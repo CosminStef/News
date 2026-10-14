@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Briefing">
+<meta name="description" content="Daily curated briefing — dental, AI, technology, psychology, education, medicine, economy, politics. Edition of October 14, 2026.">
+<link rel="manifest" href="../manifest.json">
+<title>Morning Briefing — October 14, 2026</title>
+<style>
+  :root {
+    --bg: #f6f7f9;
+    --surface: #ffffff;
+    --surface-2: #f0f2f5;
+    --text: #1a1d21;
+    --muted: #5c6670;
+    --border: #e2e6ea;
+    --accent: #2563a8;
+    --accent-soft: #e8f0fa;
+    --ok: #1f7a46;
+    --ok-bg: #e4f3ea;
+    --warn: #8a5a00;
+    --warn-bg: #fbf0d9;
+    --bad: #a33232;
+    --bad-bg: #f8e4e4;
+    --maxw: 760px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0f1216;
+      --surface: #171b21;
+      --surface-2: #1d222a;
+      --text: #e6e9ed;
+      --muted: #9aa4af;
+      --border: #2a313a;
+      --accent: #6aa9e9;
+      --accent-soft: #16304b;
+      --ok: #6fce99;
+      --ok-bg: #11301f;
+      --warn: #e5bd6a;
+      --warn-bg: #352a10;
+      --bad: #e58a8a;
+      --bad-bg: #3a1c1c;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0f1216;
+    --surface: #171b21;
+    --surface-2: #1d222a;
+    --text: #e6e9ed;
+    --muted: #9aa4af;
+    --border: #2a313a;
+    --accent: #6aa9e9;
+    --accent-soft: #16304b;
+    --ok: #6fce99;
+    --ok-bg: #11301f;
+    --warn: #e5bd6a;
+    --warn-bg: #352a10;
+    --bad: #e58a8a;
+    --bad-bg: #3a1c1c;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    font-size: 17px;
+  }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 16px 64px; }
+  header.top {
+    padding: 32px 16px 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+  }
+  header.top .kicker {
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  header.top h1 {
+    margin: 8px 0 4px;
+    font-size: 26px;
+    line-height: 1.2;
+  }
+  header.top .date { color: var(--muted); font-size: 15px; }
+  .intro {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin: 24px 0;
+    font-size: 15px;
+    color: var(--muted);
+  }
+  .intro strong { color: var(--text); }
+  nav.toc {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin: 24px 0;
+  }
+  nav.toc h2 { margin: 0 0 10px; font-size: 13px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
+  nav.toc ol { margin: 0; padding-left: 20px; }
+  nav.toc li { margin: 4px 0; }
+  nav.toc a { color: var(--accent); text-decoration: none; }
+  nav.toc a:hover { text-decoration: underline; }
+  section.cat { margin: 40px 0 0; scroll-margin-top: 16px; }
+  section.cat > h2 {
+    font-size: 22px;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 8px;
+    margin-bottom: 4px;
+  }
+  .sub { margin-top: 22px; }
+  .sub h3 {
+    font-size: 16px;
+    color: var(--text);
+    margin: 0 0 10px;
+    padding-left: 10px;
+    border-left: 3px solid var(--accent);
+  }
+  .item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin: 0 0 12px;
+  }
+  .item h4 { margin: 0 0 4px; font-size: 16px; line-height: 1.3; }
+  .item p { margin: 6px 0; font-size: 15px; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 8px; font-size: 13px; }
+  .badge {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .b-ok { background: var(--ok-bg); color: var(--ok); }
+  .b-warn { background: var(--warn-bg); color: var(--warn); }
+  .b-bad { background: var(--bad-bg); color: var(--bad); }
+  .datechip { color: var(--muted); }
+  .srcs a {
+    color: var(--accent);
+    text-decoration: none;
+    border: 1px solid var(--border);
+    padding: 1px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    background: var(--surface-2);
+  }
+  .srcs a:hover { border-color: var(--accent); }
+  .nothing {
+    color: var(--muted);
+    font-style: italic;
+    font-size: 15px;
+    padding: 6px 2px;
+  }
+  footer {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--muted);
+    text-align: center;
+  }
+  footer a { color: var(--accent); }
+  .archive-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .legend { font-size: 13px; color: var(--muted); margin-top: 6px; }
+  .legend .badge { margin-right: 4px; }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="kicker">Personal News Briefing</div>
+  <h1>Morning Briefing</h1>
+  <div class="date">Wednesday, October 14, 2026</div>
+</header>
+
+<div class="wrap">
+
+  <div class="intro">
+    <strong>About this edition.</strong> A curated scan of the last 24–48 hours across eight areas.
+    Every item carries a confidence rating and source links. Summaries are written in our own words.
+    Where only a single source or a news aggregator was available, the item is flagged
+    <span class="badge b-warn">Partial</span> or <span class="badge b-bad">Unverified</span> — treat those as leads, not confirmed facts, and open the primary source before acting.
+    <div class="legend">
+      <span class="badge b-ok">Verified</span> 2+ independent / primary sources &nbsp;
+      <span class="badge b-warn">Partial</span> one strong source, partial corroboration &nbsp;
+      <span class="badge b-bad">Unverified</span> single or aggregator source
+    </div>
+  </div>
+
+  <nav class="toc" aria-label="Table of contents">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#dental">Dental</a></li>
+      <li><a href="#ai">Artificial Intelligence</a></li>
+      <li><a href="#tech">Technology</a></li>
+      <li><a href="#psych">Psychology</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#medicine">Medicine</a></li>
+      <li><a href="#economy">Economy</a></li>
+      <li><a href="#politics">Politics</a></li>
+    </ol>
+  </nav>
+
+  <!-- ============ 1. DENTAL ============ -->
+  <section class="cat" id="dental">
+    <h2>1 · Dental</h2>
+
+    <div class="sub">
+      <h3>Medical / clinical discoveries</h3>
+      <div class="item">
+        <h4>Silver diamine fluoride halts decay in over half of treated baby teeth</h4>
+        <p>A large U.S. trial reported that a liquid brushed onto cavities arrested decay in more than half of treated primary teeth, potentially sparing many young children from drilling, infection and surgery. Note: the trial was reported in late July 2026 — nothing more recent surfaced in the last 24–48h on clinical discoveries.</p>
+        <div class="meta">
+          <span class="badge b-warn">Partial</span>
+          <span class="datechip">Reported ~29 Jul 2026</span>
+          <span class="srcs"><a href="https://www.sciencedaily.com/news/health_medicine/dentistry/" target="_blank" rel="noopener">ScienceDaily</a></span>
+        </div>
+      </div>
+      <div class="item">
+        <h4>Machine-learning study suggests tooth decay may have distinct subtypes</h4>
+        <p>A Penn Dental Medicine team mined national survey data and proposed that caries may break into several clinical subtypes, which could eventually refine prevention and treatment. Published in the Journal of Dental Research (earlier in 2026).</p>
+        <div class="meta">
+          <span class="badge b-warn">Partial</span>
+          <span class="datechip">2026</span>
+          <span class="srcs"><a href="https://www.dental.upenn.edu/news-events/2026/01/22/ai-powered-data-mining-study-illuminates-clinical-complexity-of-tooth-decay/" target="_blank" rel="noopener">Penn Dental</a></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub">
+      <h3>New technology (implants, scanners, software, launches)</h3>
+      <div class="item">
+        <h4>SprintRay launches "Foundation" wireless intraoral scanner</h4>
+        <p>SprintRay introduced Foundation, a wireless full-colour intraoral scanner tied to its ScanOS software and cloud dashboard, unveiled at 3DNext 2026. Orders reportedly opened ~10 Oct; first U.S. shipments expected early November. One trade outlet suggests the hardware is a rebadged partner device.</p>
+        <div class="meta">
+          <span class="badge b-ok">Verified</span>
+          <span class="datechip">~10–13 Oct 2026</span>
+          <span class="srcs">
+            <a href="https://www.prnewswire.com/news-releases/sprintray-expands-beyond-3d-printing-with-connected-digital-dentistry-platform-unveiled-at-3dnext-2026-302906373.html" target="_blank" rel="noopener">PRNewswire</a>
+            <a href="https://orthodonticproductsonline.com/practice-products/practice-equipment/3d-printers/sprintray-launches-foundation-intraoral-scanner-nano-series-3d-printing/" target="_blank" rel="noopener">Ortho Products</a>
+            <a href="https://instituteofdigitaldentistry.com/news/sprintray-3dnext-2026-new-nanoprint-nanowash-foundation-scanner-gc-gradia-premi-and-more/" target="_blank" rel="noopener">IDD</a>
+          </span>
+        </div>
+      </div>
+      <div class="item">
+        <h4>SHINING 3D launches Aoralscan Elf intraoral scanner</h4>
+        <p>SHINING 3D Dental released the Aoralscan Elf, a new compact intraoral scanner positioned for everyday chairside scanning.</p>
+        <div class="meta">
+          <span class="badge b-warn">Partial</span>
+          <span class="datechip">Oct 2026</span>
+          <span class="srcs"><a href="https://www.dental-tribune.com/news/shining-3d-dental-launches-aoralscan-elf-intra-oral-scanner/" target="_blank" rel="noopener">Dental Tribune</a></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub">
+      <h3>New clinic processes (call centre, patient care, SOPs)</h3>
+      <div class="item">
+        <h4>AI note-taking and patient-communication tooling going mainstream</h4>
+        <p>2026 industry reviews describe practices adopting automated clinical notes, AI-assisted radiograph/CBCT reading and bundled practice-management + analytics suites. Evidence is strongest for diagnostic support and workflow automation; adoption varies widely by role within a practice.</p>
+        <div class="meta">
+          <span class="badge b-warn">Partial</span>
+          <span class="datechip">2026 (ongoing)</span>
+          <span class="srcs"><a href="https://www.curvedental.com/dental-blog/shift-from-imaging-to-clinical-intelligence" target="_blank" rel="noopener">Curve Dental</a></span>
+        </div>
+      </div>
+      <p class="nothing">No specific, verifiable new clinic-SOP or call-centre proposal surfaced in the last 24h.</p>
+    </div>
+
+    <div class="sub">
+      <h3>Clinic sales &amp; acquisitions (RO + global)</h3>
+      <div class="item">
+        <h4>Heartland Dental affiliates with Foundation Dental Partners (33 practices)</h4>
+        <p>Heartland Dental (KKR-majority owned; 3,200+ doctors, 1,960+ locations across 39 states + DC) closed an affiliation with Foundation Dental Partners, a doctor-focused DSO supporting 33 practices.</p>
+        <div class="meta">
+          <span class="badge b-warn">Partial</span>
+          <span class="datechip">5 Oct 2026</span>
+          <span class="srcs"><a href="https://www.groupdentistrynow.com/dso-group-blog/dso-dental-mergers-2/" target="_blank" rel="noopener">Group Dentistry Now</a></span>
+        </div>
+      </div>
+      <div class="item">
+        <h4>Guardian Dentistry Partners to acquire Select Dental Management (38 locations)</h4>
+        <p>Guardian Dentistry Partners agreed to buy Select Dental Management and its 38 locations; terms not disclosed in the roundup.</p>
+        <div class="meta">
+          <span class="badge b-warn">Partial</span>
+          <span class="datechip">Oct 2026</span>
+          <span class="srcs"><a href="https://www.groupdentistrynow.com/dso-group-blog/dso-dental-mergers-2/" target="_blank" rel="noopener">Group Dentistry Now</a></span>
+        </div>
+      </div>
+      <div class="item">
+        <h4>Specialized Dental Partners acquires Peachtree Periodontics &amp; Dental Implants (GA)</h4>
+        <p>The Quad-C-backed specialty group added a Georgia perio/implant practice — described as its 10th deal of 2026.</p>
+        <div class="meta">
+          <span class="badge b-warn">Partial</span>
+          <span class="datechip">5 Oct 2026</span>
+          <span class="srcs"><a href="https://www.groupdentistrynow.com/dso-group-blog/dso-dental-mergers-2/" target="_blank" rel="noopener">Group Dentistry Now</a></span>
+        </div>
+      </div>
+      <div class="item">
+        <h4>Park Dental Partners to close ~$46M Village Family Dental deal</h4>
+        <p>Park Dental Partners plans to close on Village Family Dental in a deal worth up to $46M, adding 12 North Carolina locations and 48 doctors (agreement announced 10 Aug 2026 — included for the full transaction detail).</p>
+        <div class="meta">
+          <span class="badge b-ok">Verified</span>
+          <span class="datechip">Announced 10 Aug 2026</span>
+          <span class="srcs"><a href="https://www.sec.gov/Archives/edgar/data/0002069604/000110465926093050/tm2622596d1_ex99-1.htm" target="_blank" rel="noopener">SEC 8-K</a></span>
+        </div>
+      </div>
+      <p class="nothing">Romania: No verifiable dental-clinic transaction surfaced in the last 24–48h.</p>
+    </div>
+
+    <div class="sub">
+      <h3>Key-people moves (leadership / clinicians)</h3>
+      <div class="item">
+        <h4>ADSO CEO Andrew Smith to step down end of 2026</h4>
+        <p>The Association of Dental Support Organizations said CEO Andrew Smith will leave at year-end; the board is searching for a successor. (Reported Aug 2026 — no LinkedIn-dated change confirmed for the last 24h.)</p>
+        <div class="meta">
+          <span class="badge b-warn">Partial</span>
+          <span class="datechip">Aug 2026</span>
+          <span class="srcs"><a href="https://www.beckersdental.com/executive-moves/44406-7-dso-leadership-changes-in-august.html" target="_blank" rel="noopener">Becker's Dental</a></span>
+        </div>
+      </div>
+      <div class="item">
+        <h4>Straumann Group names Christopher Norbye as next CEO</h4>
+        <p>Global implant maker Straumann Group appointed Christopher Norbye as its incoming chief executive, per Becker's 2026 new-CEO tracking.</p>
+        <div class="meta">
+          <span class="badge b-warn">Partial</span>
+          <span class="datechip">2026</span>
+          <span class="srcs"><a href="https://www.beckersdental.com/dso-dpms/meet-10-new-dental-industry-ceos-in-2026/" target="_blank" rel="noopener">Becker's Dental</a></span>
+        </div>
+      </div>
+      <div class="item">
+        <h4>European Dental Group confirms Judith Schoenmaeckers as CEO</h4>
+        <p>EDG named Judith Schoenmaeckers CEO; she joined in 2020 as COO and had served as interim chief since June.</p>
+        <div class="meta">
+          <span class="badge b-warn">Partial</span>
+          <span class="datechip">2026</span>
+          <span class="srcs"><a href="https://www.groupdentistrynow.com/dso-group-blog/dso-people-august-2026/" target="_blank" rel="noopener">Group Dentistry Now</a></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub">
+      <h3>Lab processes &amp; technology</h3>
+      <div class="item">
+        <h4>Systematic review compares milled vs. 3D-printed zirconia frameworks</h4>
+        <p>A systematic review in the Journal of Prosthetic Dentistry (dated 4 Oct 2026) weighs marginal-fit evidence for zirconia crown/bridge frameworks made by milling versus 3D printing, noting prior in-vitro data were inconsistent. Printed zirconia still lacks FDA clearance in the U.S. for restorative use.</p>
+        <div class="meta">
+          <span class="badge b-warn">Partial</span>
+          <span class="datechip">4 Oct 2026</span>
+          <span class="srcs"><a href="https://www.sciencedaily.com/news/health_medicine/dentistry/" target="_blank" rel="noopener">JPD via ScienceDaily index</a></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub">
+      <h3>Courses &amp; the online-CE market</h3>
+      <div class="item">
+        <h4>Online education market ~$221.7B in 2026; dental CE rides mandatory-licensing demand</h4>
+        <p>Market trackers put global online education at roughly $221.7B in 2026 (~6.9% CAGR to 2030) and the broader U.S. continuing-education market near $66.9B (2024) heading to ~$96B by 2030. Dentistry's mandatory CE requirements are a structural tailwind for English-language on-demand courses, microlearning and ADA-credit offerings. No dental-specific market size is published — treat vendor "skill-uplift" claims as marketing.</p>
+        <div class="meta">
+          <span class="badge b-warn">Partial</span>
+          <span class="datechip">2026 estimates</span>
+          <span class="srcs"><a href="https://www.ecarebehavioralinstitute.com/?p=220260" target="_blank" rel="noopener">CE stats roundup</a></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 2. AI ============ -->
+  <section class="cat" id="ai">
+    <h2>2 · Artificial Intelligence</h2>
+
+    <div class="sub">
+      <h3>General news</h3>
+      <div class="item">
+        <h4>BigBear.ai reports $225M+ in federal contract awards</h4>
+        <p>The defense-AI firm said it secured over $225M in awards since July, including 25 new generative-AI awards with agencies such as the FBI, NASA, the U.S. Coast Guard, DOE and the VA. Shares rose; earnings due Oct 27.</p>
+        <div class="meta">
+          <span class="badge b-warn">Partial</span>
+          <span class="datechip">13 Oct 2026</span>
+          <span class="srcs"><a href="https://www.fool.com/coverage/stock-market-today/2026/10/13/stock-market-today-oct-13-bigbear-ai-shares-gain-on-usd225-million-contract-awards/" target="_blank" rel="noopener">Motley Fool</a></span>
+        </div>
+      </div>
+      <div class="item">
+        <h4>Character.ai enters Chapter 11 to enable court-supervised sale</h4>
+        <p>Character.ai said it began a voluntary Chapter 11 process to facilitate a supervised sale, adding the platform remains operational. Exact filing date not confirmed from available sources.</p>
+        <div class="meta">
+          <span class="badge b-bad">Unverified</span>
+          <span class="datechip">~Oct 2026</span>
+          <span class="srcs"><a href="https://blog.character.ai/an-update-on-character-ai/" target="_blank" rel="noopener">Character.ai blog</a></span>
+        </div>
+      </div>
+      <div class="item">
+        <h4>Alibaba begins selling Qwen "Glasses N1" AI wearable in China</h4>
+        <p>Reports say Alibaba started China sales of a Qwen-branded smart-glasses device (~¥2,999 / ~$450), with a Pro variant adding eye tracking. Single-aggregator sourcing — confirm against Alibaba's own channels.</p>
+        <div class="meta">
+          <span class="badge b-bad">Unverified</span>
+          <span class="datechip">13 Oct 2026</span>
+          <span class="srcs"><a href="https://aiweekly.co/ai-news-today" target="_blank" rel="noopener">AI Weekly</a></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub">
+      <h3>What could help a large dental clinic</h3>
+      <div class="item">
+        <h4>FDA-cleared dental-imaging AI is maturing into a buyable stack</h4>
+        <p>A 2025 review catalogued 29 FDA-cleared dental AI products from 13 companies; vendors such as Overjet, Pearl, Videa Health and Denti.AI Detect offer caries/bone-loss detection on 2D radiographs and CBCT. For a large clinic the near-term wins are imaging triage, automated charting/notes and call-centre scheduling — not autonomous treatment planning, where evidence remains thin. Verify FDA status directly before purchasing.</p>
+        <div class="meta">
+          <span class="badge b-warn">Partial</span>
+          <span class="datechip">2025–2026</span>
+          <span class="srcs"><a href="https://www.elementera.com/blog/dental-practice-software-in-2026-us-canada" target="_blank" rel="noopener">Elementera</a> <a href="https://www.overjet.com/blog/ai-buyer-s-guide-to-dental-practice-software" target="_blank" rel="noopener">Overjet guide</a></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. TECHNOLOGY ============ -->
+  <section class="cat" id="tech">
+    <h2>3 · Technology</h2>
+
+    <div class="sub">
+      <h3>Patents &amp; launches (global + Romania)</h3>
+      <div class="item">
+        <h4>Big-Tech patent filings: attention-seeking AI device, under-eyelid glucose sensor</h4>
+        <p>A weekly patent roundup (9 Oct) flagged filings including an OpenAI device that physically moves to catch a user's attention, a Verily blood-glucose sensor worn under the eyelid, and Nvidia AI for generating camera angles. These are published applications, not shipping products.</p>
+        <div class="meta">
+          <span class="badge b-warn">Partial</span>
+          <span class="datechip">9 Oct 2026</span>
+          <span class="srcs"><a href="https://patentlyze.com/big-tech-twelve-most-interesting-patents-october-9-2026/" target="_blank" rel="noopener">Patentlyze</a></span>
+        </div>
+      </div>
+      <div class="item">
+        <h4>Bambu Lab teases first 3D scanner (S1), slated for November 2026</h4>
+        <p>3D-printing maker Bambu Lab officially teased its first 3D scanner, the S1, ahead of a planned November 2026 release; details and pricing remain limited.</p>
+        <div class="meta">
+          <span class="badge b-warn">Partial</span>
+          <span class="datechip">Oct 2026</span>
+          <span class="srcs"><a href="https://tomshardware.com/3d-printing/3d-scanning/bambu-lab-announces-its-first-3d-scanner-and-it-might-be-expensive" target="_blank" rel="noopener">Tom's Hardware</a></span>
+        </div>
+      </div>
+      <p class="nothing">Romania-specific patents/launches: Nothing verifiable in the last 24h.</p>
+    </div>
+  </section>
+
+  <!-- ============ 4. PSYCHOLOGY ============ -->
+  <section class="cat" id="psych">
+    <h2>4 · Psychology</h2>
+
+    <div class="sub">
+      <h3>Adults — one evidence-based item (re: DSM-5)</h3>
+      <div class="item">
+        <h4>Depression may be several biological conditions under one DSM-5 label</h4>
+        <p>Researchers studying 263 people with depression identified five distinct brain-activity profiles, reinforcing the view that DSM-5 Major Depressive Disorder bundles biologically different conditions — with implications for matching patients to treatments.</p>
+        <div class="meta">
+          <span class="badge b-warn">Partial</span>
+          <span class="datechip">Oct 2026</span>
+          <span class="srcs"><a href="https://www.sciencedaily.com/news/mind_brain/psychology/" target="_blank" rel="noopener">ScienceDaily</a></span>
+        </div>
+      </div>
+      <div class="item">
+        <h4>Loneliness linked to lost years of healthy life</h4>
+        <p>A large study tied loneliness and social isolation to fewer years free of depression and anxiety — roughly 5.8 lost years for men experiencing both, ~3.7 for women. Relevant to DSM-5 depressive/anxiety disorders as a modifiable risk context.</p>
+        <div class="meta">
+          <span class="badge b-warn">Partial</span>
+          <span class="datechip">Oct 2026</span>
+          <span class="srcs"><a href="https://www.sciencedaily.com/news/health_medicine/mental_health/" target="_blank" rel="noopener">ScienceDaily</a></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub">
+      <h3>Children — a 6-year-old's developing brain (Andrei, b. 2020)</h3>
+      <div class="item">
+        <h4>At 6→7: cause-and-effect, time, and the fading of "magical thinking"</h4>
+        <p>Around age six the brain shifts toward concrete logical reasoning: children begin to grasp cause-and-effect and the concept of time, and preschool "magical thinking" fades. Typical markers include ~15 minutes of focused attention and following three-part instructions. Learning lands best through hands-on, concrete play rather than abstract instruction.</p>
+        <div class="meta">
+          <span class="badge b-ok">Verified</span>
+          <span class="datechip">Evergreen (clinical consensus)</span>
+          <span class="srcs">
+            <a href="https://www.columbiadoctors.org/health-library/article/milestones-6-year-olds/" target="_blank" rel="noopener">Columbia Doctors</a>
+            <a href="https://healthy.kaiserpermanente.org/health-wellness/health-encyclopedia/he.ue5723" target="_blank" rel="noopener">Kaiser Permanente</a>
+          </span>
+        </div>
+      </div>
+      <div class="item">
+        <h4>What to watch in the coming year</h4>
+        <p>Emerging reading and writing of simple words/sentences; a widening social world (friends and admired adults like teachers begin to meet needs once met only by family); and lingering age-typical fears (monsters, large animals). These are ranges, not deadlines — persistent lags in attention, language or social reciprocity are worth a pediatric check.</p>
+        <div class="meta">
+          <span class="badge b-ok">Verified</span>
+          <span class="datechip">Evergreen</span>
+          <span class="srcs"><a href="https://www.twinkl.com/blog/child-development-workshop-2-age-6-8-years-old" target="_blank" rel="noopener">Twinkl (dev. guide)</a></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. EDUCATION ============ -->
+  <section class="cat" id="education">
+    <h2>5 · Education</h2>
+
+    <div class="sub">
+      <h3>The next 20 years vs. the classic school</h3>
+      <div class="item">
+        <h4>2026 consensus: AI becomes an everyday classroom tool, not a teacher replacement</h4>
+        <p>Edtech forecasters expect AI to move from pilots to daily use — adaptive, moment-to-moment instruction and short targeted tutoring to ease teacher workload — while guardrails and teacher training become the gating factors, with some backlash expected. Longer-range speculation imagines learning embedded in everyday life (wearables, games) rather than a fixed "place" — but most mainstream views see AI complementing, not replacing, schools, whose socialization and childcare roles persist. (Mostly vendor/industry voices — directional, not evidence.)</p>
+        <div class="meta">
+          <span class="badge b-warn">Partial</span>
+          <span class="datechip">2026 forecasts</span>
+          <span class="srcs"><a href="https://www.gettingsmart.com/podcast/ben-kornell-on/" target="_blank" rel="noopener">Getting Smart</a> <a href="https://www.smarttech.com/news/predictions-on-future-of-edtech-2026" target="_blank" rel="noopener">SMART</a></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub">
+      <h3>Raising a child of Andrei's age (b. 2020)</h3>
+      <div class="item">
+        <h4>Lean into concrete, playful learning and a widening social circle</h4>
+        <p>At six, the most effective learning is hands-on and concrete; pair early reading/writing with play, give clear three-part instructions, and support friendships and trusted non-family adults (teachers). Expect — and gently normalize — age-typical fears. Keep expectations as ranges, not fixed targets.</p>
+        <div class="meta">
+          <span class="badge b-ok">Verified</span>
+          <span class="datechip">Evergreen</span>
+          <span class="srcs"><a href="https://www.columbiadoctors.org/health-library/article/milestones-6-year-olds/" target="_blank" rel="noopener">Columbia Doctors</a></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 6. MEDICINE ============ -->
+  <section class="cat" id="medicine">
+    <h2>6 · Medicine</h2>
+
+    <div class="sub">
+      <h3>Discoveries &amp; firsts (evidence-based)</h3>
+      <div class="item">
+        <h4>FDA approves Jaypirca (pirtobrutinib) for previously untreated CLL</h4>
+        <p>The FDA approved Eli Lilly's Jaypirca for first-line chronic lymphocytic leukemia, based on the BRUIN CLL-313 study versus bendamustine + rituximab (reported progression-free-survival hazard ratio ~0.20). The comparator was chemoimmunotherapy rather than a covalent BTK inhibitor.</p>
+        <div class="meta">
+          <span class="badge b-ok">Verified</span>
+          <span class="datechip">2 Oct 2026</span>
+          <span class="srcs"><a href="https://www.onclive.com/view/fda-grants-fast-track-designation-to-opamtistomig-for-advanced-biliary-tract-cancer" target="_blank" rel="noopener">OncLive</a> <a href="https://www.biospace.com/" target="_blank" rel="noopener">BioSpace</a></span>
+        </div>
+      </div>
+      <div class="item">
+        <h4>Zealand's petrelintide meets primary endpoint in Phase 2b (ZUPREME-2)</h4>
+        <p>Zealand Pharma reported its amylin-analogue petrelintide hit the primary endpoint in the Phase 2b ZUPREME-2 obesity trial — a watch-item in the post-GLP-1 weight-management race. Company-reported; full data pending.</p>
+        <div class="meta">
+          <span class="badge b-warn">Partial</span>
+          <span class="datechip">Oct 2026</span>
+          <span class="srcs"><a href="https://lifesciencedaily.news/clinical-trial-results-9-october-2026/" target="_blank" rel="noopener">Life Science Daily</a></span>
+        </div>
+      </div>
+      <div class="item">
+        <h4>RYZ101 improves PFS in Phase 3 neuroendocrine-tumor trial (ACTION-1)</h4>
+        <p>An interim analysis of the radiopharmaceutical RYZ101 showed improved progression-free survival versus standard of care in neuroendocrine tumors previously treated with lutetium-177. Interim, company-reported.</p>
+        <div class="meta">
+          <span class="badge b-warn">Partial</span>
+          <span class="datechip">~9 Oct 2026</span>
+          <span class="srcs"><a href="https://lifesciencedaily.news/clinical-trial-results-9-october-2026/" target="_blank" rel="noopener">Life Science Daily</a></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 7. ECONOMY ============ -->
+  <section class="cat" id="economy">
+    <h2>7 · Economy</h2>
+
+    <div class="sub">
+      <h3>M&amp;A — EU &gt; €100M · US/China &gt; $100M · Romania &gt; €1M</h3>
+      <div class="item">
+        <h4>Schneider Electric to acquire PTC for ~$22.6B (all cash)</h4>
+        <p>France's Schneider Electric agreed to buy Boston-based industrial-software firm PTC in an all-cash deal — its largest ever — expected to close by Q3 2027 and funded by up to €6B equity plus up to €17B new debt.</p>
+        <div class="meta">
+          <span class="badge b-ok">Verified</span>
+          <span class="datechip">5 Oct 2026</span>
+          <span class="srcs"><a href="https://www.bloomberg.com/news/articles/2026-10-05/schneider-electric-to-acquire-ptc-for-more-than-20-billion" target="_blank" rel="noopener">Bloomberg</a> <a href="https://www.energyconnects.com/news/utilities/2026/october/schneider-expands-in-ai-with-record-23-billion-acquisition/" target="_blank" rel="noopener">Energy Connects</a></span>
+        </div>
+      </div>
+      <div class="item">
+        <h4>C.H. Robinson to acquire RXO for ~$5.8B</h4>
+        <p>Logistics group C.H. Robinson agreed to buy RXO in a cash-and-stock deal valued ~$5.8B, with closing expected in H1 2027.</p>
+        <div class="meta">
+          <span class="badge b-warn">Partial</span>
+          <span class="datechip">5 Oct 2026</span>
+          <span class="srcs"><a href="https://www.ttnews.com/articles/ch-robinson-rxo-deal-2026" target="_blank" rel="noopener">Transport Topics</a></span>
+        </div>
+      </div>
+      <div class="item">
+        <h4>Ithaca Holdings to take Bumble private for ~$1.3B</h4>
+        <p>Ithaca Holdings agreed to acquire Bumble in an all-cash deal at $6.05/share (~138% premium to its 9 Oct close), taking the dating-app company private.</p>
+        <div class="meta">
+          <span class="badge b-warn">Partial</span>
+          <span class="datechip">13 Oct 2026</span>
+          <span class="srcs"><a href="https://finance.yahoo.com/markets/stocks/articles/bumble-agrees-1-3-billion-135737763.html" target="_blank" rel="noopener">Yahoo Finance</a></span>
+        </div>
+      </div>
+      <div class="item">
+        <h4>Romania: EU clears Tenaris's full takeover of Artrom Steel Tubes (€86M)</h4>
+        <p>The European Commission authorized Tenaris to fully acquire Romanian steel-tube maker Artrom (plants in Slatina and Reșița) for €86M total; seller is US-based GLGH Steel. Clearance is one approval — not final closing.</p>
+        <div class="meta">
+          <span class="badge b-warn">Partial</span>
+          <span class="datechip">~14 Oct 2026</span>
+          <span class="srcs"><a href="https://informat.ro/ue/tenaris-preluare-artrom-steel-tubes-comisia-europeana-slatina-resita-143366" target="_blank" rel="noopener">Informat.ro</a></span>
+        </div>
+      </div>
+      <div class="item">
+        <h4>Romania context: Q3 M&amp;A ~€2.3B, up 2.2× year-on-year</h4>
+        <p>A PwC Romania report pegs Q3 2026 Romanian M&amp;A at ~€2.3B (2.2× a year earlier), led by the Electronic Arts takeover (Romanian share estimated &gt;€650M). Other recent deals: AFI retail-park portfolio (~€282M) and Premier Energy–Evryo (~€700M, H2 2026).</p>
+        <div class="meta">
+          <span class="badge b-warn">Partial</span>
+          <span class="datechip">Q3 2026</span>
+          <span class="srcs"><a href="https://www.stiridecluj.ro/national/miliarde-de-euro-pe-firme-din-romania-piata-tranzactiilor-s-a-dublat-in-doar-trei-luni-iar-o-singura-preluare-a-adus-peste-650-de-milioane-de-euro" target="_blank" rel="noopener">Știri de Cluj</a></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 8. POLITICS ============ -->
+  <section class="cat" id="politics">
+    <h2>8 · Politics</h2>
+
+    <div class="sub">
+      <h3>New appointments (EU · Romania · US)</h3>
+      <div class="item">
+        <h4>EU: Paulina Dejmek Hack becomes Director-General for Financial Stability (DG FISMA)</h4>
+        <p>The European Commission appointed Paulina Dejmek Hack as Director-General of DG FISMA (financial stability, financial services and capital markets union), effective 1 October 2026. DG Competition also named new directors for cartels and state aid (30 Sep).</p>
+        <div class="meta">
+          <span class="badge b-warn">Partial</span>
+          <span class="datechip">1 Oct 2026</span>
+          <span class="srcs"><a href="https://www.brusselstimes.com/eu-affairs/2340410/eu-appoints-leaders-for-financial-stability-competition-digital-services-overhaul" target="_blank" rel="noopener">Brussels Times</a></span>
+        </div>
+      </div>
+      <div class="item">
+        <h4>US: Senate confirmations include Kevin Warsh to the Federal Reserve Board</h4>
+        <p>Recent Senate civilian confirmations (list dated ~30 Sep) include Kevin Warsh to the Federal Reserve Board of Governors (14-year term from 1 Feb 2026) and ambassador nominees to Sierra Leone and Kenya.</p>
+        <div class="meta">
+          <span class="badge b-warn">Partial</span>
+          <span class="datechip">~30 Sep 2026</span>
+          <span class="srcs"><a href="https://www.senate.gov/pagelayout/legislative/one_item_and_teasers/nom_confc.htm" target="_blank" rel="noopener">US Senate</a></span>
+        </div>
+      </div>
+      <p class="nothing">Romania: No verifiable new top-leadership appointment surfaced in the last 24h.</p>
+    </div>
+
+    <div class="sub">
+      <h3>New laws adopted / to apply</h3>
+      <div class="item">
+        <h4>Romania (Monitorul Oficial): anti-SLAPP, Moisil Year, territorial-organization amendment</h4>
+        <p>MO nr. 845 (7 Oct 2026) published, among others: Law 193/2026 protecting against manifestly unfounded/abusive lawsuits aimed at people in public-mobilization actions (anti-SLAPP); Law 191/2026 declaring 2026 the "Grigore Constantin Moisil Year"; and Law 194/2026 amending the annex to Law 2/1968 on territorial administrative organization. Earlier, Law 190/2026 (MO 841, 5 Oct) amended OUG 81/2021 on interventions during brown-bear attacks.</p>
+        <div class="meta">
+          <span class="badge b-warn">Partial</span>
+          <span class="datechip">5–7 Oct 2026</span>
+          <span class="srcs"><a href="https://www.ccjtm.ro/monitorul-845-din-data-07-10-2026/" target="_blank" rel="noopener">MO 845 summary</a> <a href="https://ghidullegal.ro/post/ce-acte-normative-au-fost-publicate-azi-9-octombrie-2026/" target="_blank" rel="noopener">Ghidul Legal</a></span>
+        </div>
+      </div>
+      <div class="item">
+        <h4>EU (EUR-Lex): AI Act amendment now in force, phasing to Aug 2027</h4>
+        <p>Regulation (EU) 2026/1744 amends the AI Act; it is in force with provisions phasing in until full application by 2 August 2027. Also recently published: Directive (EU) 2026/470 (sustainability-reporting simplification; transpose by 26 Jul 2028) and Implementing Regulation (EU) 2026/248 on e-signatures/seals. (These are recent, not newly adopted this week.)</p>
+        <div class="meta">
+          <span class="badge b-ok">Verified</span>
+          <span class="datechip">2026 (in force)</span>
+          <span class="srcs"><a href="https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng" target="_blank" rel="noopener">EUR-Lex 2026/1744</a> <a href="https://eur-lex.europa.eu/eli/dir/2026/470/oj/eng" target="_blank" rel="noopener">Dir 2026/470</a></span>
+        </div>
+      </div>
+      <p class="nothing">US (Federal Register / Congress): No bill signed into law found in the last 24–48h.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Compiled automatically from public web sources, ~24–48h window, for personal use.
+    Confidence ratings reflect source multiplicity, not legal or medical advice.
+    Always open the primary source before acting on a <span class="badge b-warn">Partial</span> or <span class="badge b-bad">Unverified</span> item.</p>
+    <p><a class="archive-link" href="2026-10-14.html">📚 Archive</a></p>
+    <p style="margin-top:14px;">Edition: October 14, 2026</p>
+  </footer>
+
+</div>
+</body>
+</html>
