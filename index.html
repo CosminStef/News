@@ -1,0 +1,850 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Briefing">
+<meta name="theme-color" content="#0f1115">
+<link rel="manifest" href="manifest.json">
+<title>Daily Briefing — October 17, 2026</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2064%2064%27%3E%3Crect%20width%3D%2764%27%20height%3D%2764%27%20rx%3D%2714%27%20fill%3D%27%231f6f78%27%2F%3E%3Ctext%20x%3D%2732%27%20y%3D%2746%27%20font-size%3D%2740%27%20text-anchor%3D%27middle%27%20fill%3D%27white%27%20font-family%3D%27Georgia%2Cserif%27%3EB%3C%2Ftext%3E%3C%2Fsvg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  /* Layout: single reading column, sticky dated masthead, anchored TOC, item cards grouped by category + sub-chapter. */
+  :root {
+    --bg: #f6f7f9;
+    --surface: #ffffff;
+    --fg: #1a1f2b;
+    --muted: #5c6575;
+    --faint: #8691a1;
+    --border: #e3e7ec;
+    --accent: #1f6f78;
+    --accent-soft: #e4f1f1;
+    --ok: #2f7d4f;
+    --warn: #a86812;
+    --weak: #7a8494;
+    --display: "Fraunces", Georgia, "Times New Roman", serif;
+    --body: "Newsreader", Georgia, "Times New Roman", serif;
+    --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0f1115;
+      --surface: #171a21;
+      --fg: #e7eaf0;
+      --muted: #9aa3b4;
+      --faint: #6b7483;
+      --border: #272c36;
+      --accent: #4fb3bf;
+      --accent-soft: #15333640;
+      --ok: #5bbd81;
+      --warn: #e0a44a;
+      --weak: #7f8a9c;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0f1115;
+    --surface: #171a21;
+    --fg: #e7eaf0;
+    --muted: #9aa3b4;
+    --faint: #6b7483;
+    --border: #272c36;
+    --accent: #4fb3bf;
+    --accent-soft: #15333640;
+    --ok: #5bbd81;
+    --warn: #e0a44a;
+    --weak: #7f8a9c;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--body);
+    font-size: 1.12rem;
+    line-height: 1.6;
+    font-optical-sizing: auto;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0 0 auto;
+    height: env(safe-area-inset-top, 0px);
+    background: var(--surface);
+    z-index: 20;
+  }
+
+  .wrap {
+    max-width: 730px;
+    margin: 0 auto;
+    padding-left: max(18px, env(safe-area-inset-left, 0px));
+    padding-right: max(18px, env(safe-area-inset-right, 0px));
+  }
+
+  /* Masthead */
+  header.masthead {
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .masthead .wrap { padding-block: 26px 22px; }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 10px;
+  }
+  h1.title {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(2rem, 7vw, 3rem);
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+    margin: 0;
+    text-wrap: balance;
+  }
+  .dateline {
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin: 14px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+    align-items: baseline;
+  }
+  .dateline a { color: var(--accent); }
+
+  /* Sticky mini-bar */
+  .stickybar {
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 15;
+    background: color-mix(in srgb, var(--surface) 92%, transparent);
+    backdrop-filter: saturate(140%) blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+  .stickybar .wrap {
+    padding-block: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .stickybar .lede {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--faint);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .theme-toggle {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 5px 11px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+
+  main .wrap { padding-block: 10px 40px; }
+
+  .intro {
+    font-family: var(--body);
+    color: var(--muted);
+    font-size: 1.04rem;
+    border-left: 3px solid var(--accent);
+    padding: 2px 0 2px 16px;
+    margin: 26px 0 4px;
+  }
+
+  /* Table of contents */
+  nav.toc {
+    margin: 30px 0 10px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--surface);
+    padding: 18px 20px;
+  }
+  nav.toc h2 {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--faint);
+    margin: 0 0 12px;
+  }
+  nav.toc ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 7px 18px;
+    counter-reset: toc;
+  }
+  nav.toc li { counter-increment: toc; min-width: 0; }
+  nav.toc a {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 1.02rem;
+    color: var(--fg);
+    text-decoration: none;
+    display: flex;
+    gap: 9px;
+    align-items: baseline;
+  }
+  nav.toc a::before {
+    content: counter(toc, decimal-leading-zero);
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--accent);
+    font-weight: 500;
+  }
+  nav.toc a:hover { color: var(--accent); }
+
+  /* Category sections */
+  section.cat { margin-top: 44px; scroll-margin-top: 64px; }
+  .cat-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    border-bottom: 2px solid var(--fg);
+    padding-bottom: 8px;
+    margin-bottom: 4px;
+  }
+  .cat-num {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .cat-head h2 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(1.5rem, 5vw, 1.95rem);
+    letter-spacing: -0.015em;
+    margin: 0;
+  }
+
+  h3.sub {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.14rem;
+    color: var(--fg);
+    margin: 26px 0 2px;
+  }
+  h3.sub .sub-mark {
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    margin-right: 7px;
+  }
+
+  .empty {
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    color: var(--faint);
+    letter-spacing: 0.02em;
+    margin: 8px 0 4px;
+    font-style: normal;
+  }
+
+  /* Item */
+  article.item {
+    padding: 16px 0 18px;
+    border-bottom: 1px solid var(--border);
+  }
+  article.item:last-child { border-bottom: none; }
+  article.item h4 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.2rem;
+    line-height: 1.25;
+    margin: 0 0 7px;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  article.item p { margin: 0 0 10px; }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+    font-family: var(--mono);
+    font-size: 0.73rem;
+  }
+  .date {
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 2px 9px;
+    border-radius: 999px;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+    border: 1px solid;
+  }
+  .badge::before {
+    content: "";
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+  .badge.v { color: var(--ok); border-color: color-mix(in srgb, var(--ok) 45%, transparent); }
+  .badge.p { color: var(--warn); border-color: color-mix(in srgb, var(--warn) 45%, transparent); }
+  .badge.u { color: var(--weak); border-color: color-mix(in srgb, var(--weak) 50%, transparent); }
+  .sources {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+    margin-top: 2px;
+  }
+  .sources a {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted color-mix(in srgb, var(--accent) 55%, transparent);
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+  .sources a:hover { border-bottom-style: solid; }
+  .note {
+    font-size: 0.92rem;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  .topnote {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin: 6px 0 2px;
+  }
+
+  footer {
+    border-top: 1px solid var(--border);
+    margin-top: 44px;
+    background: var(--surface);
+  }
+  footer .wrap { padding-block: 24px 30px; }
+  footer p {
+    font-family: var(--mono);
+    font-size: 0.74rem;
+    color: var(--faint);
+    line-height: 1.7;
+    margin: 0 0 8px;
+  }
+  footer a { color: var(--accent); }
+  .backtop {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  @media (max-width: 460px) {
+    body { font-size: 1.06rem; }
+    nav.toc ol { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+  a { color: var(--accent); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <p class="eyebrow">Personal Daily Briefing</p>
+    <h1 class="title">The Morning Briefing</h1>
+    <p class="dateline">
+      <span>Friday, October 17, 2026</span>
+      <span>Research window: Oct 14–17, 2026</span>
+      <span><a href="#archive">Archive ↗</a></span>
+    </p>
+  </div>
+</header>
+
+<div class="stickybar">
+  <div class="wrap">
+    <span class="lede">Oct 17 · 8 sections</span>
+    <button class="theme-toggle" id="themeBtn" type="button" aria-label="Toggle colour theme">Theme</button>
+  </div>
+</div>
+
+<main>
+  <div class="wrap">
+
+    <p class="intro">Eight beats, researched fresh this morning and cross-checked against independent sources. Every item carries its publication date, a confidence rating, and its source links. Where nothing credible surfaced in the last 24–72 hours, the sub-section says so plainly — nothing is invented to fill space.</p>
+
+    <nav class="toc" aria-label="Sections">
+      <h2>In this edition</h2>
+      <ol>
+        <li><a href="#dental">Dental</a></li>
+        <li><a href="#ai">Artificial Intelligence</a></li>
+        <li><a href="#tech">Technology</a></li>
+        <li><a href="#psychology">Psychology</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#medicine">Medicine</a></li>
+        <li><a href="#economy">Economy</a></li>
+        <li><a href="#politics">Politics</a></li>
+      </ol>
+    </nav>
+
+    <!-- ============ 1. DENTAL ============ -->
+    <section class="cat" id="dental">
+      <div class="cat-head"><span class="cat-num">01</span><h2>Dental</h2></div>
+
+      <h3 class="sub"><span class="sub-mark">—</span>Medical discoveries</h3>
+      <p class="empty">No new clinical breakthrough or trial result dated within the window.</p>
+      <article class="item">
+        <h4>Review maps the microbiome–immune interplay in periodontitis</h4>
+        <p>A narrative review in Frontiers in Microbiology pulls together current understanding of how oral bacteria and the host immune system drive periodontal disease, and surveys where therapy research is heading. It consolidates existing evidence rather than reporting a new finding, so treat it as a reference synthesis, not a discovery.</p>
+        <div class="meta">
+          <span class="date">15 Oct 2026</span>
+          <span class="badge p">Partial</span>
+        </div>
+        <div class="sources"><a href="https://www.frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2026.1953464/full" target="_blank" rel="noopener">frontiersin.org</a></div>
+        <p class="note" style="margin-top:8px">Context (not new): the Nottingham fluoride-free enamel-regrowth peptide gel still circulates, but original coverage dates to late 2025 and remains ex-vivo only.</p>
+      </article>
+
+      <h3 class="sub"><span class="sub-mark">—</span>New technologies (implants, scanners, software, launches)</h3>
+      <p class="empty">No confirmed hardware or software product launch within the window.</p>
+      <article class="item">
+        <h4>Market-research houses flag digital-dentistry growth</h4>
+        <p>Several paid forecasts landed mid-week: the U.S. digital-dentistry market is projected to top $1.6B by 2032 on aligner and DSO-driven scanner and 3D-printer adoption, with parallel U.S. (~5.9% CAGR) and Australia (~7.0% CAGR) equipment reports. These are vendor-direction signals, not product news.</p>
+        <div class="meta">
+          <span class="date">14 Oct 2026</span>
+          <span class="badge p">Partial</span>
+        </div>
+        <div class="sources"><a href="https://globenewswire.com/news-release/2026/10/14/3380539/28124/en/u-s-digital-dentistry-market-to-top-1-6b-by-2032-as-clear-aligners-and-dsos-drive-intraoral-scanner-and-3d-printer-adoption.html" target="_blank" rel="noopener">globenewswire.com</a></div>
+        <p class="note" style="margin-top:8px">Correction to feeds circulating this week: Ultradent's Gemini Nova cordless diode laser is an 11 Aug 2026 release, not a mid-October one.</p>
+      </article>
+
+      <h3 class="sub"><span class="sub-mark">—</span>New clinic processes (call centre, patient care, SOPs)</h3>
+      <p class="empty">Nothing relevant in the last 24h.</p>
+
+      <h3 class="sub"><span class="sub-mark">—</span>Clinic sales &amp; acquisitions (Romania + global)</h3>
+      <article class="item">
+        <h4>TUSK Q4 2026 dental-market report: consolidation, tighter financing, lower multiples</h4>
+        <p>TUSK Practice Sales published its quarterly read on the practice-transaction market. Headline figures: dentist ownership has fallen from 85% (2005) to 73%, DSO affiliation has more than doubled since 2015, the industry is roughly 35% consolidated, and valuation multiples are expected to compress from today's ~5–9×+ EBITDA toward 4–6×. Useful backdrop for any owner weighing an exit.</p>
+        <div class="meta">
+          <span class="date">14 Oct 2026</span>
+          <span class="badge v">Verified</span>
+        </div>
+        <div class="sources">
+          <a href="https://www.prnewswire.com/news-releases/tusk-practice-sales-releases-q4-2026-dental-market-report-on-dso-expansion-tighter-financing-and-exit-planning-302908646.html" target="_blank" rel="noopener">prnewswire.com</a>
+          <a href="https://www.dentistrytoday.com/tusk-practice-sales-releases-q4-2026-dental-market-report/" target="_blank" rel="noopener">dentistrytoday.com</a>
+        </div>
+      </article>
+      <article class="item">
+        <h4>Freshest closed deal just outside the window: Heartland × Foundation Dental Partners</h4>
+        <p>Heartland Dental folded Foundation Dental Partners — a doctor-focused DSO supporting 33 practices across Georgia, Tennessee, South Carolina and Kentucky — into its supported network. Terms were not disclosed. Dated 2 Oct, so a fortnight old, but the most substantive clinic-network transaction near the window.</p>
+        <div class="meta">
+          <span class="date">2 Oct 2026</span>
+          <span class="badge v">Verified</span>
+        </div>
+        <div class="sources"><a href="https://www.prnewswire.com/news-releases/heartland-dental-welcomes-foundation-dental-partners-into-its-supported-network-302897192.html" target="_blank" rel="noopener">prnewswire.com</a></div>
+      </article>
+      <p class="topnote"><strong>Romania:</strong> No new Romanian clinic deal in the window. The most recent relevant move remains Dental Holding's acquisition of Greece's Memodent Group (its 7th add-on) — but that is a dental-supplies distributor, dated January 2026, not a clinic.</p>
+
+      <h3 class="sub"><span class="sub-mark">—</span>Key-people migrations (leadership / doctors)</h3>
+      <article class="item">
+        <h4>Henry Schein names Emmanuel Caprais as SVP &amp; CFO</h4>
+        <p>The dental-and-medical distributor is bringing in Emmanuel Caprais, previously SVP &amp; CFO of ITT Inc., as its new finance chief, effective 4 Nov 2026. Announced around mid-October; the exact announcement date could not be independently cross-confirmed.</p>
+        <div class="meta">
+          <span class="date">mid-Oct 2026</span>
+          <span class="badge p">Partial</span>
+        </div>
+        <div class="sources"><a href="https://www.businesswire.com/newsroom/industry/health/dental" target="_blank" rel="noopener">businesswire.com</a></div>
+      </article>
+      <article class="item">
+        <h4>California appoints Cara Miyasaki to the Dental Board</h4>
+        <p>Governor Newsom's 14 Oct appointments list includes Cara Miyasaki of San Jose to the Dental Board of California. This is a regulatory-board seat rather than a company leadership move.</p>
+        <div class="meta">
+          <span class="date">14 Oct 2026</span>
+          <span class="badge p">Partial</span>
+        </div>
+        <div class="sources"><a href="https://gov.ca.gov/2026/10/14/governor-newsom-announces-appointments-10-14-26" target="_blank" rel="noopener">gov.ca.gov</a></div>
+      </article>
+      <p class="note">LinkedIn could not be queried this run (authenticated access blocked), so LinkedIn-sourced moves and exact change dates were not independently verified.</p>
+
+      <h3 class="sub"><span class="sub-mark">—</span>Lab processes &amp; technologies</h3>
+      <article class="item">
+        <h4>Standard Dental Labs buys Dr. Tooth / Sheen lab — and reshores work from China</h4>
+        <p>Standard Dental Labs (OTCQB: TUTH) acquired Dr. Tooth / Sheen Dental Laboratory in an asset deal (cash plus stock, with an earn-out tied to retained-customer revenue), adding ~$800K of annualised revenue and nearly doubling its base to an estimated $1.6M+. The notable process angle: the company plans to move work currently outsourced to China into its Sarasota, Florida facility for tighter quality control. Dated 2 Oct, just outside the strict window.</p>
+        <div class="meta">
+          <span class="date">2 Oct 2026</span>
+          <span class="badge v">Verified</span>
+        </div>
+        <div class="sources">
+          <a href="https://pulse2.com/standard-dental-labs-acquires-dr-tooth-increasing-estimated-annualized-revenue-to-more-than-1-6-million/" target="_blank" rel="noopener">pulse2.com</a>
+          <a href="https://www.businessobserverfl.com/news/2026/oct/02/florida-dental-labs-latest-acquisition-nearly-doubles-annualized-revenue-base/" target="_blank" rel="noopener">businessobserverfl.com</a>
+        </div>
+      </article>
+
+      <h3 class="sub"><span class="sub-mark">—</span>Courses: opinion leaders, platforms &amp; the English-language online market</h3>
+      <p class="empty">No course launch dated within the window.</p>
+      <article class="item">
+        <h4>Market read: free, sponsor-funded CE dominates; implants + digital sell</h4>
+        <p>Across recent sources the prevailing model for English-language online dental education is free, manufacturer-funded continuing education used as a lead and loyalty channel (Colgate Oral Health Network, P&amp;G's DentalCare.com, Dentsply Sirona Academy, and Keystone's new free Campus). Paid, premium content stays concentrated in hands-on live training (Pikos, Harvard HSDM's one-year CE). The topics that consistently sell are implantology and full-arch (All-on-X), digital workflows and intraoral scanning, AI in diagnostics and lab design, clear aligners, and prosthetics/treatment planning — implants and digital are the clear commercial drivers. Demand is underpinned by state CE-credit mandates; no reliable data quantified the marketing lift from KOL-led faculty.</p>
+        <div class="meta">
+          <span class="date">recent (2026)</span>
+          <span class="badge p">Partial</span>
+        </div>
+        <div class="sources">
+          <a href="https://ignitedds.com/dental-continuing-education-10-websites-where-dentists-can-earn-free-ce/" target="_blank" rel="noopener">ignitedds.com</a>
+          <a href="https://www.dental-tribune.com/c/keystone-dental-group/news/smart-learning-for-enhanced-implant-care-keystone-dental-launches-new-online-education-platform/" target="_blank" rel="noopener">dental-tribune.com</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- ============ 2. AI ============ -->
+    <section class="cat" id="ai">
+      <div class="cat-head"><span class="cat-num">02</span><h2>Artificial Intelligence</h2></div>
+
+      <h3 class="sub"><span class="sub-mark">—</span>Across the field</h3>
+      <article class="item">
+        <h4>Amazon's Bee unit launches two always-listening personal-AI devices</h4>
+        <p>Amazon unveiled the Bee Frontier, a ~$75 wearable (wrist or clip-on) that transcribes and summarises conversations, alongside the ~$100 card-sized Bee Eclipse that attaches magnetically to a phone. A new "Bee Pro" subscription (~$11.99/month) adds unlimited summaries and Alexa+ integration. It is Amazon's first hardware since acquiring Bee in 2025; privacy coverage is divided.</p>
+        <div class="meta"><span class="date">15 Oct 2026</span><span class="badge v">Verified</span></div>
+        <div class="sources">
+          <a href="https://www.aboutamazon.com/news/devices/amazon-personal-ai-bee-frontier-bee-eclipse" target="_blank" rel="noopener">aboutamazon.com</a>
+          <a href="https://www.cnbc.com/2026/10/15/amazon-bee-frontier-eclipse-ai-devices.html" target="_blank" rel="noopener">cnbc.com</a>
+        </div>
+      </article>
+      <article class="item">
+        <h4>Microsoft AI finishes pre-training MAI-Base-2, a 2.8-trillion-parameter model</h4>
+        <p>Microsoft AI says it completed pre-training of MAI-Base-2, a mixture-of-experts model with 2.8T total / ~80B active parameters, trained on roughly 16,000 GB200 GPUs over 38 days. The company claims it beats every open-weight model it tested and is several times more training-efficient than a leading rival — claims that are self-reported and not independently verified. It is still in post-training and will be licensed to partners via Foundry rather than shipped as a product.</p>
+        <div class="meta"><span class="date">15 Oct 2026</span><span class="badge v">Verified</span></div>
+        <div class="sources">
+          <a href="https://microsoft.ai/news/frontier-pre-training-at-microsoft-ai/" target="_blank" rel="noopener">microsoft.ai</a>
+          <a href="https://oodaloop.com/briefs/technology/microsoft-ai-unveils-mai-base-2-a-2-8-trillion-parameter-foundation-model-with-superior-flops-efficiency/" target="_blank" rel="noopener">oodaloop.com</a>
+        </div>
+      </article>
+      <article class="item">
+        <h4>Reflection AI releases Beam open weights under Apache 2.0</h4>
+        <p>Reflection AI published the full open weights for Beam, a 501B-parameter (23B active) sparse mixture-of-experts model with a 1M-token context, aimed at coding, agents, science and maths. The permissive Apache-2.0 licence, multiple numeric formats, a companion CLI agent harness and day-zero hosting across 40+ partners make it one of the more consequential open releases of the week; benchmark comparisons are the company's own.</p>
+        <div class="meta"><span class="date">16 Oct 2026</span><span class="badge v">Verified</span></div>
+        <div class="sources">
+          <a href="https://reflection.ai/blog/introducing-beam" target="_blank" rel="noopener">reflection.ai</a>
+          <a href="https://huggingface.co/blog/reflection-beam" target="_blank" rel="noopener">huggingface.co</a>
+        </div>
+      </article>
+      <article class="item">
+        <h4>Google's Gemini 4 Argon reaches general availability in GitHub Copilot</h4>
+        <p>Google widened access to its Gemini 4 Argon frontier model across the Gemini API and subscriber products, and GitHub announced general availability of Argon inside Copilot's paid tiers. Introductory API pricing was reported around $2/M input and $10/M output through end-November. Mostly secondary coverage; Google's own post could not be located.</p>
+        <div class="meta"><span class="date">13 Oct 2026 (just outside window)</span><span class="badge p">Partial</span></div>
+        <div class="sources"><a href="https://letsdatascience.com/news/google-expands-gemini-4-argon-access-across-api-and-subscriber-products-644a49ff" target="_blank" rel="noopener">letsdatascience.com</a></div>
+      </article>
+
+      <h3 class="sub"><span class="sub-mark">—</span>What could help a large dental clinic</h3>
+      <p class="empty">No new dental-specific AI product launch in the window.</p>
+      <article class="item">
+        <h4>Market signals point at AI-assisted imaging and front-desk automation</h4>
+        <p>Mid-week market-research releases project strong growth in AI-assisted dental and medical imaging (one pegs AI-enabled medical imaging at ~$18B). For a large practice, the maturing, buyable tools remain imaging/diagnostic AI (Pearl's FDA-cleared 2D/3D reads embedded in Dentsply Sirona DS Core, plus Overjet and Videa) and AI front-desk/receptionist systems that handle 24/7 booking, two-way messaging and auto-rescheduling. These are adoption signals and existing products, not launches from this week.</p>
+        <div class="meta"><span class="date">14–16 Oct 2026</span><span class="badge p">Partial</span></div>
+        <div class="sources">
+          <a href="https://globenewswire.com/news-release/2026/10/16/3382421/28124/en/ai-enabled-medical-imaging-solutions-market-global-and-regional-analysis-and-forecast-2026-2036-market-to-reach-18-04-billion-as-generative-ai-and-workflow-automation-scale.html" target="_blank" rel="noopener">globenewswire.com</a>
+          <a href="https://resources.rework.com/tools/ai-tools/best-ai-tools-for-dental-diagnostics-2026" target="_blank" rel="noopener">resources.rework.com</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- ============ 3. TECHNOLOGY ============ -->
+    <section class="cat" id="tech">
+      <div class="cat-head"><span class="cat-num">03</span><h2>Technology</h2></div>
+
+      <h3 class="sub"><span class="sub-mark">—</span>Launches — global</h3>
+      <article class="item">
+        <h4>Apple opens pre-orders for the iPhone Duo, its first foldable</h4>
+        <p>Apple's first foldable, the iPhone Duo, went up for pre-order on 16 Oct, with retail availability on 23 Oct. It starts at $1,999 (256GB) and runs to $3,199 (2TB), pairing a 7.6-inch inner display with a 5.4-inch outer screen; Apple bills it as its thinnest iPhone. No post-launch sales or supply data yet.</p>
+        <div class="meta"><span class="date">16 Oct 2026</span><span class="badge v">Verified</span></div>
+        <div class="sources">
+          <a href="https://www.phonearena.com/news/with-limited-supply-of-iphone-duo-at-launch-apple-makes-it-easier-to-pre-order_id183719" target="_blank" rel="noopener">phonearena.com</a>
+          <a href="https://hypebeast.com/2026/9/apple-announces-iphone-duo-pre-order-timeline" target="_blank" rel="noopener">hypebeast.com</a>
+        </div>
+      </article>
+      <article class="item">
+        <h4>Apple introduces a Home Collection of smart-home accessories</h4>
+        <p>Apple announced a lineup of smart-home hardware — cameras, thermostats and a door lock — developed with partners including LG Electronics and Schneider Electric. Dated 13 Oct, a few days before the window, but a clean primary-sourced launch.</p>
+        <div class="meta"><span class="date">13 Oct 2026 (just outside window)</span><span class="badge v">Verified</span></div>
+        <div class="sources"><a href="https://www.apple.com/newsroom/2026/10/introducing-apple-home-collection-a-new-lineup-of-smart-home-accessories/" target="_blank" rel="noopener">apple.com</a></div>
+      </article>
+
+      <h3 class="sub"><span class="sub-mark">—</span>Launches &amp; funding — Romania</h3>
+      <article class="item">
+        <h4>Romanian-founded VoicePatrol raises ~$3.4M led by GapMinder</h4>
+        <p>VoicePatrol, a Romanian-founded startup whose AI detects severe toxicity in multiplayer voice chat in near-real-time (warnings or muting within about five seconds), closed a ~$3.4M round led by GapMinder, with Impact Ventures, Ollin Ventures and The Build Fund joining. The capital is earmarked for global expansion; one outlet listed the figure as ~€3M, so currency reporting varies slightly.</p>
+        <div class="meta"><span class="date">13–14 Oct 2026</span><span class="badge v">Verified</span></div>
+        <div class="sources">
+          <a href="https://www.startupresearcher.com/news/romanian-founded-voicepatrol-raises-usd3-4-million" target="_blank" rel="noopener">startupresearcher.com</a>
+          <a href="https://startupcafe.ro/startup-ai-romanesc-care-combate-hartuirea-in-jocurile-online-finantare-de-la-gapminder-78688" target="_blank" rel="noopener">startupcafe.ro</a>
+        </div>
+      </article>
+
+      <h3 class="sub"><span class="sub-mark">—</span>Patents (global + Romania)</h3>
+      <p class="empty">No authoritative USPTO / EPO / OSIM grant list for the window could be confirmed from two independent sources.</p>
+      <article class="item">
+        <h4>Reported-but-unconfirmed filings</h4>
+        <p>Two patent items circulated without a verifiable second source: Datavault AI (Nasdaq: DVLT) reportedly received a USPTO notice of allowance for a data-futures/tokenisation application (a notice of allowance is not an issued patent), and a tracker reported Samsung filing for photos that carry an embedded "rebuild kit" so AI can restore edited-out content. Neither could be confirmed against patent-office records. Romania's OSIM showed nothing relevant in the window.</p>
+        <div class="meta"><span class="date">~15–16 Oct 2026</span><span class="badge u">Unverified</span></div>
+        <div class="sources"><a href="https://www.stocktitan.net/news/DVLT/datavault-ai-highlights-data-futures-platform-patent-amid-tokenized-7fugmeb80b57.html" target="_blank" rel="noopener">stocktitan.net</a></div>
+        <p class="note" style="margin-top:8px">Policy context (Partial): the USPTO is encouraging AI patent filings under a 2026 §101 eligibility framework; generative-AI applications filed Jan–Sep 2026 already exceed all of 2025.</p>
+      </article>
+    </section>
+
+    <!-- ============ 4. PSYCHOLOGY ============ -->
+    <section class="cat" id="psychology">
+      <div class="cat-head"><span class="cat-num">04</span><h2>Psychology</h2></div>
+
+      <h3 class="sub"><span class="sub-mark">—</span>Adults — a science-backed finding, read against DSM-5</h3>
+      <article class="item">
+        <h4>Depression may not be one disorder: five distinct brain-activity profiles</h4>
+        <p>Using magnetoencephalography, a University of Helsinki team compared 263 adults with depression against 75 controls and found five subgroups with different patterns of connectivity between brain regions — some stronger than normal, some weaker. Because the single DSM-5 label of Major Depressive Disorder maps onto nearly opposite brain signatures, the authors argue depression is biologically heterogeneous, which could explain conflicting imaging studies and uneven treatment response. It directly challenges MDD as a unitary category and points toward biologically-defined subtypes — but it is still investigational, not a clinical test.</p>
+        <div class="meta"><span class="date">~8 Oct 2026 (freshest well-sourced item)</span><span class="badge v">Verified</span></div>
+        <div class="sources">
+          <a href="https://www.helsinki.fi/en/news/brain/researchers-identify-five-brain-profiles-depression" target="_blank" rel="noopener">helsinki.fi</a>
+          <a href="https://www.sciencedaily.com/releases/2026/10/261008005251.htm" target="_blank" rel="noopener">sciencedaily.com</a>
+        </div>
+      </article>
+      <article class="item">
+        <h4>How cortisol strengthens emotional memories</h4>
+        <p>A Yale study showed that the stress hormone cortisol reshapes communication between the brain's emotion and memory networks, making memory formation more selective for emotionally intense events. It is relevant to DSM-5 trauma- and stress-related and anxiety disorders — but note this is a re-report: the underlying paper was published in December 2025, so it is not a finding new to this week.</p>
+        <div class="meta"><span class="date">re-reported Oct 2026 · study Dec 2025</span><span class="badge p">Partial</span></div>
+        <div class="sources"><a href="https://news.yale.edu/2025/12/10/stress-hormones-can-alter-brain-networks-and-strengthen-emotional-memories" target="_blank" rel="noopener">news.yale.edu</a></div>
+      </article>
+
+      <h3 class="sub"><span class="sub-mark">—</span>Children — the brain of a ~6-year-old (Andrei, b. 2020)</h3>
+      <article class="item">
+        <h4>What is developing right now</h4>
+        <p>Age six marks the move into middle childhood: cause-and-effect reasoning sharpens, preschool "magical thinking" fades, and sustained attention lengthens to roughly 15 minutes at a stretch — the brain becoming ready for formal instruction, simple reading and basic arithmetic. Fine-motor control matures too (tying shoes, copying shapes, using scissors), and most children start losing baby teeth.</p>
+        <div class="meta"><span class="date">evergreen developmental science</span><span class="badge v">Verified</span></div>
+        <div class="sources">
+          <a href="https://healthy.kaiserpermanente.org/health-wellness/health-encyclopedia/he.ue5723" target="_blank" rel="noopener">kaiserpermanente.org</a>
+          <a href="https://www.columbiadoctors.org/health-library/article/milestones-6-year-olds/" target="_blank" rel="noopener">columbiadoctors.org</a>
+        </div>
+      </article>
+      <article class="item">
+        <h4>What to watch for in the coming year (6 → 7)</h4>
+        <p>Per CDC guidance for ages 6–8, expect growing independence, more future-oriented thinking, and a sharp rise in the importance of friendships, teamwork and peer acceptance. Social cognition turns outward — less self-focus, more empathy, and a dawning grasp of fairness, rules and self-conscious emotions like guilt and embarrassment. Watch for peer sensitivity (wanting to be liked) and competitiveness, and raise any lagging milestone at the paediatric check-up, since early intervention matters.</p>
+        <div class="meta"><span class="date">evergreen (CDC)</span><span class="badge v">Verified</span></div>
+        <div class="sources"><a href="https://www.cdc.gov/child-development/positive-parenting-tips/middle-childhood-6-8-years.html" target="_blank" rel="noopener">cdc.gov</a></div>
+      </article>
+    </section>
+
+    <!-- ============ 5. EDUCATION ============ -->
+    <section class="cat" id="education">
+      <div class="cat-head"><span class="cat-num">05</span><h2>Education</h2></div>
+
+      <h3 class="sub"><span class="sub-mark">—</span>The next ~20 years vs. the classical school</h3>
+      <article class="item">
+        <h4>The OECD's four scenarios for schooling in 2040</h4>
+        <p>The OECD's "Back to the Future of Education" sets out four plausible futures — explicitly thought-experiments, not predictions: schooling extended (formal schools persist and grow digitally); education outsourced (learning fragments across private and community providers); schools as learning hubs (schools open up as community anchors); and learn-as-you-go (rigid structures dissolve into continuous, AI-enabled, on-demand learning). Its parallel 2030 Learning Compass stresses the shift from content coverage toward transferable competencies and student agency.</p>
+        <div class="meta"><span class="date">OECD primary source</span><span class="badge v">Verified</span></div>
+        <div class="sources">
+          <a href="https://www.oecd.org/en/publications/back-to-the-future-s-of-education_178ef527-en/full-report/component-4.html" target="_blank" rel="noopener">oecd.org</a>
+          <a href="https://www.oecd.org/en/about/projects/future-of-education-and-skills-2030.html" target="_blank" rel="noopener">oecd.org (2030)</a>
+        </div>
+        <p class="note" style="margin-top:8px">Industry commentary broadly predicts AI-driven personalisation, a shift from seat-time to mastery-based progression, and continuous assessment — but the specific percentage forecasts circulating online conflict and are unverified.</p>
+      </article>
+
+      <h3 class="sub"><span class="sub-mark">—</span>Educating a child of Andrei's age (~6)</h3>
+      <article class="item">
+        <h4>Evidence-based approaches for ages 6–8</h4>
+        <p>CDC positive-parenting guidance recommends talking with the child about school, friendships and plans; setting clear, consistent expectations; encouraging independence (self-dressing, chores, goal-setting); supporting friendships and teamwork; and keeping reading and conversation central, since language underpins emotional self-regulation. A 2026 systematic review of ages 4–6 adds that structured or "mindful" play, role-play, storytelling and emotion-coaching reliably improve regulation, impulse control, cognitive flexibility and empathy — with the strongest effects when a supportive adult scaffolds the activity (co-regulation).</p>
+        <div class="meta"><span class="date">CDC verified · review partial</span><span class="badge v">Verified</span></div>
+        <div class="sources">
+          <a href="https://www.cdc.gov/child-development/positive-parenting-tips/middle-childhood-6-8-years.html" target="_blank" rel="noopener">cdc.gov</a>
+          <a href="https://journal.upy.ac.id/index.php/bk/article/view/8878" target="_blank" rel="noopener">systematic review (2026)</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- ============ 6. MEDICINE ============ -->
+    <section class="cat" id="medicine">
+      <div class="cat-head"><span class="cat-num">06</span><h2>Medicine</h2></div>
+
+      <article class="item">
+        <h4>Chemo-free regimen beats chemotherapy in Philadelphia-positive leukaemia (NEJM)</h4>
+        <p>The phase-3 GIMEMA ALL2820 trial randomised 236 adults with newly diagnosed Ph-positive acute lymphoblastic leukaemia to a chemotherapy-free combination of ponatinib plus blinatumomab versus imatinib plus chemotherapy. The targeted-plus-immunotherapy arm was superior on event-free survival (roughly 86% vs 67% at 24 months) with higher complete hematologic response. The authors caution that overall-survival differences were smaller and follow-up is limited; this is the full publication of data first shown at ASH in December 2025.</p>
+        <div class="meta"><span class="date">14–15 Oct 2026</span><span class="badge v">Verified</span></div>
+        <div class="sources"><a href="https://www.nejm.org/doi/full/10.1056/NEJMoa2606208" target="_blank" rel="noopener">nejm.org</a></div>
+      </article>
+      <article class="item">
+        <h4>FDA approves a presbyopia eye-drop (phentolamine 0.75%, Ryzumvi)</h4>
+        <p>The FDA approved Opus Genetics' phentolamine ophthalmic solution 0.75% for presbyopia in adults, adding the indication to a drug already marketed to reverse dilation. The approval, supported by the phase-3 VEGA-2 and VEGA-3 trials, triggers a milestone payment under Opus's licensing deal with Viatris, which holds U.S. marketing rights.</p>
+        <div class="meta"><span class="date">16 Oct 2026</span><span class="badge v">Verified</span></div>
+        <div class="sources">
+          <a href="https://www.optometrytimes.com/view/fda-approves-phentolamine-ophthalmic-solution-0-75-ryzumvi-for-presbyopia" target="_blank" rel="noopener">optometrytimes.com</a>
+          <a href="https://www.ophthalmologytimes.com/view/fda-approves-phentolamine-ophthalmic-solution-0-75-ryzumvi-for-presbyopia" target="_blank" rel="noopener">ophthalmologytimes.com</a>
+        </div>
+      </article>
+      <article class="item">
+        <h4>FDA clears a self-injection autoinjector for myasthenia gravis</h4>
+        <p>The FDA approved a once-daily autoinjector for UCB's zilucoplan (Zilbrysq), giving adults with generalised myasthenia gravis a second at-home option alongside the prefilled syringe. UCB cited a human-factors study in which about 90% of participants self-injected successfully on the first attempt without training; commercial availability is expected in Q1 2027.</p>
+        <div class="meta"><span class="date">16 Oct 2026</span><span class="badge p">Partial</span></div>
+        <div class="sources">
+          <a href="https://www.neurologylive.com/view/fda-approves-autoinjector-self-administered-zilucoplan-generalized-myasthenia-gravis" target="_blank" rel="noopener">neurologylive.com</a>
+          <a href="https://www.pharmacytimes.com/view/fda-approves-zilucoplan-autoinjector-for-myasthenia-gravis" target="_blank" rel="noopener">pharmacytimes.com</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- ============ 7. ECONOMY ============ -->
+    <section class="cat" id="economy">
+      <div class="cat-head"><span class="cat-num">07</span><h2>Economy</h2></div>
+
+      <h3 class="sub"><span class="sub-mark">—</span>USA / global (&gt; $100M)</h3>
+      <article class="item">
+        <h4>Proofpoint to acquire Varonis for ~$6.3B</h4>
+        <p>Proofpoint, owned by private-equity firm Thoma Bravo, signed a definitive all-cash agreement to buy data-security company Varonis for about $6.3 billion, at $49.75 per share. The deal takes Varonis off Nasdaq and bolsters Proofpoint's data-protection portfolio; it is pending shareholder and regulatory approval.</p>
+        <div class="meta"><span class="date">15 Oct 2026 · pending</span><span class="badge v">Verified</span></div>
+        <div class="sources">
+          <a href="https://www.sec.gov/Archives/edgar/data/0001361113/000121390026109901/ea030861001ex99-1.htm" target="_blank" rel="noopener">SEC 8-K</a>
+          <a href="https://www.bankinfosecurity.com/blogs/proofpoint-eyeing-buy-data-security-firm-varonis-p-4185" target="_blank" rel="noopener">bankinfosecurity.com</a>
+        </div>
+      </article>
+      <article class="item">
+        <h4>GTCR and Elliott to take CCC Intelligent Solutions private (~$6.1B)</h4>
+        <p>A consortium led by private-equity firm GTCR, with Elliott Investment Management participating, agreed to acquire CCC Intelligent Solutions at $7.75 per share — about a 44% premium — for an enterprise value near $6.1 billion, with no financing condition. CCC becomes privately held on closing; the deal is pending.</p>
+        <div class="meta"><span class="date">15 Oct 2026 · pending</span><span class="badge v">Verified</span></div>
+        <div class="sources">
+          <a href="https://www.sec.gov/Archives/edgar/data/0001818201/000119312526422320/d140608dex991.htm" target="_blank" rel="noopener">SEC 8-K</a>
+          <a href="https://hedgeweek.com/news/elliott-and-gtcr-near-deal-to-acquire-ccc-intelligent-solutions" target="_blank" rel="noopener">hedgeweek.com</a>
+        </div>
+      </article>
+
+      <h3 class="sub"><span class="sub-mark">—</span>EU (&gt; €100M)</h3>
+      <article class="item">
+        <h4>Premier Energy's ~€700M bid for Distribuție Energie Oltenia moves forward</h4>
+        <p>Romania's Competition Council published Premier Energy's proposed remedies to clear its acquisition of Distribuție Energie Oltenia (and Evryo Power), a deal valued at roughly €700 million. Financial completion is expected in H2 2026, subject to clearance — so the transaction is still pending.</p>
+        <div class="meta"><span class="date">16 Oct 2026 · pending</span><span class="badge v">Verified</span></div>
+        <div class="sources"><a href="https://www.profit.ro/povesti-cu-profit/energie/mega-tranzactie-in-romania-angajamentele-premier-energy-pentru-a-putea-prelua-distributie-energie-oltenia-pentru-700-de-milioane-de-euro-22844201" target="_blank" rel="noopener">profit.ro</a></div>
+      </article>
+
+      <h3 class="sub"><span class="sub-mark">—</span>Romania (&gt; €1M)</h3>
+      <article class="item">
+        <h4>BMF Grup completes takeover of ENGIE Building Solutions</h4>
+        <p>Romanian group BMF Grup closed its acquisition of ENGIE Building Solutions from ENGIE Servicii after Competition Council approval, expanding into facility management and energy services. The deal value was not disclosed in the sources.</p>
+        <div class="meta"><span class="date">15 Oct 2026 · completed</span><span class="badge v">Verified</span></div>
+        <div class="sources">
+          <a href="https://www.forbes.ro/tranzactie-in-facility-management-bmf-grup-preia-engie-building-solutions-526350" target="_blank" rel="noopener">forbes.ro</a>
+          <a href="https://www.thinkbiz.ro/2026/10/16/bmf-grup-preia-engie-building-solutions-si-accelereaza-extinderea-in-servicii-energetice-si-infrastructura-critica/" target="_blank" rel="noopener">thinkbiz.ro</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- ============ 8. POLITICS ============ -->
+    <section class="cat" id="politics">
+      <div class="cat-head"><span class="cat-num">08</span><h2>Politics</h2></div>
+
+      <h3 class="sub"><span class="sub-mark">—</span>Appointments &amp; leadership</h3>
+      <article class="item">
+        <h4>Romania: Niculescu government heads for an Oct 20 confirmation vote</h4>
+        <p>PM-designate Luca Niculescu — an independent and OECD-accession coordinator nominated by President Nicușor Dan — submitted his government programme and a 17-minister list to Parliament on 15 Oct (11 PSD, 6 independents, including finance and foreign affairs). A joint Chamber-and-Senate vote is scheduled for Tuesday 20 Oct and needs 233 votes; USR has said it will vote against. The outcome is not yet known.</p>
+        <div class="meta"><span class="date">15–16 Oct 2026 · vote 20 Oct</span><span class="badge v">Verified</span></div>
+        <div class="sources">
+          <a href="https://www.radioromania.ro/Actualitate/guvernul-luca-niculescu-in-drumul-spre-investire-votul-din-parlament-este-programat-pe-20-octombrie-id228494.html" target="_blank" rel="noopener">radioromania.ro</a>
+          <a href="https://www.digi24.ro/stiri/actualitate/politica" target="_blank" rel="noopener">digi24.ro</a>
+        </div>
+      </article>
+      <p class="topnote"><strong>EU &amp; USA:</strong> No major new EU or U.S. Senate-confirmed appointment landed inside the window. (Context: the Eurogroup has opened the process to fill an ECB Executive Board seat, with selection expected in November.)</p>
+
+      <h3 class="sub"><span class="sub-mark">—</span>New laws adopted</h3>
+      <article class="item">
+        <h4>Romania: savings &amp; investment accounts (CEI) law published in Monitorul Oficial</h4>
+        <p>A law creating tax-advantaged savings and investment accounts (CEI) — initiated by USR deputies and passed with cross-party support — was promulgated and published in Monitorul Oficial on 16 Oct. It offers tax exemptions for account holders.</p>
+        <div class="meta"><span class="date">16 Oct 2026</span><span class="badge v">Verified</span></div>
+        <div class="sources">
+          <a href="https://financialintelligence.ro/legea-conturilor-de-economii-si-investitii-a-fost-publicata-in-monitorul-oficial/" target="_blank" rel="noopener">financialintelligence.ro</a>
+          <a href="https://ziare.com/lege-pensii/publicare-monitorul-oficial-conturi-economii-investitii-usr-scutiri-taxe-2041889" target="_blank" rel="noopener">ziare.com</a>
+        </div>
+      </article>
+      <article class="item">
+        <h4>United States: three bills signed into law on Oct 15</h4>
+        <p>President Trump signed three bills on 15 Oct: the Crow Tribe Water Rights Settlement Amendments Act, the Illegal Red Snapper and Tuna Enforcement Act, and the Retire through Ownership Act. Drawn from the White House briefing statement; Federal Register publication was not independently confirmed as a second source.</p>
+        <div class="meta"><span class="date">15 Oct 2026</span><span class="badge p">Partial</span></div>
+        <div class="sources"><a href="https://www.whitehouse.gov/briefings-statements/2026/10/congressional-bills-s-240-s-283-and-s-2403-signed-into-law/" target="_blank" rel="noopener">whitehouse.gov</a></div>
+      </article>
+      <article class="item">
+        <h4>United States: executive order puts new Russia sanctions on hold</h4>
+        <p>On 16 Oct the President issued an executive order suspending implementation of tariffs and sanctions under the Graham Russia-and-Iran Sanctions Act (signed September 2026), citing the national interest — keeping the measures available to apply later rather than repealing them. Reporting tied the move to Ukraine-Russia diplomacy and energy trade.</p>
+        <div class="meta"><span class="date">16 Oct 2026</span><span class="badge v">Verified</span></div>
+        <div class="sources"><a href="https://www.cnn.com/2026/10/16/europe/us-ukraine-russia-sanctions-intl-hnk" target="_blank" rel="noopener">cnn.com</a></div>
+      </article>
+      <p class="topnote"><strong>EU:</strong> Nothing newly published in the Official Journal within the window. (Context: the Council gave final adoption on 1 Oct to the new EU Return Regulation for persons with no right to stay, now awaiting OJ publication.)</p>
+    </section>
+
+    <p style="text-align:center;margin-top:40px"><a class="backtop" href="#">↑ Back to top</a></p>
+
+    <!-- ARCHIVE -->
+    <section class="cat" id="archive">
+      <div class="cat-head"><span class="cat-num">&nbsp;</span><h2>Archive</h2></div>
+      <p class="topnote">Past editions are preserved under <code>/arhiva/</code>.</p>
+      <ul style="list-style:none;padding:0;margin:8px 0;font-family:var(--mono);font-size:0.85rem;">
+        <li style="padding:4px 0;"><a href="arhiva/2026-10-17.html">2026-10-17 — Friday</a></li>
+      </ul>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>How to read this briefing.</strong> Confidence ratings — <span style="color:var(--ok)">Verified</span> (two or more independent sources, primary where possible), <span style="color:var(--warn)">Partial</span> (single credible or primary-only source, or a re-report), <span style="color:var(--weak)">Unverified</span> (one weak source). Summaries are written in-house, not copied from sources. Dates shown are each item's publication date.</p>
+    <p>Add to your iPhone Home Screen via Share → “Add to Home Screen” to open it as the Briefing app. Compiled 2026-10-17.</p>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var btn = document.getElementById('themeBtn');
+    var root = document.documentElement;
+    function current() {
+      var set = root.getAttribute('data-theme');
+      if (set) return set;
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    try {
+      var saved = localStorage.getItem('briefing-theme');
+      if (saved === 'dark' || saved === 'light') root.setAttribute('data-theme', saved);
+    } catch (e) {}
+    if (btn) {
+      btn.addEventListener('click', function () {
+        var next = current() === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        try { localStorage.setItem('briefing-theme', next); } catch (e) {}
+      });
+    }
+  })();
+</script>
+
+</body>
+</html>
