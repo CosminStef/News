@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Briefing">
+<meta name="description" content="Daily research briefing — dental, AI, technology, psychology, education, medicine, economy, politics.">
+<meta name="theme-color" content="#0f172a">
+<link rel="manifest" href="manifest.json">
+<title>Daily Briefing — October 19, 2026</title>
+<style>
+  :root{
+    --bg:#0f172a; --bg2:#111c33; --card:#16223c; --line:#243149;
+    --txt:#e6edf6; --mut:#9fb0c7; --accent:#38bdf8; --accent2:#7dd3fc;
+    --ok:#22c55e; --okbg:#0f2e1c; --warn:#f59e0b; --warnbg:#332307;
+    --bad:#ef4444; --badbg:#331214; --info:#60a5fa; --infobg:#0e2140;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--txt);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55; font-size:17px; -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent2); text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:820px; margin:0 auto; padding:16px}
+  header.top{
+    padding:30px 16px 22px; text-align:center;
+    background:linear-gradient(180deg,#0b1424,#0f172a);
+    border-bottom:1px solid var(--line);
+  }
+  header.top .kicker{color:var(--accent); letter-spacing:.14em; text-transform:uppercase; font-size:12px; font-weight:700}
+  header.top h1{margin:.3em 0 .15em; font-size:28px; line-height:1.15; font-weight:800}
+  header.top .date{color:var(--mut); font-size:15px; margin:0}
+  .note{
+    background:var(--bg2); border:1px solid var(--line); border-left:4px solid var(--accent);
+    border-radius:10px; padding:14px 16px; margin:18px 0; font-size:14.5px; color:var(--mut);
+  }
+  .note strong{color:var(--txt)}
+  .toc{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px 18px; margin:18px 0}
+  .toc h2{margin:0 0 10px; font-size:14px; letter-spacing:.08em; text-transform:uppercase; color:var(--accent)}
+  .toc ol{margin:0; padding-left:1.2em; columns:2; column-gap:26px}
+  @media (max-width:540px){ .toc ol{columns:1} }
+  .toc li{margin:4px 0; break-inside:avoid}
+  .toc a{color:var(--txt)}
+  section.cat{margin:34px 0 10px; scroll-margin-top:12px}
+  section.cat > h2{
+    font-size:22px; font-weight:800; margin:0 0 4px; padding-bottom:8px;
+    border-bottom:2px solid var(--line); display:flex; align-items:center; gap:10px;
+  }
+  .catnum{
+    display:inline-flex; align-items:center; justify-content:center; min-width:30px; height:30px;
+    border-radius:8px; background:var(--accent); color:#06283b; font-size:15px; font-weight:800;
+  }
+  h3.sub{font-size:16px; color:var(--accent2); margin:22px 0 10px; font-weight:700}
+  .item{
+    background:var(--card); border:1px solid var(--line); border-radius:12px;
+    padding:14px 16px; margin:12px 0;
+  }
+  .item h4{margin:0 0 6px; font-size:17.5px; line-height:1.3; font-weight:700}
+  .item p{margin:0 0 10px; color:#dbe5f1; font-size:16px}
+  .meta{display:flex; flex-wrap:wrap; gap:8px; align-items:center; font-size:13px}
+  .badge{display:inline-block; padding:2px 9px; border-radius:999px; font-weight:700; font-size:12px; border:1px solid transparent}
+  .b-ok{background:var(--okbg); color:#86efac; border-color:#1f6b3d}
+  .b-warn{background:var(--warnbg); color:#fcd34d; border-color:#7c5807}
+  .b-bad{background:var(--badbg); color:#fca5a5; border-color:#7f2a2e}
+  .b-info{background:var(--infobg); color:#93c5fd; border-color:#1d4ed8}
+  .b-date{background:#1b2740; color:var(--mut); border-color:var(--line)}
+  .src{font-size:13px; color:var(--mut); margin-top:2px; word-break:break-word}
+  .src a{margin-right:2px}
+  .empty{color:var(--mut); font-style:italic; padding:6px 2px; font-size:15px}
+  .ctx{font-size:14px; color:var(--mut); margin-top:6px; padding-top:8px; border-top:1px dashed var(--line)}
+  .ctx b{color:#c6d3e4}
+  footer{margin:40px 0 24px; padding-top:18px; border-top:1px solid var(--line); color:var(--mut); font-size:13.5px; text-align:center}
+  .archive-link{display:inline-block; margin:8px 0; padding:9px 16px; background:var(--card); border:1px solid var(--line); border-radius:999px; color:var(--accent2); font-weight:600}
+  .legend{display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin:8px 0 0; font-size:12.5px; color:var(--mut)}
+  .totop{display:block; text-align:right; font-size:12.5px; color:var(--mut); margin-top:8px}
+</style>
+</head>
+<body>
+<header class="top" id="top">
+  <div class="kicker">Daily Research Briefing</div>
+  <h1>Morning Briefing</h1>
+  <p class="date">Monday, October 19, 2026</p>
+</header>
+
+<div class="wrap">
+
+  <div class="note">
+    <strong>Editorial note.</strong> October 17–18 fell on a weekend, so the strict 24–48h window carried little hard news — official gazettes (Monitorul Oficial, EUR-Lex, US Federal Register) and most markets were dormant. Where a subtopic had nothing new, it is marked as such and the nearest genuinely recent item (Oct 5–16) is given separately as <em>context</em>, with its real date. Direct primary-source retrieval was unavailable this cycle, so verification relied on cross-referencing multiple independent search results; the confidence labels below reflect that. Summaries are written in-house (not copied from sources).
+  </div>
+
+  <div class="note" style="border-left-color:var(--warn)">
+    <strong>Confidence labels.</strong>
+    <span class="legend">
+      <span><span class="badge b-ok">Verified</span> 2+ independent sources</span>
+      <span><span class="badge b-warn">Partial</span> limited / single-angle</span>
+      <span><span class="badge b-bad">Unverified</span> 1 source only</span>
+      <span><span class="badge b-info">Synthesis</span> evidence-based review</span>
+    </span>
+  </div>
+
+  <nav class="toc">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#dental">Dental</a></li>
+      <li><a href="#ai">AI</a></li>
+      <li><a href="#tech">Technology</a></li>
+      <li><a href="#psych">Psychology</a></li>
+      <li><a href="#edu">Education</a></li>
+      <li><a href="#med">Medicine</a></li>
+      <li><a href="#econ">Economy</a></li>
+      <li><a href="#pol">Politics</a></li>
+    </ol>
+  </nav>
+
+  <!-- ============ 1. DENTAL ============ -->
+  <section class="cat" id="dental">
+    <h2><span class="catnum">1</span> Dental</h2>
+
+    <h3 class="sub">Dental medical discoveries &amp; research</h3>
+    <p class="empty">Nothing relevant in the last 24h.</p>
+    <div class="item">
+      <h4>Gum disease: a microbiome-rebalancing approach <span style="font-weight:400;color:var(--mut);font-size:14px">(recent context)</span></h4>
+      <p>University of Minnesota researchers reported a strategy that disrupts bacterial signaling molecules ("quorum sensing") in dental plaque using lactonase enzymes, shifting the oral microbiome toward health-associated species without killing beneficial bacteria. The work was a laboratory study on human-donor plaque, with the underlying paper in <em>npj Biofilms and Microbiomes</em>.</p>
+      <div class="meta"><span class="badge b-ok">Verified</span><span class="badge b-date">Oct 6, 2026 · older than 48h</span></div>
+      <div class="src">Sources: ScienceDaily (Oct 6) · ScienceTimes (Oct 7) · Knowridge (Oct 12)</div>
+    </div>
+    <div class="item">
+      <h4>Review on navigation / robot-assisted implant accuracy <span style="font-weight:400;color:var(--mut);font-size:14px">(context)</span></h4>
+      <p>A <em>Frontiers in Oral Health</em> editorial pointed to a systematic review on the placement accuracy of dynamic-navigation and robot-assisted dental implant surgery. It frames growing evidence that computer-guided placement narrows deviation versus freehand technique.</p>
+      <div class="meta"><span class="badge b-bad">Unverified</span><span class="badge b-date">Oct 16, 2026 · single source</span></div>
+      <div class="src">Source: Frontiers in Oral Health (journal)</div>
+    </div>
+
+    <h3 class="sub">New dental technologies (implants, scanners, software, launches)</h3>
+    <p class="empty">Nothing relevant in the last 24h.</p>
+    <div class="ctx"><b>Recent market context (older, not 24–48h):</b> Planmeca Onyx intraoral scanner opened for orders (~June 2026); Neoss NeoScan 2000 wireless IOS; Dentsply Sirona Primescan 2; Dandy AI implant-planning scanner. None datable to Oct 17–19.</div>
+
+    <h3 class="sub">New clinic processes (call center, patient care, SOP)</h3>
+    <p class="empty">Nothing relevant in the last 24h.</p>
+    <div class="ctx"><b>Recent market context:</b> AI front-desk / call-handling vendors remain active in 2026 — Dental Intelligence "AI Receptionist" (70 languages, ~June 2026), Dentina.AI (reported 3M calls handled by late Aug 2026), Patientdesk AI (YC-backed), Arini, Clinic Lab AI. These indicate where clinic-ops automation is heading but are not last-48h news.</div>
+
+    <h3 class="sub">Clinic sales &amp; acquisitions (Romania + global)</h3>
+    <p class="empty">Nothing relevant in the last 24h.</p>
+    <div class="item">
+      <h4>Dental Holding (Abris Capital) acquires Greece's Memodent Group <span style="font-weight:400;color:var(--mut);font-size:14px">(context)</span></h4>
+      <p>Abris Capital-backed Dental Holding — a Central/South-East European dental group — acquired Memodent Group, a leading Greek dental-supply distributor, as its seventh add-on. The group reportedly operates across five countries (Romania, Bulgaria, Greece, Hungary, Croatia) with estimated 2026 revenue above €130M. Deal value was not disclosed.</p>
+      <div class="meta"><span class="badge b-ok">Verified (event)</span><span class="badge b-date">~mid-Sept 2026 · older than 48h</span></div>
+      <div class="src">Sources: Romania-Insider · SeeNews · Business Magazin · Economedia</div>
+    </div>
+    <div class="item">
+      <h4>Park Dental Partners acquires North Carolina DSO <span style="font-weight:400;color:var(--mut);font-size:14px">(context)</span></h4>
+      <p>Park Dental Partners agreed to acquire a North Carolina dental support organization (Village Family Dental) for up to $46M — roughly $39.1M base (including ~474,535 restricted shares) plus an earnout of up to $6.9M. The deal was announced around August 2026, closing later in the year.</p>
+      <div class="meta"><span class="badge b-warn">Partial</span><span class="badge b-date">~Aug 2026 · older than 48h</span></div>
+      <div class="src">Source: Becker's Dental (single outlet)</div>
+    </div>
+
+    <h3 class="sub">Key-people moves (leadership / doctors)</h3>
+    <p class="empty">Nothing relevant in the last 24h. (LinkedIn could not be accessed this cycle to date-stamp individual moves.)</p>
+    <div class="ctx"><b>Recent context:</b> Becker's published a "10 dental leadership changes" roundup (~Oct 14). DECA Dental Group named Nathan Smith (COO), Michele Silverman (chief people officer) and John DeLuna (CMO), per an Oct 5 LinkedIn post. Earlier 2026 appointments on record include Henry Schein CEO Frederick Lowery and Straumann CEO Christopher Norbye.</div>
+
+    <h3 class="sub">New lab processes &amp; technologies</h3>
+    <p class="empty">Nothing relevant in the last 24h.</p>
+    <div class="ctx"><b>Recent context:</b> Printed-vs-milled zirconia comparisons (Lithoz studies; a UT Dallas faster post-processing method) and milling-system updates (Zirkonzahn, Roland) continued through 2024–2026, but nothing is datable to this window.</div>
+
+    <h3 class="sub">Courses: thought leaders, platforms &amp; the international online CE market</h3>
+    <div class="item">
+      <h4>How English-language online dental CE sells abroad — market read</h4>
+      <p>The dominant cross-border distribution pattern is free, accreditation-backed English CE: Colgate's Oral Health Network (PACE-accredited, reportedly 2.5M+ certificates to 450k+ professionals across 200+ countries) is the clearest model, alongside Dentsply Sirona Academy, Spear Online (1,500+ clinical lessons on subscription), Dentaltown OnlineCE and India's CLIRNET "DentalNet" (launched Jan 2026). Paid international sales cluster around high-value clinical training — implants, endodontics, occlusion/treatment planning, CAD-CAM — plus country-mandated credit topics (compliance, infection control, sedation). Emerging topics being added include GLP-1 therapies, 3D printing and cybersecurity.</p>
+      <div class="meta"><span class="badge b-bad">Unverified (market context)</span><span class="badge b-date">evergreen · no hard sales data found</span></div>
+      <div class="src">Sources: ADA CE · Dentaltown OnlineCE · Spear Education · Dental Tribune (Colgate OHN) · BioSpectrum India (DentalNet)</div>
+    </div>
+  </section>
+  <a class="totop" href="#top">↑ Contents</a>
+
+  <!-- ============ 2. AI ============ -->
+  <section class="cat" id="ai">
+    <h2><span class="catnum">2</span> Artificial Intelligence</h2>
+
+    <h3 class="sub">Notable developments</h3>
+    <div class="item">
+      <h4>Schwab and JPMorgan block external AI agents from customer accounts</h4>
+      <p>Both financial firms moved to stop third-party, autonomous AI agents from logging into and transacting on client accounts, citing liability. Schwab is steering clients to its own assistant "Charley" and allowing only read-only access via controlled connectors; JPMorgan likewise permits read-only access (e.g., via Plaid) but blocks transactions. Analysts flagged a revenue motive, since outside agents could move idle cash elsewhere.</p>
+      <div class="meta"><span class="badge b-ok">Verified</span><span class="badge b-date">Oct 13–17, 2026</span></div>
+      <div class="src">Sources: The Next Web · American Banker · Financial Planning · Cybernews</div>
+    </div>
+    <div class="item">
+      <h4>AstraZeneca–insitro AI drug-discovery collaboration</h4>
+      <p>AstraZeneca partnered with California AI-biotech insitro to apply its "Virtual Human" platform — lab-grown cell models combined with machine learning — to identify targets for MASH (liver disease) and cardiomyopathies. Terms were reported as ~$40M upfront plus up to ~$1.5B in milestones and royalties, with AstraZeneca leading clinical development and holding worldwide rights to selected programs.</p>
+      <div class="meta"><span class="badge b-ok">Verified</span><span class="badge b-date">Oct 15, 2026 · circulating in-window</span></div>
+      <div class="src">Sources: Reuters (via KSL) · Pulse2 · EMJ · Business24 (RO)</div>
+    </div>
+    <div class="item">
+      <h4>Undocumented "aurora" model IDs appear in OpenAI's API</h4>
+      <p>Researchers reported spotting three undocumented model identifiers (aurora-red/green/blue-alpha) in OpenAI's API, interpreted as possible stealth tests of a new model. OpenAI published no changelog, pricing or purpose, and a follow-up search did not corroborate the claim beyond social-media posts.</p>
+      <div class="meta"><span class="badge b-bad">Unverified</span><span class="badge b-date">Oct 18, 2026 · single aggregator</span></div>
+      <div class="src">Source: AI Weekly roundup (citing social-media posts)</div>
+    </div>
+    <div class="item">
+      <h4>India government conclave spotlights AI in healthcare diagnostics</h4>
+      <p>At a MeitY-backed tech conclave in Varanasi, officials highlighted AI for disease screening, medical diagnostics, remote patient monitoring and surgical planning. This was a policy/conference discussion rather than a product launch.</p>
+      <div class="meta"><span class="badge b-warn">Partial</span><span class="badge b-date">Oct 18, 2026 · one news agency</span></div>
+      <div class="src">Source: ANI News (two reports, same event)</div>
+    </div>
+
+    <h3 class="sub">What could help a large dental clinic (market view)</h3>
+    <p class="empty">Nothing relevant in the last 24h — no dental-specific AI launch, clearance or deal dated Oct 17–19.</p>
+    <div class="ctx"><b>Current market (older context), mapped to clinic needs:</b> <b>Documentation/scribing</b> — Overjet Voice (voice clinical charting), GA Jan 2026. <b>Imaging diagnostics</b> — Pearl's FDA 510(k) for pathology detection on panoramic X-rays (Dec 2025); DEXIS DTX Studio Clinic v4.7 automated treatment planning (Feb 2026). <b>Call handling / scheduling</b> — Denti.AI Receptionist (24/7 booking). These define the available toolset for a large clinic today, not last-48h news.</div>
+  </section>
+  <a class="totop" href="#top">↑ Contents</a>
+
+  <!-- ============ 3. TECHNOLOGY ============ -->
+  <section class="cat" id="tech">
+    <h2><span class="catnum">3</span> Technology — patents &amp; launches</h2>
+
+    <h3 class="sub">Global</h3>
+    <div class="item">
+      <h4>Google launches "Universal Cart" agentic shopping (US)</h4>
+      <p>Google rolled out Universal Cart in the US — a single cart that saves items from Search, the Gemini app, YouTube and Gmail, backed by its Universal Commerce Protocol and Shopping Graph. It tracks price and stock changes, can apply promo codes via Google Wallet, and supports in-cart Google Pay checkout at select retailers (Nike, Sephora, Target, Walmart, Wayfair and others). It is positioned as a holiday-season shopping assistant.</p>
+      <div class="meta"><span class="badge b-ok">Verified</span><span class="badge b-date">Oct 15, 2026 · circulating in-window</span></div>
+      <div class="src">Sources: Ubergizmo · eMarketer · Digital Commerce 360 · Business24 (RO)</div>
+    </div>
+    <div class="item">
+      <h4>Big-Tech patent filings — week of Oct 16</h4>
+      <p>Patent aggregators logged a surge of newly published US patent <em>applications</em> (filings, not grants). Highlights: an Apple AR headset that renders a "window" view through a wall into an adjacent room; Google AR glasses that infer what a user is pointing at; and a Samsung earring that uses the jewelry itself as an antenna. The week reportedly tallied ~267 filings (Samsung ~75, Alphabet ~39–47, Sony 27, Nvidia 26, Apple 19).</p>
+      <div class="meta"><span class="badge b-warn">Partial</span><span class="badge b-date">week ending ~Oct 16, 2026</span></div>
+      <div class="src">Sources: Patentlyze · NicheOverview weekly patent update</div>
+    </div>
+    <div class="item">
+      <h4>Recent US patent grants — wearables cluster <span style="font-weight:400;color:var(--mut);font-size:14px">(context)</span></h4>
+      <p>USPTO grants issue on Tuesdays, so none fall strictly inside Oct 17–19. The most recent grant day (Oct 13) included an Apple watch-strap laser self-mixing sensor, a Samsung body-composition electrode, and Oura patents on circadian-adjusted sleep staging and positional sleep-apnea detection.</p>
+      <div class="meta"><span class="badge b-warn">Partial</span><span class="badge b-date">granted Oct 13, 2026 · outside window</span></div>
+      <div class="src">Source: Patentlyze (with cited patent numbers)</div>
+    </div>
+
+    <h3 class="sub">Romania</h3>
+    <p class="empty">Nothing relevant in the last 24h — no Romanian product launch or OSIM patent event dated Oct 17–19.</p>
+    <div class="ctx"><b>Recent context:</b> Transilvania Digital Innovation Summit (Cluj) saw executives press for "business-relevant" responsible AI adoption (covered Oct 18); the national "RO AI Factory" project was presented in Bucharest (Oct 5); Iași startup .lumen won Glovo Startup Campus 2026 (Oct 12); OSIM held an IP-in-the-AI-era panel in Timișoara (Oct 8).</div>
+  </section>
+  <a class="totop" href="#top">↑ Contents</a>
+
+  <!-- ============ 4. PSYCHOLOGY ============ -->
+  <section class="cat" id="psych">
+    <h2><span class="catnum">4</span> Psychology</h2>
+
+    <h3 class="sub">Adults — a science-backed finding, mapped to DSM-5</h3>
+    <div class="item">
+      <h4>Depression may be five distinct brain "profiles," not one condition</h4>
+      <p>A University of Helsinki team used magnetoencephalography to map brain-network connectivity in 263 adults with major depression versus 75 controls, and found five reproducible connectivity patterns hidden under a single diagnosis, each with a different symptom load. <b>DSM-5 link:</b> it challenges the categorical construct of Major Depressive Disorder (296.2x/296.3x) and supports a dimensional/biotyping view; some clusters mapped onto PTSD and substance-use features. The authors call these candidate phenotypes needing replication — scans cannot yet guide treatment.</p>
+      <div class="meta"><span class="badge b-ok">Verified</span><span class="badge b-date">Oct 8, 2026 · Nature Mental Health</span></div>
+      <div class="src">Sources: ScienceDaily · News-Medical · Neuroscience News · Psychology Today</div>
+    </div>
+    <div class="item">
+      <h4>Adult ADHD associated with higher later-life cognitive impairment</h4>
+      <p>An observational study of ~187,000 adults aged 50+ in the NIH "All of Us" program linked an ADHD diagnosis to a markedly higher hazard of mild cognitive impairment/dementia, with higher ADHD polygenic risk tracking the same way. Importantly, the association weakened to non-significance when diagnoses were forced ~8–9 years apart (a reverse-causation concern), and the study does <em>not</em> establish causation. <b>DSM-5 link:</b> it connects ADHD (314.0x) with Major/Mild Neurocognitive Disorder — two chapters rarely bridged clinically.</p>
+      <div class="meta"><span class="badge b-ok">Verified</span><span class="badge b-date">Oct 7, 2026 · JAMA Psychiatry</span></div>
+      <div class="src">Sources: JAMA Psychiatry · Medscape · News-Medical · Psychology Today</div>
+    </div>
+
+    <h3 class="sub">Children — what develops in a ~6-year-old's brain (Andrei, b. 2020)</h3>
+    <div class="item">
+      <h4>Age six: executive function comes online; thinking turns concrete</h4>
+      <p>Around age six the brain reaches roughly 90% of adult volume, and the prefrontal cortex is in active synaptic pruning and myelination — the period when working memory, impulse control and sustained attention begin to organize. Cognitively the child shifts from fantasy-based toward concrete logic: grasping cause-and-effect, time and quantity (counting to ~10, add vs. subtract), and becoming able to absorb formal instruction and read simple text. <b>What to watch this coming year:</b> emerging reading fluency and number sense; longer, more goal-directed attention (still only ~15 minutes); growing but still fragile emotional self-regulation; rising social comparison and sensitivity to fairness; and sleep and physical activity strongly shaping mood and attention. Milestones are ranges, not deadlines.</p>
+      <div class="meta"><span class="badge b-info">Evidence-based synthesis</span></div>
+      <div class="src">Sources: PubMed reviews on prefrontal development &amp; executive function · Scholastic / Columbia Doctors developmental milestones (6–7y)</div>
+    </div>
+  </section>
+  <a class="totop" href="#top">↑ Contents</a>
+
+  <!-- ============ 5. EDUCATION ============ -->
+  <section class="cat" id="edu">
+    <h2><span class="catnum">5</span> Education</h2>
+
+    <h3 class="sub">The next ~20 years vs. the classic school model</h3>
+    <div class="item">
+      <h4>Four scenarios for schooling — and a shift toward lifelong, personalized learning</h4>
+      <p>The most credible forecast framework is the OECD's "Back to the Future of Education" (four 2040 scenarios): <b>Schooling Extended</b> (today's model intensifies with deeper personalization), <b>Education Outsourced</b> (learning moves to diverse providers and "learning markets"), <b>Schools as Learning Hubs</b> (schools persist but are re-purposed across physical and virtual spaces), and <b>Learn-as-You-Go</b> (school-based learning dissolves into ubiquitous, tech-driven lifelong learning). UNESCO's "Reimagining Our Futures Together" complements this by reframing education as a public common good built on rights, care and solidarity. Across forecasts, the common break from the age-graded, standardized, teacher-front model is personalized/AI-supported, modular and lifelong learning, with schools leaning toward social and competency hubs.</p>
+      <div class="meta"><span class="badge b-ok">Verified (institutional forecasts)</span></div>
+      <div class="src">Sources: OECD "Back to the Future of Education" · WEF / Schleicher (4 scenarios) · UNESCO "Reimagining Our Futures Together"</div>
+    </div>
+
+    <h3 class="sub">How to educate a child of Andrei's age (~6)</h3>
+    <div class="item">
+      <h4>Play-based learning, short active tasks, warm consistent discipline</h4>
+      <p>For this age the evidence favors play-based, hands-on and socially warm learning over heavy drilling: support emerging literacy and numeracy through daily reading, conversation and real-world counting; keep attention tasks short (~15 min) and active; and protect sleep, physical activity and unstructured play, which directly feed the attention and self-regulation systems maturing now. On screens, the AAP sets no fixed hour cap for ages 6+ but recommends consistent family limits, media-free times (meals, the hour before bed) and places (the bedroom). For behavior, the strongest evidence base is warm, consistent, positive discipline — the approach taught by parent programs such as Triple P, The Incredible Years and Parent-Child Interaction Therapy.</p>
+      <div class="meta"><span class="badge b-info">Evidence-based synthesis</span></div>
+      <div class="src">Sources: AAP media guidance &amp; Family Media Use Plan · systematic reviews of parenting-education programs</div>
+    </div>
+  </section>
+  <a class="totop" href="#top">↑ Contents</a>
+
+  <!-- ============ 6. MEDICINE ============ -->
+  <section class="cat" id="med">
+    <h2><span class="catnum">6</span> Medicine — discoveries &amp; firsts</h2>
+
+    <div class="item">
+      <h4>Childhood-to-early-adulthood antibiotics linked to higher IBS risk by 24</h4>
+      <p>A study presented at UEG Week 2026 (Barcelona, Oct 17–20) found that antibiotic use from childhood into early adulthood is associated with higher odds of irritable bowel syndrome by age 24, with risk climbing as prescriptions accumulated (reaching ~1.7× for 6+ prescriptions in the Swedish BAMSE birth cohort of 2,853 participants). It is an observational association — no mechanism was shown, and the authors caution against avoiding necessary antibiotics.</p>
+      <div class="meta"><span class="badge b-ok">Verified</span><span class="badge b-date">Oct 18–19, 2026 · UEG Week</span></div>
+      <div class="src">Sources: PR Newswire (UEG release) · Manila Times · World Today Journal</div>
+    </div>
+    <div class="item">
+      <h4>Long-term IBD data for Skyrizi and Rinvoq at UEG Week</h4>
+      <p>AbbVie presented 20 new inflammatory-bowel-disease abstracts, emphasizing durable multi-year outcomes — including ulcerative-colitis clinical remission in roughly half to two-thirds of patients at week 96 in the COMMAND program, plus Crohn's and real-world data. These are new clinical datasets, but company-sponsored and not a novel discovery.</p>
+      <div class="meta"><span class="badge b-warn">Partial</span><span class="badge b-date">Oct 17, 2026 · manufacturer data</span></div>
+      <div class="src">Sources: AbbVie newsroom · GuruFocus</div>
+    </div>
+    <div class="item">
+      <h4>Guselkumab late-breaker in perianal Crohn's disease</h4>
+      <p>A UEG Week late-breaking session (scheduled Oct 19) featured FUZION data on guselkumab in perianal/fistulizing Crohn's, with roughly a quarter of patients reaching combined fistula remission at week 24 versus about one in ten on placebo. A congress preview notes the week-24 figures were previously shown at DDW, so the novelty of this presentation is unconfirmed.</p>
+      <div class="meta"><span class="badge b-bad">Unverified</span><span class="badge b-date">Oct 19, 2026 · one preview source</span></div>
+      <div class="src">Source: UEG Week preview commentary</div>
+    </div>
+    <div class="ctx"><b>Notable recent context (just outside the window):</b> Mount Sinai reported three white-matter pathways predicting lasting response to deep-brain stimulation in treatment-resistant depression (<em>Am. J. Psychiatry</em>, Oct 1; press Oct 14). Several widely shared "this week" medical stories are re-circulations of July–early-October publications and do not meet the 24–48h bar.</div>
+  </section>
+  <a class="totop" href="#top">↑ Contents</a>
+
+  <!-- ============ 7. ECONOMY ============ -->
+  <section class="cat" id="econ">
+    <h2><span class="catnum">7</span> Economy — M&amp;A</h2>
+
+    <h3 class="sub">In-window (Oct 17–19)</h3>
+    <div class="item">
+      <h4>OpenWorld to acquire AI-agent platform Blocksight (US/crypto)</h4>
+      <p>Nasdaq-listed OpenWorld announced a definitive merger agreement to acquire Blocksight, an AI-agent platform for tokenized-asset transactions. The release referenced a non-binding term sheet for an IP-backed transaction of up to $130M and a separate financing program, but no fixed cash deal value — and it rests on a single paid-newswire source with no independent reporting.</p>
+      <div class="meta"><span class="badge b-bad">Unverified</span><span class="badge b-date">Oct 19, 2026 · promotional newswire</span></div>
+      <div class="src">Source: GlobeNewswire (via Manila Times)</div>
+    </div>
+    <div class="item">
+      <h4>Amsons Group to buy Oryx Energies' Tanzania downstream business (~$230M)</h4>
+      <p>Tanzania's Amsons Group reportedly agreed to acquire Geneva-based Oryx Energies' Tanzanian downstream oil business (retail stations, storage, distribution) in a deal valued above $230M. It sits outside the EU/US-China/Romania thresholds requested and is included only for completeness; the figure could not be independently confirmed.</p>
+      <div class="meta"><span class="badge b-warn">Partial</span><span class="badge b-date">Oct 18, 2026 · outside target regions</span></div>
+      <div class="src">Sources: The Kenya Times · KBC (both unverifiable this cycle)</div>
+    </div>
+
+    <h3 class="sub">EU deals &gt; €100M</h3>
+    <p class="empty">Nothing relevant in the last 24h. (Recent EU items were antitrust <em>clearances</em> of older deals — Kimberly-Clark/Kenvue, Continental ContiTech → Lone Star, AkzoNobel/Axalta — not new announcements.)</p>
+
+    <h3 class="sub">Romania deals &gt; €1M</h3>
+    <p class="empty">Nothing relevant in the last 24h.</p>
+    <div class="ctx"><b>Nearest item (context, ~Oct 15):</b> Romania's Competition Council approved the takeover of NIS Petrol SRL — the ~19 Gazprom-branded fuel stations in Romania — by Argenta SRL (60% Adrian Crețoiu, 40% Iulian Stanciu, eMAG founder). Closing remains pending US sanctions-related licenses; deal value undisclosed.</div>
+
+    <h3 class="sub">Larger deals just before the window (context, Oct 13–16)</h3>
+    <div class="item">
+      <h4>Proofpoint (Thoma Bravo) to acquire Varonis — ~$6.3B</h4>
+      <p>Thoma Bravo-owned Proofpoint agreed to acquire data-security firm Varonis in an all-cash deal at $49.75 per share, about $6.3B, with close expected in the first half of 2027. The transaction was disclosed via SEC filings and multiple outlets.</p>
+      <div class="meta"><span class="badge b-ok">Verified</span><span class="badge b-date">Oct 15, 2026</span></div>
+      <div class="src">Sources: SEC 8-K/DEFA14A · SecurityWeek · SiliconAngle</div>
+    </div>
+    <div class="item">
+      <h4>Bumble to be taken private by Ithaca Holdings — ~$1.3B</h4>
+      <p>Dating-app company Bumble agreed to go private via Ithaca Holdings at $6.05 per Class A share, roughly $1.3B. The deal was confirmed through an SEC filing and independent reporting.</p>
+      <div class="meta"><span class="badge b-ok">Verified</span><span class="badge b-date">~Oct 13, 2026</span></div>
+      <div class="src">Sources: TechCrunch · StockTitan (SEC filing)</div>
+    </div>
+    <div class="item">
+      <h4>SoftBank weighing ~$18B acquisition of Allied Universal</h4>
+      <p>SoftBank is reportedly in preliminary talks to acquire security-services giant Allied Universal in a deal that could reach ~$18B. These are early-stage discussions, not a firm agreement.</p>
+      <div class="meta"><span class="badge b-warn">Partial</span><span class="badge b-date">Oct 16, 2026 · preliminary</span></div>
+      <div class="src">Source: Bloomberg (reported)</div>
+    </div>
+  </section>
+  <a class="totop" href="#top">↑ Contents</a>
+
+  <!-- ============ 8. POLITICS ============ -->
+  <section class="cat" id="pol">
+    <h2><span class="catnum">8</span> Politics</h2>
+
+    <h3 class="sub">New leadership appointments</h3>
+    <div class="item">
+      <h4>Romania: Niculescu cabinet faces confidence vote Oct 20 (developing)</h4>
+      <p>PM-designate Luca Niculescu (independent, designated by President Nicușor Dan on Oct 5) filed his cabinet list of 18 ministers and a governing program on Oct 15. Committee hearings of ministers run Oct 19–20, with the joint-chamber confidence vote set for Oct 20 at 14:00. As of this briefing the government is not yet installed and the outcome is unknown.</p>
+      <div class="meta"><span class="badge b-ok">Verified (schedule/status)</span><span class="badge b-date">vote Oct 20, 2026</span></div>
+      <div class="src">Sources: Euronews.ro · Spotmedia · Forbes.ro · Wall-Street.ro · RADOR</div>
+    </div>
+    <p class="empty"><b>EU:</b> Nothing relevant in the last 24h. <b>USA:</b> Nothing relevant in the last 24h (Senate not in a confirmation posture over the weekend).</p>
+
+    <h3 class="sub">New laws adopted, to be applied</h3>
+    <p class="empty">Nothing relevant strictly in the last 24h — Monitorul Oficial, EUR-Lex and the US Federal Register do not publish over the weekend.</p>
+    <div class="item">
+      <h4>Romania: Savings &amp; Investment Accounts (CEI) law <span style="font-weight:400;color:var(--mut);font-size:14px">(context)</span></h4>
+      <p>A law creating tax-advantaged Savings &amp; Investment Accounts (Conturi de Economii și de Investiții) was reported promulgated and published in Monitorul Oficial on Oct 16. It is designed to encourage retail saving and investment through a dedicated tax-favored account; the primary gazette text was not independently opened this cycle.</p>
+      <div class="meta"><span class="badge b-warn">Partial</span><span class="badge b-date">Oct 16, 2026</span></div>
+      <div class="src">Source: Ziare.com (citing bill co-sponsor)</div>
+    </div>
+    <div class="item">
+      <h4>Romania: Laws 196–199/2026 in Monitorul Oficial no. 865 <span style="font-weight:400;color:var(--mut);font-size:14px">(context)</span></h4>
+      <p>Four laws were published Oct 15: an amendment to the hunting law (407/2006); designation of Târgoviște as a "Voivodal city"; balneary/spa tourism declared a national strategic priority; and an amendment to Article 291 of the Fiscal Code (VAT). Details rest on legal-bulletin secondary sources.</p>
+      <div class="meta"><span class="badge b-warn">Partial</span><span class="badge b-date">Oct 15, 2026</span></div>
+      <div class="src">Sources: legal bulletins (ccjtm / legeaz)</div>
+    </div>
+    <div class="item">
+      <h4>USA: Treasury/IRS final regulations in the Federal Register <span style="font-weight:400;color:var(--mut);font-size:14px">(context)</span></h4>
+      <p>The Federal Register of Oct 16 carried Treasury/IRS final regulations on consolidated groups and transferee-liability assumptions, effective the same day. Content was seen at snippet level only.</p>
+      <div class="meta"><span class="badge b-warn">Partial</span><span class="badge b-date">Oct 16, 2026</span></div>
+      <div class="src">Source: govinfo.gov (Federal Register Vol. 91 No. 199)</div>
+    </div>
+    <div class="ctx"><b>EU context:</b> the latest Official Journal L-series acts found were dated Oct 13–15 (e.g., Commission Regulation amending pesticide-residue annexes); no OJ publication was confirmed for the weekend.</div>
+  </section>
+  <a class="totop" href="#top">↑ Contents</a>
+
+  <footer>
+    <a class="archive-link" href="arhiva/">🗂 Archive — past editions</a>
+    <p>Briefing compiled Monday, October 19, 2026. Summaries written in-house; every item carries a confidence label and its sources. Items marked "context" fall outside the strict 24–48h window and are dated accordingly. This briefing is informational and not professional (medical, legal, financial) advice.</p>
+  </footer>
+
+</div>
+</body>
+</html>
