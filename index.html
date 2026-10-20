@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Briefing">
+<meta name="theme-color" content="#0f1115">
+<meta name="description" content="Daily news briefing for 20 October 2026: dental, AI, technology, psychology, education, medicine, economy, politics.">
+<link rel="manifest" href="manifest.json">
+<title>Daily Briefing — 20 October 2026</title>
+<style>
+  :root{
+    --bg:#0f1115; --panel:#171a21; --panel2:#1d222b; --border:#2a3038;
+    --text:#e8eaed; --muted:#9aa4b2; --faint:#6b7585;
+    --accent:#5aa9e6; --accent2:#7fd1c0;
+    --ok:#3fb27f; --warn:#e0a94a; --bad:#d4736b;
+    --okbg:#13291f; --warnbg:#2b2413; --badbg:#2b1715;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    padding:0 16px; overflow-x:hidden;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding-bottom:64px}
+  header.top{padding:28px 0 12px; border-bottom:1px solid var(--border)}
+  .kicker{color:var(--accent); font-size:13px; letter-spacing:.12em; text-transform:uppercase; font-weight:700}
+  h1{font-size:28px; line-height:1.2; margin:8px 0 6px; font-weight:800; letter-spacing:-.01em}
+  .sub{color:var(--muted); font-size:14px; margin:0}
+  .note{
+    background:var(--panel); border:1px solid var(--border); border-radius:12px;
+    padding:14px 16px; margin:18px 0; font-size:13.5px; color:var(--muted);
+  }
+  .note strong{color:var(--text)}
+  nav.toc{
+    background:var(--panel); border:1px solid var(--border); border-radius:14px;
+    padding:14px 16px; margin:20px 0 10px;
+  }
+  nav.toc h2{font-size:12px; text-transform:uppercase; letter-spacing:.1em; color:var(--faint); margin:0 0 10px}
+  nav.toc ol{margin:0; padding:0; list-style:none; counter-reset:toc}
+  nav.toc li{counter-increment:toc; margin:0}
+  nav.toc a{
+    display:flex; align-items:baseline; gap:10px; padding:9px 4px; text-decoration:none;
+    color:var(--text); border-bottom:1px solid var(--border); font-size:15px;
+  }
+  nav.toc li:last-child a{border-bottom:none}
+  nav.toc a::before{content:counter(toc,decimal-leading-zero); color:var(--accent); font-weight:700; font-size:13px; min-width:24px}
+  nav.toc a:active{color:var(--accent)}
+  section.cat{margin:34px 0 0; scroll-margin-top:12px}
+  section.cat > h2{
+    font-size:21px; font-weight:800; margin:0 0 4px; padding-top:10px;
+    display:flex; align-items:center; gap:10px; letter-spacing:-.01em;
+  }
+  section.cat > h2 .num{
+    background:var(--accent); color:#06121c; font-size:13px; font-weight:800;
+    border-radius:7px; padding:3px 8px; letter-spacing:.02em;
+  }
+  .catrule{height:1px; background:linear-gradient(90deg,var(--accent),transparent); margin:6px 0 18px}
+  h3.sub-h{font-size:15px; font-weight:700; color:var(--accent2); margin:22px 0 10px; letter-spacing:.01em}
+  article.item{
+    background:var(--panel); border:1px solid var(--border); border-radius:12px;
+    padding:15px 16px; margin:0 0 12px;
+  }
+  article.item h4{font-size:16.5px; line-height:1.35; margin:0 0 6px; font-weight:700}
+  .meta{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:0 0 9px}
+  .date{font-size:12.5px; color:var(--faint); font-variant-numeric:tabular-nums}
+  .badge{font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.06em; padding:3px 8px; border-radius:20px; border:1px solid}
+  .b-ok{color:var(--ok); background:var(--okbg); border-color:#255a44}
+  .b-warn{color:var(--warn); background:var(--warnbg); border-color:#5a4a22}
+  .b-bad{color:var(--bad); background:var(--badbg); border-color:#5a3230}
+  article.item p{margin:0 0 10px; font-size:15px; color:#d7dbe2}
+  .src{font-size:12.5px}
+  .src a{color:var(--accent); text-decoration:none; word-break:break-word}
+  .src a:active{text-decoration:underline}
+  .src .lbl{color:var(--faint); margin-right:4px}
+  .empty{
+    border:1px dashed var(--border); border-radius:12px; padding:13px 15px; margin:0 0 12px;
+    color:var(--muted); font-size:14.5px; background:transparent;
+  }
+  .empty .ctx{display:block; margin-top:8px; font-size:13px; color:var(--faint)}
+  .ctxtag{font-size:10.5px; font-weight:800; text-transform:uppercase; letter-spacing:.06em; color:var(--faint); border:1px solid var(--border); border-radius:5px; padding:2px 6px; margin-right:6px}
+  .top-link{display:inline-block; margin-top:4px; font-size:12.5px; color:var(--faint); text-decoration:none}
+  footer{margin-top:44px; padding-top:18px; border-top:1px solid var(--border); color:var(--faint); font-size:13px}
+  footer a{color:var(--accent); text-decoration:none}
+  .archive-cta{
+    display:inline-flex; align-items:center; gap:8px; background:var(--panel2); border:1px solid var(--border);
+    border-radius:10px; padding:10px 15px; text-decoration:none; color:var(--text); font-weight:600; font-size:14px; margin-top:6px;
+  }
+  @media (max-width:420px){ h1{font-size:24px} section.cat>h2{font-size:19px} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top" id="top">
+    <div class="kicker">Daily Briefing</div>
+    <h1>Morning Briefing — 20 October 2026</h1>
+    <p class="sub">Dental · AI · Technology · Psychology · Education · Medicine · Economy · Politics</p>
+  </header>
+
+  <div class="note">
+    <strong>About this edition.</strong> Each item was cross-checked against independent sources and carries a confidence rating —
+    <span class="badge b-ok">Verified</span> (2+ independent sources),
+    <span class="badge b-warn">Partial</span> (reported but not fully confirmed), or
+    <span class="badge b-bad">Unverified</span> (single source). Summaries are written in our own words; follow the source links for the originals.
+    The research window targets the last 24–48h; where a subtopic had nothing new in that window, it is marked explicitly and the closest recent context is noted. Some primary-source pages could not be opened directly during research, so several ratings reflect agreement across multiple news reports rather than a direct read of the primary document.
+  </div>
+
+  <nav class="toc" aria-label="Table of contents">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#dental">Dental</a></li>
+      <li><a href="#ai">Artificial Intelligence</a></li>
+      <li><a href="#tech">Technology</a></li>
+      <li><a href="#psych">Psychology</a></li>
+      <li><a href="#edu">Education</a></li>
+      <li><a href="#med">Medicine</a></li>
+      <li><a href="#econ">Economy</a></li>
+      <li><a href="#pol">Politics</a></li>
+    </ol>
+  </nav>
+
+  <!-- ============ 1. DENTAL ============ -->
+  <section class="cat" id="dental">
+    <h2><span class="num">01</span> Dental</h2>
+    <div class="catrule"></div>
+
+    <h3 class="sub-h">Dental medical discoveries</h3>
+    <div class="empty">
+      Nothing relevant in the last 24h.
+      <span class="ctx"><span class="ctxtag">Context</span> A deep-learning model for detecting proximal caries on bitewing X-rays was presented at an online dentistry conference (2026-10-02, conference proceeding — preliminary), and a meta-analysis of AI accuracy for proximal caries detection was published 2026-09-30. Both sit outside the 24–48h window.
+      <br><span class="src"><span class="lbl">src:</span> <a href="https://sciforum.net/paper/34086">sciforum.net</a> · <a href="https://he02.tci-thaijo.org/index.php/bkkmedj/article/view/280942">bkkmedj</a></span></span>
+    </div>
+
+    <h3 class="sub-h">New technologies (implants, scanners, software)</h3>
+    <article class="item">
+      <h4>SprintRay unveils "Foundation" intraoral scanner and ScanOS platform</h4>
+      <div class="meta"><span class="date">2026-10-13 · outside 24h window</span><span class="badge b-warn">Partial</span></div>
+      <p>At 3DNext 2026 in Miami Beach, SprintRay introduced Foundation, a wireless full-colour intraoral scanner built around its new ScanOS software, pushing the company beyond 3D printing into a connected digital-dentistry platform. The US launch comes first, with first shipments expected in November 2026.</p>
+      <div class="src"><span class="lbl">src:</span> <a href="https://www.prnewswire.com/news-releases/sprintray-expands-beyond-3d-printing-with-connected-digital-dentistry-platform-unveiled-at-3dnext-2026-302906373.html">prnewswire.com</a> · <a href="https://instituteofdigitaldentistry.com/">instituteofdigitaldentistry.com</a></div>
+    </article>
+    <article class="item">
+      <h4>SprintRay and GC launch first GC material for the Midas Digital Press</h4>
+      <div class="meta"><span class="date">2026-10-13 · outside 24h window</span><span class="badge b-bad">Unverified</span></div>
+      <p>SprintRay and materials maker GC announced GC's first material compatible with SprintRay's Midas chairside pellet-based digital press, widening the range of printable chairside options. Only a single press listing was located.</p>
+      <div class="src"><span class="lbl">src:</span> <a href="https://www.prnewswire.com/news-releases/health-latest-news/dentistry-list/">prnewswire.com</a></div>
+    </article>
+    <article class="item">
+      <h4>Premier Dental to distribute PerioStōm periodontal product</h4>
+      <div class="meta"><span class="date">2026-10-14 · outside 24h window</span><span class="badge b-bad">Unverified</span></div>
+      <p>Trade press reported a distribution agreement bringing PerioStōm, a post-procedure periodontal-care product, to market through Premier Dental. Deal terms were not disclosed in the available reporting.</p>
+      <div class="src"><span class="lbl">src:</span> <a href="https://www.dentistrytoday.com/category/industry-news/">dentistrytoday.com</a></div>
+    </article>
+
+    <h3 class="sub-h">New clinic processes (call center, patient care, SOP)</h3>
+    <article class="item">
+      <h4>Specialty1 Partners invests in AI across specialty practices</h4>
+      <div class="meta"><span class="date">2026-10-15 · outside 24h window</span><span class="badge b-warn">Partial</span></div>
+      <p>Specialty1 Partners said it is deploying AI across clinical documentation, patient communication and insurance/operational workflows throughout its specialty-practice network. No vendor or spend figure was disclosed.</p>
+      <div class="src"><span class="lbl">src:</span> <a href="https://www.dentistrytoday.com/specialty1-partners-leads-dental-innovation/">dentistrytoday.com</a> · <a href="https://completeaitraining.com/news/specialty1-partners-invests-in-ai-for-dental-practice/">completeaitraining.com</a></div>
+    </article>
+    <article class="item">
+      <h4>DentKits and Dentistry.One add dentist review to at-home denture care</h4>
+      <div class="meta"><span class="date">2026-10-15 · outside 24h window</span><span class="badge b-bad">Unverified</span></div>
+      <p>Mail-order denture company DentKits announced a partnership with Dentistry.One to add licensed-dentist clinical review and authorisation to every case — a tele-dentistry layer on a direct-to-consumer model. A second independent source for the partnership could not be confirmed.</p>
+      <div class="src"><span class="lbl">src:</span> <a href="https://www.prnewswire.com/news-releases/dentkits-and-dentistryone-partner-to-bring-dentist-reviewed-denture-care-to-patients-at-home-302909468.html">prnewswire.com</a></div>
+    </article>
+
+    <h3 class="sub-h">Clinic sales &amp; acquisitions (Romania + global)</h3>
+    <article class="item">
+      <h4>Standard Dental Labs signs $10M equity purchase agreement with Twenty Four Capital</h4>
+      <div class="meta"><span class="date">2026-10-19</span><span class="badge b-ok">Verified</span></div>
+      <p>Florida-based dental-lab roll-up Standard Dental Labs (OTC: TUTH) signed an agreement allowing it to raise up to $10 million by selling common stock to Twenty Four Capital, funding its lab-acquisition strategy. This is an equity financing facility — issuer Standard Dental Labs, equity buyer Twenty Four Capital — rather than a practice sale.</p>
+      <div class="src"><span class="lbl">src:</span> <a href="https://www.globenewswire.com/news-release/2026/10/19/3383519/0/en/standard-dental-labs-signs-10-million-equity-purchase-agreement-with-twenty-four-capital.html">globenewswire.com</a> · <a href="https://stocktitan.net/news/TUTH/standard-dental-labs-signs-10-million-equity-purchase-agreement-with-esottq23x7ei.html">stocktitan.net</a></div>
+    </article>
+    <article class="item">
+      <h4>LevinPro HC: dental M&amp;A cooled in Q3 2026</h4>
+      <div class="meta"><span class="date">2026-10-19</span><span class="badge b-warn">Partial</span></div>
+      <p>LevinPro HC data showed dentistry still drove most physician/medical-group deal activity in Q3 2026 — 51 transactions, roughly 49% of deals — but dental M&amp;A fell about 27% year over year, with disclosed spend down to roughly $68.7M across two priced deals. It is a market report rather than a single transaction.</p>
+      <div class="src"><span class="lbl">src:</span> <a href="https://globenewswire.com/news-release/2026/10/19/3383671/0/en/physician-medical-group-m-a-fell-in-q3-26-according-to-acquisition-data-from-levinpro-hc.html">globenewswire.com</a></div>
+    </article>
+    <div class="empty">
+      <strong>Romania:</strong> Nothing relevant in the last 24h.
+      <span class="ctx"><span class="ctxtag">Context</span> DENTA 2026, Romania's largest dental expo, ran 16–18 October at ROMEXPO Bucharest — an event, not a transaction. No Romanian clinic acquisition surfaced in the window.</span>
+    </div>
+
+    <h3 class="sub-h">Key-people migrations (leadership / doctors)</h3>
+    <div class="empty">
+      Nothing strictly inside the 24–48h window. <em>LinkedIn could not be accessed during research, so dates of change are from trade press.</em>
+      <span class="ctx"><span class="ctxtag">Context</span> The American Dental Association installed Dr. Thomas Paumier as its new president (reported 2026-10-15, single source). Arjen Radder became CEO of European DSO Colosseum Dental effective 2026-10-01 (announced September), succeeding Patrick De Maeseneire, who moved to chairman.
+      <br><span class="src"><span class="lbl">src:</span> <a href="https://www.beckersdental.com/executive-moves/">beckersdental.com</a> · <a href="https://www.groupdentistrynow.com/dso-group-blog/dso-people-august-2026/">groupdentistrynow.com</a></span></span>
+    </div>
+
+    <h3 class="sub-h">New lab processes &amp; technologies</h3>
+    <article class="item">
+      <h4>Standard Dental Labs funds lab roll-up with $10M facility</h4>
+      <div class="meta"><span class="date">2026-10-19</span><span class="badge b-ok">Verified</span></div>
+      <p>The only in-window lab-sector item is the $10M equity facility above, earmarked to fund Standard Dental Labs' strategy of acquiring and consolidating dental laboratories. It signals continued capital formation behind lab consolidation.</p>
+      <div class="src"><span class="lbl">src:</span> <a href="https://www.globenewswire.com/news-release/2026/10/19/3383519/0/en/standard-dental-labs-signs-10-million-equity-purchase-agreement-with-twenty-four-capital.html">globenewswire.com</a> · <a href="https://investing.com/news/company-news/standard-dental-labs-finalizes-10m-equity-purchase-agreement-93CH-4957705">investing.com</a></div>
+    </article>
+    <div class="empty">
+      <span class="ctx"><span class="ctxtag">Context</span> Recent lab AI workflows (outside the window): 3Shape Automate self-service AI design (~Sept 2026, proposals in ~5 minutes) and Voxel AI Lab (launched May 2026, printable model from a scan in ~60 seconds).
+      <br><span class="src"><span class="lbl">src:</span> <a href="https://www.dentistrytoday.com/3shape-unveils-advanced-ai-lab-workflows/">dentistrytoday.com</a> · <a href="https://learn.voxeldental.com/blog/voxel-ai-lab-dental-design-software">voxeldental.com</a></span></span>
+    </div>
+
+    <h3 class="sub-h">Courses — market assessment (English-language online dental CE abroad)</h3>
+    <article class="item">
+      <h4>How English-language online dental education is sold internationally</h4>
+      <div class="meta"><span class="date">market overview · not time-sensitive</span><span class="badge b-warn">Partial</span></div>
+      <p>Three sales models dominate: low-cost all-access subscriptions (e.g. Dentaltown's 500+ courses at ~$178/yr with certificates; ADA CE's 300+ courses), free sponsor-funded libraries used as brand lead-gen (Dentalcare.com/P&amp;G, Colgate Oral Health Network, Viva Learning), and premium per-course or cohort "academy" brands from thought leaders (e.g. The Dawson Academy). In the US, compliance-driven topics sell best (opioid-prescriber rules, CDT coding certificates, sedation) because they are license necessities; growth topics include 3D-printing workflows, cybersecurity, GLP-1 oral-health implications and pediatric endodontics.</p>
+      <p>In Europe, clinical skill-building sells strongest — implantology, clear aligners/orthodontics, periodontics, occlusion, plus dental Botox/facial aesthetics. Note: ADA CERP accredits <em>providers</em> but does not endorse individual courses or instructors, which matters for credit when selling across borders.</p>
+      <div class="src"><span class="lbl">src:</span> <a href="https://www.ada.org/education/continuing-education">ada.org</a> · <a href="https://www.dentaltown.com/onlinece">dentaltown.com</a> · <a href="https://www.dentoflow.com/en/post/discover-continuing-dental-education-in-february-2026">dentoflow.com</a></div>
+    </article>
+    <a class="top-link" href="#top">↑ Contents</a>
+  </section>
+
+  <!-- ============ 2. AI ============ -->
+  <section class="cat" id="ai">
+    <h2><span class="num">02</span> Artificial Intelligence</h2>
+    <div class="catrule"></div>
+
+    <h3 class="sub-h">News from any domain</h3>
+    <article class="item">
+      <h4>Anthropic pledges ~5% of equity to a public-benefit fund</h4>
+      <div class="meta"><span class="date">2026-10-18</span><span class="badge b-ok">Verified</span></div>
+      <p>Anthropic said it will set aside roughly 5% of its shares for a new public-benefit fund, naming labour-market disruption as a focus area and noting it has already committed about $200 million to studying AI's impact on workers. The pledge still requires stockholder approval and could grow as the company's valuation rises.</p>
+      <div class="src"><span class="lbl">src:</span> <a href="https://www.aljazeera.com/economy/2026/10/19/anthropic-says-it-will-commit-5-of-shares-to-public-benefit-fund">aljazeera.com</a> · <a href="https://foxnews.com/live-news/ai-news-anthropic-workers-safety-10-19">foxnews.com</a></div>
+    </article>
+    <article class="item">
+      <h4>Report: Anthropic, Google and OpenAI all preparing new frontier models</h4>
+      <div class="meta"><span class="date">2026-10-19</span><span class="badge b-warn">Partial</span></div>
+      <p>The Information reported that the three leading labs are readying new models amid intensifying competition over reasoning, specialization and cost — reportedly an Anthropic model that infers users' goals from sparse instructions, a Google "Gemini 4 Carbon" upgrade, and a new OpenAI "Terra"-family model. This is a secondhand press report, not an official announcement from any of the companies.</p>
+      <div class="src"><span class="lbl">src:</span> <a href="https://investing.com/news/stock-market-news/anthropic-google-and-openai-prepare-new-ai-models-the-information-reports-4957891">investing.com</a></div>
+    </article>
+
+    <h3 class="sub-h">What could help a large dental clinic (market view)</h3>
+    <div class="empty">
+      Nothing relevant in the last 24h.
+      <span class="ctx"><span class="ctxtag">Context</span> No dental/healthcare-operations AI launch, clearance or deal was dated within the window. The most recent datable developments are weeks old — e.g. Pearl's "Second Opinion 3D" commercial launch (2026-09-03) and Pearl/Videa integrations into practice-management software — relevant to imaging, patient communication and revenue-cycle work, but not new this cycle.</span>
+    </div>
+    <a class="top-link" href="#top">↑ Contents</a>
+  </section>
+
+  <!-- ============ 3. TECHNOLOGY ============ -->
+  <section class="cat" id="tech">
+    <h2><span class="num">03</span> Technology</h2>
+    <div class="catrule"></div>
+
+    <h3 class="sub-h">New patents &amp; launches — global</h3>
+    <article class="item">
+      <h4>Apple sets 28 October event; first touchscreen MacBook Pro expected</h4>
+      <div class="meta"><span class="date">2026-10-19</span><span class="badge b-warn">Partial</span></div>
+      <p>Multiple outlets, citing Bloomberg's Mark Gurman, reported that Apple sent invitations for an all-day launch experience in Los Angeles on 28 October, widely expected to debut Apple's first OLED touchscreen MacBook Pro (14" and 16") alongside a refreshed iMac (M6) and an OLED iPad mini. As of 20 October this rests on reporting and invitations; Apple had not published official specs.</p>
+      <div class="src"><span class="lbl">src:</span> <a href="https://www.cnbc.com/2026/10/19/apple-product-launch-event-oct-28-analysts-expect-touchscreen-laptop.html">cnbc.com</a> · <a href="https://bloomberg.com/news/articles/2026-10-19/apple-announces-oct-28-event-for-touch-screen-macbook-pro">bloomberg.com</a> · <a href="https://9to5mac.com/?p=1074297">9to5mac.com</a></div>
+    </article>
+    <article class="item">
+      <h4>fal releases FLUX 3 Max image-to-video model</h4>
+      <div class="meta"><span class="date">~2026-10-18/19</span><span class="badge b-bad">Unverified</span></div>
+      <p>AI-infrastructure company fal announced FLUX 3 Max, an image-to-video generation model, per a press-release listing. Only a single listing was located and no independent confirmation was found.</p>
+      <div class="src"><span class="lbl">src:</span> <a href="https://www.prnewswire.com/news-releases/latest-news-topics/artificial-intelligence/">prnewswire.com</a></div>
+    </article>
+
+    <h3 class="sub-h">New patents &amp; launches — Romania</h3>
+    <div class="empty">
+      Nothing relevant in the last 24h.
+      <span class="ctx"><span class="ctxtag">Context</span> No Romanian product launch or OSIM/EPO patent grant was dated in the window. Recent Romanian tech activity is older (How to Web 2026 ran 6–8 October; OSIM's October calendar lists routine seminars and invention fairs).</span>
+    </div>
+    <a class="top-link" href="#top">↑ Contents</a>
+  </section>
+
+  <!-- ============ 4. PSYCHOLOGY ============ -->
+  <section class="cat" id="psych">
+    <h2><span class="num">04</span> Psychology</h2>
+    <div class="catrule"></div>
+
+    <h3 class="sub-h">Adults — recent scientifically grounded findings (DSM-5 linked)</h3>
+    <article class="item">
+      <h4>Five distinct brain "profiles" in major depression</h4>
+      <div class="meta"><span class="date">2026-09 / 2026-10</span><span class="badge b-ok">Verified</span></div>
+      <p>A University of Helsinki team used magnetoencephalography to map functional connectivity in 263 people with major depressive disorder and 75 controls, identifying five biologically distinct profiles — some hyperconnected (one tied to severe substance use), others weakly connected (one with more prominent PTSD symptoms). The authors argue depression is not biologically uniform, which could explain conflicting past results; the work is preliminary and aimed at future biomarker-guided treatment. <em>DSM-5: major depressive disorder, PTSD, substance-use disorders.</em></p>
+      <div class="src"><span class="lbl">src:</span> <a href="https://www.news-medical.net/news/20260923/Brain-activity-study-reveals-five-distinct-profiles-for-depression.aspx">news-medical.net</a> · <a href="https://neurosciencenews.com/five-brain-profiles-depression-31246/">neurosciencenews.com</a></div>
+    </article>
+    <article class="item">
+      <h4>Loneliness and isolation cost years of mental-disorder-free life</h4>
+      <div class="meta"><span class="date">2026-09 · Nature Communications</span><span class="badge b-ok">Verified</span></div>
+      <p>A Tulane-led analysis of 277,000+ UK Biobank participants found that people who were both lonely and socially isolated lost substantial disease-free lifespan, mostly in mental health — men about 5.8 and women about 3.7 years free of disorders such as depression and anxiety. Healthy behaviours partly offset objective isolation but not subjective loneliness. The study is observational, so it shows association rather than proven cause.</p>
+      <div class="src"><span class="lbl">src:</span> <a href="https://www.news-medical.net/news/20260922/Loneliness-and-social-isolation-cost-people-years-of-healthy-life.aspx">news-medical.net</a> · <a href="https://neurosciencenews.com/loneliness-mental-health-longevity-31238/">neurosciencenews.com</a></div>
+    </article>
+    <article class="item">
+      <h4>ADHD–mortality link in adults largely explained by anxiety and depression</h4>
+      <div class="meta"><span class="date">2026-10-14 (preprint)</span><span class="badge b-warn">Partial</span></div>
+      <p>A US National Health Interview Survey cohort (~52,000 adults) found adults with ADHD had higher all-cause mortality, but comorbid depression and anxiety accounted for roughly 58% of that excess risk — the ADHD–mortality link became non-significant after adjustment. The finding is a preprint, not yet peer-reviewed, and secondary reports cite inconsistent death counts.</p>
+      <div class="src"><span class="lbl">src:</span> <a href="https://adhdevidence.org/blog/cohort-study-finds-adhd-link-to-higher-mortality-is-mediated-by-comorbid-anxiety-and-depression">adhdevidence.org</a> · <a href="https://www.medrxiv.org/content/10.64898/2026.06.08.26355148">medrxiv.org</a></div>
+    </article>
+
+    <h3 class="sub-h">Children — the brain of a ~6-year-old (Andrei, b. 2020)</h3>
+    <article class="item">
+      <h4>Brain near adult size; pruning, myelination, prefrontal maturation</h4>
+      <div class="meta"><span class="date">developmental reference</span><span class="badge b-warn">Partial</span></div>
+      <p>By about age 6–7 the brain has reached roughly 90–95% of its adult size. This stage is marked by synaptic pruning, increasing myelination, and continued maturation of the prefrontal cortex — the basis for better emotional regulation, longer attention and improved social interaction. Structural development still continues well into adolescence.</p>
+      <div class="src"><span class="lbl">src:</span> <a href="https://developingchild.harvard.edu/topic/executive-function/">developingchild.harvard.edu</a> · <a href="https://pressbooks.palomar.edu/childdevelopment/chapter/brain-development/">palomar.edu</a></div>
+    </article>
+    <article class="item">
+      <h4>Cognitive shift: emerging reading, cause-and-effect, fading "magical thinking"</h4>
+      <div class="meta"><span class="date">developmental reference</span><span class="badge b-ok">Verified</span></div>
+      <p>Around age 6 children typically begin reading simple text, can count and start to write, grasp time and cause-and-effect, and sustain attention for roughly 15 minutes, while the preschool "magical thinking" fades. Over the coming year expect rapid vocabulary growth and a dawning grasp that words can carry more than one meaning (jokes, puns).</p>
+      <div class="src"><span class="lbl">src:</span> <a href="https://www.columbiadoctors.org/health-library/article/milestones-6-year-olds/">columbiadoctors.org</a> · <a href="https://www.webmd.com/parenting/child-at-6-milestones">webmd.com</a></div>
+    </article>
+    <article class="item">
+      <h4>Social-emotional shift toward peers — and signs to watch</h4>
+      <div class="meta"><span class="date">developmental reference</span><span class="badge b-ok">Verified</span></div>
+      <p>Friendships and group play grow in importance, cooperation and turn-taking increase alongside limit-testing and greater independence. In the coming year, consider a professional check-in for: loss of previously-held skills, persistent social withdrawal, trouble following simple instructions that disrupts school, or ongoing anxiety or aggression that interferes with daily life — single missed milestones are normal variation.</p>
+      <div class="src"><span class="lbl">src:</span> <a href="https://healthy.kaiserpermanente.org/health-wellness/health-encyclopedia/he.ue5723">kaiserpermanente.org</a> · <a href="https://www.cigna.com/knowledge-center/hw/milestones-for-6-year-olds-ue5723">cigna.com</a></div>
+    </article>
+    <a class="top-link" href="#top">↑ Contents</a>
+  </section>
+
+  <!-- ============ 5. EDUCATION ============ -->
+  <section class="cat" id="edu">
+    <h2><span class="num">05</span> Education</h2>
+    <div class="catrule"></div>
+
+    <h3 class="sub-h">Education over the next ~20 years vs. classic schooling</h3>
+    <article class="item">
+      <h4>WEF Future of Jobs: skills churn reshaping learning</h4>
+      <div class="meta"><span class="date">2025-01</span><span class="badge b-ok">Verified</span></div>
+      <p>The World Economic Forum projects that 39% of workers' core skills will change by 2030, with an estimated 170 million new jobs created and 92 million displaced (net +78 million). With ~85% of employers planning to upskill and ~50% to reskill staff, the trajectory points away from one-time classroom schooling toward continuous, AI-driven reskilling.</p>
+      <div class="src"><span class="lbl">src:</span> <a href="https://www.businesstoday.in/wef-2025/story/39-of-skills-outdated-by-2030-wef-warns-of-ais-impact-on-jobs-460306-2025-01-10">businesstoday.in</a> · <a href="https://www.outlookbusiness.com/deeptech/artificial-intelligence/is-ai-the-skill-of-future-wef-warns-39-of-current-job-skills-obsolete-by-2030">outlookbusiness.com</a></div>
+    </article>
+    <article class="item">
+      <h4>OECD "AI and the Future of Skills": what schooling must still build</h4>
+      <div class="meta"><span class="date">project 2023–2025</span><span class="badge b-ok">Verified</span></div>
+      <p>The OECD project assesses which human capabilities AI will struggle to reproduce, using an AI Exposure Measure that compares AI capability with occupational requirements across nine domains. Its implication for the next two decades: pivot education away from content AI can perform toward uniquely human capabilities — complex reasoning, collaboration and creativity.</p>
+      <div class="src"><span class="lbl">src:</span> <a href="https://www.oecd.org/en/about/projects/artificial-intelligence-and-future-of-skills.html">oecd.org</a> · <a href="https://oecd-ilibrary.org/education/ai-and-the-future-of-skills-volume-1_cf9db84c-de">oecd-ilibrary.org</a></div>
+    </article>
+    <article class="item">
+      <h4>Open University Future of Learning Report 2026</h4>
+      <div class="meta"><span class="date">2026</span><span class="badge b-warn">Partial</span></div>
+      <p>The report links education reform to AI and the low-carbon transition, projecting a shift from fixed classroom schooling toward personalized, lifelong learning. It cites estimates that AI could affect up to 40% of global employment and that around 39% of skill sets will change by 2030. Single institutional report; specific framing not independently corroborated.</p>
+      <div class="src"><span class="lbl">src:</span> <a href="https://iet.open.ac.uk/future-of-learning">iet.open.ac.uk</a></div>
+    </article>
+
+    <h3 class="sub-h">Educating a child of Andrei's age (~6) — evidence-based</h3>
+    <article class="item">
+      <h4>CDC positive-parenting tips, middle childhood (6–8)</h4>
+      <div class="meta"><span class="date">current (page updated 2024)</span><span class="badge b-ok">Verified</span></div>
+      <p>CDC guidance for this age: show affection and recognize accomplishments; give age-appropriate responsibilities; help set achievable goals to build self-direction; talk about school, friends and the future; use consistent, clear discipline; encourage reading and active play; ensure 9–12 hours of sleep per 24 hours; and limit recreational screen time with a family media plan and no TV in the bedroom.</p>
+      <div class="src"><span class="lbl">src:</span> <a href="https://rcg.hawaii.gov/wp-content/uploads/2022/05/CDC-Positive-Parenting-Tips-middle-childhood-6-8.pdf">cdc (pdf)</a> · <a href="https://www.chconline.org/resourcelibrary/positive-parenting-tips-middle-childhood-6-8-years-old/">chconline.org</a></div>
+    </article>
+    <article class="item">
+      <h4>UNICEF: learn by doing, encourage rather than punish</h4>
+      <div class="meta"><span class="date">current guidance</span><span class="badge b-ok">Verified</span></div>
+      <p>UNICEF advises building skills and confidence by involving the child in real family tasks (setting the table, choosing clothes), relying on encouragement over punishment, and respecting the child's individual personality and pace rather than comparing them with others — supporting autonomy and intrinsic motivation at age 6.</p>
+      <div class="src"><span class="lbl">src:</span> <a href="https://www.unicef.org/asia-pacific/place-for-parents/positive-parenting-tips-6-10">unicef.org</a></div>
+    </article>
+    <article class="item">
+      <h4>AAP: parent as "media mentor," balanced screen use</h4>
+      <div class="meta"><span class="date">reference</span><span class="badge b-warn">Partial</span></div>
+      <p>The American Academy of Pediatrics frames parents as their child's "media mentor" and recommends a personalized Family Media Plan rather than a single fixed limit, cautioning that excessive device use can crowd out physical activity, hands-on exploration and face-to-face interaction — all central to a 6-year-old's learning.</p>
+      <div class="src"><span class="lbl">src:</span> <a href="https://www.healthychildren.org/English/fmp/Pages/MediaPlan.aspx">healthychildren.org</a></div>
+    </article>
+    <a class="top-link" href="#top">↑ Contents</a>
+  </section>
+
+  <!-- ============ 6. MEDICINE ============ -->
+  <section class="cat" id="med">
+    <h2><span class="num">06</span> Medicine</h2>
+    <div class="catrule"></div>
+    <article class="item">
+      <h4>TLC590 long-acting ropivacaine hits primary endpoint in pivotal Phase 3</h4>
+      <div class="meta"><span class="date">2026-10-19</span><span class="badge b-ok">Verified</span></div>
+      <p>TLC BioSciences reported that its single-dose extended-release ropivacaine significantly cut movement-related pain over 72 hours after bunionectomy versus placebo and reduced rescue opioid use. It was also reported superior to the current long-acting standard, liposomal bupivacaine (EXPAREL), on both pain and opioid use, with analgesia lasting up to ~7 days. These are company topline results from a 304-patient trial; no peer-reviewed paper yet.</p>
+      <div class="src"><span class="lbl">src:</span> <a href="https://www.globenewswire.com/news-release/2026/10/19/3383135/0/en/tlc590-achieves-statistically-significant-reductions-in-pain-and-opioid-use-versus-both-placebo-and-liposomal-bupivacaine-in-pivotal-phase-3-trial.html">globenewswire.com</a> · <a href="https://finance.biggo.com/news/747a8995-d4c5-48fc-a23b-15518a8add66">biggo.com</a></div>
+    </article>
+    <article class="item">
+      <h4>EyePoint's DURAVYU misses primary endpoint in second Phase 3 (LUCIA)</h4>
+      <div class="meta"><span class="date">2026-10-19</span><span class="badge b-ok">Verified</span></div>
+      <p>EyePoint announced that LUCIA, the second pivotal trial of its sustained-release TKI insert DURAVYU in wet age-related macular degeneration, failed to show non-inferiority to aflibercept on best-corrected visual acuity, though it hit secondary endpoints and cut treatment burden ~38%. Following the first trial (LUGANO) also missing its primary endpoint in August, this casts doubt on the wet-AMD filing.</p>
+      <div class="src"><span class="lbl">src:</span> <a href="https://www.globenewswire.com/news-release/2026/10/19/3383257/0/en/eyepoint-announces-topline-results-from-lucia-the-second-pivotal-phase-3-clinical-trial-of-duravyu-in-wet-amd.html">globenewswire.com</a> · <a href="https://www.biospace.com/press-releases/eyepoint-announces-topline-results-from-lucia-the-second-pivotal-phase-3-clinical-trial-of-duravyu-in-wet-amd">biospace.com</a></div>
+    </article>
+    <article class="item">
+      <h4>Nature Medicine publishes Phase 1 of D2C7-ATC for recurrent glioma</h4>
+      <div class="meta"><span class="date">2026-10-16</span><span class="badge b-warn">Partial</span></div>
+      <p>A Duke-led single-arm Phase 1 trial delivered one infusion of the EGFR/EGFRvIII-targeting agent D2C7-ATC to 81 patients with recurrent malignant glioma. Median overall survival was 9.5 months, 11% of IDH wild-type glioblastoma patients lived beyond 20 months, three had durable partial responses, and toxicity was mostly grade 1–2 — encouraging signals in a disease with a poor prognosis. Exact publication date is ambiguous (Oct 16 vs 19).</p>
+      <div class="src"><span class="lbl">src:</span> <a href="https://www.nature.com/nm/articles?year=2026">nature.com/nm</a> · <a href="https://scholars.duke.edu/publication/1351090">scholars.duke.edu</a></div>
+    </article>
+    <article class="item">
+      <h4>Russia reports its first spinal cord transplant</h4>
+      <div class="meta"><span class="date">~2026-10</span><span class="badge b-bad">Unverified</span></div>
+      <p>Moscow's mayor announced that surgeons at the Sklifosovsky institute performed Russia's first spinal cord transplant — a 12-hour operation with a Chinese surgical team on a patient who had faced complete paralysis, reported to be recovering well. It follows a 1 September 2026 regulatory change permitting spinal cord, nerve and bone transplantation. Not peer-reviewed; no precise date or independent clinical outcome data.</p>
+      <div class="src"><span class="lbl">src:</span> <a href="https://www.mos.ru/news/item/55434073/">mos.ru</a> · <a href="https://snob.ru/news/v-rossii-vpervye-proveli-operatsiiu-po-transplantatsii-spinnogo-mozga/">snob.ru</a></div>
+    </article>
+    <a class="top-link" href="#top">↑ Contents</a>
+  </section>
+
+  <!-- ============ 7. ECONOMY ============ -->
+  <section class="cat" id="econ">
+    <h2><span class="num">07</span> Economy</h2>
+    <div class="catrule"></div>
+    <p class="sub" style="margin:-6px 0 16px">Deal thresholds: EU &gt; €100M · US/China &gt; $100M · Romania &gt; €1M. All three qualifying deals were announced 2026-10-19.</p>
+    <article class="item">
+      <h4>Tradeweb Markets to acquire Trumid Holdings for ~$1.97B</h4>
+      <div class="meta"><span class="date">2026-10-19</span><span class="badge b-ok">Verified</span></div>
+      <p>Tradeweb Markets agreed to buy Trumid Holdings, a New York electronic fixed-income/credit trading marketplace, from its existing owners. The all-in price is about $1.97 billion — roughly $1.75B for the operating business and ~$220M for tax assets — with Trumid becoming a wholly owned subsidiary and some entities rolling over part of their stake.</p>
+      <div class="src"><span class="lbl">src:</span> <a href="https://www.sec.gov/Archives/edgar/data/0001758730/000119312526425378/d140509d8k.htm">sec.gov (8-K)</a> · <a href="https://www.gurufocus.com/news/9130771/tradeweb-markets-tw-to-acquire-trumid-holdings-in-197-billion-deal">gurufocus.com</a></div>
+    </article>
+    <article class="item">
+      <h4>Merck KGaA to acquire Silence Therapeutics for ~$1.3B</h4>
+      <div class="meta"><span class="date">2026-10-19</span><span class="badge b-ok">Verified</span></div>
+      <p>Germany's Merck KGaA agreed to buy UK-headquartered RNAi biotech Silence Therapeutics in an all-cash deal at $20.00 per American Depositary Share — roughly a 130% premium to the Oct 16 close. The transaction values Silence at about $1.3 billion in equity (~$1.1B enterprise value), is expected to close in Q1 2027, and centers on Silence's divesiran program.</p>
+      <div class="src"><span class="lbl">src:</span> <a href="https://www.sec.gov/Archives/edgar/data/0001479615/000119312526425238/d189864dex997.htm">sec.gov</a> · <a href="https://ca.investing.com/news/stock-market-news/merck-kgaa-to-acquire-silence-therapeutics-for-13-billion-93CH-4888193">investing.com</a></div>
+    </article>
+    <article class="item">
+      <h4>Silgan &amp; American Industrial Partners to buy Trivium Packaging for ~$3.4B</h4>
+      <div class="meta"><span class="date">2026-10-19</span><span class="badge b-ok">Verified</span></div>
+      <p>Silgan Holdings and private-equity firm American Industrial Partners agreed to acquire Netherlands-based metal-packaging maker Trivium Packaging in a deal valued at about $3.4 billion. Silgan contributes its Metal Containers and flat-cap closures businesses into a new partnership that acquires Trivium, taking ~$2.3B cash and keeping a ~60% stake, with AIP providing equity plus debt; Silgan projects ~$225M of synergies by year three.</p>
+      <div class="src"><span class="lbl">src:</span> <a href="https://www.sec.gov/Archives/edgar/data/0000849869/000119312526424669/d152250d8k.htm">sec.gov (8-K)</a> · <a href="https://westfaironline.com/fairfield/norwalks-silgan-holdings-private-equity-firm-to-buy-dutch-trivium-packaging/">westfaironline.com</a></div>
+    </article>
+    <div class="empty">
+      <strong>Romania (&gt; €1M):</strong> Nothing relevant in the last 24h — no qualifying Romanian acquisition surfaced in the window.
+    </div>
+    <a class="top-link" href="#top">↑ Contents</a>
+  </section>
+
+  <!-- ============ 8. POLITICS ============ -->
+  <section class="cat" id="pol">
+    <h2><span class="num">08</span> Politics</h2>
+    <div class="catrule"></div>
+
+    <h3 class="sub-h">New leadership appointments (EU / Romania / USA)</h3>
+    <article class="item">
+      <h4>Romania: Luca Niculescu cabinet goes to investiture vote</h4>
+      <div class="meta"><span class="date">2026-10-20</span><span class="badge b-warn">Partial</span></div>
+      <p>Diplomat Luca Niculescu, designated PM on Oct 5 after the Bolojan government fell, filed his cabinet list and governing programme on Oct 15; all 13 ministers heard by committees on Oct 19 received favourable opinions, with the decisive joint-plenary vote scheduled for Tuesday Oct 20 (233 votes needed). Proposed key figures include Marian Neacșu (PSD) as Deputy PM and Interior Minister, and Alexandru Nazare staying at Finance. The final tally and swearing-in were not yet reported when research ran.</p>
+      <div class="src"><span class="lbl">src:</span> <a href="https://agerpres.ro/documentare/2026/10/16/update-lista-ministrilor-si-programul-de-guvernare-depuse-la-parlament-calendarul-formarii-guvernulu--1603520">agerpres.ro</a> · <a href="https://www.mediafax.ro/politic/breaking-news-lista-oficiala-a-guvernului-niculescu-a-ajuns-in-parlament-cine-sunt-cei-19-membri-propusi-23826164">mediafax.ro</a></div>
+    </article>
+    <div class="empty">
+      <strong>EU:</strong> Nothing relevant in the last 24h. <strong>USA:</strong> Nothing relevant in the last 24h.
+      <span class="ctx"><span class="ctxtag">Context</span> No new senior EU or US appointment was dated in the window; the most recent activity (an EU Director-General batch, a US ambassadorial confirmation batch) took effect around Oct 1.</span>
+    </div>
+
+    <h3 class="sub-h">New laws adopted / taking effect</h3>
+    <article class="item">
+      <h4>Romania: law on tax-advantaged savings &amp; investment accounts (CEI) published</h4>
+      <div class="meta"><span class="date">2026-10-15 (published)</span><span class="badge b-ok">Verified</span></div>
+      <p>The law creating tax-advantaged savings and investment accounts (<em>conturi de economii și investiții</em>), co-initiated by USR, was promulgated (Decree 814/2026) and published in Monitorul Oficial no. 865 of 15 October 2026. It lets Romanians save and invest — including for retirement — with tax exemptions, and enters into force on 1 January 2027.</p>
+      <div class="src"><span class="lbl">src:</span> <a href="https://www.bursa.ro/usr-legea-conturilor-de-economii-si-investitii-coinitiata-de-usr-a-fost-promulgata-si-publicata-in-monitorul-oficial-07296060">bursa.ro</a> · <a href="https://financialintelligence.ro/legea-conturilor-de-economii-si-investitii-a-fost-publicata-in-monitorul-oficial/">financialintelligence.ro</a></div>
+    </article>
+    <article class="item">
+      <h4>EU: technical regulations published in the Official Journal</h4>
+      <div class="meta"><span class="date">2026-10-16</span><span class="badge b-warn">Partial</span></div>
+      <p>The EUR-Lex L-series daily view for 16 October 2026 lists new Commission acts, including a regulation setting maximum residue levels for several pesticides and an implementing regulation amending a safeguard measure on ferro-alloy imports. These are technical/implementing measures rather than major new framework laws; each act's exact entry-into-force date was not confirmed.</p>
+      <div class="src"><span class="lbl">src:</span> <a href="https://eur-lex.europa.eu/oj/daily-view/L-series/default.html">eur-lex.europa.eu</a></div>
+    </article>
+    <article class="item">
+      <h4>Romania: Law 200/2026 — National Day of Romanian Athletics</h4>
+      <div class="meta"><span class="date">2026-10-18 (reported effect)</span><span class="badge b-bad">Unverified</span></div>
+      <p>Law 200/2026 designates 8 September as the National Day of Romanian Athletics; reporting states it was published in Monitorul Oficial on 15 October and applies from 18 October 2026. Confirmed via a single legal-news source only.</p>
+      <div class="src"><span class="lbl">src:</span> <a href="https://monitorlegal.ro/sport/legea-200-2026-ziua-nationala-atletismului-romanesc/">monitorlegal.ro</a></div>
+    </article>
+    <div class="empty">
+      <strong>USA (laws):</strong> Nothing relevant in the last 24h.
+      <span class="ctx"><span class="ctxtag">Context</span> No federal public law or Federal Register final rule surfaced for the window; the most recent enactments (S.240, S.283, S.2403) were signed Oct 15, just outside it.</span>
+    </div>
+    <a class="top-link" href="#top">↑ Contents</a>
+  </section>
+
+  <footer>
+    <p><a class="archive-cta" href="arhiva/">🗂️ Archive — past editions</a></p>
+    <p style="margin-top:16px">Compiled 20 October 2026. Research window: 24–48h prior. Items are summarized in our own words; confidence ratings and source links accompany each. This briefing is informational and not professional (medical, legal, or financial) advice.</p>
+  </footer>
+
+</div>
+</body>
+</html>
