@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Briefing">
+<meta name="description" content="Daily personal news briefing — dental, AI, technology, psychology, education, medicine, economy and politics.">
+<meta name="theme-color" content="#0f1115">
+<link rel="manifest" href="manifest.json">
+<title>Daily Briefing — October 22, 2026</title>
+<style>
+  :root{
+    --bg:#0f1115; --surface:#171a21; --surface-2:#1e222b; --border:#2a2f3a;
+    --text:#e8eaed; --muted:#9aa3b2; --accent:#4f9cff; --accent-soft:#1d2a3f;
+    --ok:#39d98a; --warn:#f5b84f; --bad:#ff6b6b;
+    --maxw:760px;
+  }
+  @media (prefers-color-scheme: light){
+    :root:not([data-theme="dark"]){
+      --bg:#f4f5f7; --surface:#ffffff; --surface-2:#f0f2f5; --border:#dde1e8;
+      --text:#1a1d24; --muted:#5a6475; --accent:#1769e0; --accent-soft:#e6effd;
+    }
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55; font-size:17px;
+    padding:0 16px; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--maxw); margin:0 auto}
+  header.masthead{
+    padding:30px 0 18px; border-bottom:2px solid var(--border); margin-bottom:8px;
+  }
+  .kicker{font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); font-weight:700}
+  h1{font-size:28px; line-height:1.2; margin:6px 0 4px; font-weight:800}
+  .dateline{color:var(--muted); font-size:14px; margin:0}
+  .intro{color:var(--muted); font-size:14px; margin:14px 0 0; padding:12px 14px; background:var(--surface); border:1px solid var(--border); border-radius:10px}
+  nav.toc{margin:22px 0 10px; padding:16px; background:var(--surface); border:1px solid var(--border); border-radius:12px}
+  nav.toc h2{font-size:13px; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); margin:0 0 10px}
+  nav.toc ol{margin:0; padding-left:20px; columns:2; column-gap:20px}
+  @media (max-width:520px){nav.toc ol{columns:1}}
+  nav.toc li{margin:3px 0; break-inside:avoid}
+  nav.toc a{color:var(--text); text-decoration:none; font-weight:600; font-size:15px}
+  nav.toc a:hover{color:var(--accent)}
+  section.cat{margin:34px 0 0; scroll-margin-top:12px}
+  .cat-head{display:flex; align-items:baseline; gap:10px; border-bottom:1px solid var(--border); padding-bottom:8px; margin-bottom:6px}
+  .cat-num{font-size:13px; font-weight:800; color:var(--accent); background:var(--accent-soft); border-radius:6px; padding:2px 8px}
+  .cat-head h2{font-size:21px; margin:0; font-weight:800}
+  h3.sub{font-size:15px; color:var(--muted); margin:20px 0 8px; font-weight:700; text-transform:uppercase; letter-spacing:.05em}
+  article.item{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:14px 16px; margin:10px 0}
+  article.item h4{margin:0 0 6px; font-size:17px; line-height:1.3; font-weight:700}
+  article.item p{margin:0 0 8px; font-size:15.5px}
+  .meta{display:flex; flex-wrap:wrap; align-items:center; gap:8px; font-size:13px; color:var(--muted)}
+  .badge{font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.04em; padding:2px 8px; border-radius:20px; white-space:nowrap}
+  .b-ok{background:rgba(57,217,138,.14); color:var(--ok)}
+  .b-warn{background:rgba(245,184,79,.16); color:var(--warn)}
+  .b-bad{background:rgba(255,107,107,.15); color:var(--bad)}
+  .date-tag{font-variant-numeric:tabular-nums}
+  .srcs{margin-top:4px; font-size:13px}
+  .srcs a{color:var(--accent); text-decoration:none; word-break:break-word}
+  .srcs a:hover{text-decoration:underline}
+  .srcs a:not(:last-child)::after{content:" · "; color:var(--muted)}
+  .none{color:var(--muted); font-style:italic; padding:10px 14px; background:var(--surface-2); border-radius:10px; font-size:15px; margin:8px 0}
+  .note{font-size:13px; color:var(--muted); border-left:3px solid var(--border); padding:4px 0 4px 12px; margin:8px 0}
+  .totop{display:inline-block; font-size:12px; color:var(--muted); text-decoration:none; margin-top:6px}
+  footer{margin:44px 0 30px; padding-top:18px; border-top:1px solid var(--border); color:var(--muted); font-size:13px}
+  footer a{color:var(--accent); text-decoration:none}
+  .legend{display:flex; flex-wrap:wrap; gap:10px; margin:12px 0 0; font-size:12px; color:var(--muted)}
+  .legend span{display:inline-flex; align-items:center; gap:5px}
+  .dot{width:9px; height:9px; border-radius:50%}
+  a.archive-link{display:inline-block; margin-top:8px; font-weight:700; color:var(--accent); text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead" id="top">
+  <div class="kicker">Personal Daily Briefing</div>
+  <h1>Morning Briefing — October 22, 2026</h1>
+  <p class="dateline">Thursday, 22 October 2026 · research window: last 24–48h (Oct 20–22, 2026)</p>
+  <div class="intro">
+    Each item carries a confidence level and source links. News is summarized in original wording.
+    Where a strong item fell just outside the 24–48h window, it is included and flagged with its true date as context.
+    Several Romanian and EU primary portals were not directly reachable from the research environment; items relying on
+    secondary coverage are marked accordingly.
+    <div class="legend">
+      <span><span class="dot" style="background:var(--ok)"></span>Verified — 2+ independent sources</span>
+      <span><span class="dot" style="background:var(--warn)"></span>Partial — limited corroboration</span>
+      <span><span class="dot" style="background:var(--bad)"></span>Unverified — single source</span>
+    </div>
+    <a class="archive-link" href="arhiva/">📚 Archive — past editions</a>
+  </div>
+</header>
+
+<nav class="toc" aria-label="Table of contents">
+  <h2>Contents</h2>
+  <ol>
+    <li><a href="#dental">Dental</a></li>
+    <li><a href="#ai">Artificial Intelligence</a></li>
+    <li><a href="#tech">Technology</a></li>
+    <li><a href="#psychology">Psychology</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#medicine">Medicine</a></li>
+    <li><a href="#economy">Economy</a></li>
+    <li><a href="#politics">Politics</a></li>
+  </ol>
+</nav>
+
+<!-- ============ 1. DENTAL ============ -->
+<section class="cat" id="dental">
+  <div class="cat-head"><span class="cat-num">01</span><h2>Dental</h2></div>
+
+  <h3 class="sub">Medical discoveries / research</h3>
+  <div class="none">Nimic relevant în ultimele 24h.</div>
+  <div class="note">Recent context (older than 48h): a chairside salivary-thiol test for subgingival dysbiosis was published Oct 15 in <em>Clinical and Experimental Dental Research</em> (single-source, unverified).</div>
+
+  <h3 class="sub">New technologies (implants, scanners, software, launches)</h3>
+  <article class="item">
+    <h4>ROE Dental Laboratory launches "ArchBridge for Overdenture"</h4>
+    <p>A patent-pending, fully digital overdenture workflow that removes physical models, chairside pickups and PVS records. Clinicians capture attachment positions intraorally using six reusable titanium scan bodies; the lab then positions and cures the housings, so accuracy no longer depends on chairside steps. Compatible with most major overdenture systems including Zest LOCATOR.</p>
+    <div class="meta"><span class="badge b-warn">Partial</span><span class="date-tag">Oct 21, 2026</span></div>
+    <div class="srcs">
+      <a href="https://www.prnewswire.com/news-releases/roe-dental-laboratory-introduces-archbridge-for-overdenture-a-fully-digital-overdenture-solution-with-no-models-chairside-pickups-or-pvs-records-302914422.html" target="_blank" rel="noopener">PR Newswire</a>
+      <a href="https://www.dentistrytoday.com/roe-dental-lab-introduces-archbridge-overdenture-system/" target="_blank" rel="noopener">Dentistry Today</a>
+    </div>
+  </article>
+  <div class="note">Context (older than 48h): SprintRay unveiled its "Foundation" intraoral scanner and "Nano Series" chairside print/wash/cure line at 3DNext 2026 (Oct 13), first shipments expected Nov 2026.</div>
+
+  <h3 class="sub">New clinic processes (call center, patient care, SOPs)</h3>
+  <div class="none">Nimic relevant în ultimele 24h.</div>
+  <div class="note">Adjacent: a new CareQuest Institute poll (reported Oct 21) found cross-party US support for expanding dental coverage, including via the VA — policy/access, not a clinic process (single-source).</div>
+
+  <h3 class="sub">Clinic sales / acquisitions (Romania + global)</h3>
+  <div class="none">Nimic relevant în ultimele 24h — no new deal dated Oct 20–22 confirmed. Romania: only standing for-sale/rental classified listings, no transactions.</div>
+  <div class="note">Global context (older than 48h): Heartland Dental closed its acquisition of Foundation Dental Partners (33 supported practices, terms undisclosed, ~Oct 2) and separately announced it now supports 2,000 US offices (Oct 21). Specialized Dental Partners acquired Peachtree Periodontics &amp; Dental Implants in Georgia (~Oct 5).</div>
+
+  <h3 class="sub">Key-people migrations</h3>
+  <article class="item">
+    <h4>Clyde Munro Dental Group names Louise Reeves as CEO</h4>
+    <p>Scotland's largest dental group (65 practices) appointed Louise Reeves — former COO of Portman Dentex — as chief executive, effective Oct 19. She succeeds founder Jim Hall, who remains on the board.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">Effective Oct 19, 2026</span></div>
+    <div class="srcs">
+      <a href="https://clydemunrodental.com/clyde-munro-appoints-louise-reeves/" target="_blank" rel="noopener">Company</a>
+      <a href="https://www.insidermedia.com/news/scotland/clyde-munro-appoints-former-portmandentex-coo-as-ceo" target="_blank" rel="noopener">Insider Media</a>
+      <a href="https://www.helensburghadvertiser.co.uk/news/26650169.louise-reeves-appointed-ceo-clyde-munro-dental-group/" target="_blank" rel="noopener">Helensburgh Advertiser</a>
+    </div>
+  </article>
+
+  <h3 class="sub">New lab processes and technologies</h3>
+  <article class="item">
+    <h4>Lab-side digital overdenture workflow (ROE "ArchBridge")</h4>
+    <p>The ArchBridge launch above is also the one genuine in-window lab-process story: it shifts housing placement and curing from the chair to the laboratory, aiming to improve consistency for fixed and removable overdentures.</p>
+    <div class="meta"><span class="badge b-warn">Partial</span><span class="date-tag">Oct 21, 2026</span></div>
+    <div class="srcs"><a href="https://www.dentistrytoday.com/roe-dental-lab-introduces-archbridge-overdenture-system/" target="_blank" rel="noopener">Dentistry Today</a></div>
+  </article>
+  <div class="note">Context: UT Dallas research (NSF-backed) on chairside 3D-printed zirconia crowns cutting processing from ~100h to under 30 min continues to resurface in coverage (original ~Aug 2026; not yet commercial).</div>
+
+  <h3 class="sub">Courses / education market</h3>
+  <article class="item">
+    <h4>In-window continuing-education webinars (Oct 21–26)</h4>
+    <p>Several free/paid live CE sessions ran during the window: Dental CE Academy complimentary webinars (tonsil stones Oct 21, oral rinses Oct 22, waterline safety Oct 23); University of Michigan "Implicit Biases" webinar (Oct 22, 3 credits, $95); University of Minnesota hands-on bonding-material removal (Oct 22). Verify dates before relying.</p>
+    <div class="meta"><span class="badge b-warn">Partial</span><span class="date-tag">Oct 21–26, 2026</span></div>
+    <div class="srcs">
+      <a href="https://www.dentalceacademy.com/live-ce-webinars" target="_blank" rel="noopener">Dental CE Academy</a>
+      <a href="https://dent.umich.edu/education/continuing-education" target="_blank" rel="noopener">U-Michigan CE</a>
+    </div>
+  </article>
+  <div class="note"><strong>Market read — selling English-language dental courses abroad:</strong> the dominant model is subscription/membership with tiered access to large on-demand libraries, plus live sessions and community. Spear Online relaunched (Jan 2026) with 1,500+ lessons and individualized paths; ADA sells subscriptions to 300+ courses; DSD Online (Christian Coachman) is the clearest "thought-leader-as-platform" play, built around smile-design methodology. Best-selling themes: digital/smile design, implant &amp; full-arch workflows, clear-aligner/ortho, and practice management/leadership — with free, sponsor-funded CE used as top-of-funnel. No reliable independent market-size figures surfaced (unverified).</div>
+  <a class="totop" href="#top">↑ Top</a>
+</section>
+
+<!-- ============ 2. AI ============ -->
+<section class="cat" id="ai">
+  <div class="cat-head"><span class="cat-num">02</span><h2>Artificial Intelligence</h2></div>
+
+  <h3 class="sub">General news</h3>
+  <article class="item">
+    <h4>AI-trade market wobble; Meta lifts spending; BoE warning</h4>
+    <p>The AI trade saw a sharp swing on Oct 21–22: Australian data-centre operator NextDC lost roughly a third of its value in a day after cutting guidance, while Meta again raised its AI-infrastructure spending forecast. The Bank of England warned of a possible sharper market correction tied to AI-related valuations.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">Oct 21–22, 2026</span></div>
+    <div class="srcs">
+      <a href="https://www.abc.net.au/news/2026-10-22/asx-markets-business-news-live-updates-thursday-22-october/107295020" target="_blank" rel="noopener">ABC News</a>
+      <a href="https://finance.yahoo.com/markets/live/stock-market-today-wednesday-october-21-dow-sp-500-nasdaq-100000105.html" target="_blank" rel="noopener">Yahoo Finance</a>
+    </div>
+  </article>
+  <article class="item">
+    <h4>OpenAI models reportedly offered to Google Cloud customers</h4>
+    <p>A report describes an agreement making OpenAI's models and its Codex coding tools accessible to Google Cloud customers — an unusual cross-distribution move between rivals that would widen enterprise access via Google's cloud. Not yet corroborated by a primary OpenAI or Google release.</p>
+    <div class="meta"><span class="badge b-warn">Partial</span><span class="date-tag">Oct 21–22, 2026</span></div>
+    <div class="srcs"><a href="https://www.abc.net.au/news/2026-10-22/asx-markets-business-news-live-updates-thursday-22-october/107295020" target="_blank" rel="noopener">ABC News (live blog)</a></div>
+  </article>
+  <div class="note">Flagged as unverified: a live-blog claim of a ~$25B imposed Meta privacy penalty in New Mexico contradicts primary case coverage (jury verdict Sept 25; penalty amount not yet set). Treat the figure as unconfirmed. Recent model releases (MiniMax M3.1 Flash, NVIDIA open agent models, DeepSeek-V4.1-Flash) are dated Oct 17–19, just outside the window.</div>
+
+  <h3 class="sub">Useful for a large dental clinic (market view)</h3>
+  <article class="item">
+    <h4>Videa × ClearDent — embedded AI imaging in the PMS</h4>
+    <p>Videa became the first AI-imaging partner to go live inside ClearDent's new "Embedded Experience" framework, putting AI radiograph analysis directly into the ClearDent practice-management platform (Canada). For a large clinic, the relevance is AI image-reading inside the existing workflow rather than as a separate app.</p>
+    <div class="meta"><span class="badge b-warn">Partial</span><span class="date-tag">~Oct 20, 2026</span></div>
+    <div class="srcs"><a href="https://www.01net.it/videa-and-cleardent-partner-to-bring-embedded-ai-imaging-to-canadian-dental-practices/" target="_blank" rel="noopener">01net</a></div>
+  </article>
+  <div class="note">Market context (not in-window): Pearl expanded Second Opinion 3D/CBCT reads to general dentists (Sept 2026); Overjet gained FDA 510(k) for multi-image caries/charting (Aug 2026); Dentsply Sirona and Diagnocat hold CBCT periapical-radiolucency clearances. Front-office AI (AI receptionists, auto-scheduling, voice clinical notes) is maturing but had no in-window launch.</div>
+  <a class="totop" href="#top">↑ Top</a>
+</section>
+
+<!-- ============ 3. TECHNOLOGY ============ -->
+<section class="cat" id="tech">
+  <div class="cat-head"><span class="cat-num">03</span><h2>Technology</h2></div>
+
+  <h3 class="sub">Product launches (global)</h3>
+  <article class="item">
+    <h4>Apple's first foldable, iPhone Duo, goes on sale Oct 23</h4>
+    <p>Apple's first foldable (announced Sept 9) starts at $1,999 for 256GB, with a 7.6" inner and 5.4" outer display. Preorders opened Oct 16 and sold out, pushing shipping into early 2027; reviews landed Oct 21 ahead of the Oct 23 on-sale date.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">On sale Oct 23, 2026</span></div>
+    <div class="srcs">
+      <a href="https://www.macrumors.com/roundup/iphone-duo/" target="_blank" rel="noopener">MacRumors</a>
+      <a href="https://techcrunch.com/2026/09/09/apple-unveils-its-first-foldable-the-iphone-duo/" target="_blank" rel="noopener">TechCrunch</a>
+      <a href="https://www.cnn.com/2026/10/21/tech/apple-iphone-duo-review" target="_blank" rel="noopener">CNN review</a>
+    </div>
+  </article>
+  <article class="item">
+    <h4>Apple HomeView smart-home display</h4>
+    <p>A 7-inch Apple smart-home device priced at $299 opened for preorder ahead of a Nov 13 launch, positioned as part of Apple's AI/home push.</p>
+    <div class="meta"><span class="badge b-warn">Partial</span><span class="date-tag">Launch Nov 13, 2026</span></div>
+    <div class="srcs"><a href="https://www.abc12.com/news/business/apple-just-announced-a-new-gadget-that-could-be-key-to-its-ai-push/article_092b3af5-37c4-5b28-9efc-ea4672a422bb.html" target="_blank" rel="noopener">ABC12</a></div>
+  </article>
+
+  <h3 class="sub">New patents (global)</h3>
+  <div class="none">Nimic relevant în ultimele 24h.</div>
+  <div class="note">Closest filings/grants are Oct 13–16 (outside window): Sony AI frame-generation using controller inputs, Apple watch-strap laser inner-wall sensing, Oura blood-pressure-from-pulse-shape ring — all from trade blogs, not verified against USPTO.</div>
+
+  <h3 class="sub">Romania</h3>
+  <article class="item">
+    <h4>Hambar — local-products marketplace launches in Romania</h4>
+    <p>Hambar entered the Romanian market (partners include eMAG and Salt Bank) with 200+ producers and 4,000+ products, selling verified local goods directly from producer to buyer.</p>
+    <div class="meta"><span class="badge b-warn">Partial</span><span class="date-tag">~Oct 21, 2026</span></div>
+    <div class="srcs"><a href="https://www.cotidianul.ro/hambar-se-lanseaza-in-romania-produse-locale-verificate-direct-de-la-producator-la-usa-cumparatorului/" target="_blank" rel="noopener">Cotidianul</a></div>
+  </article>
+  <div class="note">Romania patents: Nimic relevant în ultimele 24h. Several Romanian tech aggregators were unreachable from the research environment, limiting depth.</div>
+  <a class="totop" href="#top">↑ Top</a>
+</section>
+
+<!-- ============ 4. PSYCHOLOGY ============ -->
+<section class="cat" id="psychology">
+  <div class="cat-head"><span class="cat-num">04</span><h2>Psychology</h2></div>
+
+  <h3 class="sub">Adults — science-backed finding of the day</h3>
+  <article class="item">
+    <h4>Does the aging brain "trade memory for wisdom"?</h4>
+    <p>A theoretical paper in <em>Perspectives on Psychological Science</em> argues cognitive aging is not simply decline: the brain may shift from retaining fine detail toward broader, semantic, big-picture understanding. It is a conceptual proposal, not new experimental data, and bears on where normal aging ends and DSM-5 neurocognitive disorder begins.</p>
+    <div class="meta"><span class="badge b-warn">Partial</span><span class="date-tag">Oct 19–20, 2026</span></div>
+    <div class="srcs"><a href="https://www.sciencedaily.com/releases/2026/10/261019093357.htm" target="_blank" rel="noopener">ScienceDaily</a></div>
+  </article>
+  <div class="note">Within the strict 24–48h window, DSM-5-relevant findings were thin. The strongest recent results sit just outside it: adult ADHD linked to &gt;4× higher later dementia/cognitive-impairment risk (JAMA Psychiatry, Oct 7 — observational, causation unproven, <strong>Verified</strong>); and five distinct brain-connectivity profiles of depression challenging the single MDD category (Univ. of Helsinki MEG study, Oct 9, <strong>Verified</strong>).</div>
+
+  <h3 class="sub">Children — the brain of a ~6-year-old (Andrei, b. 2020)</h3>
+  <article class="item">
+    <h4>What is developing, and what to watch this coming year</h4>
+    <p><strong>Cognitive:</strong> thinking shifts toward cause-and-effect reasoning as preschool "magical thinking" fades; a sense of time emerges; reading and writing begin; the child can typically count to and grasp "10". <strong>Physical:</strong> ~2.5 inches and ~7 lbs of growth over the year, first permanent (6-year) molars erupting, baby teeth being lost. <strong>Social-emotional:</strong> parents stay the primary source of comfort, but friends and admired adults (teachers) grow in importance; pretend play is common and some preschool fears persist.</p>
+    <p><strong>Watch for:</strong> children progress unevenly, so the overall pattern matters more than any single milestone. Keep an eye on reading/writing readiness, the ability to follow multi-step instructions, emotional regulation, and peer interaction — and raise concerns early (the CDC's free Milestone Tracker app helps; note 6 is not a formal CDC checkpoint, which sits at 5 then 8).</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">Reference synthesis</span></div>
+    <div class="srcs">
+      <a href="https://www.columbiadoctors.org/health-library/article/milestones-6-year-olds/" target="_blank" rel="noopener">ColumbiaDoctors</a>
+      <a href="https://sesameworkshop.org/resources/milestones-your-six-year-old/" target="_blank" rel="noopener">Sesame Workshop</a>
+    </div>
+  </article>
+  <a class="totop" href="#top">↑ Top</a>
+</section>
+
+<!-- ============ 5. EDUCATION ============ -->
+<section class="cat" id="education">
+  <div class="cat-head"><span class="cat-num">05</span><h2>Education</h2></div>
+
+  <h3 class="sub">The next 20 years vs. the classic school model</h3>
+  <article class="item">
+    <h4>Forecasts converge on "scenarios, not a single path"</h4>
+    <p>The most rigorous framing is the OECD's "Back to the Future of Education", with four scenarios to 2040 ranging from schooling extended and more diverse, to education outsourced to markets, to schools as community learning hubs, to traditional schooling dissolving into "learning everywhere". The World Economic Forum offers a similar four-scenario set, and IE University's "Education in 2050" leans toward self-guided, personalized learning and the disintermediation of traditional institutions. Treat all 20-year predictions as scenarios — past forecasts (e.g. 1990s mass-homeschooling calls) aged poorly.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">Reference / analyses</span></div>
+    <div class="srcs">
+      <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2020/09/back-to-the-future-of-education_4fa8c90a/178ef527-en.pdf" target="_blank" rel="noopener">OECD</a>
+      <a href="https://www.weforum.org/stories/2021/01/future-of-education-4-scenarios/" target="_blank" rel="noopener">WEF</a>
+      <a href="https://www.ie.edu/insights/ideas-to-shape-the-future/idea/education-in-2050/" target="_blank" rel="noopener">IE University</a>
+    </div>
+  </article>
+
+  <h3 class="sub">How to educate a child Andrei's age (~6)</h3>
+  <article class="item">
+    <h4>Guided play with clear goals, plus some explicit instruction</h4>
+    <p>The best-supported approach at this age is adult-guided play with explicit learning goals. The Education Endowment Foundation's early-years toolkit finds play-based learning has a moderate positive effect (~+4 months progress), with guided play better evidenced than free play. Pair it with explicit instruction in early reading/phonics and numeracy, and prioritize implementation quality (good instructional design, trained adults). Note the evidence is largely extrapolated from 0–8 and 6–12 research, not studies of 6-year-olds alone.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">Reference synthesis</span></div>
+    <div class="srcs">
+      <a href="https://educationendowmentfoundation.org.uk/early-years/toolkit/play-based-learning" target="_blank" rel="noopener">EEF toolkit</a>
+      <a href="https://education.nsw.gov.au/teaching-and-learning/curriculum/early-learning/professional-learning/play-based-learning-age-appropriate-pedagogy-micro-learning" target="_blank" rel="noopener">NSW Education</a>
+    </div>
+  </article>
+  <a class="totop" href="#top">↑ Top</a>
+</section>
+
+<!-- ============ 6. MEDICINE ============ -->
+<section class="cat" id="medicine">
+  <div class="cat-head"><span class="cat-num">06</span><h2>Medicine</h2></div>
+
+  <h3 class="sub">New discoveries and firsts</h3>
+  <article class="item">
+    <h4>FDA accelerated approval: Ultomiris for IgA nephropathy</h4>
+    <p>AstraZeneca's Alexion said the FDA granted accelerated approval for Ultomiris (ravulizumab) in adults with primary IgA nephropathy at risk of progression — the first C5 complement inhibitor for this kidney disease. The nod rests on a week-34 interim analysis showing a 43.4% placebo-adjusted reduction in proteinuria; continued approval may hinge on kidney-function (eGFR) data at week 106.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">Oct 21, 2026</span></div>
+    <div class="srcs">
+      <a href="https://www.astrazeneca.com/media-centre/press-releases/2026/ultomiris-approved-in-us-in-igan.html" target="_blank" rel="noopener">AstraZeneca</a>
+      <a href="https://www.yahoo.com/news/science/articles/astrazeneca-says-fda-approves-drug-230724013.html" target="_blank" rel="noopener">Yahoo/Reuters</a>
+    </div>
+  </article>
+  <article class="item">
+    <h4>FDA approves Hibsago (bepirovirsen) for chronic hepatitis B</h4>
+    <p>The FDA approved the first antisense oligonucleotide for chronic hepatitis B — GSK and Ionis's bepirovirsen — for use alongside existing antivirals in certain adults without cirrhosis. Phase III B-Well data supported a functional-cure rate of roughly 19% after about six months; a companion diagnostic was also cleared.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">Oct 20, 2026</span></div>
+    <div class="srcs">
+      <a href="https://www.fda.gov/news-events/press-announcements/fda-approves-first-its-kind-chronic-hepatitis-b-treatment" target="_blank" rel="noopener">FDA</a>
+      <a href="https://www.ajmc.com/view/bepirovirsen-approval-offers-new-option-for-chronic-hbv-treatment" target="_blank" rel="noopener">AJMC</a>
+    </div>
+  </article>
+  <article class="item">
+    <h4>Brepocitinib hits endpoints in non-infectious uveitis (CLARITY-1 &amp; -2)</h4>
+    <p>Roivant and Priovant reported both pivotal Phase 3 trials of oral brepocitinib met their primary endpoint (time to treatment failure). Pooled across 371 patients, 62% achieved steroid-free quiescence at week 48 vs 20% on placebo, with no new safety signals; an FDA filing is planned for H1 2027.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">Oct 21, 2026</span></div>
+    <div class="srcs">
+      <a href="https://www.manilatimes.net/2026/10/21/tmt-newswire/globenewswire/roivant-and-priovant-announce-positive-results-in-clarity-1-and-clarity-2-phase-3-trials-for-brepocitinib-in-non-infectious-uveitis-niu/2450632" target="_blank" rel="noopener">GlobeNewswire</a>
+      <a href="https://www.ophthalmologytimes.com/view/brepocitinib-meets-all-phase-3-end-points-in-noninfectious-uveitis" target="_blank" rel="noopener">Ophthalmology Times</a>
+    </div>
+  </article>
+  <div class="note">Reported but unconfirmed: a secondary account (Oct 21) of an NEJM optogenetics study restoring partial vision in blind patients could not be matched to a confirmed new 2026 primary paper — treat as unverified pending the NEJM source.</div>
+  <a class="totop" href="#top">↑ Top</a>
+</section>
+
+<!-- ============ 7. ECONOMY ============ -->
+<section class="cat" id="economy">
+  <div class="cat-head"><span class="cat-num">07</span><h2>Economy</h2></div>
+
+  <h3 class="sub">Global M&amp;A (EU &gt; €100M · US/China &gt; $100M)</h3>
+  <article class="item">
+    <h4>Salesforce to acquire Braze for ~$5.66B</h4>
+    <p>Salesforce signed a definitive agreement to buy customer-engagement platform Braze for roughly $5.66B enterprise value, at $47.50 cash per Class A share. The agreement (dated Oct 19) was confirmed in Salesforce's Oct 20 SEC 8-K; closing is targeted for fiscal 2028 pending a shareholder vote and regulatory clearance. Braze's engagement and AI-decisioning tools would plug into Data 360, Customer 360 and Agentforce.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">Oct 20, 2026</span></div>
+    <div class="srcs">
+      <a href="https://www.sec.gov/Archives/edgar/data/0001108524/000119312526425881/d516983dex991.htm" target="_blank" rel="noopener">SEC 8-K</a>
+      <a href="https://ppc.land/salesforce-agrees-to-buy-braze-for-5-66bn-in-cash/" target="_blank" rel="noopener">PPC Land</a>
+    </div>
+  </article>
+  <article class="item">
+    <h4>Merck KGaA to acquire Silence Therapeutics for ~$1.3B</h4>
+    <p>Germany's Merck KGaA agreed to buy Silence Therapeutics in an all-cash deal of about $1.3B equity value ($20 per ADS, ~130% premium), adding Silence's siRNA gene-silencing platform led by phase-3-ready candidate divesiran. It is Merck KGaA's third major acquisition in under two years and remains subject to shareholder and regulatory approval.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">Oct 19, 2026</span></div>
+    <div class="srcs">
+      <a href="https://www.ksl.com/article/51638103/germanys-merck-buys-silence-therapeutics-for-13-billion" target="_blank" rel="noopener">KSL/Reuters</a>
+      <a href="https://www.cooley.com/news/coverage/2026/2026-10-19-cooley-advised-silence-therapeutics-on-agreement-to-be-acquired-by-merck-kgaa-darmstadt-germany-for-$1-3-billion" target="_blank" rel="noopener">Cooley</a>
+    </div>
+  </article>
+
+  <h3 class="sub">Romania (&gt; €1M)</h3>
+  <article class="item">
+    <h4>TTM Technologies to acquire MKS's Ophir Optics (~$650M) — includes Bucharest site</h4>
+    <p>US-listed TTM Technologies agreed to buy MKS Inc.'s Ophir Optics business — a maker of high-precision infrared thermal-imaging and laser optics for defense and industry — for about $650M cash (~10.3× expected FY2027 adjusted EBITDA), closing targeted for Q2 2027. The unit is Israel- and Romania-based, running a Bucharest manufacturing site (~6,500 sqm, 180+ employees).</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">Oct 19–20, 2026</span></div>
+    <div class="srcs">
+      <a href="https://www.credenceresearch.com/news/ttm-technologies-acquire-mks-ophir-optics-business" target="_blank" rel="noopener">Credence</a>
+      <a href="https://profit.ro/povesti-cu-profit/real-estate-constructii/exclusiv-foto-gigant-american-se-extinde-puternic-in-romania-mks-instruments-detinut-de-cele-mai-mari-fonduri-de-investitii-din-lume-vrea-sa-isi-creasca-cu-50-numarul-de-angajati-22260373" target="_blank" rel="noopener">Profit.ro</a>
+    </div>
+  </article>
+  <article class="item">
+    <h4>Romania clears Raiffeisen's acquisition of Garanti Bank Romania (~€591M)</h4>
+    <p>Romania's Competition Council cleared Raiffeisen Bank's acquisition of Garanti Bank Romania (plus Motoractive IFN and a subsidiary), valued at ~€591M, around Oct 20. This is a regulatory-approval milestone — the underlying deal was announced earlier in 2026 — with completion expected in Q4 2026.</p>
+    <div class="meta"><span class="badge b-warn">Partial</span><span class="date-tag">Oct 20, 2026 (clearance)</span></div>
+    <div class="srcs"><a href="https://www.profit.ro/povesti-cu-profit/financiar/ultima-ora-banca-vanduta-in-romania-raiffeisen-preia-garanti-bank-tranzactie-autorizata-22862903" target="_blank" rel="noopener">Profit.ro</a></div>
+  </article>
+  <div class="note">China (&gt; $100M): Nimic relevant în ultimele 24h. No new EU-domestic deal cleanly dated Oct 20–22 surfaced; the three large items above cluster at Oct 19–20, the outer edge of the window.</div>
+  <a class="totop" href="#top">↑ Top</a>
+</section>
+
+<!-- ============ 8. POLITICS ============ -->
+<section class="cat" id="politics">
+  <div class="cat-head"><span class="cat-num">08</span><h2>Politics</h2></div>
+
+  <h3 class="sub">New leadership appointments</h3>
+  <article class="item">
+    <h4>Romania: new government under PM Luca Niculescu invested</h4>
+    <p>After months of interim rule following the fall of the Bolojan cabinet, Parliament confirmed a new minority government led by independent PM Luca-Alexandru Niculescu; President Nicușor Dan's appointment decree was published in Monitorul Oficial on Oct 20. Reported key ministers include Marian Neacșu (PSD, Deputy PM &amp; Interior), Alexandru Nazare (Finance), Radu Marinescu (Justice), Ștefan-Radu Oprea (Defence) and Sebastian-Dănuț Neculăescu (Foreign Affairs). The reported 280–58 confidence vote is single-source (treat as partial).</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">Oct 20, 2026</span></div>
+    <div class="srcs">
+      <a href="https://www.mediafax.ro/stirile-zilei/cine-sunt-ministrii-din-guvernul-luca-niculescu-lista-completa-a-noului-executiv-11-ministri-psd-si-sase-independenti-23828856" target="_blank" rel="noopener">Mediafax</a>
+      <a href="https://www.wall-street.ro/articol/politica/luca-niculescu-prezinta-lista-ministrilor" target="_blank" rel="noopener">Wall-Street.ro</a>
+    </div>
+  </article>
+  <div class="note">EU: Nimic relevant în ultimele 24h (nearest senior appointment: Paulina Dejmek Hack as DG FISMA Director-General, Oct 1). USA: Nimic relevant în ultimele 24h on confirmations dated Oct 20–22.</div>
+
+  <h3 class="sub">New laws adopted / taking effect</h3>
+  <article class="item">
+    <h4>Romania: Law 202/2026 — tax-free savings &amp; investment accounts</h4>
+    <p>A new law (co-initiated by USR) creates tax-advantaged personal savings-and-investment accounts as a voluntary supplement to the state pension; gains are untaxed and the regime applies from 2027. It was promulgated and published in Monitorul Oficial (sources give the date variously as Oct 15 vs Oct 19).</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">~Oct 15–19, 2026</span></div>
+    <div class="srcs">
+      <a href="https://www.bursa.ro/usr-legea-conturilor-de-economii-si-investitii-coinitiata-de-usr-a-fost-promulgata-si-publicata-in-monitorul-oficial-07296060" target="_blank" rel="noopener">Bursa.ro</a>
+      <a href="https://alba24.ro/romanii-vor-putea-economisi-si-investi-bani-fara-impozit-din-2027-noua-lege-a-fost-publicata-in-monitorul-oficial-1162874.html" target="_blank" rel="noopener">Alba24</a>
+    </div>
+  </article>
+  <article class="item">
+    <h4>EU: Implementing Decision 2026/2267 on industrial-emissions reporting</h4>
+    <p>Published in the Official Journal on Oct 20, this Commission decision sets the format and frequency of data Member States must report under the Industrial Emissions Portal regulation (EU 2024/1244). It applies from Jan 1, 2028 and repeals the 2019 predecessor from end-2027.</p>
+    <div class="meta"><span class="badge b-warn">Partial</span><span class="date-tag">Published Oct 20, 2026</span></div>
+    <div class="srcs">
+      <a href="https://eulawlive.com/commission-adopts-two-decisions-on-reporting-environmental-data-from-industrial-installations/" target="_blank" rel="noopener">EU Law Live</a>
+      <a href="https://eur-lex.europa.eu/eli/dec_impl/2026/2267/oj/eng" target="_blank" rel="noopener">EUR-Lex</a>
+    </div>
+  </article>
+  <article class="item">
+    <h4>USA: Chiricahua National Park Act signed into law</h4>
+    <p>President Trump signed legislation redesignating the ~12,025-acre Chiricahua National Monument in Arizona as Chiricahua National Park — the country's 64th national park. The House passed it in March and the Senate unanimously on Sept 30; boundaries, land uses and NPS management are unchanged.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">Oct 20, 2026</span></div>
+    <div class="srcs">
+      <a href="https://tucson.com/news/local/environment/article_398c4244-89b1-4beb-919c-e84b76007e1c.html" target="_blank" rel="noopener">Tucson.com</a>
+      <a href="https://www.kvue.com/article/news/nation-world/new-national-park-arizona-trump-legislation/507-f0259932-e144-49f3-a22f-41a5d1098fe6" target="_blank" rel="noopener">KVUE</a>
+    </div>
+  </article>
+  <div class="note">Flagged unverified: a summary claiming "10 bills signed Oct 20" (including dating-app rules) could not be corroborated beyond the Chiricahua act.</div>
+  <a class="totop" href="#top">↑ Top</a>
+</section>
+
+<footer>
+  <p><strong>Daily Briefing</strong> · compiled 22 October 2026. Summaries are written in original wording; each item links to its sources. Confidence labels reflect how many independent sources corroborated the item at research time — always open the source before acting on anything market-, legal- or health-sensitive.</p>
+  <p><a href="arhiva/">📚 Archive</a> · Add to iPhone Home Screen for an app-style view (Share → Add to Home Screen).</p>
+</footer>
+
+</div>
+</body>
+</html>
