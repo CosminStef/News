@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Briefing">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="manifest" href="../manifest.json">
+  <title>Daily Briefing — October 23, 2026</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --surface: #1e293b;
+      --surface-2: #263449;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --border: #334155;
+      --verified: #22c55e;
+      --partial: #f59e0b;
+      --unverified: #ef4444;
+      --link: #7dd3fc;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      font-size: 17px;
+      -webkit-text-size-adjust: 100%;
+    }
+    .wrap { max-width: 820px; margin: 0 auto; padding: 16px; }
+    header {
+      padding: 28px 0 20px;
+      border-bottom: 2px solid var(--border);
+      margin-bottom: 8px;
+    }
+    header h1 {
+      font-size: 1.7rem;
+      margin: 0 0 6px;
+      letter-spacing: -0.5px;
+    }
+    header .date { color: var(--accent); font-weight: 600; }
+    header .sub { color: var(--muted); font-size: 0.95rem; margin-top: 8px; }
+    .archive-link {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 7px 14px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--link);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .archive-link:hover { background: var(--surface-2); }
+    nav.toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin: 24px 0;
+    }
+    nav.toc h2 { margin: 0 0 12px; font-size: 1rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+    nav.toc ol { margin: 0; padding-left: 22px; }
+    nav.toc li { margin: 6px 0; }
+    nav.toc a { color: var(--link); text-decoration: none; }
+    nav.toc a:hover { text-decoration: underline; }
+    section.category { margin: 40px 0; scroll-margin-top: 16px; }
+    .cat-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 8px;
+      margin-bottom: 4px;
+    }
+    .cat-head h2 { font-size: 1.4rem; margin: 0; }
+    .cat-num {
+      background: var(--accent);
+      color: var(--bg);
+      font-weight: 700;
+      border-radius: 8px;
+      width: 32px; height: 32px;
+      display: inline-flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    h3.subcat {
+      font-size: 1.05rem;
+      color: var(--accent);
+      margin: 26px 0 10px;
+      font-weight: 600;
+    }
+    .item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin: 12px 0;
+    }
+    .item h4 { margin: 0 0 6px; font-size: 1.05rem; line-height: 1.35; }
+    .item p { margin: 6px 0; }
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+      font-size: 0.85rem;
+    }
+    .badge {
+      padding: 2px 10px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.78rem;
+      white-space: nowrap;
+    }
+    .badge.verified { background: rgba(34,197,94,0.15); color: var(--verified); border: 1px solid var(--verified); }
+    .badge.partial { background: rgba(245,158,11,0.15); color: var(--partial); border: 1px solid var(--partial); }
+    .badge.unverified { background: rgba(239,68,68,0.15); color: var(--unverified); border: 1px solid var(--unverified); }
+    .date-tag { color: var(--muted); }
+    .sources a { color: var(--link); text-decoration: none; word-break: break-word; }
+    .sources a:hover { text-decoration: underline; }
+    .sources { font-size: 0.85rem; color: var(--muted); }
+    .nothing {
+      color: var(--muted);
+      font-style: italic;
+      padding: 10px 14px;
+      background: var(--surface);
+      border: 1px dashed var(--border);
+      border-radius: 10px;
+      margin: 10px 0;
+    }
+    .note {
+      font-size: 0.85rem;
+      color: var(--muted);
+      background: var(--surface-2);
+      border-left: 3px solid var(--accent);
+      padding: 8px 12px;
+      border-radius: 0 8px 8px 0;
+      margin: 10px 0;
+    }
+    footer {
+      margin: 48px 0 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    .top-link { display: block; text-align: right; font-size: 0.8rem; margin-top: 8px; }
+    .top-link a { color: var(--muted); text-decoration: none; }
+    @media (max-width: 480px) {
+      body { font-size: 16px; }
+      header h1 { font-size: 1.4rem; }
+      .cat-head h2 { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap" id="top">
+
+  <header>
+    <h1>Daily Briefing</h1>
+    <div class="date">Friday, October 23, 2026</div>
+    <div class="sub">Personal news digest &middot; 8 categories &middot; sources cross-checked, each item labelled by confidence.</div>
+    <a class="archive-link" href="../">&#128218; Archive</a>
+  </header>
+
+  <div class="note">
+    <strong>How to read this:</strong> every item carries a confidence badge &mdash;
+    <span class="badge verified">Verified</span> (2+ independent sources),
+    <span class="badge partial">Partial</span> (credible but partly single-source or with ambiguity),
+    <span class="badge unverified">Unverified</span> (single source only). Summaries are written in-house; follow the source links for the originals.
+  </div>
+
+  <nav class="toc">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#dental">Dental</a></li>
+      <li><a href="#ai">AI</a></li>
+      <li><a href="#tech">Technology</a></li>
+      <li><a href="#psychology">Psychology</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#medicine">Medicine</a></li>
+      <li><a href="#economy">Economy</a></li>
+      <li><a href="#politics">Politics</a></li>
+    </ol>
+  </nav>
+
+  <!-- ===================== 1. DENTAL ===================== -->
+  <section class="category" id="dental">
+    <div class="cat-head"><span class="cat-num">1</span><h2>Dental</h2></div>
+
+    <h3 class="subcat">Medical discoveries &amp; research</h3>
+
+    <div class="item">
+      <h4>October JADA spotlights the oral virome and the "oral-gut-brain axis"</h4>
+      <p>The October issue of the Journal of the American Dental Association leads with a UCLA review of how viruses across the oral-gut-brain axis may influence oral health. It connects to UCLA's $20.6M NIH-funded Human Virome Characterization Center, one of five national centres with partners including Baylor, Mayo Clinic and USC.</p>
+      <div class="meta-row">
+        <span class="badge verified">Verified</span>
+        <span class="date-tag">Oct 5, 2026 (grant from Feb 2025)</span>
+      </div>
+      <p class="sources">Sources: <a href="https://adanews.ada.org/ada-news/2026/october/october-jada-examines-how-human-virome-research-could-impact-dentistry/">ADA News</a> &middot; <a href="https://www.uclahealth.org/news/release/ucla-lead-206m-nih-funded-center-unlock-role-viruses-human">UCLA Health</a></p>
+    </div>
+
+    <div class="item">
+      <h4>Pure cranberry juice curbed plaque regrowth; the sweetened version did not</h4>
+      <p>A University of Illinois Chicago team ran two small trials (8 adults, 14 children) and found unsweetened cranberry juice cut plaque bacterial regrowth and acid production by roughly 44% and 33% respectively, while sweetened cranberry cocktail showed no benefit. The authors stress the trials were small and cavity-prevention is still unproven.</p>
+      <div class="meta-row">
+        <span class="badge verified">Verified</span>
+        <span class="date-tag">Study Jun 23, 2026; re-reported Oct 21, 2026</span>
+      </div>
+      <p class="sources">Sources: <a href="https://www.hygienetown.com/news/details/14945/unsweetened-cranberry-juice-curbed-plaque-acid-but-sweetened-cocktail-did-not">Hygienetown</a> &middot; <a href="https://www.oralhealthgroup.com/clinical/dental-research/pure-cranberry-juice-reduces-dental-plaque-activity-in-small-study-1003999489">Oral Health Group</a></p>
+    </div>
+
+    <div class="item">
+      <h4>Growing 2026 literature on GLP-1 drugs and periodontal health</h4>
+      <p>Several 2026 review articles examine how GLP-1 receptor agonists (the Ozempic class) affect periodontal inflammation, dry mouth and alveolar bone. The emerging consensus is that they may reduce periodontal inflammation, but bone effects and clear clinical benefit remain unproven.</p>
+      <div class="meta-row">
+        <span class="badge partial">Partial</span>
+        <span class="date-tag">Reviews through 2026</span>
+      </div>
+      <p class="sources">Sources: <a href="https://agd.org/constituent/news/2026/08/17/navigating-the-dental-implications-of-glp-1-receptor-agonists">AGD</a> &middot; <a href="https://www.mdpi.com/2218-273X/16/6/857">Biomolecules</a></p>
+    </div>
+
+    <h3 class="subcat">New technologies (implants, scanners, software)</h3>
+
+    <div class="item">
+      <h4>AI crown &amp; bridge design tools maturing for chairside and lab use</h4>
+      <p>DentalTwin's DentaBRIDGE (AI crown/bridge design up to 14 units) and 3Shape Automate continue to spread, producing mill- or print-ready proposals in minutes. These are vendor-reported capabilities rather than independent studies, and no brand-new flagship launch was confirmed this week.</p>
+      <div class="meta-row">
+        <span class="badge partial">Partial</span>
+        <span class="date-tag">DentaBRIDGE profile May 1, 2026</span>
+      </div>
+      <p class="sources">Sources: <a href="https://news.digital-dentistry.org/news/dentabridge-bringing-ai-supported-crown-and-bridge-design-into-everyday-workflows/">Digital Dentistry</a> &middot; <a href="https://simplelabos.com/blog/ai-tools-dental-lab-automation">SimpleLabOS</a></p>
+    </div>
+    <div class="note">No new intraoral-scanner flagship launch was verified in the last 24-72h. Current flagships remain iTero Lumina, 3Shape TRIOS 6 Wireless and Medit i900.</div>
+
+    <h3 class="subcat">New clinic processes (call center, patient care, SOP)</h3>
+
+    <div class="item">
+      <h4>AI voice / front-desk "receptionists" accelerating in practices</h4>
+      <p>AI phone agents that capture missed and after-hours calls and sync summaries to the practice software are a leading 2026 process trend. Adit launched an AI Front Desk Agent and Dental Intelligence an AI Receptionist handling calls in ~70 languages; vendor context suggests nearly half of inbound calls arrive after hours.</p>
+      <div class="meta-row">
+        <span class="badge partial">Partial</span>
+        <span class="date-tag">Adit Feb 2026; comparison Oct 16, 2026</span>
+      </div>
+      <p class="sources">Sources: <a href="https://www.patientdesk.ai/blog/voice-ai-in-2026-how-22-5b-tech-is-reshaping-dental-practices">PatientDesk</a> &middot; <a href="https://adit.com/top-10-dental-patient-communication-software">Adit</a></p>
+    </div>
+
+    <div class="item">
+      <h4>CDT 2026 code set rolled into practice-management systems</h4>
+      <p>Practices need to adopt the CDT 2026 procedure codes; Dentrix, Eaglesoft and Open Dental issued compatibility updates while cloud platforms updated automatically. A concrete SOP point: self-hosted Open Dental offices must manually verify their versions, as server installs do not auto-update.</p>
+      <div class="meta-row">
+        <span class="badge partial">Partial</span>
+        <span class="date-tag">Guidance Oct 2026</span>
+      </div>
+      <p class="sources">Sources: <a href="https://www.curvedental.com/dental-blog/best-dental-practice-management-software-2026">Curve Dental</a> &middot; <a href="https://pabau.com/blog/top-7-dental-practice-software-in-the-us-2026-guide/">Pabau</a></p>
+    </div>
+
+    <h3 class="subcat">Clinic sales &amp; acquisitions (RO + global)</h3>
+
+    <div class="item">
+      <h4>Heartland Dental closes affiliation with Foundation Dental Partners (33 practices)</h4>
+      <p>Heartland Dental affiliated with Foundation Dental Partners, a doctor-focused DSO with 33 supported practices across Georgia, Tennessee, South Carolina and Kentucky; financial terms were not disclosed. The deal pushes Heartland past 3,200 affiliated doctors across more than 1,960 locations in 39 states plus DC.</p>
+      <div class="meta-row">
+        <span class="badge verified">Verified</span>
+        <span class="date-tag">Closed Oct 2, 2026</span>
+      </div>
+      <p class="sources">Sources: <a href="https://www.beckersdental.com/dso-dpms/heartland-dental-affiliates-with-foundation-dental-partners/">Becker's</a> &middot; <a href="https://www.ropesgray.com/en/news-and-events/news/2026/10/ropes-gray-advised-heartland-dental-in-its-affiliation-with-foundation-dental-partners">Ropes &amp; Gray</a></p>
+    </div>
+
+    <div class="item">
+      <h4>Park Dental Partners to acquire Village Family Dental (NC) — $39.1M base, up to $46M</h4>
+      <p>Park Dental Partners agreed to buy North Carolina DSO Village Family Dental for a $39.1M base (including ~$9.2M in stock) plus up to $6.9M contingent, a potential $46M total. It adds ~48 doctors across 12 locations and marks Park's entry into North Carolina; closing is expected later in 2026.</p>
+      <div class="meta-row">
+        <span class="badge verified">Verified</span>
+        <span class="date-tag">Announced Aug 2026; reconfirmed Oct 19, 2026</span>
+      </div>
+      <p class="sources">Sources: <a href="https://www.beckersdental.com/dso-dpms/park-dental-partners-plans-acquisition-of-north-carolina-dso-for-up-to-46m/">Becker's</a> &middot; <a href="https://parkdentalpartners.gcs-web.com/node/7046/html">Park Dental SEC 8-K</a></p>
+    </div>
+
+    <div class="item">
+      <h4>Romania: Dental Elite expands with Accession Capital backing (~&euro;2M)</h4>
+      <p>Romanian chain Dental Elite took growth capital from Accession Capital Partners and opened three new clinics in Ploie&#537;ti, Buz&#259;u and Voluntari for about &euro;2M, reaching 7 clinics and 40 chairs. The group has stated a goal of 20+ clinics and &euro;20M+ revenue within five years. No brand-new Romanian clinic acquisition surfaced in the last 72h.</p>
+      <div class="meta-row">
+        <span class="badge partial">Partial</span>
+        <span class="date-tag">Investment late 2025; openings 2026</span>
+      </div>
+      <p class="sources">Sources: <a href="https://www.dentalelite.ro/blog/2-milioane-de-euro-investitie-in-extinderea-dental-elite-3-noi-clinici-stomatologice-inaugurate-in-tara/">Dental Elite</a> &middot; <a href="https://business-review.eu/business/healthcare/over-24000-patients-in-the-past-three-years-for-dental-elite-clinics-and-growing-interest-in-prevention-among-romanians-293565">Business Review</a></p>
+    </div>
+
+    <div class="item">
+      <h4>Romania: Dental Holding takes over Greece's Memodent (supply distribution)</h4>
+      <p>Romanian company Dental Holding agreed to acquire Memodent Group, Greece's leading dental-supplies distributor, with combined group revenue expected to top &euro;130M in 2026. This is a distribution/supply-chain deal rather than a clinic, expected to close subject to regulatory approval.</p>
+      <div class="meta-row">
+        <span class="badge partial">Partial</span>
+        <span class="date-tag">Announced Jan 2026</span>
+      </div>
+      <p class="sources">Sources: <a href="https://www.romania-insider.com/dental-holding-acquisition-greece-jan-2026">Romania Insider</a></p>
+    </div>
+    <div class="note">Market context: LevinPro reported physician-group M&amp;A cooled in Q3 2026 on higher financing costs, while TUSK's Q4 report (Oct 14) flagged the Fed's Sept rate rise and new SBA rules as headwinds for buyers &mdash; though DSO appetite stays high amid tight supply.</div>
+
+    <h3 class="subcat">Key-people migrations (leadership / doctors)</h3>
+
+    <div class="item">
+      <h4>DECA Dental Group adds three C-suite leaders</h4>
+      <p>Dallas-based DECA Dental Group appointed Nathan Smith as Chief Operating Officer, Michele Silverman as Chief People Officer and John DeLuna as Chief Marketing Officer. (Reported by trade press; LinkedIn could not be checked directly this session.)</p>
+      <div class="meta-row">
+        <span class="badge partial">Partial</span>
+        <span class="date-tag">Reported Oct 8, 2026</span>
+      </div>
+      <p class="sources">Sources: <a href="https://www.beckersdental.com/executive-moves/deca-dental-group-adds-3-c-suite-leaders/">Becker's</a></p>
+    </div>
+    <div class="note">Becker's published a mid-October roundup of ~10 dental leadership moves, but only the teaser was accessible, so individual names/dates within it are unconfirmed.</div>
+
+    <h3 class="subcat">New lab processes &amp; technologies</h3>
+
+    <div class="item">
+      <h4>Stratasys pushes polychromatic monolithic 3D-printed dentures</h4>
+      <p>Stratasys continued promoting its TrueDent denture ecosystem, including an Oct 16 continuing-education webinar on polychromatic monolithic 3D-printed dentures claiming better fit, occlusal accuracy and throughput. Case studies cite labs printing 500-600 dentures a week on near-fully-digital workflows.</p>
+      <div class="meta-row">
+        <span class="badge partial">Partial</span>
+        <span class="date-tag">Webinar Oct 16, 2026</span>
+      </div>
+      <p class="sources">Sources: <a href="https://www.stratasys.com/en/dental/resources/blog/">Stratasys blog</a> &middot; <a href="https://www.stratasys.com/en/dental/resources/case-studies/">Case studies</a></p>
+    </div>
+
+    <div class="item">
+      <h4>AI design &amp; automation becoming standard in labs</h4>
+      <p>2026 lab guides describe maturing AI categories &mdash; crown design, scan quality control, milling/printing nesting and shade matching &mdash; alongside overnight milling and blank changers. Claimed efficiency gains (time saved per case, lower remake rates) come from trade sources and are not independently verified.</p>
+      <div class="meta-row">
+        <span class="badge partial">Partial</span>
+        <span class="date-tag">2026</span>
+      </div>
+      <p class="sources">Sources: <a href="https://simplelabos.com/blog/ai-tools-dental-lab-automation">SimpleLabOS</a> &middot; <a href="https://www.dentalcrafter.com/resources/ai-s9n5a">Dental Crafters</a></p>
+    </div>
+
+    <h3 class="subcat">Courses: thought leaders, platforms &amp; the international market</h3>
+
+    <div class="item">
+      <h4>Spear Education expands its digital learning platform</h4>
+      <p>Spear Education expanded its online platform in 2026 with individualised and early-career programs and tiered team memberships, and deepened partnerships with Overjet and Align. It markets 1,300+ CE-eligible on-demand lessons, with a one-year membership bundled into eligible workshop registrations.</p>
+      <div class="meta-row">
+        <span class="badge partial">Partial</span>
+        <span class="date-tag">Platform expansion Jan 2026</span>
+      </div>
+      <p class="sources">Sources: <a href="https://www.speareducation.com/about-spear/newsroom/">Spear newsroom</a> &middot; <a href="https://content.speareducation.com/free-spear-online-membership-with-2026-workshop">Spear</a></p>
+    </div>
+
+    <div class="item">
+      <h4>Market read: how English-language online dentistry courses sell abroad</h4>
+      <p>Across major providers, the best-selling online CE topics are implantology and clear aligners, followed by digital dentistry/CAD-CAM, esthetics, endodontics and practice growth. The dominant model is hybrid &mdash; online theory sold as multi-module series (often 8-40 CE credits, a few hundred to several thousand dollars) with hands-on surgical skills upsold in person. A recurring buyer check is CE-credit acceptance, which varies by jurisdiction. No audited market-size report with revenue figures was found.</p>
+      <div class="meta-row">
+        <span class="badge partial">Partial</span>
+        <span class="date-tag">2026 (provider data)</span>
+      </div>
+      <p class="sources">Sources: <a href="https://www.dentaltown.com/onlinece/category/10/implant-dentistry">Dentaltown OnlineCE</a> &middot; <a href="https://instituteofdigitaldentistry.com/aligners-and-nightguards/">Institute of Digital Dentistry</a></p>
+    </div>
+    <div class="top-link"><a href="#top">&uarr; Back to top</a></div>
+  </section>
+
+  <!-- ===================== 2. AI ===================== -->
+  <section class="category" id="ai">
+    <div class="cat-head"><span class="cat-num">2</span><h2>AI</h2></div>
+
+    <h3 class="subcat">News across any domain</h3>
+
+    <div class="item">
+      <h4>OpenAI's GPT models land on Google Cloud (private preview)</h4>
+      <p>Google announced that Google Cloud now hosts OpenAI's GPT models alongside its own Gemini and Anthropic's Claude, making it the first major cloud to carry all three frontier families. The launch cites GPT-6 Astra, GPT-6.1 Sol and GPT-6 Luna in private preview, deepening OpenAI's move beyond Microsoft-exclusive hosting.</p>
+      <div class="meta-row">
+        <span class="badge verified">Verified</span>
+        <span class="date-tag">Oct 21, 2026</span>
+      </div>
+      <p class="sources">Sources: <a href="https://www.cnbc.com/2026/10/21/openai-bring-its-ai-models-to-googles-cloud-expands-beyond-microsoft.html">CNBC</a> &middot; <a href="https://the-decoder.com/google-cloud-now-offers-openai-models-alongside-gemini-and-claude-becoming-the-only-major-provider-with-all-three/">The Decoder</a></p>
+    </div>
+
+    <div class="item">
+      <h4>Google rolls out Gemini "Personal Intelligence" to Android Auto</h4>
+      <p>Google began bringing Gemini's Personal Intelligence to Android Auto, letting the in-car assistant draw on a driver's Gmail, Photos, Calendar, Maps and Search and keep context across trips. Cars with Google built-in follow later; the feature is not coming to Apple CarPlay.</p>
+      <div class="meta-row">
+        <span class="badge verified">Verified</span>
+        <span class="date-tag">Oct 20, 2026</span>
+      </div>
+      <p class="sources">Sources: <a href="https://androidcentral.com/apps-software/android-auto/personal-intelligence-hits-the-road-google-gemini-rollout-android-auto">Android Central</a> &middot; <a href="https://www.androidauthority.com/gemini-personal-intelligence-on-android-auto-3725650/">Android Authority</a></p>
+    </div>
+
+    <div class="item">
+      <h4>Google makes Gemini 4 Argon broadly available with low intro pricing</h4>
+      <p>Google moved its flagship Gemini 4 Argon multimodal model to broad availability with limited-time introductory API pricing of about $2 input / $10 output per million tokens, via the Gemini API, AI Studio and its Antigravity dev environment. The release is framed as a bid to match OpenAI and Anthropic at the frontier.</p>
+      <div class="meta-row">
+        <span class="badge verified">Verified</span>
+        <span class="date-tag">Oct 13, 2026 (unveiled ~Oct 1)</span>
+      </div>
+      <p class="sources">Sources: <a href="https://venturebeat.com/technology/google-makes-gemini-4-argon-broadly-available-with-limited-time-low-api-pricing-of-2-10-per-1m-token">VentureBeat</a> &middot; <a href="https://www.cnbc.com/2026/10/01/google-gemini-4-arrives-as-wall-street-shifts-to-personal-agents.html">CNBC</a></p>
+    </div>
+
+    <h3 class="subcat">What could help a large dental clinic</h3>
+    <div class="note">No dental-specific AI launch or clearance was dated within the last 24-72h. The items below are the most recent verified market developments, provided as context.</div>
+
+    <div class="item">
+      <h4>Pearl adds revenue-cycle management and an "Oral Health Index"</h4>
+      <p>Pearl, reported as the first dental AI cleared for both 2D and 3D radiographs, added an Oral Health Index built on 26M+ X-rays and a revenue-cycle platform aimed at cleaner insurance claims &mdash; directly relevant to a large group's diagnostics and billing. Competitors for multi-site groups include Overjet and VideaHealth.</p>
+      <div class="meta-row">
+        <span class="badge partial">Partial</span>
+        <span class="date-tag">Coverage through mid-2026</span>
+      </div>
+      <p class="sources">Sources: <a href="https://www.beckersdental.com/ai-teledentistry/pearl-vs-videa-vs-overjet-what-3-ai-giants-have-accomplished-in-2026/">Becker's</a></p>
+    </div>
+
+    <div class="item">
+      <h4>Dentsply Sirona's Smart View - Detect (CBCT AI diagnostic aid)</h4>
+      <p>Dentsply Sirona launched Smart View - Detect, an FDA-cleared AI aid for spotting teeth with periapical radiolucencies in CBCT scans, available in the US and Europe. For a clinic running high CBCT volume it can serve as a triage or second-read layer.</p>
+      <div class="meta-row">
+        <span class="badge verified">Verified</span>
+        <span class="date-tag">May 12, 2026</span>
+      </div>
+      <p class="sources">Sources: <a href="https://www.beckersdental.com/dental-technology/49089-3-dental-technologies-earning-fda-clearance.html">Becker's</a></p>
+    </div>
+
+    <div class="item">
+      <h4>AI front-desk / scheduling platforms for practices</h4>
+      <p>Conversational AI receptionists (Heygent, Hemingway, Xcare) handle calls and texts, book appointments and re-engage lapsed patients, integrating with Dentrix, Eaglesoft, Open Dental and Curve Dental. For a large clinic the relevant gains are admin automation and no-show reduction; no launches fell in the freshness window.</p>
+      <div class="meta-row">
+        <span class="badge partial">Partial</span>
+        <span class="date-tag">Mid-2026</span>
+      </div>
+      <p class="sources">Sources: <a href="https://www.drbicuspid.com/clinical/treatment-software/ai/article/15678196/heygent-launches-ai-practice-management-platform">DrBicuspid</a></p>
+    </div>
+    <div class="top-link"><a href="#top">&uarr; Back to top</a></div>
+  </section>
+
+  <!-- ===================== 3. TECHNOLOGY ===================== -->
+  <section class="category" id="tech">
+    <div class="cat-head"><span class="cat-num">3</span><h2>Technology</h2></div>
+
+    <h3 class="subcat">Patents &amp; launches — global</h3>
+
+    <div class="item">
+      <h4>Apple debuts the "Apple Home Collection"</h4>
+      <p>Apple unveiled a smart-home line &mdash; indoor and outdoor cameras, a smart door lock, video doorbell and thermostat, most built with LG &mdash; centred on a new HomeView smart display in countertop and wall-mounted versions. Devices were announced mid-October and reported to ship from mid-November.</p>
+      <div class="meta-row">
+        <span class="badge verified">Verified</span>
+        <span class="date-tag">Oct 13, 2026</span>
+      </div>
+      <p class="sources">Sources: <a href="https://www.engadget.com/2285070/apple-debuts-the-apple-home-collection-of-smart-devices-including-cameras-thermostats-and-door-locks/">Engadget</a> &middot; <a href="https://techcrunch.com/2026/10/06/apple-is-reportedly-partnering-with-lg-to-launch-a-smart-lock-thermostat-and-doorbell/">TechCrunch</a></p>
+    </div>
+
+    <div class="item">
+      <h4>Apple's first touchscreen MacBook reportedly due ~Oct 27</h4>
+      <p>Bloomberg's Mark Gurman reported Apple plans to introduce its first touchscreen laptop, plus a new iPad Mini, on or around October 27. This is reporting rather than a confirmed Apple announcement.</p>
+      <div class="meta-row">
+        <span class="badge unverified">Unverified</span>
+        <span class="date-tag">Event expected Oct 27, 2026</span>
+      </div>
+      <p class="sources">Sources: <a href="https://www.engadget.com/2281839/apple-reportedly-plans-touchscreen-macbook-and-ipad-mini-launch-for-this-month/">Engadget</a></p>
+    </div>
+    <div class="note">No notable, verifiable patent grant or filing (USPTO/WIPO) was confirmed within the last 24-72h.</div>
+
+    <h3 class="subcat">Patents &amp; launches — Romania</h3>
+
+    <div class="item">
+      <h4>Anthropic acquires Opaque, co-founded by Romanian-born Raluca Ada Popa</h4>
+      <p>Anthropic agreed to acquire Opaque, a confidential-computing and AI-security startup that grew out of UC Berkeley's RISELab; co-founders include Romanian-born professor Raluca Ada Popa and Ion Stoica. Terms were undisclosed; the move is read as strengthening Anthropic's enterprise data-security story.</p>
+      <div class="meta-row">
+        <span class="badge verified">Verified</span>
+        <span class="date-tag">Oct 13, 2026</span>
+      </div>
+      <p class="sources">Sources: <a href="https://www.romania-insider.com/romanian-co-founded-tech-company-opaque-acquired-anthropic">Romania Insider</a> &middot; <a href="https://www.constellationr.com/insights/news/anthropic-acquires-opaque">Constellation Research</a></p>
+    </div>
+
+    <div class="item">
+      <h4>Polish AI firm Zowie opens its first Bucharest office</h4>
+      <p>Zowie, a Polish AI customer-service company, is opening its first Romanian office in Bucharest and recruiting sales staff as part of a CEE expansion. It signals a growing AI-services footprint in Romania.</p>
+      <div class="meta-row">
+        <span class="badge partial">Partial</span>
+        <span class="date-tag">Oct 22, 2026</span>
+      </div>
+      <p class="sources">Sources: <a href="https://www.romania-insider.com/business/polish-ai-company-zowie-expands-into-romania-opening">Romania Insider</a></p>
+    </div>
+
+    <div class="item">
+      <h4>How to Web 2026 and the Black Sea AI Gigafactory bid</h4>
+      <p>Romania's flagship How to Web conference (Oct 6-8, Bucharest) drew 200+ investors; cybersecurity startup AISafe Labs won the Spotlight competition with a TechAngels commitment. Separately, Romania is pursuing an EU-call "Black Sea AI Gigafactory" bid, with site selection expected in early 2027.</p>
+      <div class="meta-row">
+        <span class="badge partial">Partial</span>
+        <span class="date-tag">Oct 6-8, 2026</span>
+      </div>
+      <p class="sources">Sources: <a href="https://www.romania-insider.com/how-web-bucharest-conference-2026">Romania Insider</a></p>
+    </div>
+    <div class="note">No new OSIM patent grant or notable Romanian filing was found within the last 24-72h.</div>
+    <div class="top-link"><a href="#top">&uarr; Back to top</a></div>
+  </section>
+
+  <!-- ===================== 4. PSYCHOLOGY ===================== -->
+  <section class="category" id="psychology">
+    <div class="cat-head"><span class="cat-num">4</span><h2>Psychology</h2></div>
+
+    <h3 class="subcat">Adults — a DSM-5-related finding</h3>
+
+    <div class="item">
+      <h4>ADHD self-harm risk peaks before medication starts, not because of it</h4>
+      <p>An international study reported via BMJ Mental Health found self-harm among people with ADHD climbed in roughly the 90 days before medication was initiated and then fell after treatment began, across five health systems. The pattern argues the medication is not the driver &mdash; emerging symptoms likely prompt both the clinical visit and the self-harm. ADHD is a DSM-5 diagnosis.</p>
+      <div class="meta-row">
+        <span class="badge verified">Verified</span>
+        <span class="date-tag">Oct 22, 2026</span>
+      </div>
+      <p class="sources">Sources: <a href="https://medicalxpress.com/news/2026-10-adhd-medication-international.html">MedicalXpress</a> &middot; <a href="https://www.adhdevidence.org/blog/meta-analysis-finds-people-with-adhd-twice-as-likely-to-self-harm">ADHD Evidence (corroborating)</a></p>
+    </div>
+
+    <div class="item">
+      <h4>Several schizophrenia symptoms traced to one weak, slow brain signal</h4>
+      <p>An imaging study (25 patients vs 25 controls, reported in Science Advances) found a single neural signal that was weaker and slower in people with schizophrenia, with larger abnormalities tracking impaired audio-visual timing, disorganised speech and overall severity. It suggests disparate symptoms may share one signalling deficit.</p>
+      <div class="meta-row">
+        <span class="badge unverified">Unverified</span>
+        <span class="date-tag">Oct 22, 2026</span>
+      </div>
+      <p class="sources">Sources: <a href="https://medicalxpress.com/news/2026-10-imaging-links-schizophrenia-symptoms-brain.html">MedicalXpress</a></p>
+    </div>
+
+    <h3 class="subcat">Children — a ~6-year-old's brain (Andrei, b. 2020)</h3>
+
+    <div class="item">
+      <h4>What typically develops around age 6 &mdash; and what to watch for</h4>
+      <p><strong>Developing now:</strong> cause-and-effect reasoning and basic time concepts; the preschool "magical thinking" fades; formal reading and writing begin; attention span and working memory lengthen; a growing theory of mind (understanding others' feelings with guidance). Friendships become real but unstable, and the child is both more independent and, at times, less secure.</p>
+      <p><strong>Watch over the coming year</strong> (raise early at wellness visits if a pattern persists): ongoing trouble with letter sounds/phonics or avoiding reading; persistent difficulty concentrating or settling into school routines; strong school aversion, extreme reactions or recurring stomach/headaches (possible stress signals); ongoing difficulty with dressing, eating or fine-motor tasks. Normal variation is wide &mdash; a repeated pattern matters more than a single instance.</p>
+      <div class="meta-row">
+        <span class="badge verified">Verified</span>
+        <span class="date-tag">Established developmental science</span>
+      </div>
+      <p class="sources">Sources: <a href="https://www.greatschools.org/gk/parenting/health-and-development/developmental-milestones-your-6-year-old-child/">GreatSchools</a> &middot; <a href="https://www.cigna.com/knowledge-center/hw/milestones-for-6-year-olds-ue5723">Cigna/Healthwise</a> &middot; <a href="https://sesameworkshop.org/resources/milestones-your-six-year-old/">Sesame Workshop</a></p>
+    </div>
+
+    <div class="item">
+      <h4>Recent research: genetic links to ADHD, autism and depression shift with age</h4>
+      <p>A study reported in Molecular Psychiatry found the genetic influences on ADHD, autism and depression change across development from childhood to young adulthood, with downstream effects on peer relationships, education and employment.</p>
+      <div class="meta-row">
+        <span class="badge partial">Partial</span>
+        <span class="date-tag">Oct 5, 2026</span>
+      </div>
+      <p class="sources">Sources: <a href="https://www.news-medical.net/news/20261005/Genetic-links-to-ADHD-autism-and-depression-changed-with-age.aspx">News-Medical</a></p>
+    </div>
+    <div class="top-link"><a href="#top">&uarr; Back to top</a></div>
+  </section>
+
+  <!-- ===================== 5. EDUCATION ===================== -->
+  <section class="category" id="education">
+    <div class="cat-head"><span class="cat-num">5</span><h2>Education</h2></div>
+
+    <h3 class="subcat">Education over the next ~20 years vs classical schooling</h3>
+
+    <div class="item">
+      <h4>OECD's four scenarios for schooling to 2040</h4>
+      <p>The OECD's "Back to the Future of Education" sketches four futures: schooling extended (schools keep growing), education outsourced (learning shifts to market/community providers), schools as learning hubs (reinvented, blending physical and virtual), and learn-as-you-go (school-based learning ends, with AI embedding learning in daily life). The OECD frames these as thinking tools, not predictions.</p>
+      <div class="meta-row">
+        <span class="badge verified">Verified</span>
+        <span class="date-tag">OECD reference report</span>
+      </div>
+      <p class="sources">Sources: <a href="https://www.oecd.org/en/publications/back-to-the-future-s-of-education_178ef527-en/full-report.html">OECD</a> &middot; <a href="https://ncee.org/future-scenarios-for-schooling/">NCEE</a></p>
+    </div>
+
+    <div class="item">
+      <h4>UNESCO: AI will reshape, not replace, the teacher's role</h4>
+      <p>UNESCO's essay collection "AI and the Future of Education" frames the next era around ethics, equity and human-machine coexistence, warning of an "AI divide" as roughly one in three people still lack reliable connectivity. Paired with its AI Competency Framework for Teachers, the thesis is a shift to a teacher-AI-student dynamic in which the teacher becomes more of a guide.</p>
+      <div class="meta-row">
+        <span class="badge partial">Partial</span>
+        <span class="date-tag">Sep 2025 report</span>
+      </div>
+      <p class="sources">Sources: <a href="https://social.desa.un.org/ar/node/7985">UN DESA</a> &middot; <a href="https://www.smarttech.com/news/predictions-on-future-of-edtech-2026">SMART Technologies</a></p>
+    </div>
+
+    <div class="item">
+      <h4>Near-term forecasts: AI moves from pilots to routine classroom use</h4>
+      <p>2026 education outlooks converge on AI shifting from experimentation to measured use with clearer guardrails &mdash; short targeted AI tutoring to support (not replace) teachers, districts standardising on one or two approved AI ecosystems, and AI literacy becoming an expected graduate skill. These are near-term predictions rather than a rigorous long-range model.</p>
+      <div class="meta-row">
+        <span class="badge partial">Partial</span>
+        <span class="date-tag">Jan 2026</span>
+      </div>
+      <p class="sources">Sources: <a href="https://www.eschoolnews.com/innovative-teaching/2026/01/01/draft-2026-predictions/">eSchool News</a> &middot; <a href="https://thejournal.com/articles/2026/01/29/tech-outlook-2026-what-education-leaders-expect-this-year.aspx">THE Journal</a></p>
+    </div>
+
+    <h3 class="subcat">How to educate a ~6-year-old (evidence-based)</h3>
+
+    <div class="item">
+      <h4>What the evidence supports for a child Andrei's age</h4>
+      <p>Consensus guidance: keep <strong>unstructured play</strong> central (it supports imagination, decision-making and problem-solving); prioritise <strong>shared reading and rich back-and-forth conversation</strong>, where the interaction is the active ingredient for language and literacy; manage <strong>screens</strong> with daily limits and screen-free zones, noting research that parent-child co-viewing and discussion matter more than raw minutes; and keep <strong>consistent routines</strong> plus plenty of physical activity to help the child adapt to school's demands.</p>
+      <div class="meta-row">
+        <span class="badge verified">Verified</span>
+        <span class="date-tag">Established science (through 2024-2026)</span>
+      </div>
+      <p class="sources">Sources: <a href="https://www.childandfamilydevelopment.com/blog/evidence-based-parenting-behaviors-managing-screentime/">Child &amp; Family Development</a> &middot; <a href="https://researchonline.lse.ac.uk/id/eprint/90280">LSE Research</a></p>
+    </div>
+    <div class="top-link"><a href="#top">&uarr; Back to top</a></div>
+  </section>
+
+  <!-- ===================== 6. MEDICINE ===================== -->
+  <section class="category" id="medicine">
+    <div class="cat-head"><span class="cat-num">6</span><h2>Medicine</h2></div>
+
+    <h3 class="subcat">New discoveries &amp; firsts</h3>
+
+    <div class="item">
+      <h4>Dolutegravir (Tivicay PD) usable for HIV from birth</h4>
+      <p>Trial data (IMPAACT 2023, reported in Lancet HIV) support an FDA decision allowing dolutegravir for infants from birth up to four weeks weighing at least 2 kg, extending its use into the newborn window. In a phase-1 trial of 48 HIV-exposed newborns, drug levels matched adult effective levels with a comparable safety profile.</p>
+      <div class="meta-row">
+        <span class="badge verified">Verified</span>
+        <span class="date-tag">Lancet HIV Oct 22, 2026; FDA Aug 25, 2026</span>
+      </div>
+      <p class="sources">Sources: <a href="https://medicalxpress.com/news/2026-10-international-fda-hiv-drug-newborns.html">MedicalXpress</a> &middot; <a href="https://www.healio.com/news/pediatrics/20260825/fda-extends-approval-of-tivicay-to-treat-newborns-with-hiv">Healio</a></p>
+    </div>
+
+    <div class="item">
+      <h4>First-of-its-kind trial: ultra-low-dose radiation for Parkinson's inflammation</h4>
+      <p>Mayo Clinic launched a trial testing ultra-low, anti-inflammatory doses of radiation therapy for early-stage Parkinson's, using imaging-guided conformal arc therapy over five daily treatments. The single-arm study of about 20 invited participants aims to slow motor-symptom progression at six months.</p>
+      <div class="meta-row">
+        <span class="badge verified">Verified</span>
+        <span class="date-tag">Reported Oct 22, 2026 (trial start Jan 2026)</span>
+      </div>
+      <p class="sources">Sources: <a href="https://medicalxpress.com/news/2026-10-kind-trial-dose-brain-inflammation.html">MedicalXpress</a> &middot; <a href="https://clinicaltrials.gov/study/NCT07218952">ClinicalTrials.gov</a></p>
+    </div>
+
+    <div class="item">
+      <h4>First human bladder transplant shows sustained function (context)</h4>
+      <p>The world's first human bladder transplant (UCLA/USC, operated May 2025 on a 41-year-old) showed normal sensation, spontaneous voiding and full continence with no rejection, and the one-year follow-up reported the patient thriving. Published in The Lancet in June 2026, so this is established rather than a last-48h item.</p>
+      <div class="meta-row">
+        <span class="badge verified">Verified</span>
+        <span class="date-tag">Lancet Jun 23, 2026</span>
+      </div>
+      <p class="sources">Sources: <a href="https://www.uclahealth.org/news/release/ucla-health-study-documents-successful-one-year-outcome">UCLA Health</a> &middot; <a href="https://www.urologytimes.com/view/first-in-human-bladder-transplant-demonstrates-sustained-function-at-6-months">Urology Times</a></p>
+    </div>
+    <div class="note">Other Oct 22 items surfaced via a single reputable aggregator and could not be independently confirmed this session (treat as unverified / likely index lag): a Cas9-nickase gene-editing approach shortening Huntington's CAG repeats in mice; a needle-free jet-injection mRNA vaccine in mice; and Europe's reported first single-incision robotic kidney transplant in Barcelona.</div>
+    <div class="top-link"><a href="#top">&uarr; Back to top</a></div>
+  </section>
+
+  <!-- ===================== 7. ECONOMY ===================== -->
+  <section class="category" id="economy">
+    <div class="cat-head"><span class="cat-num">7</span><h2>Economy</h2></div>
+
+    <h3 class="subcat">Major acquisitions &amp; sales</h3>
+
+    <div class="item">
+      <h4>EQT to acquire Qiagen for ~&euro;10.8 billion</h4>
+      <p>Private-equity firm EQT announced a definitive all-cash takeover offer for diagnostics company Qiagen at &euro;46.50 per share, an enterprise value of roughly &euro;10.8 billion and about a 40% premium. Co-investors include Abu Dhabi's ADIA and CPP Investments; Qiagen's boards recommend acceptance, with closing targeted for mid-2027 subject to a 50%+1 threshold and regulatory clearance.</p>
+      <div class="meta-row">
+        <span class="badge verified">Verified</span>
+        <span class="date-tag">Oct 21, 2026</span>
+      </div>
+      <p class="sources">Sources: <a href="https://www.sec.gov/Archives/edgar/data/0001015820/000110465926117921/tm2628053d1_ex99-1.htm">Qiagen SEC filing</a> &middot; <a href="https://www.gurufocus.com/news/9136561/qiagen-qgen-agrees-to-108-billion-acquisition-by-eqt-at-a-40-premium">GuruFocus</a></p>
+    </div>
+
+    <div class="item">
+      <h4>Salesforce to acquire Braze for ~$5.66 billion</h4>
+      <p>Salesforce signed a definitive agreement to buy customer-engagement platform Braze for about $5.66 billion enterprise value, paying $47.50 per Class A share in cash &mdash; roughly a 58% premium. The all-cash deal has no financing condition and is expected to close in Salesforce's fiscal 2028, subject to a Braze shareholder vote and antitrust approval.</p>
+      <div class="meta-row">
+        <span class="badge verified">Verified</span>
+        <span class="date-tag">Oct 20, 2026</span>
+      </div>
+      <p class="sources">Sources: <a href="https://www.sec.gov/Archives/edgar/data/0001676238/000095010326015850/dp254600_ex9902.htm">Braze 8-K</a> &middot; <a href="https://www.mlex.com/mlex/articles/2540179">MLex</a></p>
+    </div>
+
+    <div class="item">
+      <h4>LSEG to buy credit-data firm Octus for ~$3.5 billion</h4>
+      <p>The London Stock Exchange Group agreed to acquire credit-intelligence provider Octus from Permira for about $3.5 billion, financed with external debt. LSEG casts Octus as complementary to its fixed-income and private-markets data; Octus is expected to generate over $300M revenue in 2026.</p>
+      <div class="meta-row">
+        <span class="badge verified">Verified</span>
+        <span class="date-tag">Oct 22, 2026</span>
+      </div>
+      <p class="sources">Sources: <a href="https://www.bloomberg.com/news/articles/2026-10-22/lseg-agrees-3-5-billion-deal-to-buy-credit-firm-octus">Bloomberg</a> &middot; <a href="https://www.lseg.com/en/investor-relations/regulatory-news/details/17833706">LSEG</a></p>
+    </div>
+
+    <div class="item">
+      <h4>IFM Investors reportedly to take majority of Associated British Ports (~&pound;10bn)</h4>
+      <p>One outlet reported that an IFM-managed fund agreed to buy a 63.9% stake in UK port operator Associated British Ports from CPP Investments and OMERS, valuing ABP at about &pound;10 billion. Other recent reporting still described the auction as a contest among shortlisted bidders, so the "agreed" status is not corroborated.</p>
+      <div class="meta-row">
+        <span class="badge unverified">Unverified</span>
+        <span class="date-tag">Reported Oct 22, 2026</span>
+      </div>
+      <p class="sources">Sources: <a href="https://www.marineinsight.com/uks-largest-port-operator-set-to-get-australian-fund-as-majority-owner-in-reported-10-billion-deal/">Marine Insight</a></p>
+    </div>
+    <div class="note"><strong>Romania (&gt;&euro;1M):</strong> Nothing relevant in the last 24h. (Context: PwC reported Q3 2026 Romanian M&amp;A at ~&euro;2.3B across 93 deals, but no specific transaction was announced Oct 20-23.) &nbsp;<strong>China:</strong> Nothing relevant in the last 24h.</div>
+    <div class="top-link"><a href="#top">&uarr; Back to top</a></div>
+  </section>
+
+  <!-- ===================== 8. POLITICS ===================== -->
+  <section class="category" id="politics">
+    <div class="cat-head"><span class="cat-num">8</span><h2>Politics</h2></div>
+
+    <h3 class="subcat">New leadership appointments</h3>
+
+    <div class="item">
+      <h4>Romania: Luca Niculescu government wins investiture</h4>
+      <p>Parliament approved the new government led by PM-designate Luca Niculescu on Oct 20 by 280 votes to 58, ending months of caretaker rule after the Bolojan cabinet fell in May. The PSD-dominated mixed cabinet was backed by PNL and UDMR but not AUR or USR; career diplomat Dan Neculăescu, former envoy to NATO, becomes Foreign Minister.</p>
+      <div class="meta-row">
+        <span class="badge verified">Verified</span>
+        <span class="date-tag">Oct 20, 2026</span>
+      </div>
+      <p class="sources">Sources: <a href="https://www.wall-street.ro/articol/politica/breaking-news-fum-alb-la-palatul-parlamentului-guvernul-niculescu-a-trecut.html">Wall-Street.ro</a> &middot; <a href="https://www.economica.net/?p=987328">Economica.net</a></p>
+    </div>
+    <div class="note"><strong>EU institutions:</strong> Nothing relevant in the last 24h (the von der Leyen Commission runs to Oct 2029). &nbsp;<strong>USA:</strong> Nothing relevant in the last 24h (no Cabinet-level appointment or Senate confirmation found for Oct 20-23).</div>
+
+    <h3 class="subcat">New laws adopted / entering into force</h3>
+
+    <div class="item">
+      <h4>Romania: Law 202/2026 on Savings and Investment Accounts published</h4>
+      <p>Law no. 202/2026 creating tax-advantaged savings-and-investment accounts (conturi CEI) appeared in Monitorul Oficial no. 865 of Oct 15, 2026. Sources conflict on timing: the header shows Oct 18, but the fiscal effects apply from Jan 1, 2027, with ASF to issue implementing norms within 90 days. Publication is just outside the strict 24-72h window but is the most recent notable law.</p>
+      <div class="meta-row">
+        <span class="badge partial">Partial</span>
+        <span class="date-tag">Published Oct 15, 2026</span>
+      </div>
+      <p class="sources">Sources: <a href="https://www.infodosar.ro/monitorul-oficial/parlamentul/368610-lege-202-2026">Infodosar / Monitorul Oficial</a></p>
+    </div>
+    <div class="note"><strong>EU (EUR-Lex):</strong> Nothing relevant in the last 24h. &nbsp;<strong>USA (Federal Register / Congress):</strong> Nothing relevant in the last 24h (latest notable action was a September stopgap funding bill).</div>
+    <div class="top-link"><a href="#top">&uarr; Back to top</a></div>
+  </section>
+
+  <footer>
+    <p>Daily Briefing &middot; edition of October 23, 2026. Research window: the last 24-72 hours, with a few clearly-dated adjacent items. Summaries are original; confidence labels reflect source corroboration at time of writing. Not professional, medical, legal or financial advice &mdash; verify before acting.</p>
+    <p><a href="../" style="color: var(--link);">Browse the archive &rarr;</a></p>
+  </footer>
+
+</div>
+</body>
+</html>
