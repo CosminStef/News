@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Briefing">
+<meta name="theme-color" content="#0f1115">
+<meta name="description" content="Daily personal news briefing — 24 October 2026">
+<link rel="manifest" href="manifest.json">
+<title>Daily Briefing — 24 October 2026</title>
+<style>
+  :root{
+    --bg:#0f1115; --surface:#171a21; --surface-2:#1e222b;
+    --text:#e7e9ee; --muted:#9aa3b2; --line:#272c37;
+    --accent:#4da3ff; --accent-dim:#2d6db5;
+    --ok:#3fb27f; --ok-bg:#12362a;
+    --warn:#e0a23a; --warn-bg:#3a2e12;
+    --bad:#e06464; --bad-bg:#3a1a1a;
+  }
+  @media (prefers-color-scheme: light){
+    :root:not([data-theme="dark"]){
+      --bg:#f5f6f8; --surface:#ffffff; --surface-2:#eef0f4;
+      --text:#1a1d24; --muted:#5a6473; --line:#dfe3ea;
+      --accent:#1f6fd6; --accent-dim:#9cc4f2;
+      --ok:#1f8a5b; --ok-bg:#e2f3ea;
+      --warn:#9a6b12; --warn-bg:#f6eccf;
+      --bad:#c0392b; --bad-bg:#f6dcd8;
+    }
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55; font-size:17px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:0 16px 64px}
+  header.masthead{
+    padding:32px 0 20px; border-bottom:1px solid var(--line); margin-bottom:8px;
+  }
+  .kicker{
+    font-size:12px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--accent); font-weight:700; margin:0 0 6px;
+  }
+  h1{
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:30px; line-height:1.15; margin:0 0 6px; font-weight:700;
+  }
+  .dateline{color:var(--muted); font-size:14px; margin:0}
+  .intro{
+    background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:14px 16px; margin:20px 0; font-size:14.5px; color:var(--muted);
+  }
+  .intro strong{color:var(--text)}
+  nav.toc{
+    background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:14px 16px; margin:20px 0 28px;
+  }
+  nav.toc h2{font-size:13px; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); margin:0 0 10px}
+  nav.toc ol{margin:0; padding-left:20px; columns:2; column-gap:24px}
+  @media (max-width:480px){ nav.toc ol{columns:1} }
+  nav.toc li{margin:4px 0; break-inside:avoid}
+  nav.toc a{color:var(--text); text-decoration:none}
+  nav.toc a:hover{color:var(--accent)}
+  section.cat{margin:36px 0 0; scroll-margin-top:16px}
+  h2.cat-title{
+    font-family:Georgia,serif; font-size:23px; margin:0 0 4px;
+    padding-bottom:8px; border-bottom:2px solid var(--accent);
+    display:flex; align-items:baseline; gap:10px;
+  }
+  h2.cat-title .num{color:var(--accent); font-size:16px; font-weight:700}
+  h3.sub{
+    font-size:15px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--muted); margin:24px 0 10px; font-weight:700;
+  }
+  .item{
+    background:var(--surface); border:1px solid var(--line);
+    border-radius:12px; padding:14px 16px; margin:12px 0;
+  }
+  .item h4{font-size:17.5px; margin:0 0 7px; line-height:1.3}
+  .item p{margin:0 0 10px; font-size:15.5px}
+  .meta{display:flex; flex-wrap:wrap; align-items:center; gap:8px; font-size:13px}
+  .badge{
+    display:inline-block; font-size:11.5px; font-weight:700; letter-spacing:.03em;
+    padding:2px 9px; border-radius:999px; text-transform:uppercase;
+  }
+  .b-ok{background:var(--ok-bg); color:var(--ok)}
+  .b-warn{background:var(--warn-bg); color:var(--warn)}
+  .b-bad{background:var(--bad-bg); color:var(--bad)}
+  .date-tag{color:var(--muted)}
+  .srcs{margin-top:8px; font-size:13px}
+  .srcs a{color:var(--accent); text-decoration:none; word-break:break-word}
+  .srcs a:hover{text-decoration:underline}
+  .srcs .label{color:var(--muted); margin-right:4px}
+  .nothing{
+    color:var(--muted); font-style:italic; font-size:15px;
+    padding:10px 16px; border-left:3px solid var(--line); margin:12px 0;
+  }
+  .note{font-size:13.5px; color:var(--muted); margin:8px 0 0}
+  footer{
+    margin-top:48px; padding-top:20px; border-top:1px solid var(--line);
+    font-size:13px; color:var(--muted);
+  }
+  footer a{color:var(--accent); text-decoration:none}
+  .toplink{display:inline-block; margin-top:10px; font-size:12.5px; color:var(--muted); text-decoration:none}
+  .toplink:hover{color:var(--accent)}
+  .archive-link{
+    display:inline-block; margin-top:14px; padding:8px 14px;
+    background:var(--surface-2); border:1px solid var(--line); border-radius:8px;
+    color:var(--text); text-decoration:none; font-size:14px; font-weight:600;
+  }
+  .archive-link:hover{border-color:var(--accent); color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead" id="top">
+    <p class="kicker">Personal Daily Briefing</p>
+    <h1>The Morning Briefing</h1>
+    <p class="dateline">Saturday, 24 October 2026 · research window: 22–24 Oct 2026</p>
+    <a class="archive-link" href="arhiva/">📁 Archive</a>
+  </header>
+
+  <div class="intro">
+    <strong>How to read this.</strong> Each item carries a confidence badge —
+    <span class="badge b-ok">Verified</span> (two or more independent sources agree),
+    <span class="badge b-warn">Partial</span> (corroborated but with gaps or a disputed date),
+    <span class="badge b-bad">Unverified</span> (single source only). Summaries are written in-house, not copied.
+    <br><br>
+    <strong>Method note.</strong> Direct page-fetching was unavailable this cycle, so verification rests on
+    cross-checked web-search results rather than reads of the primary documents. Genuinely fresh items inside the
+    strict 24–48h window were thin in several sections; where a strong story sits a few days outside it, the exact
+    date is shown so you can judge recency. Nothing here is invented — items without a source were dropped.
+  </div>
+
+  <nav class="toc" aria-label="Table of contents">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#dental">Dental</a></li>
+      <li><a href="#ai">AI</a></li>
+      <li><a href="#tech">Technology</a></li>
+      <li><a href="#psychology">Psychology</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#medicine">Medicine</a></li>
+      <li><a href="#economy">Economy</a></li>
+      <li><a href="#politics">Politics</a></li>
+    </ol>
+  </nav>
+
+  <!-- ===================== 1. DENTAL ===================== -->
+  <section class="cat" id="dental">
+    <h2 class="cat-title"><span class="num">01</span> Dental</h2>
+
+    <h3 class="sub">Medical discoveries &amp; research</h3>
+    <p class="nothing">Nothing relevant in the last 24h — no dental research cleanly dated 22–24 Oct could be confirmed. Recent context below (older than 48h).</p>
+    <div class="item">
+      <h4>Omega-3 plus low-dose aspirin tested against severe periodontitis</h4>
+      <p>A yearlong trial of 109 patients reported that omega-3 fatty acids combined with low-dose aspirin improved outcomes in severe periodontitis, suggesting an inexpensive adjunct to standard periodontal care. The result is early and single-trial; larger confirmation is needed.</p>
+      <div class="meta"><span class="badge b-warn">Partial</span><span class="date-tag">≈ 1 Sep 2026</span></div>
+      <div class="srcs"><span class="label">Source:</span><a href="https://medicaldialogues.in/mdtv/medical-news-today/medical-bulletin-01september2026-178356">medicaldialogues.in</a></div>
+    </div>
+    <div class="item">
+      <h4>Tooth-regrowth drug TRG035 advances in children</h4>
+      <p>Japan's Toregem Biopharma continues early-phase (IIa) testing of TRG035, an antibody therapy aimed at regrowing teeth in children with congenital tooth agenesis, with pre-Series C financing noted in mid-2026. The approach remains investigational and years from clinical use.</p>
+      <div class="meta"><span class="badge b-warn">Partial</span><span class="date-tag">financing ≈ May 2026</span></div>
+      <div class="srcs"><span class="label">Source:</span><a href="https://futurism.com/health-medicine/plans-accelerated-human-trials-tooth-regeneration.md">futurism.com</a></div>
+    </div>
+
+    <h3 class="sub">New technologies (implants, scanners, software)</h3>
+    <div class="item">
+      <h4>Align's iTero interoperability antitrust claims revived on appeal</h4>
+      <p>The US Ninth Circuit partly reversed a lower court and revived Sherman Act monopolization claims over Align Technology's 2017 move to cut iTero interoperability with 3Shape TRIOS scanners, sending the class case back to a San Francisco district court. The dental-trade pickup of the ruling landed around 22 October.</p>
+      <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">ruling 5 Oct 2026 · coverage ≈ 22 Oct</span></div>
+      <div class="srcs"><span class="label">Sources:</span><a href="https://www.pymnts.com/cpi-posts/invisalign-maker-must-face-renewed-antitrust-litigation/">pymnts.com</a> · <a href="https://www.leagle.com/decision/infco20261005080">leagle.com</a></div>
+    </div>
+    <div class="item">
+      <h4>SprintRay unveils its first intraoral scanner, "Foundation," plus ScanOS</h4>
+      <p>At its 3DNext 2026 event in Miami, SprintRay introduced a branded intraoral scanner and ScanOS software, extending the company from chairside 3D printing into a full scan-to-print digital workflow; new NanoPrint and NanoWash hardware was also shown. Reported by a single trade outlet so far.</p>
+      <div class="meta"><span class="badge b-warn">Partial</span><span class="date-tag">≈ 12 Oct 2026</span></div>
+      <div class="srcs"><span class="label">Source:</span><a href="https://instituteofdigitaldentistry.com/news/sprintray-3dnext-2026-new-nanoprint-nanowash-foundation-scanner-gc-gradia-premi-and-more/">instituteofdigitaldentistry.com</a></div>
+    </div>
+    <div class="item">
+      <h4>Three dental technologies cleared by the FDA in 2026</h4>
+      <p>A trade roundup lists 3Shape's Dx AI platform, Orca Dental AI's orthodontic 3D imaging, and a first-of-its-kind dental MRI among FDA clearances this year. Individual clearance dates were not shown and could not be pinned to the current window.</p>
+      <div class="meta"><span class="badge b-bad">Unverified</span><span class="date-tag">dates unconfirmed</span></div>
+      <div class="srcs"><span class="label">Source:</span><a href="https://www.beckersdental.com/dental-technology/49089-3-dental-technologies-earning-fda-clearance.html">beckersdental.com</a></div>
+    </div>
+
+    <h3 class="sub">New clinic processes (call centre, patient care, SOP)</h3>
+    <p class="nothing">Nothing relevant in the last 24h — only undated vendor marketing (AI front-desk / missed-call capture services) surfaced, which does not qualify as dated news.</p>
+
+    <h3 class="sub">Clinic sales &amp; acquisitions</h3>
+    <div class="item">
+      <h4>Heartland Dental affiliates with Foundation Dental Partners</h4>
+      <p>The largest US DSO added Foundation Dental Partners — a doctor-led group of 33 supported practices across Georgia, Tennessee, South Carolina and Kentucky — bringing Heartland to roughly 3,200 doctors and about 1,960 locations across 39 states plus DC. Terms were not disclosed; the affiliation closed on 2 October.</p>
+      <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">closed 2 Oct 2026</span></div>
+      <div class="srcs"><span class="label">Sources:</span><a href="https://www.beckersdental.com/dso-dpms/heartland-dental-affiliates-with-foundation-dental-partners/">beckersdental.com</a> · <a href="https://www.ropesgray.com/en/news-and-events/news/2026/10/ropes-gray-advised-heartland-dental-in-its-affiliation-with-foundation-dental-partners">ropesgray.com</a></div>
+    </div>
+    <div class="item">
+      <h4>Mid-Atlantic Dental Partners acquires DentalOne Partners</h4>
+      <p>An all-cash acquisition reportedly lifts the combined group above 240 affiliated offices across 18 states. The year was not fully confirmable from available snippets, and separate reporting of a Western Dental move on Mid-Atlantic adds some uncertainty to the corporate picture.</p>
+      <div class="meta"><span class="badge b-warn">Partial</span><span class="date-tag">report 21 Oct 2026</span></div>
+      <div class="srcs"><span class="label">Source:</span><a href="https://www.beckersdental.com/dso-dpms/mid-atlantic-dental-acquires-dentalone/">beckersdental.com</a></div>
+    </div>
+    <div class="item">
+      <h4>TUSK Q4 2026 dental-market report: tighter deal financing</h4>
+      <p>The quarterly report flags continued DSO expansion alongside stricter lending — lenders now commonly requiring 1.25x debt-service coverage and quality-of-earnings reviews on deals above $3M — and projects roughly 17% global DSO growth. Useful context for anyone weighing a clinic sale or acquisition.</p>
+      <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">14 Oct 2026</span></div>
+      <div class="srcs"><span class="label">Sources:</span><a href="https://www.prnewswire.com/news-releases/tusk-practice-sales-releases-q4-2026-dental-market-report-on-dso-expansion-tighter-financing-and-exit-planning-302908646.html">prnewswire.com</a> · <a href="https://www.beckersdental.com/dso-dpms/whats-driving-buyer-behavior-in-the-dso-market/">beckersdental.com</a></div>
+    </div>
+    <p class="note"><strong>Romania:</strong> Nothing relevant in the last 24h — no Romanian clinic transaction was dated to the window. Live background: Dental Elite (ACP Credit–backed) is opening clinics in Voluntari, Ploiești and Buzău toward ~20 by 2030; Dental Holding is pursuing regional acquisitions (Hungary, Croatia, Greece) toward €110–130M revenue.</p>
+
+    <h3 class="sub">Key-people moves (leadership / doctors)</h3>
+    <p class="nothing">Nothing could be verified as a key-people move inside 22–24 Oct. LinkedIn was not reachable this cycle to confirm change dates.</p>
+    <div class="item">
+      <h4>Named moves circulating (dates unconfirmed)</h4>
+      <p>Trade roundups list Kevin Mosher as incoming CEO of National Dentex Labs, and — for the wider group — Straumann's Christopher Norbye as CEO effective 1 December. None of these could be confirmed as occurring within the current 24–48h window.</p>
+      <div class="meta"><span class="badge b-bad">Unverified</span><span class="date-tag">window unconfirmed</span></div>
+      <div class="srcs"><span class="label">Source:</span><a href="https://www.beckersdental.com/executive-moves/6-dental-c-suite-moves-in-30-days">beckersdental.com</a></div>
+    </div>
+
+    <h3 class="sub">New lab processes &amp; technologies</h3>
+    <p class="nothing">Nothing relevant in the last 24h for lab process/tech launches.</p>
+    <div class="item">
+      <h4>Standard Dental Labs acquires Dr. Tooth LLC (Sheen Dental Laboratory)</h4>
+      <p>Standard Dental Labs bought substantially all operating assets of Dr. Tooth, effective 2 October, paying cash plus stock with an earn-out tied to retained customer revenue. The only clearly dated October lab-sector transaction found.</p>
+      <div class="meta"><span class="badge b-warn">Partial</span><span class="date-tag">effective 2 Oct 2026</span></div>
+      <div class="srcs"><span class="label">Source:</span><a href="https://www.rttnews.com/3696236/standard-dental-labs-acquires-dr-tooth-llc.aspx">rttnews.com</a></div>
+    </div>
+
+    <h3 class="sub">Courses &amp; the English-language online market</h3>
+    <div class="item">
+      <h4>How English-language dental CE is sold abroad — three dominant models</h4>
+      <p>Providers converge on three go-to-market models: all-access subscription libraries with live-streamed CE (e.g. The Dawson Academy), à-la-carte on-demand bundles bought individually or packaged (e.g. the ADA's 2026 CDT coding series), and blended microlearning plus hands-on workshops (e.g. Dental ED Global). Topics that reliably sell skew to compliance and coding (opioid/MATE Act training, CDT coding, sedation-complication management) and to clinical staples (occlusion, implants, TMD, CBCT, pediatric airway).</p>
+      <div class="meta"><span class="badge b-warn">Partial</span><span class="date-tag">market synthesis · provider data</span></div>
+      <div class="srcs"><span class="label">Sources:</span><a href="https://thedawsonacademy.com/online-courses/live-stream-courses/">thedawsonacademy.com</a> · <a href="https://www.ada.org/en/education-careers/continuing-education">ada.org</a> · <a href="https://academy.dentaledglobal.com/tag/ada-ce-credits/">dentaledglobal.com</a></div>
+      <p class="note">No independent (non-provider) bestseller ranking or hard cross-country enrolment/pricing data could be verified — treat sales claims as self-reported.</p>
+    </div>
+    <a class="toplink" href="#top">↑ Contents</a>
+  </section>
+
+  <!-- ===================== 2. AI ===================== -->
+  <section class="cat" id="ai">
+    <h2 class="cat-title"><span class="num">02</span> AI</h2>
+
+    <h3 class="sub">Developments worth noting</h3>
+    <div class="item">
+      <h4>Nvidia launches a 64GB DGX Spark desktop AI system</h4>
+      <p>Nvidia put a 64GB version of its DGX Spark desktop AI computer on sale on 23 October at $4,999 through partners including Dell, HP, Asus and Acer; it keeps the GB10 Grace Blackwell superchip and can run models up to roughly 100B parameters locally, with two units pairable. The existing 128GB model's price rose to $6,950 on cited memory-supply constraints.</p>
+      <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">on sale 23 Oct 2026</span></div>
+      <div class="srcs"><span class="label">Sources:</span><a href="https://www.guru3d.com/story/idia-launches-64gb-dgx-spark-desktop-ai-system-for/">guru3d.com</a> · <a href="https://aiweekly.co/alerts/nvidia-launches-64gb-dgx-spark-at-4999-as-128gb-hits-6950">aiweekly.co</a></div>
+    </div>
+    <div class="item">
+      <h4>Agility Robotics standardises its Digit 5 humanoid on Nvidia IGX Thor</h4>
+      <p>Agility Robotics said the general-availability version of its Digit 5 warehouse humanoid will use Nvidia's IGX Thor as its exclusive onboard compute, consolidating the robot's AI processing and extending a joint safety collaboration. The announcement reached investors via a company press release reproduced in an SEC filing.</p>
+      <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">22 Oct 2026</span></div>
+      <div class="srcs"><span class="label">Sources:</span><a href="https://www.sec.gov/Archives/edgar/data/0002074973/000121390026111719/ea0309402-425_churchill11.htm">sec.gov</a> · <a href="https://www.newsbytesapp.com/news/science/agility-robotics-unveils-digit-5-humanoid-to-improve-warehouse-safety/tldr">newsbytesapp.com</a></div>
+    </div>
+    <div class="item">
+      <h4>OpenAI reportedly raising ~$30B ahead of an IPO</h4>
+      <p>Multiple outlets reported on 22 October that OpenAI is working on a new private round of up to about $30 billion at a valuation variously cited between $1.25 trillion and $1.4 trillion. The figures conflict across sources and the talks are described as early, so terms could change.</p>
+      <div class="meta"><span class="badge b-warn">Partial</span><span class="date-tag">22 Oct 2026</span></div>
+      <div class="srcs"><span class="label">Sources:</span><a href="https://techcrunch.com/2026/10/22/openai-working-on-new-30b-raise-at-1-25t-valuation-ahead-of-ipo/">techcrunch.com</a> · <a href="https://www.arise.tv/openai-eyes-30bn-funding-round-as-investors-push-valuation-toward-1-4tn/">arise.tv</a></div>
+    </div>
+
+    <h3 class="sub">What could help a large dental clinic</h3>
+    <div class="item">
+      <h4>Overjet launches "Ivy," an AI dental-insurance coordinator</h4>
+      <p>Overjet introduced Ivy, pitched as an AI that verifies patient eligibility and benefits, checks coverage limits and exclusions, phones insurers when data is missing, and combines findings with practice fees to produce cost estimates — squarely aimed at the insurance-admin and call-centre load of a large practice. The launch date is disputed (press dateline ~19 Oct) and coverage is largely the vendor's own.</p>
+      <div class="meta"><span class="badge b-warn">Partial</span><span class="date-tag">≈ 19 Oct 2026</span></div>
+      <div class="srcs"><span class="label">Sources:</span><a href="https://www.healthcaredive.com/press-release/20260922-overjet-introduces-ivy-an-ai-insurance-coordinator-and-the-first-of-its-ai/">healthcaredive.com</a> · <a href="https://www.beckersdental.com/ai-teledentistry/43636-overjet-launches-next-advancement-of-its-insurance-ai-platform.html">beckersdental.com</a></div>
+    </div>
+    <div class="item">
+      <h4>AI-assisted implant treatment-planning moves into cloud workflows</h4>
+      <p>A market report highlights implant treatment-planning software integrating with cloud collaboration platforms (e.g. Straumann AXS) and AI-assisted planning across a connected digital ecosystem — the diagnostic/planning layer most relevant to a high-volume implant practice. This is a market-research release rather than a specific product launch.</p>
+      <div class="meta"><span class="badge b-warn">Partial</span><span class="date-tag">22 Oct 2026</span></div>
+      <div class="srcs"><span class="label">Source:</span><a href="https://globenewswire.com/news-release/2026/10/22/3386511/28124/en/global-dental-implant-treatment-planning-software-market-size-share-and-forecast-2026-2032-digital-dentistry-and-gp-adoption-drive-3-4-cagr-toward-40-million.html">globenewswire.com</a></div>
+    </div>
+    <a class="toplink" href="#top">↑ Contents</a>
+  </section>
+
+  <!-- ===================== 3. TECHNOLOGY ===================== -->
+  <section class="cat" id="tech">
+    <h2 class="cat-title"><span class="num">03</span> Technology</h2>
+
+    <h3 class="sub">Product launches — global</h3>
+    <div class="item">
+      <h4>Apple's first foldable, the iPhone Duo, goes on sale</h4>
+      <p>Apple's debut foldable launched on 23 October starting at $1,999 and reportedly slipped into backorder quickly, with some shipping estimates sliding into January 2027. A "Made for iPhone Duo" label was introduced for apps optimised to the foldable form factor.</p>
+      <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">23 Oct 2026</span></div>
+      <div class="srcs"><span class="label">Sources:</span><a href="https://www.macrumors.com/2026/10/13/apple-october-upcoming-products/">macrumors.com</a> · <a href="https://9to5mac.com/2026/10/15/apple-is-about-to-kick-off-four-weeks-straight-of-new-product-launches/">9to5mac.com</a></div>
+    </div>
+
+    <h3 class="sub">Product launches — Romania</h3>
+    <div class="item">
+      <h4>iPhone Duo reaches Romania on a staggered schedule</h4>
+      <p>Romania was not in the first global wave: retailer listings showed only the top 2TB variant available around 23 October (≈19,999 lei), with 512GB and lower configurations pushed to mid/late November. There was no official Apple or carrier on-sale confirmation for the country.</p>
+      <div class="meta"><span class="badge b-warn">Partial</span><span class="date-tag">23 Oct 2026</span></div>
+      <div class="srcs"><span class="label">Sources:</span><a href="https://www.mobilissimo.ro/stiri-telefoane/iphone-duo-se-lasa-asteptat-si-in-romania-ce-termene-de-livrare-apar-la-precomanda">mobilissimo.ro</a> · <a href="https://www.pcmagazin.ro/stirile-zilei-despre-tehnologie-23-octombrie-2026/">pcmagazin.ro</a></div>
+    </div>
+
+    <h3 class="sub">New patents</h3>
+    <p class="nothing">Nothing relevant in the last 24h — no notable patent grant (global) dated to the window could be confirmed.</p>
+    <p class="nothing">Romania (OSIM): Nothing relevant in the last 24h.</p>
+    <a class="toplink" href="#top">↑ Contents</a>
+  </section>
+
+  <!-- ===================== 4. PSYCHOLOGY ===================== -->
+  <section class="cat" id="psychology">
+    <h2 class="cat-title"><span class="num">04</span> Psychology</h2>
+
+    <h3 class="sub">Adults — new, evidence-based findings</h3>
+    <div class="item">
+      <h4>Adult ADHD linked to markedly higher later-life dementia risk</h4>
+      <p>A University of Pittsburgh team analysing 187,341 adults aged 50+ in the NIH "All of Us" database found 6.7% of those with ADHD developed dementia or cognitive impairment versus 3.4% without, an adjusted risk more than fourfold higher. The study is observational and does not prove causation, but the association persisted even with an 8-year gap between ADHD diagnosis and cognitive decline. <em>(DSM-5: ADHD.)</em></p>
+      <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">JAMA Psychiatry · 7 Oct 2026</span></div>
+      <div class="srcs"><span class="label">Sources:</span><a href="https://www.upmc.com/media/news/100726-adult-adhd-dementia-risk-study">upmc.com</a> · <a href="https://www.healio.com/news/neurology/20261016/adhd-associated-with-higher-risk-for-cognitive-impairment-dementia-in-older-adults">healio.com</a></div>
+    </div>
+    <div class="item">
+      <h4>Loneliness and isolation cost years of mental-health-free life</h4>
+      <p>A Tulane-led analysis of 277,489 UK Biobank adults found that people who were both lonely and socially isolated lost substantial disease-free years — men about 5.8 years free of mental disorders, women about 3.7. A healthier lifestyle offset isolation's physical-disease effect but not the mental-health risk tied to loneliness. <em>(DSM-5: depressive &amp; anxiety disorders.)</em></p>
+      <div class="meta"><span class="badge b-warn">Partial</span><span class="date-tag">Nature Communications · Aug–Sep 2026</span></div>
+      <div class="srcs"><span class="label">Sources:</span><a href="https://nautil.us/loneliness-and-social-isolation-can-rob-men-of-six-disease-free-years-of-their-lives-1285210/">nautil.us</a> · <a href="https://www.news-medical.net/news/20260922/loneliness-and-social-isolation-cost-people-years-of-healthy-life.aspx">news-medical.net</a></div>
+    </div>
+
+    <h3 class="sub">Children — the ~6-year-old brain (for Andrei, b. 2020)</h3>
+    <div class="item">
+      <h4>Executive function surges as the prefrontal cortex matures</h4>
+      <p>Between about five and seven, the prefrontal cortex and its networks mature quickly, driving gains in working memory, impulse control and sustained attention — the core of "school readiness." Practically, this is the year sitting still, waiting turns and following multi-step instructions become realistic expectations.</p>
+      <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">developmental reference</span></div>
+      <div class="srcs"><span class="label">Source:</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4308416">pmc.ncbi.nlm.nih.gov</a></div>
+    </div>
+    <div class="item">
+      <h4>Theory of mind consolidates — "knowing about knowing"</h4>
+      <p>By around age six children reliably reason about others' beliefs and perspectives, including understanding that people can be mistaken — a shift tied to prefrontal activity. Expect better perspective-taking, more complex cooperative play, and the start of genuine empathy-based sharing.</p>
+      <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">developmental reference</span></div>
+      <div class="srcs"><span class="label">Source:</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3073354">pmc.ncbi.nlm.nih.gov</a></div>
+    </div>
+    <div class="item">
+      <h4>Literacy and numeracy leap; magical thinking fades — and what to watch</h4>
+      <p>Most six-year-olds begin decoding and reading, grasp counting and the concept of ten, and reason more about cause and effect while shedding preschool "magical thinking"; motor skills and friendships grow in importance. Flag for a paediatrician any developmental regression, persistent trouble following simple instructions, ongoing anxiety or aggression, social withdrawal, or vision/hearing concerns — the CDC milestones are "most children" guides, not a screening test.</p>
+      <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">developmental reference</span></div>
+      <div class="srcs"><span class="label">Sources:</span><a href="https://www.cdc.gov/ncbddd/actearly/index.html">cdc.gov</a> · <a href="https://sesameworkshop.org/resources/milestones-your-six-year-old/">sesameworkshop.org</a></div>
+    </div>
+    <a class="toplink" href="#top">↑ Contents</a>
+  </section>
+
+  <!-- ===================== 5. EDUCATION ===================== -->
+  <section class="cat" id="education">
+    <h2 class="cat-title"><span class="num">05</span> Education</h2>
+
+    <h3 class="sub">The next 20 years vs. the classical school</h3>
+    <div class="item">
+      <h4>OECD's four scenarios for schooling to 2040</h4>
+      <p>The OECD's "Back to the Future of Education" sketches four futures: schooling extended (formal schools keep expanding with shared digital environments); education outsourced (handed to market/external providers); schools as community learning hubs; and learn-as-you-go (school-based learning dissolves into continuous, tech-mediated learning). The OECD stresses these are foresight scenarios, not predictions.</p>
+      <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">OECD · reference</span></div>
+      <div class="srcs"><span class="label">Source:</span><a href="https://www.oecd.org/en/publications/back-to-the-future-s-of-education_178ef527-en/full-report.html">oecd.org</a></div>
+    </div>
+    <div class="item">
+      <h4>Open University: lifelong learning becomes the default</h4>
+      <p>The OU's Future of Learning Report 2026 argues education must restructure around fast AI-driven change and the net-zero transition, citing projections that AI could affect up to ~40% of jobs and that ~39% of existing skill sets will change by 2030. Its conclusion: flexible, lifelong learning is now essential rather than optional.</p>
+      <div class="meta"><span class="badge b-warn">Partial</span><span class="date-tag">2026</span></div>
+      <div class="srcs"><span class="label">Source:</span><a href="https://iet.open.ac.uk/future-of-learning">iet.open.ac.uk</a></div>
+    </div>
+
+    <h3 class="sub">Educating a child of Andrei's age (~6)</h3>
+    <div class="item">
+      <h4>Read aloud daily — through at least kindergarten</h4>
+      <p>The AAP's 2024 policy statement — its first literacy update in a decade — recommends shared reading from infancy and continuing through kindergarten to build language, school readiness and brain development. Practically: keep books in the bedtime routine and let the child choose at the library.</p>
+      <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">AAP · reference</span></div>
+      <div class="srcs"><span class="label">Source:</span><a href="https://www.aap.org/en/news-room/news-releases/aap/2024/american-academy-of-pediatrics-promotes-shared-reading-starting-in-infancy-as-a-positive-parenting-practice-with-lifelong-benefits">aap.org</a></div>
+    </div>
+    <div class="item">
+      <h4>Use structured and pretend play to build self-regulation</h4>
+      <p>Studies in five- and six-year-olds find play-based programs (pretend play, play-based mindfulness) improve emotion understanding, reduce aggressive responses and strengthen executive function. Samples are modest, so the evidence shows play helps — not that it beats direct instruction.</p>
+      <div class="meta"><span class="badge b-warn">Partial</span><span class="date-tag">reference</span></div>
+      <div class="srcs"><span class="label">Source:</span><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12840435/">ncbi.nlm.nih.gov</a></div>
+    </div>
+    <div class="item">
+      <h4>Protect sleep and active play; limit non-educational screens</h4>
+      <p>Paediatric guidance pairs daily reading with limits on recreational screen time and ample active play; research has found reading time and screen time displace each other in early childhood. Prioritise routines, outdoor play and conversation over passive screens.</p>
+      <div class="meta"><span class="badge b-warn">Partial</span><span class="date-tag">reference</span></div>
+      <div class="srcs"><span class="label">Source:</span><a href="https://www.physiciansweekly.com/aap-why-literacy-promotion-is-crucial-during-clinical-visits/">physiciansweekly.com</a></div>
+    </div>
+    <a class="toplink" href="#top">↑ Contents</a>
+  </section>
+
+  <!-- ===================== 6. MEDICINE ===================== -->
+  <section class="cat" id="medicine">
+    <h2 class="cat-title"><span class="num">06</span> Medicine</h2>
+
+    <div class="item">
+      <h4>First personalised mRNA cancer vaccine passes a Phase 3 trial (melanoma)</h4>
+      <p>In the Phase 3 INTerpath-001 trial (over 1,100 high-risk resected-melanoma patients), Moderna and Merck's individualised neoantigen vaccine intismeran plus pembrolizumab cut the risk of recurrence or death by 42% versus pembrolizumab alone. Billed as the first positive Phase 3 for an individualised neoantigen therapy and the first mRNA cancer treatment to succeed in a late-stage trial; it is not yet FDA-approved and overall-survival data are still maturing.</p>
+      <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">ESMO · 23 Oct 2026</span></div>
+      <div class="srcs"><span class="label">Sources:</span><a href="https://www.scimex.org/newsfeed/expert-reaction-melanoma-vaccine-reduces-death-or-cancer-recurrence-by-42-percent">scimex.org</a> · <a href="https://www.ajmc.com/view/merck-moderna-cancer-vaccine-cuts-melanoma-recurrence-risk-by-42-">ajmc.com</a></div>
+    </div>
+    <div class="item">
+      <h4>A new immune pathway against small-cell lung cancer</h4>
+      <p>WEHI researchers reported that gamma-delta T cells — a previously overlooked immune cell type — can detect and kill small-cell lung cancer even when the tumour is "invisible" to the cells current immunotherapies rely on. Patients with more of these cells fared better, and existing drugs might boost their activity, pointing to a new avenue for one of the deadliest cancers.</p>
+      <div class="meta"><span class="badge b-warn">Partial</span><span class="date-tag">Cancer Cell · 14–16 Oct 2026</span></div>
+      <div class="srcs"><span class="label">Source:</span><a href="https://www.news-medical.net/news/20261014/WEHI-study-reveals-a-new-immune-pathway-for-fighting-small-cell-lung-cancer.aspx">news-medical.net</a></div>
+    </div>
+    <div class="item">
+      <h4>Human cells "de-aged" in the lab</h4>
+      <p>University of Bonn researchers converted blood-cell precursors from an 80-year-old donor directly into neural stem cells whose epigenetic age measured below 20, with the rejuvenation occurring gradually through the conversion. It is a laboratory research model — for example for studying Alzheimer's — not a treatment.</p>
+      <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">Aging Cell · 9 Oct 2026</span></div>
+      <div class="srcs"><span class="label">Sources:</span><a href="https://www.uni-bonn.de/en/news/211-2026">uni-bonn.de</a> · <a href="https://www.news-medical.net/news/20261009/Bonn-researchers-successfully-rejuvenate-human-cells-in-a-test-tube.aspx">news-medical.net</a></div>
+    </div>
+    <div class="item">
+      <h4>Exercise linked to slower Parkinson's progression</h4>
+      <p>A Neurology study following 294 people with mild-to-moderate Parkinson's for up to seven years found that higher weekly physical activity tracked with markedly slower cognitive and motor decline, with benefit appearing to plateau above roughly eight hours a week. The data are observational and based on self-reported activity.</p>
+      <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">Neurology · 7 Oct 2026</span></div>
+      <div class="srcs"><span class="label">Sources:</span><a href="https://www.uc.edu/news/articles/2026/09/n21434479.html">uc.edu</a> · <a href="https://www.powershealth.org/about-us/newsroom/health-library/2026/10/08/exercise-can-slow-parkinsons-progression-study-says">powershealth.org</a></div>
+    </div>
+    <div class="item">
+      <h4>2026 Nobel Prize in Medicine goes to optogenetics</h4>
+      <p>Karl Deisseroth, Peter Hegemann and Georg Nagel shared the prize for discoveries on light-gated ion channels and optogenetics — using light to switch individual neurons on and off. The technique is now central to neuroscience, with potential for restoring vision and treating brain disorders.</p>
+      <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">announced 5 Oct 2026</span></div>
+      <div class="srcs"><span class="label">Sources:</span><a href="https://www.nobelprize.org/prizes/medicine/2026/">nobelprize.org</a> · <a href="https://www.gpb.org/news/2026/10/05/nobel-medicine-prize-goes-3-scientists-for-research-brain-activity">gpb.org</a></div>
+    </div>
+    <a class="toplink" href="#top">↑ Contents</a>
+  </section>
+
+  <!-- ===================== 7. ECONOMY ===================== -->
+  <section class="cat" id="economy">
+    <h2 class="cat-title"><span class="num">07</span> Economy</h2>
+    <p class="note">Thresholds applied: EU deals &gt; €100M, US/China &gt; $100M, Romania &gt; €1M.</p>
+
+    <div class="item">
+      <h4>CRH completes ~$8.5B acquisition of Arcosa <span style="color:var(--muted);font-weight:400">· US</span></h4>
+      <p>Building-materials group CRH closed its all-cash purchase of US aggregates and infrastructure-products maker Arcosa at $150.00 per share, an enterprise value of about $8.5 billion. First announced in June, the deal closed ahead of its original early-2027 guidance; Arcosa is now a wholly owned CRH subsidiary.</p>
+      <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">completed 23 Oct 2026</span></div>
+      <div class="srcs"><span class="label">Sources:</span><a href="https://www.crh.com/media/press-releases/2026/crh-to-acquire-arcosa-leading-u-s-provider-of-aggregates-and-critical-infrastructure-products-for-8-5b/">crh.com</a> · <a href="https://www.sec.gov/Archives/edgar/data/0000849395/000119312526429523/d187492dex991.htm">sec.gov</a></div>
+    </div>
+    <div class="item">
+      <h4>Gilead acquires an oral IL-23R inhibitor from China's PepStar <span style="color:var(--muted);font-weight:400">· US/China</span></h4>
+      <p>Gilead Sciences agreed to pick up the investigational oral IL-23R inhibitor HCXT-2001 from Chinese biotech PepStar to bolster its inflammatory-bowel-disease pipeline, in a deal reported at about $1.275 billion. Only one roundup source surfaced, so terms and date are reported rather than confirmed.</p>
+      <div class="meta"><span class="badge b-warn">Partial</span><span class="date-tag">reported 23 Oct 2026</span></div>
+      <div class="srcs"><span class="label">Source:</span><a href="https://www.pharmexec.com/view/gilead-oral-il-23r-inhibitor-pepstar-zymeworks-dll3-targeting-t-cell-engager-roche">pharmexec.com</a></div>
+    </div>
+    <div class="item">
+      <h4>Salesforce to acquire Braze for ~$5.66B <span style="color:var(--muted);font-weight:400">· US</span></h4>
+      <p>Salesforce signed a definitive agreement to buy customer-engagement software firm Braze at $47.50 per share cash — roughly a 58% premium, ~$5.66 billion enterprise value — to fold real-time messaging into its Agentforce stack. Closing is expected in Salesforce's FY2028, subject to shareholder and regulatory approval.</p>
+      <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">20 Oct 2026</span></div>
+      <div class="srcs"><span class="label">Sources:</span><a href="https://www.sec.gov/Archives/edgar/data/0001108524/000119312526425881/d516983dex991.htm">sec.gov</a> · <a href="https://www.thestar.com.my/tech/tech-news/2026/10/20/salesforce-to-acquire-braze-in-a-566-billion-deal">thestar.com.my</a></div>
+    </div>
+    <div class="item">
+      <h4>CBRE to acquire UK data-centre firm Onnec for up to ~$1B <span style="color:var(--muted);font-weight:400">· EU/UK</span></h4>
+      <p>CBRE agreed to buy London-based data-centre cabling and infrastructure-services provider Onnec Group for £460M cash upfront plus an earn-out of up to £300M — up to roughly $1 billion in total. Onnec serves hyperscalers across the UK, Europe and Asia-Pacific; the deal is expected to close by end-2026.</p>
+      <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">20 Oct 2026</span></div>
+      <div class="srcs"><span class="label">Sources:</span><a href="https://www.cbre.com/press-releases/cbre-expands-critical-infrastructure-capabilities-europe-asia-pacific-onnec-acquisition">cbre.com</a> · <a href="https://datacenterdynamics.com/en/news/cbre-acquires-data-center-services-firm-onnec">datacenterdynamics.com</a></div>
+    </div>
+    <div class="item">
+      <h4>Romania clears Raiffeisen's ~€591M takeover of Garanti BBVA Romania <span style="color:var(--muted);font-weight:400">· Romania</span></h4>
+      <p>Romania's Competition Council approved Raiffeisen Bank's acquisition of Garanti Bank SA and its leasing arm Motoractive, a ~€591 million deal first announced in March that would make Raiffeisen the country's third-largest bank by assets. Closing is expected in Q4 2026. No fresh Romanian deal was dated inside the 22–24 Oct window.</p>
+      <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">approval 20 Oct 2026</span></div>
+      <div class="srcs"><span class="label">Sources:</span><a href="https://www.romania-insider.com/romanias-competition-council-approves-raiffeisens-acquisition-garanti">romania-insider.com</a> · <a href="https://alba24.ro/raiffeisen-bank-primeste-aprobarea-pentru-preluarea-garanti-bank-romania-tranzactie-de-590-de-milioane-de-euro-1163540.html">alba24.ro</a></div>
+    </div>
+    <a class="toplink" href="#top">↑ Contents</a>
+  </section>
+
+  <!-- ===================== 8. POLITICS ===================== -->
+  <section class="cat" id="politics">
+    <h2 class="cat-title"><span class="num">08</span> Politics</h2>
+
+    <h3 class="sub">New appointments (EU · Romania · USA)</h3>
+    <div class="item">
+      <h4>Romania: new secretaries of state in the PM's Chancellery</h4>
+      <p>Monitorul Oficial of 23 October carried decisions appointing Mihnea-Claudiu Drumea as secretary of state in the Prime Minister's Chancellery and Jean Dănuț Cărbunaru as secretary of state and government spokesperson, while two others were released from their posts. The moves fill out the new Niculescu government's apparatus.</p>
+      <div class="meta"><span class="badge b-warn">Partial</span><span class="date-tag">23 Oct 2026</span></div>
+      <div class="srcs"><span class="label">Sources:</span><a href="https://www.gandul.ro/politica/un-liberal-care-a-demisionat-din-guvernul-bolojan-numit-secretar-de-stat-in-executivul-luca-niculescu-21043273">gandul.ro</a> · <a href="https://adevarul.ro/politica/un-fost-subaltern-al-dianei-buzoianu-la-mediu-2566134.html">adevarul.ro</a></div>
+    </div>
+    <div class="item">
+      <h4>Romania: the Niculescu government sworn in (Decree 818/2026)</h4>
+      <p>Parliament invested the cabinet of PM Luca-Alexandru Niculescu on 20 October (280 in favour, 58 against), ending roughly five months of interim rule; President Nicușor Dan signed the appointment decree, published the same day. The cabinet has 18 ministers, including Alexandru Nazare at finance and Marian Neacșu as deputy PM/interior.</p>
+      <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">20 Oct 2026</span></div>
+      <div class="srcs"><span class="label">Sources:</span><a href="https://www.news.ro/politic-intern/presedintele-nicusor-dan-a-semnat-decretul-pentru-numirea-guvernului-acesta-a-fost-deja-publicat-in-monitorul-oficial-1922401320002026101822864364">news.ro</a> · <a href="https://ecopolitic.ro/decretul-pentru-numirea-guvernului-niculescu-publicat-in-monitorul-oficial/">ecopolitic.ro</a></div>
+    </div>
+    <div class="item">
+      <h4>EU: Ilze Brands Kehris named Special Representative for Human Rights</h4>
+      <p>The Council of the EU appointed Ilze Brands Kehris as the EU Special Representative for Human Rights, with a mandate running from 19 October 2026 to 29 February 2028. The post is a Council foreign-policy appointment.</p>
+      <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">19 Oct 2026</span></div>
+      <div class="srcs"><span class="label">Source:</span><a href="https://www.consilium.europa.eu/en/press/press-releases/2026/10/19/human-rights-eu-appoints-a-new-special-representative/">consilium.europa.eu</a></div>
+    </div>
+    <p class="note"><strong>USA:</strong> No new leadership appointment or Senate confirmation could be verified inside 22–24 Oct. The most recent confirmations found date to late September.</p>
+
+    <h3 class="sub">New laws that will be applied</h3>
+    <div class="item">
+      <h4>USA: Mystic Alerts Act (H.R. 7022) signed into law</h4>
+      <p>President Trump signed H.R. 7022, which lets wireless carriers opt in to delivering emergency alerts via satellite and directs the FCC to issue a rulemaking within six months and a final rule within a year — a response to the 2025 Texas Hill Country floods. A companion land-conveyance bill (H.R. 952) was signed alongside it. Legislative trackers still showed "signing pending," reflecting typical tracker lag.</p>
+      <div class="meta"><span class="badge b-warn">Partial</span><span class="date-tag">22 Oct 2026</span></div>
+      <div class="srcs"><span class="label">Sources:</span><a href="https://www.whitehouse.gov/briefings-statements/2026/10/congressional-bills-h-r-952-and-h-r-7022-signed-into-law/">whitehouse.gov</a> · <a href="https://ground.news/article/mystic-alerts-act-heads-to-president-to-sign">ground.news</a></div>
+    </div>
+    <p class="note"><strong>Romania:</strong> No new <em>lege</em> was identified in Monitorul Oficial on 22–24 Oct — only ministerial orders and a Constitutional Court decision. The most recent applicable new law is Law 202/2026 (creating "CEI" savings-and-investment accounts and amending the Fiscal Code), published 15 Oct and in force since 18 Oct — outside the window.</p>
+    <p class="note"><strong>EU:</strong> No Official Journal act was confirmed as published on 22–24 Oct. Nothing relevant in the last 24h.</p>
+    <a class="toplink" href="#top">↑ Contents</a>
+  </section>
+
+  <footer>
+    <p>Compiled automatically on 24 October 2026. Summaries are original; confidence badges reflect source agreement, not editorial endorsement. Items without a verifiable source were omitted rather than inferred.</p>
+    <p><a href="arhiva/">📁 Browse the archive</a></p>
+  </footer>
+
+</div>
+</body>
+</html>
