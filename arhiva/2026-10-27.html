@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Briefing">
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#0f1115">
+  <title>Daily Briefing — Monday, October 27, 2026</title>
+  <meta name="description" content="Personal daily news briefing — dental, AI, technology, psychology, education, medicine, economy and politics.">
+  <style>
+    :root{
+      --bg:#0f1115; --surface:#171a21; --surface-2:#1f232c; --border:#2a2f3a;
+      --text:#e8eaed; --muted:#9aa1ad; --accent:#6ea8fe; --accent-2:#8b93a7;
+      --ok:#3ecf8e; --ok-bg:#133227; --warn:#f0b64b; --warn-bg:#362b12;
+      --bad:#e0725f; --bad-bg:#351f1b; --ref:#9aa7ff; --ref-bg:#1e2140;
+    }
+    @media (prefers-color-scheme: light){
+      :root:not([data-theme="dark"]){
+        --bg:#f5f6f8; --surface:#ffffff; --surface-2:#eef0f4; --border:#dcdfe6;
+        --text:#1b1e24; --muted:#5c6470; --accent:#2563eb; --accent-2:#5c6470;
+        --ok:#1a7f4b; --ok-bg:#e3f6ec; --warn:#9a6b10; --warn-bg:#fbf1d8;
+        --bad:#b23b26; --bad-bg:#fae6e1; --ref:#4044c4; --ref-bg:#e8e9fb;
+      }
+    }
+    *{box-sizing:border-box}
+    html{-webkit-text-size-adjust:100%}
+    body{
+      margin:0; background:var(--bg); color:var(--text);
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      line-height:1.55; font-size:17px;
+      -webkit-font-smoothing:antialiased;
+    }
+    .wrap{max-width:820px; margin:0 auto; padding:24px 16px 72px;}
+    header.masthead{padding:14px 0 18px; border-bottom:1px solid var(--border); margin-bottom:22px;}
+    .kicker{font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); font-weight:700;}
+    h1{font-size:1.9rem; line-height:1.15; margin:.25em 0 .1em; letter-spacing:-.01em;}
+    .dateline{color:var(--muted); font-size:.95rem; margin-top:4px;}
+    .note{
+      background:var(--surface); border:1px solid var(--border); border-radius:12px;
+      padding:14px 16px; margin:18px 0 6px; font-size:.92rem; color:var(--muted);
+    }
+    .note strong{color:var(--text);}
+    nav.toc{
+      background:var(--surface); border:1px solid var(--border); border-radius:12px;
+      padding:14px 16px; margin:20px 0 10px;
+    }
+    nav.toc h2{font-size:.8rem; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); margin:0 0 10px;}
+    nav.toc ol{margin:0; padding-left:1.1em; columns:2; column-gap:22px;}
+    @media (max-width:520px){ nav.toc ol{columns:1;} h1{font-size:1.55rem;} body{font-size:16px;} }
+    nav.toc li{margin:5px 0; break-inside:avoid;}
+    nav.toc a{color:var(--text); text-decoration:none;}
+    nav.toc a:hover{color:var(--accent); text-decoration:underline;}
+    section.cat{margin:34px 0 0; scroll-margin-top:12px;}
+    .cat-head{display:flex; align-items:baseline; gap:10px; border-bottom:2px solid var(--border); padding-bottom:8px; margin-bottom:6px;}
+    .cat-num{font-size:.9rem; font-weight:800; color:var(--accent); min-width:1.4em;}
+    .cat-head h2{font-size:1.3rem; margin:0; letter-spacing:-.01em;}
+    .sub{font-size:.76rem; text-transform:uppercase; letter-spacing:.09em; color:var(--accent-2); font-weight:700; margin:22px 0 2px;}
+    .empty{color:var(--muted); font-style:italic; margin:6px 0 2px; font-size:.95rem;}
+    article.item{
+      background:var(--surface); border:1px solid var(--border); border-radius:12px;
+      padding:14px 16px; margin:12px 0;
+    }
+    article.item h3{margin:0 0 6px; font-size:1.06rem; line-height:1.3;}
+    article.item p{margin:0 0 10px;}
+    .meta{display:flex; flex-wrap:wrap; gap:8px 12px; align-items:center; font-size:.82rem; color:var(--muted);}
+    .badge{display:inline-block; font-size:.72rem; font-weight:700; letter-spacing:.03em; padding:2px 9px; border-radius:999px; text-transform:uppercase;}
+    .b-ok{background:var(--ok-bg); color:var(--ok);}
+    .b-warn{background:var(--warn-bg); color:var(--warn);}
+    .b-bad{background:var(--bad-bg); color:var(--bad);}
+    .b-ref{background:var(--ref-bg); color:var(--ref);}
+    .date-chip{color:var(--muted);}
+    .srcs{margin-top:8px; font-size:.82rem; line-height:1.5; word-break:break-word;}
+    .srcs a{color:var(--accent); text-decoration:none;}
+    .srcs a:hover{text-decoration:underline;}
+    .srcs .lbl{color:var(--muted); margin-right:4px;}
+    .ctx{border-left:3px solid var(--border); background:var(--surface-2);}
+    .ctx .tag{font-size:.72rem; font-weight:700; color:var(--accent-2); text-transform:uppercase; letter-spacing:.05em;}
+    footer{margin-top:48px; padding-top:18px; border-top:1px solid var(--border); color:var(--muted); font-size:.85rem;}
+    footer a{color:var(--accent);}
+    .toplink{display:inline-block; margin-top:8px; font-size:.8rem; color:var(--accent-2); text-decoration:none;}
+    .archive-btn{display:inline-block; margin-top:10px; padding:8px 16px; background:var(--surface); border:1px solid var(--border); border-radius:10px; color:var(--text); text-decoration:none; font-size:.9rem; font-weight:600;}
+    .archive-btn:hover{border-color:var(--accent); color:var(--accent);}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <div class="kicker">Personal Daily Briefing</div>
+    <h1>Morning News Briefing</h1>
+    <div class="dateline">Monday, October 27, 2026 · Research window: Oct 25–27, 2026</div>
+    <a class="archive-btn" href=".">📁 Archive</a>
+  </header>
+
+  <div class="note">
+    <strong>Editor's note on sourcing.</strong> This edition covers roughly the last 24–48 hours. Oct 25–26 fell on a weekend, so verifiable fresh output was thin across several topics, and the available search index had limited coverage of the most recent day. Each item carries an honest confidence label: <em>Verified</em> (2+ independent sources), <em>Partial</em> (confirmed event but key figures/details not fully pinned down), <em>Unverified</em> (single source), or <em>Reference</em> (evergreen, for the developmental/forecast questions you asked to be standing topics). Where no fresh, verifiable item existed for a subtopic, that is stated plainly — and where a verified item fell just outside the 48h window but is genuinely useful, it is included and clearly tagged <em>Recent context (outside 48h)</em>. Nothing here is invented or extrapolated.
+  </div>
+
+  <nav class="toc" aria-label="Table of contents">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#dental">Dental</a></li>
+      <li><a href="#ai">Artificial Intelligence</a></li>
+      <li><a href="#tech">Technology</a></li>
+      <li><a href="#psychology">Psychology</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#medicine">Medicine</a></li>
+      <li><a href="#economy">Economy</a></li>
+      <li><a href="#politics">Politics</a></li>
+    </ol>
+  </nav>
+
+  <!-- ================= 1. DENTAL ================= -->
+  <section class="cat" id="dental">
+    <div class="cat-head"><span class="cat-num">1</span><h2>Dental</h2></div>
+
+    <div class="sub">Medical / clinical discoveries</div>
+    <article class="item">
+      <h3>AI chatbots reportedly beat clinicians on a radiation-safety quiz</h3>
+      <p>A study circulating via a syndication network claims that general-purpose generative AI models outscored dentists and physicians on a questionnaire about radiological safety. The result is framed as a hint of decision-support potential, while also raising the familiar caution about over-reliance on AI. The underlying paper, title and DOI could not be confirmed, and no independent second source was found.</p>
+      <div class="meta"><span class="badge b-bad">Unverified</span><span class="date-chip">~Oct 26, 2026</span></div>
+      <div class="srcs"><span class="lbl">Source:</span><a href="https://bioengineer.org/ai-chatbots-outperformed-dentists-and-doctors-on-radiation-safety-quiz" target="_blank" rel="noopener">bioengineer.org</a></div>
+    </article>
+    <article class="item">
+      <h3>NHS Cumbria survey: most dental staff plan to change how they work</h3>
+      <p>A mixed-methods survey reported as appearing in BMC Health Services Research found that of 136 respondents (including 40 dentists), roughly 70% intend to change their way of working — about 85% among dentists specifically. It reads as another signal of workforce strain in NHS dentistry, but only a single syndicated source could be located.</p>
+      <div class="meta"><span class="badge b-bad">Unverified</span><span class="date-chip">~Oct 25, 2026</span></div>
+      <div class="srcs"><span class="lbl">Source:</span><a href="https://bioengineer.org/cumbria-survey-finds-most-nhs-dental-staff-plan-to-change-how-they-work/" target="_blank" rel="noopener">bioengineer.org</a></div>
+    </article>
+
+    <div class="sub">New technologies (implants · scanners · software · launches)</div>
+    <article class="item">
+      <h3>Gargle launches "next-generation" dental practice websites</h3>
+      <p>Utah dental-marketing firm Gargle announced a new web-build approach for practices, emphasizing security, page speed and search visibility. This is a vendor press release with no independent confirmation of the claims.</p>
+      <div class="meta"><span class="badge b-bad">Unverified</span><span class="date-chip">~Oct 26, 2026</span></div>
+      <div class="srcs"><span class="lbl">Source:</span><a href="https://www.prnewswire.com/news-releases/gargle-introduces-next-generation-dental-websites-designed-for-greater-security-speed-and-search-visibility-302918864.html" target="_blank" rel="noopener">PR Newswire</a></div>
+    </article>
+    <article class="item ctx">
+      <span class="tag">Recent context (outside 48h)</span>
+      <h3>SprintRay "Foundation" wireless intraoral scanner unveiled</h3>
+      <p>SprintRay showed a wireless, color intraoral scanner called Foundation (running on its ScanOS platform) at 3DNext 2026 in Miami Beach, with shipments said to begin in November 2026. Separately, a US antitrust case over access to Invisalign scanners returned to court. Both are adjacent to the window rather than inside it.</p>
+      <div class="meta"><span class="badge b-warn">Partial</span><span class="date-chip">Oct 22–24, 2026</span></div>
+      <div class="srcs"><span class="lbl">Sources:</span><a href="https://3dprint.com/335411/3d-printing-news-briefs-10-24-2026/" target="_blank" rel="noopener">3DPrint.com</a> · Dental Tribune (Invisalign antitrust, Oct 22)</div>
+    </article>
+
+    <div class="sub">New clinic processes (call center · patient care · SOP)</div>
+    <p class="empty">Nothing relevant in the last 24h.</p>
+    <article class="item ctx">
+      <span class="tag">Market note (evergreen)</span>
+      <h3>AI front-desk / scheduling tools for clinics — pricing signal</h3>
+      <p>No dated news in the window, but the AI receptionist / automated-scheduling category keeps expanding (Dentina AI, TrueLark, Arini, CloudTalk, mConsent, Hello Patient). Indicative pricing from vendor roundups: Dentina.AI from ~$299/month (annual); CloudTalk's AI Receptionist from ~$99/month for 200 minutes. Useful as a benchmark if you revisit your call-center SOPs; none of it is independently audited.</p>
+      <div class="meta"><span class="badge b-warn">Partial</span><span class="date-chip">evergreen</span></div>
+    </article>
+
+    <div class="sub">Clinic sales / acquisitions (Romania + global)</div>
+    <p class="empty">Nothing relevant in the last 24h — no transaction datable to Oct 25–27 was confirmed. Romania: no fresh deal found (the Dr. Leahu–Regina Maria and Dent Estet–Stomestet references are from 2023 or earlier).</p>
+    <article class="item ctx">
+      <span class="tag">Recent context (outside 48h)</span>
+      <h3>Heartland Dental affiliates with Foundation Dental Partners</h3>
+      <p>Heartland Dental closed an affiliation with Foundation Dental Partners, a DSO of 33 practices across GA/TN/SC/KY. No financial terms were disclosed. The deal closed Oct 2, 2026.</p>
+      <div class="meta"><span class="badge b-ok">Verified</span><span class="date-chip">Oct 2, 2026</span></div>
+      <div class="srcs"><span class="lbl">Sources:</span><a href="https://www.beckersdental.com/dso-dpms/heartland-dental-affiliates-with-foundation-dental-partners/" target="_blank" rel="noopener">Becker's</a> · <a href="https://www.ropesgray.com/en/news-and-events/news/2026/10/ropes-gray-advised-heartland-dental-in-its-affiliation-with-foundation-dental-partners" target="_blank" rel="noopener">Ropes &amp; Gray</a></div>
+    </article>
+
+    <div class="sub">Key-people moves (leadership / dentists)</div>
+    <p class="empty">Nothing relevant in the last 24h — no move datable to Oct 25–27 confirmed. (LinkedIn profiles could not be opened from this environment, so change-dates there were not independently checked.)</p>
+    <article class="item ctx">
+      <span class="tag">Recent context (outside 48h)</span>
+      <h3>DECA Dental Group adds three C-suite leaders; ADSO CEO to step down</h3>
+      <p>DECA Dental Group appointed Nathan Smith (COO), Michele Silverman (CPO) and John DeLuna (CMO), announced early October. Separately, Andrew Smith announced he will step down as CEO of the Association of Dental Support Organizations effective Dec 31, 2026, with a successor search underway.</p>
+      <div class="meta"><span class="badge b-ok">Verified</span><span class="date-chip">Oct 5–8, 2026</span></div>
+      <div class="srcs"><span class="lbl">Sources:</span><a href="https://www.beckersdental.com/executive-moves/deca-dental-group-adds-3-c-suite-leaders/" target="_blank" rel="noopener">Becker's (DECA)</a> · <a href="https://www.beckersdental.com/executive-moves/andrew-smith-to-step-down-as-ceo-of-association-of-dsos/" target="_blank" rel="noopener">Becker's (ADSO)</a></div>
+    </article>
+
+    <div class="sub">New lab technologies and processes</div>
+    <p class="empty">Nothing relevant in the last 24h. (A "full digital lab workflow" piece re-syndicated on Oct 26 traces back to a 2022 UT Health San Antonio announcement, so it is not fresh.)</p>
+
+    <div class="sub">Courses &amp; the English-language online market</div>
+    <article class="item">
+      <h3>How English-language dentistry courses sell abroad — market read</h3>
+      <p>The dominant model is online/hybrid certificates led by university key opinion leaders. ACDE (Rutgers + ~37 member schools) runs live KOL webinars; the EAO offers a fully online certificate track in implant dentistry (Leuven/Ghent/Bern modules, January start); Harvard runs a one-year Implant &amp; Digital Dentistry CE program. The topics that sell are implantology, aligner therapy and digital CAD/CAM + AI workflows — Dentsply Sirona uses a free aligner course series as freemium lead-gen. Premium live courses signal pricing power: Pikos Institute at ~$5,795–6,995 per seat; High Tech Dental Seminars implant program ~CAD 15,900+. Aggregators like Class Central list 100+ dentistry courses from universities on Coursera/edX. This is assembled from providers' own marketing pages — there is no neutral sales-volume data, and none of it is dated to the window.</p>
+      <div class="meta"><span class="badge b-warn">Partial</span><span class="date-chip">evergreen / market read</span></div>
+      <div class="srcs"><span class="lbl">Sources:</span><a href="https://www.classcentral.com/subject/dentistry" target="_blank" rel="noopener">Class Central</a> · <a href="https://www.eao.org/education/the-eao-certificates-in-implant-dentistry/" target="_blank" rel="noopener">EAO</a> · <a href="https://www.pikosinstitute.com/" target="_blank" rel="noopener">Pikos Institute</a> · <a href="https://www.hsdm.harvard.edu/implant-digital-dentistry" target="_blank" rel="noopener">Harvard HSDM</a></div>
+    </article>
+    <a class="toplink" href="#">↑ Top</a>
+  </section>
+
+  <!-- ================= 2. AI ================= -->
+  <section class="cat" id="ai">
+    <div class="cat-head"><span class="cat-num">2</span><h2>Artificial Intelligence</h2></div>
+
+    <div class="sub">Notable developments</div>
+    <article class="item">
+      <h3>Anthropic opens its books ahead of a record-sized IPO</h3>
+      <p>Anthropic's IPO prospectus became public, revealing rapid revenue growth alongside very large reported costs; coverage put recent quarterly revenue in the mid-teens of billions of dollars and a headline net loss in the tens of billions that is described as driven mainly by a non-cash accounting adjustment on convertible notes rather than cash burn. The targeted valuation is reported in the trillions, with a Nasdaq listing possibly timed after the US midterm elections. Exact figures and the precise timeline vary across the secondary outlets that carried it, so treat the specific numbers as reported rather than settled. <em>(Disclosure: Anthropic is the maker of the assistant compiling this briefing; reported here as public news, neutrally.)</em></p>
+      <div class="meta"><span class="badge b-warn">Partial</span><span class="date-chip">~Oct 26, 2026</span></div>
+      <div class="srcs"><span class="lbl">Sources:</span><a href="https://www.usnews.com/news/top-news/articles/2026-10-26/anthropic-opens-books-on-ais-explosive-growth-and-staggering-costs" target="_blank" rel="noopener">U.S. News (Reuters)</a> · <a href="https://www.ypradio.org/npr-news/2026-10-26/ai-giant-anthropic-files-for-an-ipo-that-could-break-records" target="_blank" rel="noopener">NPR</a></div>
+    </article>
+    <article class="item">
+      <h3>Reported: UK AI biosecurity mission with leading labs</h3>
+      <p>An aggregator reported that OpenAI, Anthropic and Google DeepMind would join a UK-government-backed AI biosecurity effort, with model-credit and compute commitments. Only a single source was found, and a second independent confirmation from the last 48h could not be established.</p>
+      <div class="meta"><span class="badge b-bad">Unverified</span><span class="date-chip">~Oct 25–26, 2026</span></div>
+      <div class="srcs"><span class="lbl">Source:</span><a href="https://bravenewcoin.com/insights/openai-anthropic-and-google-deepmind-join-uks-new-ai-biosecurity-mission" target="_blank" rel="noopener">Brave New Coin</a></div>
+    </article>
+
+    <div class="sub">What could help a large dental clinic (market perspective)</div>
+    <p class="empty">Nothing relevant in the last 24h.</p>
+    <article class="item ctx">
+      <span class="tag">Recent context (outside 48h)</span>
+      <h3>Dental-imaging AI keeps maturing</h3>
+      <p>Two recent threads are worth tracking for a large clinic: Videa (×ClearDent) extended its dental-imaging AI in Canada (mid-October), and Overjet's IRIS secured a second FDA clearance for real-time radiograph quality checking (August). These point to where near-term clinic value is landing — chair-side imaging triage and radiograph QA — rather than back-office automation.</p>
+      <div class="meta"><span class="badge b-ok">Verified</span><span class="date-chip">Aug–Oct 2026</span></div>
+      <div class="srcs"><span class="lbl">Sources:</span><a href="https://www.beckersdental.com/?p=27819" target="_blank" rel="noopener">Becker's (Videa)</a> · <a href="https://www.healthcaredive.com/press-release/20260803-overjet-adds-a-second-fda-clearance-to-iris-the-foundation-of-a-growing-ai/" target="_blank" rel="noopener">Healthcare Dive (Overjet)</a></div>
+    </article>
+    <a class="toplink" href="#">↑ Top</a>
+  </section>
+
+  <!-- ================= 3. TECHNOLOGY ================= -->
+  <section class="cat" id="tech">
+    <div class="cat-head"><span class="cat-num">3</span><h2>Technology</h2></div>
+    <div class="sub">New patents &amp; launches — Global</div>
+    <p class="empty">Nothing relevant in the last 24h. No USPTO/EPO grant or global product launch could be dated strictly to Oct 25–27 (the nearest, Oppo's Find X10 global launch ~Oct 21, is outside the window).</p>
+    <div class="sub">New patents &amp; launches — Romania</div>
+    <p class="empty">Nothing relevant in the last 24h. No OSIM filing or Romanian launch was datable to the window (context: Politehnica University Bucharest won awards at the Traian Vuia inventions exhibition, reported Oct 14).</p>
+    <a class="toplink" href="#">↑ Top</a>
+  </section>
+
+  <!-- ================= 4. PSYCHOLOGY ================= -->
+  <section class="cat" id="psychology">
+    <div class="cat-head"><span class="cat-num">4</span><h2>Psychology</h2></div>
+
+    <div class="sub">Adults — evidence-based finding (DSM-5 linked)</div>
+    <article class="item">
+      <h3>FDA clears a personalized neuromodulation system for PTSD</h3>
+      <p>Wave Neuroscience's MeRT system — combining EEG biomarkers and AI to tailor transcranial magnetic stimulation — received FDA clearance as a non-drug treatment for post-traumatic stress disorder (PTSD, a DSM-5 diagnosis). The company cites ~52% symptom reduction and ~68% remission from its MeRT-005-B trial, but those efficacy numbers are company-reported and not yet peer-reviewed. The clearance itself is corroborated across independent outlets.</p>
+      <div class="meta"><span class="badge b-ok">Verified</span><span class="badge b-warn">Partial (efficacy)</span><span class="date-chip">reported Oct 23, 2026</span></div>
+      <div class="srcs"><span class="lbl">Sources:</span><a href="https://scitechdaily.com/fda-clears-first-of-its-kind-nonmedication-treatment-for-ptsd/" target="_blank" rel="noopener">SciTechDaily</a> · <a href="https://pharmashots.com/33817/wave-neurosciences-mert-system-receives-the-us-fda-clearance-for-ptsd/" target="_blank" rel="noopener">PharmaShots</a></div>
+    </article>
+    <article class="item">
+      <h3>"Living" review: MDMA-assisted therapy for PTSD — promising but early</h3>
+      <p>A continuously-updatable meta-analysis pooled 6 randomized trials (286 participants) and found MDMA-assisted therapy significantly reduced PTSD symptoms (Hedges' g ≈ −0.71) and roughly doubled remission versus control. The authors rate the certainty of evidence as low and stress it is too early for firm conclusions; the effect on depression was not significant. Relevant to PTSD under DSM-5.</p>
+      <div class="meta"><span class="badge b-ok">Verified</span><span class="date-chip">coverage Oct 2026</span></div>
+      <div class="srcs"><span class="lbl">Sources:</span><a href="https://www.psypost.org/can-mdma-cure-ptsd-a-new-review-of-the-evidence-says-its-too-early-to-tell/" target="_blank" rel="noopener">PsyPost</a> · <a href="https://www.psychologytoday.com/za/blog/addiction-outlook/202610/mdma-molly-for-ptsd-hope-hype-and-hard-evidence" target="_blank" rel="noopener">Psychology Today</a></div>
+    </article>
+    <article class="item">
+      <h3>Reported: five "brain profiles" of depression</h3>
+      <p>A single report described the identification of five distinct brain-activity profiles among 263 people with major depressive disorder (MDD, DSM-5). The specific figures could not be confirmed against a second independent source (nearby studies describe different subtype counts), so treat with caution.</p>
+      <div class="meta"><span class="badge b-bad">Unverified</span><span class="date-chip">Oct 9, 2026</span></div>
+      <div class="srcs"><span class="lbl">Source:</span><a href="https://www.sciencedaily.com/news/health_medicine/mental_health/" target="_blank" rel="noopener">ScienceDaily (mental health)</a></div>
+    </article>
+
+    <div class="sub">Children — what develops in a ~6-year-old (Andrei, b. 2020)</div>
+    <article class="item">
+      <h3>Middle childhood begins: cause-and-effect thinking takes hold</h3>
+      <p>Around age six the preschooler's "magical thinking" fades and genuine cause-and-effect reasoning and a sense of time emerge. Andrei should be describing experiences more fully, talking about his own thoughts and feelings, counting and understanding quantities up to ten, and beginning to write. Development is uneven by nature — a child can be ahead in one area and behind in another, and that is normal.</p>
+      <div class="meta"><span class="badge b-ref">Reference</span><span class="date-chip">evergreen</span></div>
+      <div class="srcs"><span class="lbl">Sources:</span><a href="https://www.cdc.gov/child-development/positive-parenting-tips/middle-childhood-6-8-years.html" target="_blank" rel="noopener">CDC</a> · <a href="https://healthy.kaiserpermanente.org/health-wellness/health-encyclopedia/he.ue5723" target="_blank" rel="noopener">Kaiser Permanente</a></div>
+    </article>
+    <article class="item">
+      <h3>What to watch over the next year (6 → 7)</h3>
+      <p>Socially and emotionally, expect more independence from parents, friendships and teamwork becoming important, a strong need to be liked by peers, and more complex emotions (guilt, embarrassment) plus a developing grasp of rules and fairness. Cognitively, attention span lengthens and early reading/writing accelerate; physically, catching a ball with the hands, riding a two-wheeler and tying shoelaces come online. Flag to a doctor any marked regression or persistent difficulty with language, attention or socializing.</p>
+      <div class="meta"><span class="badge b-ref">Reference</span><span class="date-chip">evergreen</span></div>
+      <div class="srcs"><span class="lbl">Sources:</span><a href="https://www.cdc.gov/child-development/positive-parenting-tips/middle-childhood-6-8-years.html" target="_blank" rel="noopener">CDC — Middle Childhood 6–8</a> · <a href="https://sesameworkshop.org/resources/milestones-your-six-year-old/" target="_blank" rel="noopener">Sesame Workshop</a></div>
+    </article>
+    <a class="toplink" href="#">↑ Top</a>
+  </section>
+
+  <!-- ================= 5. EDUCATION ================= -->
+  <section class="cat" id="education">
+    <div class="cat-head"><span class="cat-num">5</span><h2>Education</h2></div>
+
+    <div class="sub">Education over the next ~20 years vs. the classical school</div>
+    <article class="item">
+      <h3>OECD's four scenarios for schooling to ~2040</h3>
+      <p>The OECD's "Back to the Future of Education" lays out four scenarios: (1) <em>Schooling extended</em> — today's school intensifies; (2) <em>Education outsourced</em> — private and on-demand learning markets explode; (3) <em>Schools as learning hubs</em> — school redefined as a community hub; (4) <em>Learn-as-you-go</em> — formal schooling dissolves into continuous, technology-mediated learning. The OECD is explicit that these are thinking tools, not predictions, and the classical model survives as one scenario rather than a certainty.</p>
+      <div class="meta"><span class="badge b-ref">Reference</span><span class="date-chip">OECD, standing framework</span></div>
+      <div class="srcs"><span class="lbl">Sources:</span><a href="https://www.oecd-ilibrary.org/education/back-to-the-future-of-education_7c2c1be9-en" target="_blank" rel="noopener">OECD iLibrary</a> · <a href="https://oecdedutoday.com/future-proof-four-scenarios-future-schooling/" target="_blank" rel="noopener">OECD Education Today</a></div>
+    </article>
+
+    <div class="sub">How to educate a child of Andrei's age (~6)</div>
+    <article class="item">
+      <h3>Read aloud, teach reading explicitly, and talk about screens together</h3>
+      <p>The AAP describes shared read-aloud time as one of the most effective ways to expose a child to rich language and build early literacy. For learning to read, the "science of reading" / structured-literacy consensus favors explicit, systematic phonics in sequence, grounded in the Simple View of Reading (word recognition × language comprehension); the primary peer-reviewed reference is the National Reading Panel (2000). Screen content — including educational apps — supports learning mainly when it is well-designed and an adult discusses it with the child (co-viewing), not passive watching. A reported 2026 AAP "5 C" screen-time framework (Child, Content, Calm, Crowding Out, Communication) circulated via secondary sources but could not be confirmed directly from the AAP.</p>
+      <div class="meta"><span class="badge b-ref">Reference</span><span class="badge b-warn">Partial (5 C framework)</span><span class="date-chip">evergreen</span></div>
+      <div class="srcs"><span class="lbl">Sources:</span><a href="https://newsroom.osfhealthcare.org/importance-of-reading-aloud-to-kids/" target="_blank" rel="noopener">OSF HealthCare (read-aloud)</a> · <a href="https://www.hmhco.com/blog/structured-literacy-vs-science-of-reading" target="_blank" rel="noopener">HMH (structured literacy)</a></div>
+    </article>
+    <a class="toplink" href="#">↑ Top</a>
+  </section>
+
+  <!-- ================= 6. MEDICINE ================= -->
+  <section class="cat" id="medicine">
+    <div class="cat-head"><span class="cat-num">6</span><h2>Medicine</h2></div>
+    <div class="sub">Discoveries &amp; firsts (scientifically proven)</div>
+    <p class="empty">Nothing relevant in the last 24h. No peer-reviewed discovery or regulatory first could be verified from two sources and dated strictly to Oct 25–27 (the weekend plus Monday). Several items carrying an "Oct 26" date on aggregators turned out to be re-posts of older studies.</p>
+    <article class="item ctx">
+      <span class="tag">Recent context (outside 48h)</span>
+      <h3>FDA approves bepirovirsen (Hibsago) for chronic hepatitis B</h3>
+      <p>The FDA approved bepirovirsen, the first antisense oligonucleotide for chronic hepatitis B, for adults without cirrhosis alongside existing antiviral therapy. Phase 3 (B-Well) data showed roughly a 19% "functional cure" rate versus 0% on placebo in the lower-viral-load population.</p>
+      <div class="meta"><span class="badge b-ok">Verified</span><span class="date-chip">Oct 20, 2026</span></div>
+      <div class="srcs"><span class="lbl">Sources:</span><a href="https://ir.ionis.com/node/35161" target="_blank" rel="noopener">Ionis IR</a> · <a href="https://www.hcplive.com/view/fda-approves-bepirovirsen-for-chronic-hepatitis-b" target="_blank" rel="noopener">HCPLive</a></div>
+    </article>
+    <article class="item ctx">
+      <span class="tag">Recent context (outside 48h)</span>
+      <h3>Povetacicept Phase 3 interim data in IgA nephropathy</h3>
+      <p>Interim Phase 3 results for povetacicept in IgA nephropathy were presented at Kidney Week (Denver), with serious adverse events of 3% vs 4% and no deaths, though injection-site reactions were more common on treatment. The primary article was not read directly, so the detail is partially confirmed.</p>
+      <div class="meta"><span class="badge b-warn">Partial</span><span class="date-chip">~Oct 23, 2026</span></div>
+      <div class="srcs"><span class="lbl">Sources:</span><a href="https://nephjc.com/news/denver-day3" target="_blank" rel="noopener">NephJC (Kidney Week)</a> · NEJM (reported)</div>
+    </article>
+    <a class="toplink" href="#">↑ Top</a>
+  </section>
+
+  <!-- ================= 7. ECONOMY ================= -->
+  <section class="cat" id="economy">
+    <div class="cat-head"><span class="cat-num">7</span><h2>Economy</h2></div>
+
+    <div class="sub">United States (deals &gt; $100M)</div>
+    <article class="item">
+      <h3>EQT to acquire Range Resources in an all-stock merger</h3>
+      <p>EQT announced a definitive all-stock merger to acquire Range Resources, creating the largest integrated US natural-gas producer in the Appalachian basin. Range holders receive 0.987 EQT shares each — about $12.8B in equity value and a pro-forma enterprise value above $50B including debt — for combined output over 9 Bcfe/day across ~3 million net acres.</p>
+      <div class="meta"><span class="badge b-ok">Verified</span><span class="date-chip">Oct 26, 2026</span></div>
+      <div class="srcs"><span class="lbl">Sources:</span><a href="https://www.sec.gov/Archives/edgar/data/0000033213/000121390026112242/ea030960101ex99-1.htm" target="_blank" rel="noopener">EQT 8-K (SEC)</a> · <a href="https://www.theglobeandmail.com/business/industry-news/article-eqt-to-acquire-range-resources-creating-us-gas-giant/" target="_blank" rel="noopener">Globe and Mail</a></div>
+    </article>
+    <article class="item">
+      <h3>HealthSpan Partners to take Surgery Partners private for ~$5.7B</h3>
+      <p>HealthSpan Partners (affiliated with Bon Secours Mercy Health) agreed to acquire ambulatory-surgery operator Surgery Partners in an all-cash deal at $23.50/share, an enterprise value of roughly $5.7B including debt. Shareholders other than Bain Capital (~39%) are cashed out; the stock jumped ~47% on the news, with closing expected in Q1 2027 subject to approvals.</p>
+      <div class="meta"><span class="badge b-ok">Verified</span><span class="date-chip">Oct 26, 2026</span></div>
+      <div class="srcs"><span class="lbl">Sources:</span><a href="https://www.beckershospitalreview.com/asc-transactions-and-valuation-issues/bon-secours-mercy-health-affiliate-to-acquire-surgery-partners-for-5-7b/" target="_blank" rel="noopener">Becker's Hospital Review</a> · <a href="https://www.fool.com/coverage/stock-market-today/2026/10/26/stock-market-today-oct-26-surgery-partners-skyrockets-48-on-usd5-7-billion-healthspan-acquisition/" target="_blank" rel="noopener">The Motley Fool</a></div>
+    </article>
+    <article class="item">
+      <h3>Reported: Intel to acquire quantum-software startup Classiq</h3>
+      <p>Israeli press reported that Intel would acquire quantum-computing software startup Classiq for about $2.3B in cash and stock. The figure comes from sources close to the deal; terms were not officially confirmed by Intel, and coverage is so far limited to Israeli outlets.</p>
+      <div class="meta"><span class="badge b-warn">Partial</span><span class="date-chip">Oct 26, 2026</span></div>
+      <div class="srcs"><span class="lbl">Sources:</span><a href="https://www.ynetnews.com/business/article/rkd8qnanme" target="_blank" rel="noopener">Ynetnews</a> · Haaretz (tech)</div>
+    </article>
+
+    <div class="sub">European Union (deals &gt; €100M)</div>
+    <p class="empty">Nothing relevant in the last 24h. (The ~$3.5B LSEG/Octus deal was announced Oct 22, outside the window.)</p>
+
+    <div class="sub">Romania (deals &gt; €1M)</div>
+    <p class="empty">Nothing relevant in the last 24h. No Romanian acquisition or sale was datable to Oct 25–27 from verifiable sources.</p>
+    <a class="toplink" href="#">↑ Top</a>
+  </section>
+
+  <!-- ================= 8. POLITICS ================= -->
+  <section class="cat" id="politics">
+    <div class="cat-head"><span class="cat-num">8</span><h2>Politics</h2></div>
+
+    <div class="sub">New leadership appointments — EU · Romania · USA</div>
+    <p class="empty">Nothing relevant in the last 24h across the EU, Romania and the USA (the window was mostly a weekend).</p>
+    <article class="item ctx">
+      <span class="tag">Recent context (outside 48h)</span>
+      <h3>Romania: Niculescu government sworn in; EU names new human-rights envoy</h3>
+      <p>Romania's Luca Niculescu government was invested on Oct 20 (280 votes in favor), with the appointment decree published in the Official Gazette the same day. Separately, on Oct 19 the Council of the EU appointed Ilze Brands Kehris as its new Special Representative for Human Rights (mandate to Feb 2028). Both sit just outside the 48h window.</p>
+      <div class="meta"><span class="badge b-ok">Verified</span><span class="date-chip">Oct 19–20, 2026</span></div>
+      <div class="srcs"><span class="lbl">Sources:</span><a href="https://agerpres.ro/english/2026/10/20/decree-appointing-niculescu-government-published-in-romania-s-official-gazette--1605099" target="_blank" rel="noopener">Agerpres</a> · <a href="https://www.consilium.europa.eu/en/press/press-releases/2026/10/19/human-rights-eu-appoints-a-new-special-representative/" target="_blank" rel="noopener">Council of the EU</a></div>
+    </article>
+
+    <div class="sub">New laws adopted — Romania (Monitorul Oficial) · EU (EUR-Lex) · USA (Federal Register / Congress)</div>
+    <p class="empty">Nothing relevant in the last 24h. No law or final rule could be dated and confirmed to Oct 25–27 in Romania, the EU or the US. (Note: several primary sources — monitoruloficial.ro, EUR-Lex, federalregister.gov — were not reachable from this environment, so this is a "not found / not confirmable" result, not a confirmed absence.)</p>
+
+    <div class="sub">In-window event (not an appointment or law)</div>
+    <article class="item">
+      <h3>Romanian PM makes first foreign visit — to Chișinău</h3>
+      <p>Prime Minister Luca Niculescu made his first official foreign trip on Oct 27, to Chișinău, for talks with President Maia Sandu and Moldovan officials on joint Romania–Moldova projects. In a same-day statement he named fiscal discipline, the budget revision and the 2027 budget as priorities.</p>
+      <div class="meta"><span class="badge b-ok">Verified</span><span class="date-chip">Oct 27, 2026</span></div>
+      <div class="srcs"><span class="lbl">Sources:</span><a href="https://www.digi24.ro/stiri/actualitate/politica/premierul-luca-niculescu-merge-in-republica-moldova-pe-27-octombrie-discutii-cu-maia-sandu-si-oficialii-de-la-chisinau-4003057" target="_blank" rel="noopener">Digi24</a> · <a href="https://agerpres.ro/romania-in-lume/2026/10/23/prim-ministrul-romaniei-luca-niculescu-va-efectua-prima-vizita-la-chisinau-pe-27-octombrie--1606104" target="_blank" rel="noopener">Agerpres</a></div>
+    </article>
+    <a class="toplink" href="#">↑ Top</a>
+  </section>
+
+  <footer>
+    <p>Compiled automatically on Monday, October 27, 2026. Items are summarized in the editor's own words; follow the source links for full reporting. Confidence labels reflect how well each item could be independently verified at compile time.</p>
+    <p><a href=".">📁 Browse the archive</a></p>
+  </footer>
+</div>
+</body>
+</html>
