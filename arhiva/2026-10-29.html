@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Daily Briefing — October 29, 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Briefing">
+<meta name="theme-color" content="#0f1115">
+<meta name="description" content="Personal daily news briefing for 29 October 2026: dental, AI, technology, psychology, education, medicine, economy, politics.">
+<link rel="manifest" href="manifest.json">
+<style>
+  :root{
+    --bg:#0f1115; --surface:#171a21; --surface-2:#1e222b; --border:#2a2f3a;
+    --text:#e8eaed; --muted:#9aa3b2; --accent:#4da3ff; --accent-soft:#1f3350;
+    --ok:#36c08a; --ok-bg:#12271f; --warn:#e0a63a; --warn-bg:#2a2210; --bad:#e86a6a; --bad-bg:#2b1414;
+    --maxw:760px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6; font-size:17px;
+  }
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 16px 64px;}
+  header.top{padding:28px 0 8px; border-bottom:1px solid var(--border); margin-bottom:8px;}
+  .kicker{color:var(--accent); font-size:13px; letter-spacing:.14em; text-transform:uppercase; font-weight:700;}
+  h1{font-family:Georgia,"Times New Roman",serif; font-size:30px; line-height:1.2; margin:6px 0 4px;}
+  .date{color:var(--muted); font-size:15px; margin:0;}
+  .lead{color:var(--muted); font-size:14px; margin:14px 0 0; padding:12px 14px; background:var(--surface); border:1px solid var(--border); border-radius:10px;}
+  .lead b{color:var(--text);}
+  nav.toc{margin:22px 0 8px; background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:14px 16px;}
+  nav.toc h2{font-size:13px; text-transform:uppercase; letter-spacing:.12em; color:var(--muted); margin:0 0 10px;}
+  nav.toc ol{margin:0; padding-left:20px; columns:2; column-gap:20px;}
+  @media (max-width:520px){nav.toc ol{columns:1}}
+  nav.toc li{margin:4px 0;}
+  nav.toc a{color:var(--text); text-decoration:none;}
+  nav.toc a:hover{color:var(--accent); text-decoration:underline;}
+  section.cat{margin-top:40px; scroll-margin-top:16px;}
+  .cat-head{display:flex; align-items:baseline; gap:10px; border-bottom:2px solid var(--accent); padding-bottom:8px; margin-bottom:6px;}
+  .cat-num{font-family:Georgia,serif; color:var(--accent); font-size:22px; font-weight:700;}
+  .cat-head h2{font-family:Georgia,serif; font-size:24px; margin:0;}
+  h3.sub{font-size:14px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin:26px 0 10px; border-left:3px solid var(--accent-soft); padding-left:10px;}
+  article.item{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:16px 16px 14px; margin:12px 0;}
+  article.item h4{margin:0 0 6px; font-size:18px; line-height:1.35;}
+  .meta{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:0 0 10px; font-size:12.5px;}
+  .pill{display:inline-block; padding:2px 9px; border-radius:999px; font-weight:700; font-size:11.5px; letter-spacing:.03em; border:1px solid transparent;}
+  .pill.date{background:var(--surface-2); color:var(--muted); border-color:var(--border); font-weight:600;}
+  .pill.ok{background:var(--ok-bg); color:var(--ok); border-color:#1c4a37;}
+  .pill.warn{background:var(--warn-bg); color:var(--warn); border-color:#4a3c13;}
+  .pill.bad{background:var(--bad-bg); color:var(--bad); border-color:#4a1f1f;}
+  article.item p{margin:0 0 10px;}
+  .sources{font-size:13px; color:var(--muted); margin:0;}
+  .sources a{color:var(--accent); text-decoration:none; word-break:break-word;}
+  .sources a:hover{text-decoration:underline;}
+  .sources .lbl{color:var(--muted); font-weight:600; margin-right:4px;}
+  .empty{background:var(--surface-2); border:1px dashed var(--border); border-radius:10px; padding:12px 14px; color:var(--muted); font-style:italic; margin:12px 0;}
+  .note{font-size:13px; color:var(--muted); margin:6px 0 0;}
+  .toplink{display:inline-block; margin-top:10px; font-size:12.5px; color:var(--muted); text-decoration:none;}
+  .toplink:hover{color:var(--accent);}
+  footer{margin-top:48px; padding-top:18px; border-top:1px solid var(--border); color:var(--muted); font-size:13px;}
+  footer a{color:var(--accent); text-decoration:none;}
+  .archive-link{display:inline-block; margin-top:8px; padding:8px 14px; background:var(--surface); border:1px solid var(--border); border-radius:10px; color:var(--text); text-decoration:none; font-size:14px;}
+  .archive-link:hover{border-color:var(--accent); color:var(--accent);}
+  @media (prefers-color-scheme: light){
+    :root:not([data-theme="dark"]){
+      --bg:#f4f5f7; --surface:#ffffff; --surface-2:#eef0f3; --border:#dcdfe5;
+      --text:#1a1d23; --muted:#5a6473; --accent:#1769c7; --accent-soft:#cfe0f5;
+      --ok:#1b8a5a; --ok-bg:#e6f6ee; --warn:#9a6b00; --warn-bg:#fbf0d6; --bad:#c0392b; --bad-bg:#fbe4e1;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top" id="top">
+  <div class="kicker">Daily Briefing</div>
+  <h1>Morning News &amp; Analysis</h1>
+  <p class="date">Thursday, 29 October 2026</p>
+  <p class="lead">Each item is summarised in our own words with a confidence label and source links. <b>Verified</b> = corroborated by 2+ independent sources; <b>Partial</b> = limited or vendor/self-reported corroboration; <b>Unverified</b> = single source. Where nothing qualified within the last 24–72h for a topic, that is stated plainly. Items dated earlier in October are the freshest verifiable material available for that subtopic and are dated honestly.</p>
+  <a class="archive-link" href="arhiva/">📚 Archive</a>
+</header>
+
+<nav class="toc">
+  <h2>Contents</h2>
+  <ol>
+    <li><a href="#dental">Dental</a></li>
+    <li><a href="#ai">AI</a></li>
+    <li><a href="#tech">Technology</a></li>
+    <li><a href="#psychology">Psychology</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#medicine">Medicine</a></li>
+    <li><a href="#economy">Economy</a></li>
+    <li><a href="#politics">Politics</a></li>
+  </ol>
+</nav>
+
+<!-- ============ 1. DENTAL ============ -->
+<section class="cat" id="dental">
+  <div class="cat-head"><span class="cat-num">1</span><h2>Dental</h2></div>
+
+  <h3 class="sub">Medical / research discoveries</h3>
+  <p class="note">No major breakthrough landed strictly within 26–29 Oct; the freshest verifiable items are mid-October journal pieces.</p>
+
+  <article class="item">
+    <h4>Chairside salivary-thiols test for gum dysbiosis</h4>
+    <div class="meta"><span class="pill date">15 Oct 2026</span><span class="pill warn">Partial</span></div>
+    <p>A cross-sectional study assessed whether a point-of-care salivary thiols test can flag subgingival microbial dysbiosis in adults, suggesting a low-cost screening aid for periodontal risk. The work appeared in <i>Clinical and Experimental Dental Research</i> and is early-stage.</p>
+    <p class="sources"><span class="lbl">Source:</span><a href="https://onlinelibrary.wiley.com/journal/20574347">Clinical &amp; Experimental Dental Research</a></p>
+  </article>
+
+  <article class="item">
+    <h4>Enamel remineralisation via calcium hypophosphite</h4>
+    <div class="meta"><span class="pill date">16 Oct 2026</span><span class="pill warn">Partial</span></div>
+    <p>Lab work in <i>BDJ Open</i> reports hydroxyapatite forming on tooth surfaces driven by calcium hypophosphite in saliva, pointing toward new remineralisation strategies. It remains an early bench finding rather than a clinical product.</p>
+    <p class="sources"><span class="lbl">Source:</span><a href="https://www.nature.com/subjects/dentistry">Nature — Dentistry (BDJ Open)</a></p>
+  </article>
+
+  <article class="item">
+    <h4>Oral virome and its relevance to dentistry (JADA)</h4>
+    <div class="meta"><span class="pill date">05 Oct 2026</span><span class="pill warn">Partial</span></div>
+    <p>The October <i>Journal of the American Dental Association</i> examines how human virome research could shape dental diagnosis and care. It is a review/editorial framing rather than a single new result.</p>
+    <p class="sources"><span class="lbl">Source:</span><a href="https://www.modental.org/news-publications/news-updates/2026/10/05/October-JADA-examines-how-human-virome-research-could-impact-dentistry">Missouri Dental Assn. (on JADA)</a></p>
+  </article>
+
+  <h3 class="sub">New technologies (implants, scanners, software)</h3>
+
+  <article class="item">
+    <h4>SprintRay unveils "Foundation" intraoral scanner, ScanOS &amp; Nano Series</h4>
+    <div class="meta"><span class="pill date">13 Oct 2026</span><span class="pill ok">Verified</span></div>
+    <p>At its 3DNext 2026 event in Miami Beach, SprintRay showed Foundation — a wireless full-colour intraoral scanner running new ScanOS software and a cloud dashboard — alongside the compact Nano chairside print/wash/cure system and a materials tie-up with GC. Foundation launches first in the US, with first shipments expected November 2026; Nano rolls out more widely subject to clearance.</p>
+    <p class="sources"><span class="lbl">Sources:</span>
+      <a href="https://orthodonticproductsonline.com/practice-products/practice-equipment/3d-printers/sprintray-launches-foundation-intraoral-scanner-nano-series-3d-printing/">Orthodontic Products</a> ·
+      <a href="https://3dprintingindustry.com/news/sprintray-builds-a-one-stop-digital-dentistry-workflow-from-scanning-to-curing-255834/">3D Printing Industry</a> ·
+      <a href="https://instituteofdigitaldentistry.com/news/sprintray-3dnext-2026-new-nanoprint-nanowash-foundation-scanner-gc-gradia-premi-and-more/">Institute of Digital Dentistry</a></p>
+  </article>
+
+  <article class="item">
+    <h4>3DDX launches "AI Planning" for implants</h4>
+    <div class="meta"><span class="pill date">12–15 Oct 2026</span><span class="pill ok">Verified</span></div>
+    <p>3DDX added AI Planning to its Connect platform, generating a 3D rendering, nerve segmentation, virtual crowns and a proposed implant plan within minutes of a scan upload. It is marketed as human-in-the-loop — a 3DDX dentist validates every plan and the treating clinician keeps final authority; guides ship in ~2 days and STL files within ~2 hours. (One corroborating source is a company advertorial.)</p>
+    <p class="sources"><span class="lbl">Sources:</span>
+      <a href="https://www.drbicuspid.com/dental-specialties/oral-maxillofacial-surgery/article/15837021/3ddx-launches-ai-dental-implant-planning">DrBicuspid</a> ·
+      <a href="https://dentalspire.com/article-page/takeaway?id=f69f4281-35c8-4ec8-b01b-4a9a99007ea7&amp;pub=Inside+Dentistry">Inside Dentistry</a></p>
+  </article>
+
+  <h3 class="sub">New clinic processes (call centre, patient care, SOPs)</h3>
+  <p class="note">Coverage here is dominated by vendor blogs; self-reported statistics are directional, not primary.</p>
+
+  <article class="item">
+    <h4>AI phone agents move from novelty to supplement for dental call centres</h4>
+    <div class="meta"><span class="pill date">Oct 2026</span><span class="pill warn">Partial</span></div>
+    <p>Industry commentary describes AI phone agents and call-monitoring augmenting or replacing traditional call centres at lower cost, freeing staff for higher-value work. The phone still drives roughly 71% of bookings, so AI is positioned as a supplement to — not a replacement for — reliable live phone access.</p>
+    <p class="sources"><span class="lbl">Sources:</span>
+      <a href="https://skytalegroup.com/blog/2026-dental-trends-why-the-next-cycle-will-reward-discipline-density-and-experience/">Skytale Group</a> ·
+      <a href="https://agentzap.ai/blog/dental-practice-phone-statistics">AgentZap</a></p>
+  </article>
+
+  <article class="item">
+    <h4>After-hours coverage becomes the new baseline for patient capture</h4>
+    <div class="meta"><span class="pill date">Oct 2026</span><span class="pill warn">Partial</span></div>
+    <p>Several pieces argue near-instant call answering is now the expected floor, citing that a large share of calls (reported 27–42%, definitions vary) go unanswered — especially after hours — and that practices lose new patients to faster competitors. Omnichannel contact (phone/chat/text without repeating oneself) is framed as table stakes.</p>
+    <p class="sources"><span class="lbl">Sources:</span>
+      <a href="https://www.dentalbase.ai/blogs/industry-trends/dental-industry-trends-2026-guide">DentalBase</a> ·
+      <a href="https://www.patientdesk.ai/blog/after-hours-patient-support-42-of-calls-are-missed">PatientDesk</a></p>
+  </article>
+
+  <h3 class="sub">Clinic sales &amp; acquisitions (RO + global)</h3>
+
+  <article class="item">
+    <h4>Heartland Dental affiliates with Foundation Dental Partners, passes 2,000 offices</h4>
+    <div class="meta"><span class="pill date">~21 Oct 2026</span><span class="pill ok">Verified</span></div>
+    <p>Heartland Dental affiliated with Foundation Dental Partners (reported as 33 practices across GA/TN/SC/KY; Heartland's own milestone release cited 51 added offices — sources do not reconcile the gap). The deal pushed Heartland past 2,000 supported offices, which it claims is a US DSO first. Terms were not disclosed.</p>
+    <p class="sources"><span class="lbl">Sources:</span>
+      <a href="https://www.beckersdental.com/dso-dpms/heartland-dental-affiliates-with-foundation-dental-partners/">Becker's Dental</a> ·
+      <a href="https://www.ropesgray.com/en/news-and-events/news/2026/10/ropes-gray-advised-heartland-dental-in-its-affiliation-with-foundation-dental-partners">Ropes &amp; Gray</a></p>
+  </article>
+
+  <article class="item">
+    <h4>Dental Elite (Romania) completes €2M expansion to 8 clinics</h4>
+    <div class="meta"><span class="pill date">Oct 2026</span><span class="pill ok">Verified</span></div>
+    <p>Romanian chain Dental Elite (Ciucu family) finished a ~€2 million expansion, opening clinics in Ploiești, Buzău and Voluntari and reaching 8 clinics / 41 chairs. It targets ~12 locations by early 2027 and 15–20 clinics by 2028. Note: these are greenfield openings, not acquisitions.</p>
+    <p class="sources"><span class="lbl">Sources:</span>
+      <a href="https://www.forbes.ro/dental-elite-investeste-2-milioane-de-euro-in-extindere-si-deschide-trei-noi-clinici-497492">Forbes.ro</a> ·
+      <a href="https://www.profit.ro/povesti-cu-profit/dental-elite-pornit-cu-4-scaune-deschide-noi-clinici-in-romania-in-ploiesti-buzau-si-voluntari-22418866">Profit.ro</a></p>
+  </article>
+
+  <article class="item">
+    <h4>Guardian Dentistry Partners to acquire Select Dental Management (38 sites)</h4>
+    <div class="meta"><span class="pill date">Oct 2026</span><span class="pill bad">Unverified</span></div>
+    <p>A DSO-on-DSO deal in which Guardian Dentistry Partners reportedly agreed to acquire Select Dental Management and its 38 locations. Terms were not disclosed and only a single aggregator reference was found — treat as unconfirmed.</p>
+    <p class="sources"><span class="lbl">Source:</span><a href="https://www.groupdentistrynow.com/dso-group-blog/dental-acquisitions-july/">Group Dentistry Now</a></p>
+  </article>
+
+  <h3 class="sub">Key-people moves (leadership / doctors)</h3>
+  <p class="note">LinkedIn could not be opened directly this session; moves below are corroborated via company releases, SEC filings and trade press.</p>
+
+  <article class="item">
+    <h4>Align Technology names Jennifer L. Davis as President &amp; CEO</h4>
+    <div class="meta"><span class="pill date">28 Oct 2026</span><span class="pill ok">Verified</span></div>
+    <p>Align Technology (Invisalign, iTero) named Jennifer L. Davis — former CEO of P&amp;G's Global Healthcare business — as its next president and CEO. She joins as CEO-elect and board member from 2 Nov 2026 and becomes CEO on 31 Dec 2026; Joseph Hogan, CEO since 2015, moves to a one-year advisory role and retires from the board after a mid-2027 strategy meeting. This is the clearest strictly in-window dental leadership item.</p>
+    <p class="sources"><span class="lbl">Sources:</span>
+      <a href="https://www.sec.gov/Archives/edgar/data/0001097149/000109714926000078/algn-ex991pressreleaseceos.htm">SEC 8-K — press release</a> ·
+      <a href="https://www.sec.gov/Archives/edgar/data/0001097149/000109714926000078/algn-20261026.htm">SEC 8-K filing</a></p>
+  </article>
+
+  <article class="item">
+    <h4>Clyde Munro Dental Group (Scotland) appoints Louise Reeves as CEO</h4>
+    <div class="meta"><span class="pill date">19 Oct 2026</span><span class="pill ok">Verified</span></div>
+    <p>Scotland's largest dental group named Louise Reeves — former COO of Portman Dentex — as chief executive, succeeding founder Jim Hall, who stays on the board. The ~65-practice group signals a shift from acquisition toward strengthening its existing network.</p>
+    <p class="sources"><span class="lbl">Sources:</span>
+      <a href="https://clydemunrodental.com/clyde-munro-appoints-louise-reeves/">Company release</a> ·
+      <a href="https://www.insidermedia.com/news/scotland/clyde-munro-appoints-former-portmandentex-coo-as-ceo">Insider Media</a></p>
+  </article>
+
+  <article class="item">
+    <h4>Lightwave Dental promotes Dr. Clifton Cameron to CEO</h4>
+    <div class="meta"><span class="pill date">effective 01 Oct 2026</span><span class="pill ok">Verified</span></div>
+    <p>DSO Lightwave Dental elevated its president and chief clinical officer, Dr. Clifton Cameron, to CEO. Founder Justin Jory stepped down after a decade, staying on as shareholder and adviser.</p>
+    <p class="sources"><span class="lbl">Sources:</span>
+      <a href="https://www.drbicuspid.com/dental-business/dso/article/15835377/dds-lightwave-dental-names-new-ceo">DrBicuspid</a> ·
+      <a href="https://www.dentistrytoday.com/lightwave-dental-names-dr-clifton-cameron-ceo/">Dentistry Today</a></p>
+  </article>
+
+  <h3 class="sub">New lab processes &amp; technologies</h3>
+  <div class="empty">Nothing relevant in the last 24h. The circulating story on ultra-fast zirconia 3D-printing (UT Dallas, sub-30-minute debinding for potential same-day permanent crowns) was published in <i>Ceramics International</i> in Sept 2025 and only re-amplified in 2026 — it predates the window.</div>
+
+  <h3 class="sub">Courses &amp; CE (opinion leaders, platforms, English-language market)</h3>
+
+  <article class="item">
+    <h4>Market read: what sells in English-language online dental CE</h4>
+    <div class="meta"><span class="pill date">Oct 2026</span><span class="pill warn">Partial</span></div>
+    <p>Paid demand clusters around compliance-mandated topics — DEA / controlled-substances (MATE Act) opioid courses, infection control and coding certifications — because licence renewal creates recurring, non-discretionary purchases. ADA's bestsellers echo this (DEA opioid compliance, a 2026 coding certificate, sedation complications, whole-body health), while emerging clinical interest sits in 3D-printing workflows, GLP-1 drugs &amp; oral health, pediatric endodontics and neurodivergent-patient care. No public sales figures exist; this is inferred from bestseller and new-course listings.</p>
+    <p class="sources"><span class="lbl">Sources:</span>
+      <a href="https://www.ada.org/education/continuing-education">ADA CE</a> ·
+      <a href="https://www.elitelearning.com/dental/">Elite Learning</a></p>
+  </article>
+
+  <article class="item">
+    <h4>Free CE is pricing pressure on paid platforms</h4>
+    <div class="meta"><span class="pill date">Oct 2026</span><span class="pill warn">Partial</span></div>
+    <p>Large free-CE libraries (e.g. DentalCare.com's 150+ courses and manufacturer academies such as Dentsply Sirona) commoditise basic clinical content. That pushes paid providers toward compliance-mandated, credentialed or hands-on content that free libraries don't cover — a useful signal for anyone selling courses in English abroad.</p>
+    <p class="sources"><span class="lbl">Sources:</span>
+      <a href="https://ignitedds.com/dental-continuing-education-10-websites-where-dentists-can-earn-free-ce/">IgniteDDS</a> ·
+      <a href="https://www.dentsplysirona.com/en-us/academy/ce.html">Dentsply Sirona Academy</a></p>
+  </article>
+
+  <a class="toplink" href="#top">↑ Back to top</a>
+</section>
+
+<!-- ============ 2. AI ============ -->
+<section class="cat" id="ai">
+  <div class="cat-head"><span class="cat-num">2</span><h2>AI</h2></div>
+
+  <h3 class="sub">General AI news</h3>
+
+  <article class="item">
+    <h4>Google DeepMind launches Genie 4 world model</h4>
+    <div class="meta"><span class="pill date">27 Oct 2026</span><span class="pill ok">Verified</span></div>
+    <p>DeepMind released Genie 4, a real-time interactive "world model," as a research preview rolling out to Google AI Ultra subscribers and Gemini API early-access partners. New versus Genie 3: native real-time audio, live text-prompt steering (change weather, camera or add objects mid-simulation), more realistic physics and scenes staying coherent up to ~2 minutes. DeepMind still flags drift and in-world text legibility as open limitations.</p>
+    <p class="sources"><span class="lbl">Sources:</span>
+      <a href="https://techcrunch.com/2026/10/27/googles-genie-4-world-model-adds-audio-more-realistic-worlds-and-real-time-steering/">TechCrunch</a> ·
+      <a href="https://www.unite.ai/google-deepmind-rolls-out-genie-4-world-model-in-research-preview/">Unite.ai</a> ·
+      <a href="https://thenextweb.com/news/google-deepmind-genie-4-world-model">TNW</a></p>
+  </article>
+
+  <article class="item">
+    <h4>Oracle embeds OpenAI's ChatGPT and Codex across its enterprise stack</h4>
+    <div class="meta"><span class="pill date">27 Oct 2026</span><span class="pill ok">Verified</span></div>
+    <p>At Oracle AI World (Las Vegas), Oracle announced embedding OpenAI's ChatGPT and Codex across its business applications and database products to make data easier to query, plus new offerings (Oracle AI Workspace, AI Security Mesh, App Composer, AI SMB Bundle). Sam Altman appeared on stage with co-CEO Clay Magouyrk; exact rollout timelines remain vague.</p>
+    <p class="sources"><span class="lbl">Sources:</span>
+      <a href="https://analyticsindiamag.com/ai-news/oracle-partners-with-openai-to-bring-chatgpt-and-codex-to-enterprise-workflows">Analytics India</a> ·
+      <a href="https://blogs.oracle.com/machinelearning+selectai/connecting-codex-to-enterprise-data-with-oracle-autonomous-ai-database-mcp-server">Oracle Blog</a></p>
+  </article>
+
+  <article class="item">
+    <h4>OpenAI claims three AI-generated results in maths, CS and physics</h4>
+    <div class="meta"><span class="pill date">26 Oct 2026</span><span class="pill warn">Announcement verified / result unverified</span></div>
+    <p>OpenAI said its internal models produced three new results — in harmonic analysis (Kakeya/local smoothing), complexity theory (a claimed disproof of the Exponential Time Hypothesis) and quantum field theory — and published a Lean formalisation. The ETH claim is under review by experts including its originators (Impagliazzo, Paturi) and MIT's Ryan Williams; crucially, the algorithm stays superpolynomial, so it does not imply P=NP. The announcement is well-attested, but the scientific claims await independent peer verification.</p>
+    <p class="sources"><span class="lbl">Sources:</span>
+      <a href="https://thenextweb.com/news/openai-exponential-time-hypothesis-false-kakeya-yang-mills">TNW</a> ·
+      <a href="https://www.unite.ai/openai-says-its-models-produced-three-proofs-in-math-cs-and-physics/">Unite.ai</a></p>
+  </article>
+
+  <article class="item">
+    <h4>Anthropic launches enterprise cost/spend visibility tools</h4>
+    <div class="meta"><span class="pill date">28 Oct 2026</span><span class="pill warn">Partial</span></div>
+    <p>Anthropic reportedly introduced tools letting companies see what their Claude spending actually buys (usage/cost transparency for enterprise buyers), reported alongside IPO-preparation context. The primary report could not be opened directly and rests on aggregator corroboration.</p>
+    <p class="sources"><span class="lbl">Sources:</span>
+      <a href="https://techcrunch.com/2026/10/28/anthropic-just-launched-tools-to-show-companies-what-their-ai-spending-is-buying">TechCrunch</a> ·
+      <a href="https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-wednesday-october-28-2026/">The Neuron</a></p>
+  </article>
+
+  <h3 class="sub">What could help a large dental clinic (market perspective)</h3>
+
+  <article class="item">
+    <h4>Dental Intelligence launches DI Voice (native phones + AI receptionist)</h4>
+    <div class="meta"><span class="pill date">27 Oct 2026</span><span class="pill warn">Partial</span></div>
+    <p>Dental Intelligence added DI Voice, a native phone system built into its practice-performance platform, with calls routable to its AI Receptionist for off-hours coverage. It is available now, though the release does not clearly state DI Voice itself books appointments. The source is a single company release distributed across wires.</p>
+    <p class="sources"><span class="lbl">Source:</span>
+      <a href="https://globenewswire.com/news-release/2026/10/27/3389470/0/en/dental-intelligence-launches-di-voice-bringing-native-phones-into-the-practice-performance-platform.html">GlobeNewswire</a></p>
+  </article>
+
+  <article class="item">
+    <h4>Symplicured launches ClinicOS — AI front desk that books appointments</h4>
+    <div class="meta"><span class="pill date">25 Oct 2026</span><span class="pill bad">Unverified</span></div>
+    <p>Singapore's Symplicured launched ClinicOS, an AI front-desk voice agent that answers calls, fields service/hours/provider questions and books appointments on the call. Its first live deployment was a multi-specialty dental practice in Bangalore, where the company claims 94% of appointments were confirmed without staff involvement — a vendor-reported figure from a single press release.</p>
+    <p class="sources"><span class="lbl">Source:</span>
+      <a href="https://www.openpr.com/news/4671783/symplicured-launches-clinicos-the-ai-front-desk">OpenPR</a></p>
+  </article>
+
+  <article class="item">
+    <h4>Scoping review: AI for predicting gum disease / tooth loss "not ready for the clinic"</h4>
+    <div class="meta"><span class="pill date">28 Oct 2026</span><span class="pill warn">Partial</span></div>
+    <p>A scoping review of AI prognostic models for periodontal disease and tooth loss reported strong lab accuracy (a tuned random forest reached AUC ~0.91) but concluded the models are not yet ready for clinical deployment. A useful caution for clinics weighing diagnostic-AI vendor claims.</p>
+    <p class="sources"><span class="lbl">Source:</span>
+      <a href="https://bioengineer.org/ai-shows-promise-for-predicting-gum-disease-and-tooth-loss-but-is-not-ready-for-the-clinic">Bioengineer.org</a></p>
+  </article>
+
+  <a class="toplink" href="#top">↑ Back to top</a>
+</section>
+
+<!-- ============ 3. TECHNOLOGY ============ -->
+<section class="cat" id="tech">
+  <div class="cat-head"><span class="cat-num">3</span><h2>Technology</h2></div>
+
+  <h3 class="sub">New patents &amp; product launches — global</h3>
+
+  <article class="item">
+    <h4>NVIDIA and Oracle expand OCI with Vera Rubin systems</h4>
+    <div class="meta"><span class="pill date">27 Oct 2026</span><span class="pill warn">Partial</span></div>
+    <p>Announced at Oracle AI World, NVIDIA and Oracle said they will expand Oracle Cloud Infrastructure with NVIDIA Vera Rubin NVL72 systems for multi-gigawatt AI workloads, positioning Oracle among the first to deploy/validate the platform. In-window reporting came via event roundups; broader Vera Rubin production news predates the window.</p>
+    <p class="sources"><span class="lbl">Sources:</span>
+      <a href="https://wccftech.com/worlds-top-cloud-providers-now-getting-worlds-fastest-ai-platform-nvidia-vera-rubin/">Wccftech</a> ·
+      <a href="https://killtheai.com/news/top-10-ai-news-today-october-28-2026/">KillTheAI roundup</a></p>
+  </article>
+
+  <article class="item">
+    <h4>USPTO weekly patent grants issued (Tue 27 Oct 2026)</h4>
+    <div class="meta"><span class="pill date">27 Oct 2026</span><span class="pill warn">Partial</span></div>
+    <p>The USPTO's weekly grants for 27 Oct are published in the official daily certificates / Official Gazette. A third-party tracker flags notable grants such as US 12,777,682 (a nanosheet-transistor semiconductor device assigned to TSMC); specific numbers should be confirmed in Patent Center. These are routine weekly issuances, not a single announcement.</p>
+    <p class="sources"><span class="lbl">Source (primary):</span>
+      <a href="https://www.uspto.gov/web/patents/dailycert/20261027-Tuesday/20261027-Tuesday.html">USPTO daily certificate</a></p>
+  </article>
+
+  <h3 class="sub">Patents &amp; launches — Romania</h3>
+  <div class="empty">Nothing relevant in the last 24h — no in-window product launch or granted patent confirmed. Context (outside window): OSIM published its routine patent bulletin Nr. 9/2026; the "Innovation Pathways Romania 2026" AI brokerage event was scheduled for 29 Oct in Bucharest (an event, not a product/patent launch).</div>
+
+  <a class="toplink" href="#top">↑ Back to top</a>
+</section>
+
+<!-- ============ 4. PSYCHOLOGY ============ -->
+<section class="cat" id="psychology">
+  <div class="cat-head"><span class="cat-num">4</span><h2>Psychology</h2></div>
+
+  <h3 class="sub">Adults — a science-backed finding (DSM-5 lens)</h3>
+
+  <article class="item">
+    <h4>Legal online sports betting linked to more depression &amp; anxiety treatment</h4>
+    <div class="meta"><span class="pill date">14 Oct 2026</span><span class="pill ok">Verified</span></div>
+    <p>A quasi-experimental study in <i>JAMA Psychiatry</i> compared US states that legalised online sports betting (2018–2022) with those that did not, using commercial-insurance claims (2016–2023). Legalisation was associated with ~5–7% relative increases in outpatient depression and anxiety diagnoses and in antidepressant/anxiolytic prescriptions, with no rise in substance-use diagnoses or ER/inpatient visits. It is an association — the data cannot confirm which individuals actually gambled.</p>
+    <p class="note"><b>DSM-5 link:</b> maps to Depressive Disorders (MDD) and Anxiety Disorders; the underlying behaviour relates to Gambling Disorder, the only behavioural addiction in DSM-5.</p>
+    <p class="sources"><span class="lbl">Sources:</span>
+      <a href="https://jamanetwork.com/journals/jamapsychiatry/article-abstract/2854925">JAMA Psychiatry</a> ·
+      <a href="https://publichealth.jhu.edu/2026/online-sports-betting-linked-to-more-mental-health-treatment">Johns Hopkins</a> ·
+      <a href="https://www.medscape.com/viewarticle/legalized-online-betting-tied-uptick-mental-health-treatment-2026a100141n">Medscape</a></p>
+  </article>
+
+  <h3 class="sub">Children — the brain of a ~6-year-old (Andrei, b. 2020)</h3>
+
+  <article class="item">
+    <h4>What develops around age 6 — and what to watch this coming year</h4>
+    <div class="meta"><span class="pill date">reference (AAP 2018 + milestone science)</span><span class="pill warn">Partial</span></div>
+    <p>Around age 6 the prefrontal cortex grows rapidly, driving executive function — working memory, impulse control, focus and flexible thinking — while synaptic pruning and myelination make thinking faster and more organised (the classic "5-to-7 shift"). Cognitively a child moves from learning-to-read toward decoding simple words, grasps basic number and time concepts, and develops stronger theory of mind; socially they play cooperatively and want to follow rules, but still carry preschool fears and limited emotional regulation. The AAP stresses that play — including unstructured and guided "playful learning" — is brain-building and buffers stress.</p>
+    <p class="note"><b>Watch for this year:</b> persistent trouble recognising letters/sounds or no interest in print; delays across several skills at once; speech that's hard to understand; impulsivity or inattention far beyond age norms; extreme separation anxiety, persistent sadness/irritability or disruptive aggression; or loss of previously acquired skills (regression) — any of these warrant a pediatrician check. (CDC milestone checklists formally run to age 5, so the 5-year checklist is the nearest CDC reference for a child just turning 6.)</p>
+    <p class="sources"><span class="lbl">Sources:</span>
+      <a href="https://aap.org/en/news-room/news-releases/aap/2018/want-creative-curious-healthier-children-with-21st-century-skills-let-them-play">AAP "Power of Play" (Yogman et al., Pediatrics 2018)</a> ·
+      <a href="https://healthy.kaiserpermanente.org/health-wellness/health-encyclopedia/he.ue5723">Kaiser Permanente — milestones for 6-year-olds</a></p>
+  </article>
+
+  <a class="toplink" href="#top">↑ Back to top</a>
+</section>
+
+<!-- ============ 5. EDUCATION ============ -->
+<section class="cat" id="education">
+  <div class="cat-head"><span class="cat-num">5</span><h2>Education</h2></div>
+
+  <h3 class="sub">Education over the next ~20 years vs. the classic school</h3>
+
+  <article class="item">
+    <h4>OECD's four scenarios for schooling to 2040</h4>
+    <div class="meta"><span class="pill date">2020, updated 2025</span><span class="pill ok">Verified</span></div>
+    <p>The OECD offers not a single forecast but four scenarios to 2040: <b>Schooling Extended</b> (traditional schools persist, scaled up with digital tools); <b>Education Outsourced</b> (learning fragments across private/online providers, weakening the school's monopoly); <b>Schools as Learning Hubs</b> (schools remain but open up and network with communities); and <b>Learn-as-you-go</b> (formal structures largely dissolve into AI-driven, on-demand learning). The 2025 "Trends Shaping Education" update stress-tests these with continuation/disruption/collapse archetypes. Across all four, the contrast with classic schooling is less reliance on fixed age-grade classrooms, more AI personalisation, blurred school boundaries and lifelong rather than front-loaded learning — deliberately "possible futures," not predictions.</p>
+    <p class="sources"><span class="lbl">Sources:</span>
+      <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2020/09/back-to-the-future-of-education_4fa8c90a/178ef527-en.pdf">OECD — Back to the Future of Education</a> ·
+      <a href="https://www.oecd.org/en/publications/trends-shaping-education-2025_ee6587fd-en/full-report/global-trends-and-the-future-of-education-in-2025_7358e77a.html">OECD — Trends Shaping Education 2025</a></p>
+  </article>
+
+  <h3 class="sub">How to educate a ~6-year-old (Andrei, b. 2020)</h3>
+
+  <article class="item">
+    <h4>Evidence-based guidance: read daily, let play lead, talk a lot</h4>
+    <div class="meta"><span class="pill date">reference (AAP + literacy research)</span><span class="pill warn">Partial</span></div>
+    <p>Evidence points to combining: (a) daily shared/dialogic reading — the AAP recommends shared reading through at least kindergarten, favouring print over screens; (b) learning through play and "guided play" rather than heavy direct instruction, which the AAP's "Power of Play" shows builds executive function and buffers stress; (c) at age 6, supporting the move from learning-to-read toward decoding (letter sounds plus context), with word games and conversation that grow vocabulary (a strong predictor of later reading); and (d) limited recreational screen time in favour of hands-on, social activity. Practical takeaway: read together daily, let play lead with light adult guidance, talk a lot, keep learning low-pressure, and protect sleep and unstructured time.</p>
+    <p class="sources"><span class="lbl">Sources:</span>
+      <a href="https://aap.org/en/news-room/news-releases/aap/2018/want-creative-curious-healthier-children-with-21st-century-skills-let-them-play">AAP "Power of Play"</a> ·
+      <a href="https://www.pbs.org/parents/learn-grow/age-6/literacy/reading">PBS Parents — reading at age 6</a></p>
+  </article>
+
+  <a class="toplink" href="#top">↑ Back to top</a>
+</section>
+
+<!-- ============ 6. MEDICINE ============ -->
+<section class="cat" id="medicine">
+  <div class="cat-head"><span class="cat-num">6</span><h2>Medicine</h2></div>
+
+  <h3 class="sub">New discoveries &amp; firsts (science-backed)</h3>
+
+  <article class="item">
+    <h4>Sacituzumab tirumotecan beats chemo in endometrial cancer (Phase 3)</h4>
+    <div class="meta"><span class="pill date">26 Oct 2026</span><span class="pill ok">Verified</span></div>
+    <p>The Phase 3 TroFuse-005 trial (776 patients, 31 countries) found the TROP2-directed antibody-drug conjugate sacituzumab tirumotecan cut the risk of death by ~32% and of progression-or-death by ~41% versus physician's-choice chemotherapy in previously treated advanced/recurrent endometrial cancer. Results were presented at ESMO 2026 (Madrid) and published simultaneously in <i>The Lancet</i>; an FDA decision is expected by June 2027.</p>
+    <p class="sources"><span class="lbl">Sources:</span>
+      <a href="https://www.cancernetwork.com/view/sac-tmt-improves-survival-vs-chemotherapy-in-pretreated-endometrial-cancer">CancerNetwork</a> ·
+      <a href="https://ecancer.org/en/news/29097-esmo-2026-sacituzumab-tirumotecan-effective-at-decreasing-recurrence-of-and-death-from-endometrial-cancer">ecancer (ESMO)</a> ·
+      <a href="https://nyulangone.org/news/next-gen-drug-significantly-prevents-return-and-death-endometrial-cancer">NYU Langone</a></p>
+  </article>
+
+  <article class="item">
+    <h4>First remote robotic surgery between two US hospitals</h4>
+    <div class="meta"><span class="pill date">26 Oct 2026</span><span class="pill warn">Partial</span></div>
+    <p>Dr. Vipul Patel, operating from AdventHealth Celebration in Florida, remotely controlled a surgical robot to remove the prostate of a 66-year-old patient about 35 miles away in Minneola — described as the first such telesurgery between two US hospitals. It is part of an FDA-authorised clinical research study. Coverage traces largely to a single ABC exclusive plus AdventHealth's own release, so independent confirmation is limited.</p>
+    <p class="sources"><span class="lbl">Sources:</span>
+      <a href="https://www.goodmorningamerica.com/wellness/story/doctor-performs-surgery-patient-hospital-35-miles-robotics-137576330">GMA / ABC News</a> ·
+      <a href="https://www.adventhealth.com/news/expanding-access-care-through-record-setting-remote-robotic-surgery-adventhealth-celebration">AdventHealth</a></p>
+  </article>
+
+  <article class="item">
+    <h4>Ivonescimab + chemo improves survival in first-line biliary tract cancer</h4>
+    <div class="meta"><span class="pill date">25 Oct 2026</span><span class="pill ok">Verified</span></div>
+    <p>In the Phase 3 HARMONi-GI1 trial (682 patients, China), the bispecific antibody ivonescimab plus gemcitabine/cisplatin produced median overall survival of 14.9 vs 12.1 months (HR 0.75) and median PFS of 8.4 vs 5.8 months (HR 0.61) versus durvalumab plus chemotherapy. Presented as a late-breaker at ESMO 2026 and framed as a potential new first-line standard — with the caveat that it was a single-region, China-only population.</p>
+    <p class="sources"><span class="lbl">Sources:</span>
+      <a href="https://onclive.com/view/ivonescimab-plus-chemotherapy-improves-os-vs-durvalumab-plus-chemotherapy-in-first-line-biliary">OncLive</a> ·
+      <a href="https://www.cancernetwork.com/view/ivonescimab-combo-improves-survival-in-advanced-biliary-tract-cancer">CancerNetwork</a></p>
+  </article>
+
+  <a class="toplink" href="#top">↑ Back to top</a>
+</section>
+
+<!-- ============ 7. ECONOMY ============ -->
+<section class="cat" id="economy">
+  <div class="cat-head"><span class="cat-num">7</span><h2>Economy</h2></div>
+
+  <h3 class="sub">Acquisitions &amp; sales (EU &gt;€100M · US/China &gt;$100M · RO &gt;€1M)</h3>
+
+  <article class="item">
+    <h4>GE Vernova to acquire Trench Group from Triton Partners</h4>
+    <div class="meta"><span class="pill date">28 Oct 2026</span><span class="pill ok">Verified</span></div>
+    <p>GE Vernova agreed to buy Trench Group — a global supplier of high-voltage grid components (~3,000 employees, 11 sites) — from private-equity owner Triton Partners for roughly €8.0 billion (~$9.0 billion), funded about half cash and half debt. Closing is targeted for late 2027, subject to regulatory approvals; disclosed in GE Vernova's Q3 2026 earnings materials.</p>
+    <p class="sources"><span class="lbl">Sources:</span>
+      <a href="https://www.sec.gov/Archives/edgar/data/0001996810/000199681026000162/gevpressrelease3q26.htm">SEC — GEV press release</a> ·
+      <a href="https://www.sec.gov/Archives/edgar/data/0001996810/000199681026000163/gev3q2026form10-q.pdf">SEC — GEV 10-Q</a></p>
+  </article>
+
+  <article class="item">
+    <h4>EQT to acquire Range Resources in all-stock deal (~$12.8B)</h4>
+    <div class="meta"><span class="pill date">26 Oct 2026</span><span class="pill ok">Verified</span></div>
+    <p>US natural-gas producer EQT agreed to buy Appalachian rival Range Resources all-stock (0.987 EQT shares per Range share), an equity value of ~$12.8 billion at a ~20.6% premium and a combined enterprise value above $50 billion including debt. EQT holders would own ~73%, Range ~27%; expected to close Q1 2027 pending approvals.</p>
+    <p class="sources"><span class="lbl">Sources:</span>
+      <a href="https://www.sec.gov/Archives/edgar/data/0000033213/000121390026112242/ea030960101ex99-1.htm">SEC — press release</a> ·
+      <a href="https://wsau.com/2026/10/26/eqt-range-resources-tie-up-in-50-billion-plus-deal-to-create-us-gas-giant/">WSAU / Reuters</a></p>
+  </article>
+
+  <article class="item">
+    <h4>Ares Capital to acquire MidCap Financial (MFIC) — EV ~$2.6B</h4>
+    <div class="meta"><span class="pill date">26–27 Oct 2026</span><span class="pill ok">Verified</span></div>
+    <p>Business-development company Ares Capital agreed to acquire the Apollo-managed BDC MFIC in a stock-and-cash merger with total enterprise value ~$2.6 billion; MFIC holders receive $10.88 per fully diluted share, a 30.1% premium to the prior close. Both boards approved the deal.</p>
+    <p class="sources"><span class="lbl">Sources:</span>
+      <a href="https://www.sec.gov/Archives/edgar/data/0001287750/000110465926118958/tm2628314d1_ex99-1.htm">SEC — press release</a> ·
+      <a href="https://www.buyoutsinsider.com/apollo-bulks-up-its-midcap-lending-unit-as-big-competitors-loom/">Buyouts Insider</a></p>
+  </article>
+
+  <article class="item">
+    <h4>Romania: Autonom Services to acquire 100% of Business Lease România</h4>
+    <div class="meta"><span class="pill date">26 Oct 2026</span><span class="pill warn">Partial</span></div>
+    <p>Romanian mobility/leasing group Autonom Services signed to buy the entire Business Lease România fleet-leasing unit (1,821,271 shares) from its Dutch owner. The transaction value was not disclosed, and closing is pending Competition Council clearance and foreign-investment screening — a full fleet-leasing acquisition clears the RO &gt;€1M threshold.</p>
+    <p class="sources"><span class="lbl">Sources:</span>
+      <a href="https://www.profit.ro/povesti-cu-profit/auto-transporturi/tranzactie-romanii-cumpara-de-la-olandezi-autonom-services-a-semnat-acordul-pentru-achizitia-a-100-din-actiunile-business-lease-romania-22886343">Profit.ro</a> ·
+      <a href="https://www.juridice.ro/863941/filip-company-a-asistat-autonom-in-legatura-cu-achizitia-business-lease-romania.html">Juridice.ro</a></p>
+  </article>
+
+  <a class="toplink" href="#top">↑ Back to top</a>
+</section>
+
+<!-- ============ 8. POLITICS ============ -->
+<section class="cat" id="politics">
+  <div class="cat-head"><span class="cat-num">8</span><h2>Politics</h2></div>
+
+  <h3 class="sub">New appointments (EU / Romania / USA leadership)</h3>
+  <div class="empty">Nothing relevant in the strict 24–72h window. Recent context: Romania's new government under PM Luca-Alexandru Niculescu was appointed by presidential decree (Decret nr. 818/2026) on 20 Oct 2026 (Monitorul Oficial no. 877), confirmed with 280 votes. The EU Commission's most recent senior appointment (DG FISMA, Paulina Dejmek Hack) took effect 1 Oct 2026. No US Senate confirmations dated 26–29 Oct were found.</div>
+
+  <h3 class="sub">New laws adopted that will apply</h3>
+
+  <article class="item">
+    <h4>Romania (Monitorul Oficial): no new statute published in-window</h4>
+    <div class="meta"><span class="pill date">26–28 Oct 2026</span><span class="pill ok">Verified</span></div>
+    <p>Daily tracking confirms no new law (lege) was published in Monitorul Oficial Partea I on 26, 27 or 28 Oct 2026; the issues in that span (897–900) carried AEP reports and Constitutional Court decisions rather than new statutes.</p>
+    <p class="sources"><span class="lbl">Sources:</span>
+      <a href="https://ghidullegal.ro/post/ce-acte-normative-au-fost-publicate-azi-27-octombrie-2026/">GhidulLegal (27 Oct)</a> ·
+      <a href="https://ghidullegal.ro/post/ce-acte-normative-au-fost-publicate-azi-28-octombrie-2026/">GhidulLegal (28 Oct)</a></p>
+  </article>
+
+  <div class="empty"><b>EU (EUR-Lex):</b> Nothing relevant in-window — no Parliament/Council-adopted regulation or directive found adopted or published during 26–29 Oct (October otherwise saw routine Commission implementing acts). <b>USA (Federal Register / Congress):</b> Nothing relevant in-window — no bill signings or Public Laws dated 26–29 Oct found; the most recent signings were a batch of 10 bills on 20 Oct 2026. Both are "no in-window item found" rather than independently confirmed negatives — verify directly on EUR-Lex and Congress.gov if needed.</div>
+
+  <a class="toplink" href="#top">↑ Back to top</a>
+</section>
+
+<footer>
+  <p><b>Daily Briefing</b> — compiled 29 October 2026. Summaries are written in our own words; original wording belongs to the linked sources. Confidence labels reflect source corroboration, not endorsement. Several primary hosts (CDC, HealthyChildren, some newswires and LinkedIn) could not be opened directly this session, which is why some items are marked Partial.</p>
+  <p><a class="archive-link" href="arhiva/">📚 Browse the archive</a></p>
+</footer>
+
+</div>
+</body>
+</html>
