@@ -1,0 +1,11 @@
+{
+  "name": "Morning Briefing",
+  "short_name": "Briefing",
+  "description": "Daily research & analysis briefing",
+  "display": "standalone",
+  "start_url": ".",
+  "scope": ".",
+  "background_color": "#0f1216",
+  "theme_color": "#2a6df4",
+  "lang": "en"
+}
