@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Briefing">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="manifest" href="../manifest.json">
+  <title>Daily Briefing — October 31, 2026</title>
+  <style>
+    :root{
+      --bg:#0f172a; --panel:#111c33; --panel2:#15223d; --line:#24324f;
+      --text:#e7edf7; --muted:#9fb0cc; --accent:#38bdf8; --accent2:#6ee7b7;
+      --v:#34d399; --p:#fbbf24; --u:#f87171;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; background:var(--bg); color:var(--text);
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      line-height:1.55; -webkit-text-size-adjust:100%;
+    }
+    .wrap{max-width:820px; margin:0 auto; padding:20px 16px 72px}
+    header.top{padding:14px 0 8px; border-bottom:1px solid var(--line); margin-bottom:18px}
+    .kicker{color:var(--accent); font-size:.8rem; letter-spacing:.14em; text-transform:uppercase; font-weight:700}
+    h1{font-size:1.7rem; line-height:1.2; margin:.25rem 0 .2rem}
+    .date{color:var(--muted); font-size:.95rem}
+    .intro{color:var(--muted); font-size:.9rem; margin-top:10px}
+    nav.toc{
+      background:var(--panel); border:1px solid var(--line); border-radius:14px;
+      padding:14px 16px; margin:18px 0 26px;
+    }
+    nav.toc h2{font-size:.8rem; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin:0 0 10px}
+    nav.toc ol{margin:0; padding-left:1.1rem; columns:2; column-gap:20px}
+    @media (max-width:520px){nav.toc ol{columns:1}}
+    nav.toc li{margin:4px 0}
+    nav.toc a{color:var(--text); text-decoration:none}
+    nav.toc a:hover{color:var(--accent)}
+    section.cat{margin:34px 0 10px; scroll-margin-top:12px}
+    .cat-head{display:flex; align-items:baseline; gap:10px; border-bottom:2px solid var(--accent); padding-bottom:6px; margin-bottom:6px}
+    .cat-num{color:var(--accent); font-weight:800; font-size:1rem}
+    .cat-head h2{font-size:1.3rem; margin:0}
+    h3.sub{font-size:.98rem; color:var(--accent2); margin:22px 0 10px; font-weight:700}
+    .empty{color:var(--muted); font-style:italic; background:var(--panel); border:1px dashed var(--line); border-radius:10px; padding:10px 12px; font-size:.9rem}
+    article.item{
+      background:var(--panel); border:1px solid var(--line); border-radius:12px;
+      padding:14px 15px; margin:12px 0;
+    }
+    article.item h4{margin:0 0 6px; font-size:1.05rem; line-height:1.3}
+    article.item p{margin:0 0 10px; color:#dbe4f3; font-size:.95rem}
+    .meta{display:flex; flex-wrap:wrap; align-items:center; gap:8px; font-size:.78rem}
+    .badge{border-radius:999px; padding:2px 10px; font-weight:700; font-size:.72rem; letter-spacing:.02em}
+    .b-v{background:rgba(52,211,153,.14); color:var(--v); border:1px solid rgba(52,211,153,.4)}
+    .b-p{background:rgba(251,191,36,.14); color:var(--p); border:1px solid rgba(251,191,36,.4)}
+    .b-u{background:rgba(248,113,113,.14); color:var(--u); border:1px solid rgba(248,113,113,.4)}
+    .when{color:var(--muted)}
+    .src{margin-top:8px; font-size:.8rem}
+    .src a{color:var(--accent); text-decoration:none; word-break:break-word}
+    .src a:hover{text-decoration:underline}
+    .note{color:var(--muted); font-size:.82rem; font-style:italic; margin-top:6px}
+    .totop{display:inline-block; margin-top:8px; font-size:.78rem; color:var(--muted); text-decoration:none}
+    footer{margin-top:44px; padding-top:18px; border-top:1px solid var(--line); color:var(--muted); font-size:.82rem}
+    footer a{color:var(--accent); text-decoration:none}
+    .legend{display:flex; flex-wrap:wrap; gap:10px; margin:14px 0 0}
+    .archive-link{display:inline-block; margin-top:14px; background:var(--panel2); border:1px solid var(--line); border-radius:10px; padding:8px 14px; color:var(--text); text-decoration:none; font-weight:600; font-size:.9rem}
+    .archive-link:hover{border-color:var(--accent)}
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <div class="kicker">Personal News Briefing</div>
+    <h1>Daily Briefing</h1>
+    <div class="date">Friday, October 31, 2026</div>
+    <p class="intro">News from the last 24–48 hours (window: Oct 29–31, 2026) across dental, AI, technology, psychology, education, medicine, economy and politics. Each item carries a confidence level and source links. Summaries are written in our own words. Where nothing new and verifiable was found for a subsection, that is stated plainly.</p>
+    <div class="legend">
+      <span class="badge b-v">Verified</span>
+      <span class="badge b-p">Partial</span>
+      <span class="badge b-u">Unverified</span>
+    </div>
+    <a class="archive-link" href="index.html">🗂 Archive</a>
+  </header>
+
+  <nav class="toc" id="top">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#dental">Dental</a></li>
+      <li><a href="#ai">Artificial Intelligence</a></li>
+      <li><a href="#tech">Technology</a></li>
+      <li><a href="#psychology">Psychology</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#medicine">Medicine</a></li>
+      <li><a href="#economy">Economy</a></li>
+      <li><a href="#politics">Politics</a></li>
+    </ol>
+  </nav>
+
+  <!-- ============ 1. DENTAL ============ -->
+  <section class="cat" id="dental">
+    <div class="cat-head"><span class="cat-num">01</span><h2>Dental</h2></div>
+
+    <h3 class="sub">Dental medical discoveries</h3>
+    <div class="empty">Nothing relevant in the last 24h.</div>
+
+    <h3 class="sub">New technologies (implants, scanners, software, launches)</h3>
+    <div class="empty">Nothing relevant in the last 24h. (Context, outside the window: SprintRay unveiled its "Foundation" wireless intraoral scanner, "ScanOS" software and "Nano Series" chairside printing at 3DNext 2026 on Oct 13, with first shipments expected in November 2026.)</div>
+
+    <h3 class="sub">New clinic processes (call center, patient care, SOP)</h3>
+    <article class="item">
+      <h4>ADA finds U.S. dentists less busy and less confident in Q3 2026</h4>
+      <p>The American Dental Association's Health Policy Institute quarterly economic update reports that roughly two in five dentists say they are not busy enough and could take on more patients — a sharp rise from the prior quarter — while overall sector confidence slipped to about 41%. New-patient wait times fell to around 12 days. The figures are relevant to staffing, scheduling and patient-acquisition SOPs.</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="when">Reported Oct 29, 2026</span></div>
+      <div class="src">Sources: <a href="https://www.ada.org/-/media/project/ada-organization/ada/ada-org/files/resources/research/hpi/state_us_dental_economy_q32026.pdf">ADA HPI (PDF)</a> · <a href="https://www.dentaltown.com/">Dentaltown</a></div>
+    </article>
+    <article class="item">
+      <h4>Aspen Dental opens free veterans savings-plan enrollment and Nov 7 Day of Service</h4>
+      <p>Aspen Dental said it will offer free enrollment in its Dental Savings Plan to veterans throughout November, with added benefits for VFW members. On its annual Day of Service (Nov 7), more than 550 offices are slated to provide free care to veterans — a patient-access and outreach process at DSO scale.</p>
+      <div class="meta"><span class="badge b-p">Partial</span><span class="when">Oct 30, 2026</span></div>
+      <div class="note">One primary trade source; a second independent confirmation could not be opened.</div>
+      <div class="src">Source: <a href="https://www.dentistrytoday.com/aspen-dental-offers-veterans-free-dental-savings-plan-enrollment/">Dentistry Today</a></div>
+    </article>
+
+    <h3 class="sub">Clinic sales / acquisitions (Romania + global)</h3>
+    <div class="empty">Nothing relevant in the last 24h. (Context, outside the window: Heartland Dental closed its acquisition of Foundation Dental Partners — 33 supported practices — in early October; terms undisclosed.)</div>
+
+    <h3 class="sub">Key-people moves (leadership / doctors)</h3>
+    <article class="item">
+      <h4>Mikrona Group (Switzerland) names Michael Besomi CEO</h4>
+      <p>Michael Besomi, head of Mikrona's Ortho Walker unit and with the group since March 2025, was named CEO of Mikrona Group AG, overseeing its Mikrona, Ortho Walker, Axera Dental, FTC Dental and Alpin Orthodontics brands. He succeeds Fabio Fagagnini, who remains Chairman and continues as CEO of parent Healthcare Holding Schweiz AG. The handover is effective Nov 1, 2026.</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="when">Announced ~Oct 30, 2026</span></div>
+      <div class="note">LinkedIn profile change could not be opened directly to confirm the date.</div>
+      <div class="src">Sources: <a href="https://www.healthcare-holding.ch/en/healthcare-holding-news/mikrona-group-ag-%C3%BCbergibt-f%C3%BChrung-an-die-n%C3%A4chste-generation">Healthcare Holding</a> · <a href="https://www.zwp-online.info/zwpnews/wirtschaft-und-recht/businessnews/mikrona-group-ag-ubergibt-fuhrung-an-die-nachste-generation">ZWP-online</a></div>
+    </article>
+    <article class="item">
+      <h4>Align Technology (Invisalign) names Jennifer Davis CEO-elect</h4>
+      <p>Align's board appointed Jennifer Davis, former CEO of P&amp;G's health-care business, as president and CEO. She joins as CEO-elect and director on Nov 2, 2026 and becomes CEO on Dec 31, 2026, succeeding Joe Hogan, who has led the company since 2015 and will retire and move to a strategic-advisor role. (Announced Oct 26 — just before the window, but the most significant recent dental-sector leadership move.)</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="when">Oct 26, 2026</span></div>
+      <div class="src">Source: <a href="https://www.sec.gov/Archives/edgar/data/0001097149/000109714926000078/algn-ex991pressreleaseceos.htm">SEC 8-K filing</a></div>
+    </article>
+
+    <h3 class="sub">New dental-lab processes and technologies</h3>
+    <article class="item">
+      <h4>3D Systems donates NextDent 300 printer to Remote Area Medical</h4>
+      <p>3D Systems announced a donation of its NextDent 300 MultiJet 3D printer to the nonprofit Remote Area Medical to expand free digital-denture production. The NextDent 300 prints monolithic multi-material dentures (teeth and base in one piece) and will be installed in RAM's forthcoming mobile dental lab serving underserved communities, replacing an earlier NextDent 5100.</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="when">Oct 29, 2026</span></div>
+      <div class="src">Sources: <a href="https://www.globenewswire.com/news-release/2026/10/29/3391884/8852/en/3d-systems-donates-nextdent-300-3d-printer-to-remote-area-medical-to-expand-access-to-free-denture-care-in-the-u-s.html">GlobeNewswire</a> · <a href="https://www.stocktitan.net/news/DDD/3d-systems-donates-next-dent-300-3d-printer-to-remote-area-medical-ktj8r0iqlvgr.html">StockTitan</a></div>
+    </article>
+
+    <h3 class="sub">Courses &amp; the online English-language dentistry course market</h3>
+    <div class="empty">No dated news event in the last 24h. Market assessment below (context, not breaking news).</div>
+    <article class="item">
+      <h4>How online English-language dental CE is sold internationally</h4>
+      <p>English-language continuing education is sold mostly direct to dentists through three channels: subscription/membership platforms (e.g., Viva Learning, Dental Learning — ADA CERP / AGD PACE accredited); manufacturer "academies" that use free online courses as a funnel into paid hands-on training (e.g., Dentsply Sirona Aligner Course Series); and individual thought-leader brands selling high-ticket self-paced plus hands-on bundles (commonly ~$3,000–$4,000, e.g., 3D Dentists, Implant Pathways). The best-selling topics are implants/surgery, clear aligners/orthodontics, and practice marketing; accreditation is the key trust signal buyers look for.</p>
+      <div class="meta"><span class="badge b-p">Partial</span><span class="when">Market context</span></div>
+      <div class="note">Based on provider/marketing sources; no public audited sales rankings exist.</div>
+      <div class="src">Sources: <a href="https://www.dentsplysirona.com/en-us/academy/course-series/aligner-course-series.html">Dentsply Sirona Academy</a> · <a href="https://identitydental.com/courses/">Identity Dental Marketing</a></div>
+    </article>
+    <a class="totop" href="#top">↑ Contents</a>
+  </section>
+
+  <!-- ============ 2. AI ============ -->
+  <section class="cat" id="ai">
+    <div class="cat-head"><span class="cat-num">02</span><h2>Artificial Intelligence</h2></div>
+
+    <h3 class="sub">News (any domain)</h3>
+    <article class="item">
+      <h4>Mistral releases open weights for Mistral Large 4</h4>
+      <p>Mistral published open weights for its roughly one-trillion-parameter multimodal mixture-of-experts model (about 49–52B active parameters per token), positioning it as a leading open-weight model for coding and cybersecurity with roughly a 1M-token context. It is distributed via Hugging Face and available through Mistral's API, OpenRouter, Microsoft Foundry and NVIDIA endpoints; a quantized build runs on four NVIDIA B200/B300 GPUs. The exact license terms are reported inconsistently.</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="when">Oct 29, 2026</span></div>
+      <div class="src">Sources: <a href="https://mistral.ai/news/mistral-large-4-oss/">Mistral</a> · <a href="https://techcrunch.com/2026/10/29/mistral-releases-weights-for-its-trillion-parameter-ai-model-targeting-cybersecurity/">TechCrunch</a></div>
+    </article>
+    <article class="item">
+      <h4>OpenAI, Google, Microsoft and Anthropic back a shared AI-training opt-out token</h4>
+      <p>The four companies announced support for a single robots.txt policy token ("__usage_ai-training") that lets publishers opt out of having their content used for AI training. It is a training-preference signal only — it does not block fetching or grounding, nor remove content already in existing models. Anthropic (which drafted the proposal via the IETF) has begun implementing; Microsoft targets around Feb 1, 2027, with Google and OpenAI following later.</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="when">Oct 30, 2026</span></div>
+      <div class="src">Sources: <a href="https://siliconangle.com/2026/10/30/google-anthropic-and-others-to-support-new-ai-crawling-opt-out-standard/">SiliconANGLE</a> · <a href="https://www.datastudios.org/post/openai-google-microsoft-anthropic-robots-txt-ai-training-opt-out-token">Data Studios</a></div>
+    </article>
+    <article class="item">
+      <h4>Google announces Gemini 4 Carbon (limited access)</h4>
+      <p>Google unveiled Gemini 4 Carbon, initially restricted to selected cyber-defenders via its "Fairwind" program, with no general-availability date and no public API yet. Reported preview pricing is around $2 in / $10 out per million tokens. Several third-party trackers mislabel the announcement as a full public release.</p>
+      <div class="meta"><span class="badge b-p">Partial</span><span class="when">Oct 28, 2026</span></div>
+      <div class="src">Source: <a href="https://nerdschalk.com/gemini-4-carbon-public-release-date-what-google-has-announced/">Nerdschalk</a></div>
+    </article>
+    <article class="item">
+      <h4>New York lawmakers propose tightening the RAISE Act</h4>
+      <p>About a year after New York's RAISE Act (effective Jan 1, 2027), a new bill would reportedly add incident-disclosure duties, stronger enforcement and independent safety oversight — including quarterly reporting on self-improving AI research, 72-hour disclosure of major capability jumps, and annual audits by a state-licensed "frontier examiner." This is a pending proposal, not law, and the bill number/status could not be independently confirmed.</p>
+      <div class="meta"><span class="badge b-u">Unverified</span><span class="when">Reported Oct 30, 2026</span></div>
+      <div class="note">Single primary source; underlying RAISE Act is well documented.</div>
+      <div class="src">Context: <a href="https://www.wiley.law/alert-New-York-Finalizes-RAISE-Act-for-Frontier-AI-Models-Law-Takes-Effect-January-1-2027">Wiley Law</a></div>
+    </article>
+
+    <h3 class="sub">What could help a large dental clinic (market perspective)</h3>
+    <article class="item">
+      <h4>Zocdoc opens its booking network to AI agents</h4>
+      <p>Zocdoc now lets registered AI agents find vetted providers, verify insurance and book confirmed appointments directly onto provider calendars via its MCP server, launching with partner agent "Instinct" (with Google Gemini and Amazon Health AI also connected). Agents must register, identify themselves and obtain patient consent before booking. For a large clinic, it signals where patient self-scheduling is heading — agent-driven booking it may want to be discoverable through.</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="when">Oct 28, 2026</span></div>
+      <div class="src">Sources: <a href="https://www.prnewswire.com/news-releases/as-others-put-up-walls-zocdoc-opens-its-doors-and-welcomes-ai-agents-to-reliably-connect-patients-to-care-302921530.html">PR Newswire</a> · <a href="https://www.healthcaredive.com/news/zocdoc-invites-ai-agents-to-book-appointments-on-behalf-of-patients/873035">Healthcare Dive</a></div>
+    </article>
+    <article class="item">
+      <h4>Confido Health raises $12.5M for front-office automation (CareOS)</h4>
+      <p>Confido Health raised $12.5M to expand CareOS, an AI-agent platform that automates patient-access and revenue-cycle operations across phone, text, email and fax. The company names dental among the specialties it plans to expand into — the kind of multi-channel front-desk and billing automation a large multi-site clinic would evaluate. Handle-rate claims are vendor-reported.</p>
+      <div class="meta"><span class="badge b-p">Partial</span><span class="when">Late October 2026</span></div>
+      <div class="src">Source: <a href="https://alleywatch.com/2026/10/confido-health-agentic-ai-healthcare-operations-patient-access-automation-revenue-cycle-careos-chetan-reddy">AlleyWatch</a></div>
+    </article>
+    <a class="totop" href="#top">↑ Contents</a>
+  </section>
+
+  <!-- ============ 3. TECHNOLOGY ============ -->
+  <section class="cat" id="tech">
+    <div class="cat-head"><span class="cat-num">03</span><h2>Technology</h2></div>
+
+    <h3 class="sub">Launches &amp; patents (global)</h3>
+    <article class="item">
+      <h4>Samsung confirms a new book-style foldable launch in China</h4>
+      <p>Samsung confirmed via Weibo a product launch in China on Oct 29, 2026, teasing a gold-framed book-style foldable widely reported as the "Galaxy W27." The name, specs, roughly CNY 16,999 price and a reported Nov 5 sales start come from leaks and outlets, not from Samsung; it is described as a China-exclusive luxury variant of the Galaxy Z Fold.</p>
+      <div class="meta"><span class="badge b-p">Partial</span><span class="when">Oct 29, 2026</span></div>
+      <div class="note">Launch date confirmed by Samsung; name, specs and price unconfirmed.</div>
+      <div class="src">Sources: <a href="https://www.androidauthority.com/samsung-next-foldable-phone-october-29-3727071/">Android Authority</a> · <a href="https://www.phonearena.com/news/samsung-new-foldable-launch_id184271">PhoneArena</a></div>
+    </article>
+    <article class="item">
+      <h4>Recent wearable / health-tech patent grants</h4>
+      <p>A patent-watch roundup lists recent U.S. grants in wearables, including Zepp Health/Amazfit (heart-rate tracking, granted Oct 27), plus Oct 20 grants to Oura (universal charger), Google (a wearable band-connector design patent) and Whoop (determining sleep need from physiological measurements). The patent numbers are plausible but were not independently confirmed against USPTO records.</p>
+      <div class="meta"><span class="badge b-u">Unverified</span><span class="when">Grants Oct 20–27, 2026</span></div>
+      <div class="note">Single secondary source; not cross-checked at USPTO.</div>
+      <div class="src">Verify at: <a href="https://patentsgazette.uspto.gov/week40/OG/patentee/alphaS.html">USPTO Gazette</a></div>
+    </article>
+
+    <h3 class="sub">Technology launches &amp; patents (Romania)</h3>
+    <div class="empty">Nothing relevant in the last 24h. (Context, outside the window: OSIM attended UMF Cluj "Technology Transfer Days 2026" on Oct 28; OSIM publishes monthly patent bulletins rather than daily grant news.)</div>
+    <a class="totop" href="#top">↑ Contents</a>
+  </section>
+
+  <!-- ============ 4. PSYCHOLOGY ============ -->
+  <section class="cat" id="psychology">
+    <div class="cat-head"><span class="cat-num">04</span><h2>Psychology</h2></div>
+
+    <h3 class="sub">Adults — new, scientifically-based findings</h3>
+    <div class="empty">No independently verified adult psychology finding was published strictly in the Oct 29–31 window. The freshest in-window item concerns minors (below); the most recent verified adult findings follow, with their true dates flagged.</div>
+    <article class="item">
+      <h4>Roughly two in three tweens and teens now use AI chatbots</h4>
+      <p>Two surveys released around Oct 30 — a JED Foundation survey of 5,500 students aged 9–17 (90% had used an AI chatbot) and a Common Sense Media survey — found heavy chatbot use among minors, with certain uses correlating with worse mental-health symptoms. The data are cross-sectional, so causation is unclear; an independent developmental psychologist cautioned against over-reading the link.</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="when">Oct 30, 2026</span></div>
+      <div class="src">Sources: <a href="https://www.npr.org/2026/10/30/nx-s1-6022278/ai-artificial-intelligence-teens-jed-common-sense-media">NPR</a> · <a href="https://www.opb.org/article/2026/10/30/new-research-looks-at-teen-mental-health-and-ai-chatbot-use/">OPB</a></div>
+    </article>
+    <article class="item">
+      <h4>Depression may be five distinct brain "profiles," not one disorder</h4>
+      <p>A University of Helsinki team used MEG recordings from 263 adults with major depressive disorder plus 75 controls and sorted patients into five subtypes based on brain-connectivity patterns, which differed in symptoms and in hyper- versus hypo-connectivity. The work supports the view that DSM-5's single MDD category may mask biologically distinct conditions, though it is cross-sectional and needs replication.</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="when">~Sept 23, 2026 (outside window)</span></div>
+      <div class="src">Sources: <a href="https://www.helsinki.fi/en/news/brain/researchers-identify-five-brain-profiles-depression">University of Helsinki</a> · <a href="https://neurosciencenews.com/five-brain-profiles-depression-31246/">Neuroscience News</a></div>
+    </article>
+    <article class="item">
+      <h4>Deeper slow-wave sleep linked to more anxiety in young adults</h4>
+      <p>A study in the journal <em>Sleep</em> found that healthy young male conscripts with a higher proportion of deep (N3) sleep and slower dissipation of slow-wave activity reported greater anxiety — counter to the usual assumption that more deep sleep is always better. The sample was young men only, so it may not generalize.</p>
+      <div class="meta"><span class="badge b-p">Partial</span><span class="when">~Oct 14, 2026</span></div>
+      <div class="note">Single reporting outlet located; DOI recommended for confirmation.</div>
+      <div class="src">Source: <a href="https://www.docwirenews.com/post/slow-wave-sleep-may-be-linked-to-anxiety-and-depression">DocWire News</a></div>
+    </article>
+
+    <h3 class="sub">Children — brain development of a ~6-year-old (Andrei, b. 2020)</h3>
+    <article class="item">
+      <h4>Prefrontal cortex and myelination drive attention and self-control</h4>
+      <p>Around age 6 the frontal cortex (attention, problem-solving, impulse control) is still maturing and myelination continues, speeding communication between brain regions. The practical result: a 6-year-old can focus longer (roughly 15 minutes on a task), follow multi-step instructions and filter distractions better than a preschooler. Watch for in the coming year: impulse control is growing but still limited, so meltdowns and difficulty waiting remain developmentally normal.</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="when">Established science</span></div>
+      <div class="src">Sources: <a href="https://pressbooks.palomar.edu/childdevelopment/chapter/brain-development/">Palomar — Child Development</a> · <a href="https://healthy.kaiserpermanente.org/health-wellness/health-encyclopedia/he.ue5723">Kaiser Permanente</a></div>
+    </article>
+    <article class="item">
+      <h4>Concrete reasoning and early literacy/numeracy take off</h4>
+      <p>By 6, children typically count to and understand "10," recognize numbers, sort and compare objects, begin sounding out and reading simple words, and increasingly distinguish imagination from reality. Expect rapid gains in reading fluency and basic arithmetic this year as formal (first-grade) schooling begins.</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="when">Established science</span></div>
+      <div class="src">Sources: <a href="https://www.columbiadoctors.org/health-library/article/milestones-6-year-olds/">Columbia Doctors</a> · <a href="https://www.scholastic.com/parents/family-life/creativity-and-critical-thinking/development-milestones/cognitive-development-6-7-year-olds.html">Scholastic</a></div>
+    </article>
+    <article class="item">
+      <h4>Friendships, fairness and lingering childhood fears</h4>
+      <p>Six-year-olds grow in cooperative play, want to follow rules and please adults, and become sensitive to fairness; many still have age-typical fears (the dark, monsters, large animals). Watch this year for emotional regulation under school pressure and whether friendships and group play are developing — persistent social withdrawal is worth discussing with a pediatrician.</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="when">Established science</span></div>
+      <div class="src">Sources: <a href="https://www.peacehealth.org/medical-topics/id/ue5723">PeaceHealth</a> · <a href="https://www.webmd.com/parenting/child-at-6-milestones">WebMD</a></div>
+    </article>
+    <a class="totop" href="#top">↑ Contents</a>
+  </section>
+
+  <!-- ============ 5. EDUCATION ============ -->
+  <section class="cat" id="education">
+    <div class="cat-head"><span class="cat-num">05</span><h2>Education</h2></div>
+
+    <h3 class="sub">Education over the next ~20 years vs. classic schooling</h3>
+    <article class="item">
+      <h4>OECD's four scenarios for schooling to 2040</h4>
+      <p>The OECD's "Back to the Future of Education" lays out four futures to 2040 — Schooling Extended, Education Outsourced, Schools as Learning Hubs, and Learn-as-you-go — ranging from today's school model persisting to learning dispersed across digital platforms and communities. It is explicitly a planning framework, not a prediction, showing classic schooling is one of several plausible paths rather than a given.</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="when">OECD report</span></div>
+      <div class="src">Source: <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2020/09/back-to-the-future-of-education_4fa8c90a/178ef527-en.pdf">OECD (PDF)</a></div>
+    </article>
+    <article class="item">
+      <h4>Generative AI will reshape classrooms (OECD Digital Education Outlook 2026)</h4>
+      <p>The OECD Digital Education Outlook 2026 reviews evidence on generative AI in student self-study, joint student–teacher use and teacher-only use, concluding that AI can aid learning when guided by sound teaching principles and that outright bans are not sustainable. The direction of travel is classic instruction increasingly augmented by AI tutoring and automation rather than replaced.</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="when">Jan 2026</span></div>
+      <div class="src">Source: <a href="https://www.oecd.org/en/publications/oecd-digital-education-outlook-2026_062a7394-en.html">OECD</a></div>
+    </article>
+    <article class="item">
+      <h4>WEF: 39% of core job skills to change by 2030</h4>
+      <p>The World Economic Forum's Future of Jobs Report 2025 states employers expect 39% of workers' core skills to change by 2030 (down from 44% in 2023), implying schooling and lifelong learning must shift toward adaptability, AI literacy and continuous reskilling rather than fixed curricula.</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="when">WEF 2025</span></div>
+      <div class="src">Source: <a href="https://www.weforum.org/publications/the-future-of-jobs-report-2025/in-full/3-skills-outlook/">WEF Future of Jobs</a></div>
+    </article>
+
+    <h3 class="sub">How to educate a child of Andrei's age (~6)</h3>
+    <article class="item">
+      <h4>Daily shared reading and word games</h4>
+      <p>At 6, children sound out simple words using letter sounds and context; daily shared reading expands vocabulary and word games build decoding skills, and a parent's own visible enjoyment of reading has a lasting effect. It is low-cost and directly matched to this age's emerging literacy.</p>
+      <div class="meta"><span class="badge b-v">Verified</span></div>
+      <div class="src">Source: <a href="https://www.pbs.org/parents/learn-grow/age-6/literacy/reading">PBS Parents</a></div>
+    </article>
+    <article class="item">
+      <h4>Match tasks to attention span; use multi-step instructions</h4>
+      <p>Because a 6-year-old can typically focus about 15 minutes and follow multi-step directions, keep learning sessions short and concrete, build in movement, and gradually increase complexity as frontal-lobe control matures. Pair this with clear, consistent routines to support still-developing impulse control.</p>
+      <div class="meta"><span class="badge b-v">Verified</span></div>
+      <div class="src">Source: <a href="https://www.scholastic.com/parents/family-life/creativity-and-critical-thinking/development-milestones/cognitive-development-6-7-year-olds.html">Scholastic</a></div>
+    </article>
+    <article class="item">
+      <h4>Limit screens; prioritize interaction and sleep</h4>
+      <p>Pediatric guidance for this age recommends reading together and limiting screen time, with real-world interaction and adequate sleep supporting attention and emotional regulation. Given the recent findings on children and AI chatbots, be especially deliberate about AI and companion-app exposure for a child this young.</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="when">chatbot caution: association only</span></div>
+      <div class="src">Sources: <a href="https://www.webmd.com/parenting/child-at-6-milestones">WebMD</a> · <a href="https://www.npr.org/2026/10/30/nx-s1-6022278/ai-artificial-intelligence-teens-jed-common-sense-media">NPR</a></div>
+    </article>
+    <a class="totop" href="#top">↑ Contents</a>
+  </section>
+
+  <!-- ============ 6. MEDICINE ============ -->
+  <section class="cat" id="medicine">
+    <div class="cat-head"><span class="cat-num">06</span><h2>Medicine</h2></div>
+
+    <article class="item">
+      <h4>FDA approves Voceryq — first plasmid-DNA immunotherapy for recurrent respiratory papillomatosis</h4>
+      <p>The FDA granted accelerated approval to Inovio's Voceryq (INO-3107) for adults with recurrent respiratory papillomatosis, a rare HPV-driven disease that causes wart-like airway growths. Described as the first plasmid-DNA-based immunotherapy of its kind, the approval rested on a reduction in the number of surgeries needed, with confirmatory trials required. It is Inovio's first approved product.</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="when">Oct 30, 2026</span></div>
+      <div class="src">Sources: <a href="https://www.fda.gov/news-events/press-announcements/fda-approves-first-plasmid-dna-based-immunotherapy-adults-recurrent-respiratory-papillomatosis">FDA</a> · <a href="https://rallies.ai/news/us-fda-approves-inovios-treatment-for-rare-throat-disease-2c2993c3f32ebab9">Reuters-sourced wire</a></div>
+    </article>
+    <article class="item">
+      <h4>Diet plus supervised exercise put early-onset type 2 diabetes into remission in 54%</h4>
+      <p>In the randomized RESET for Remission trial, adults under 45 with early-onset type 2 diabetes followed an 800–900 kcal/day low-energy diet plus structured exercise. At 24 weeks, 54% achieved remission versus 4% on usual care. A key limitation is the absence of a diet-only arm, so exercise's independent contribution is unclear, and long-term durability is unknown.</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="when">Oct 29–30, 2026</span></div>
+      <div class="src">Sources: <a href="https://www.thelancet.com/journals/lanam/article/PIIS2667-193X(26)00294-2/fulltext">The Lancet Regional Health</a> · <a href="https://www.sciencedaily.com/releases/2026/10/261029072129.htm">ScienceDaily</a></div>
+    </article>
+    <article class="item">
+      <h4>Oxaloacetate may ease cancer-related "brain fog"</h4>
+      <p>A small UCLA Health-led study tested oxaloacetate, a molecule used in the body's energy metabolism, in breast-cancer survivors with cancer-related cognitive impairment. After eight weeks, participants reported improvements in memory and concentration. The authors cautioned the sample was small with no placebo group; a randomized placebo-controlled phase 2 trial is planned.</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="when">~Oct 29–30, 2026</span></div>
+      <div class="src">Sources: <a href="https://www.technologynetworks.com/cancer-research/news/nutritional-supplement-may-ease-chemo-brain-and-reduce-fatigue-for-cancer-survivors-417580">Technology Networks</a> · <a href="https://www.bcrf.org/blog/supplement-may-help-ease-brian-fog-after-breast-cancer-treatment/">BCRF</a></div>
+    </article>
+    <article class="item">
+      <h4>Fexlamose fails Phase 2a trial in COPD (notable negative result)</h4>
+      <p>Aer Therapeutics reported top-line results from its Phase 2a trial of fexlamose in COPD: the 90 mg dose showed no improvement in lung function after 28 days, and most respiratory adverse events occurred in the fexlamose arm. The trial enrolled 119 patients.</p>
+      <div class="meta"><span class="badge b-p">Partial</span><span class="when">Oct 30, 2026</span></div>
+      <div class="note">Single primary source (company release); no independent replication yet.</div>
+      <div class="src">Source: <a href="https://www.globenewswire.com/news-release/2026/10/30/3392177/0/en/aer-therapeutics-announces-top-line-results-from-its-phase-2a-proof-of-concept-trial-of-fexlamose-in-chronic-obstructive-pulmonary-disease-copd.html">GlobeNewswire</a></div>
+    </article>
+    <a class="totop" href="#top">↑ Contents</a>
+  </section>
+
+  <!-- ============ 7. ECONOMY ============ -->
+  <section class="cat" id="economy">
+    <div class="cat-head"><span class="cat-num">07</span><h2>Economy</h2></div>
+
+    <h3 class="sub">United States (deals &gt; $100M)</h3>
+    <article class="item">
+      <h4>DoorDash to acquire Instacart for ~$17 billion</h4>
+      <p>DoorDash signed a definitive agreement to buy grocery-delivery rival Instacart (Maplebear) at $65.00 per share — an equity value of roughly $17 billion and about a 26% premium to Instacart's Oct 22 close. The consideration is at least 75% cash, with holders able to elect cash, DoorDash stock, or a mix (stock capped at 25% via proration). Instacart's board approved unanimously.</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="when">Oct 29, 2026</span></div>
+      <div class="src">Sources: <a href="https://www.sec.gov/Archives/edgar/data/0001792789/000114036126041111/ef20084547_ex99-1.htm">DoorDash 8-K</a> · <a href="https://www.foxbusiness.com/retail/doordash-advanced-talks-acquire-instacart-potential-17b-deal">Fox Business</a></div>
+    </article>
+
+    <h3 class="sub">European Union (deals &gt; €100M)</h3>
+    <article class="item">
+      <h4>Tesco sells its Czech and Slovak businesses to Ahold Delhaize for ~€1.7 billion</h4>
+      <p>Tesco agreed to sell its Czech Republic and Slovakia operations to Dutch retailer Ahold Delhaize for an enterprise value of about €1.7 billion (£1.5 billion), on a cash- and debt-free basis, covering all stores, offices and three distribution centres (Hungary excluded). Tesco expects roughly €1.2 billion net cash, most to be returned to shareholders via buyback; completion is expected in H2 2027, subject to regulatory approval.</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="when">Oct 30, 2026</span></div>
+      <div class="src">Sources: <a href="https://www.bloomberg.com/news/articles/2026-10-30/tesco-strikes-deal-to-sell-czech-slovakia-unit-for-1-7-billion">Bloomberg</a> · <a href="https://www.retailgazette.co.uk/blog/2026/10/tesco-agrees-e1-7bn/">Retail Gazette</a></div>
+    </article>
+
+    <h3 class="sub">Romania (deals &gt; €1M)</h3>
+    <div class="empty">Nothing confirmed strictly in the last 24h. (Context, just outside the window: Rheinmetall and MSC agreed to acquire Mangalia Shipyard for ~€138M, announced ~Oct 27, pending clearances; Autonom Services signed to acquire Business Lease Romania ~Oct 26, price undisclosed.)</div>
+    <a class="totop" href="#top">↑ Contents</a>
+  </section>
+
+  <!-- ============ 8. POLITICS ============ -->
+  <section class="cat" id="politics">
+    <div class="cat-head"><span class="cat-num">08</span><h2>Politics</h2></div>
+
+    <h3 class="sub">New appointments (EU, Romania, USA)</h3>
+    <article class="item">
+      <h4>ECB President Lagarde announces early departure (Feb 2027)</h4>
+      <p>Christine Lagarde notified the ECB Governing Council and the European Council president that she will step down as ECB President on Feb 7, 2027, before her term ends. The European Council has begun the succession process; no successor has been named. This is a departure and succession start, not a completed appointment.</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="when">Oct 29, 2026</span></div>
+      <div class="src">Sources: <a href="https://www.euronews.com/2026/10/29/ecb-president-christine-lagarde-to-step-down-in-february-months-before-her-term-ends">Euronews</a> · <a href="https://www.brusselstimes.com/eu-affairs/2383560/ecb-leadership-shake-up-to-begin-as-lagarde-announces-her-departure-in-2027">Brussels Times</a></div>
+    </article>
+    <article class="item">
+      <h4>Romania: a government Secretary-General appointment published in Monitorul Oficial</h4>
+      <p>Monitorul Oficial Part I no. 905 of Oct 29, 2026 reportedly contains a Prime Minister's decision appointing a Secretary-General of the Government. The appointee's identity could not be confirmed from a primary source. (For context, the Niculescu government's appointment decree was published in MO no. 877 on Oct 20.)</p>
+      <div class="meta"><span class="badge b-u">Unverified</span><span class="when">Published Oct 29, 2026</span></div>
+      <div class="note">Secondary source; name not confirmed against Monitorul Oficial directly.</div>
+      <div class="src">Source: <a href="https://www.ccjtm.ro/monitorul-905-din-data-29-10-2026/">MO index (secondary)</a></div>
+    </article>
+    <div class="empty"><strong>United States:</strong> No new federal leadership appointment or Senate confirmation found for Oct 29–31; coverage is dominated by the Nov 3 midterm campaign.</div>
+
+    <h3 class="sub">New laws adopted / taking effect</h3>
+    <div class="empty"><strong>Romania (Monitorul Oficial):</strong> No new law published Oct 28–30. MO no. 905 carried a Constitutional Court decision and administrative acts; a government session was held Oct 30 but its specific acts could not be retrieved.</div>
+    <div class="empty"><strong>EU (EUR-Lex):</strong> Nothing relevant in the last 24h — no major new legislative act identified as adopted in the window.</div>
+    <div class="empty"><strong>USA (Federal Register / Congress):</strong> Nothing relevant in the last 24h — no bill signed into law on Oct 29–30; the most recent signings were earlier in October.</div>
+    <a class="totop" href="#top">↑ Contents</a>
+  </section>
+
+  <footer>
+    <p><strong>Methodology.</strong> Items were sought from the last 24–48 hours and, where possible, confirmed against two or more independent sources, favoring primary sources (official releases, Monitorul Oficial, EUR-Lex, Federal Register, company filings, peer-reviewed journals, patent offices). <span class="badge b-v">Verified</span> = 2+ independent sources; <span class="badge b-p">Partial</span> = consistent but with unconfirmed specifics; <span class="badge b-u">Unverified</span> = single source or could not be cross-checked. Summaries are written in our own words; nothing is invented or extrapolated. Some sources could not be opened directly from the research environment and were cross-referenced via independent reporting.</p>
+    <p><a href="index.html">🗂 Browse the archive</a> · Briefing for October 31, 2026</p>
+  </footer>
+
+</div>
+</body>
+</html>
