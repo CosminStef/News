@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Briefing">
+<meta name="description" content="Personal daily news briefing for 4 November 2026: dental, AI, technology, psychology, education, medicine, economy, politics.">
+<link rel="manifest" href="manifest.json">
+<title>Daily Briefing — 4 November 2026</title>
+<style>
+  :root{
+    --bg:#0f172a; --bg2:#111c34; --card:#172036; --card2:#1d294420;
+    --ink:#e8edf7; --muted:#9fb0cc; --faint:#728099;
+    --line:#26334f; --accent:#6ea8fe; --accent2:#8b7bf0;
+    --ok:#2bb673; --ok-bg:#12341f; --partial:#d6a234; --partial-bg:#34280f;
+    --unver:#e06c75; --unver-bg:#3a1719;
+    --maxw:860px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-text-size-adjust:100%;
+  }
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 16px 72px}
+  header.top{
+    padding:34px 0 20px; border-bottom:1px solid var(--line); margin-bottom:8px;
+  }
+  .kicker{color:var(--accent); font-weight:700; letter-spacing:.14em; text-transform:uppercase; font-size:12.5px}
+  h1{font-size:clamp(26px,6vw,40px); line-height:1.12; margin:8px 0 6px; letter-spacing:-.02em}
+  .date{color:var(--muted); font-size:15px; margin:0}
+  .intro{color:var(--muted); font-size:14.5px; margin:16px 0 0; padding:14px 16px; background:var(--bg2); border:1px solid var(--line); border-radius:12px}
+  .intro b{color:var(--ink)}
+
+  /* TOC */
+  nav.toc{margin:24px 0 8px; padding:18px 18px 10px; background:var(--card); border:1px solid var(--line); border-radius:16px}
+  nav.toc h2{margin:0 0 12px; font-size:13px; text-transform:uppercase; letter-spacing:.12em; color:var(--faint)}
+  nav.toc ol{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:8px 18px}
+  nav.toc a{display:flex; gap:10px; align-items:baseline; color:var(--ink); text-decoration:none; padding:7px 8px; border-radius:9px}
+  nav.toc a:hover,nav.toc a:focus{background:var(--bg2)}
+  nav.toc .n{color:var(--accent); font-weight:700; font-variant-numeric:tabular-nums; min-width:18px}
+  @media (max-width:560px){ nav.toc ol{grid-template-columns:1fr} }
+
+  section.cat{margin:40px 0 0; scroll-margin-top:16px}
+  .cat-head{display:flex; align-items:center; gap:12px; padding-bottom:10px; border-bottom:2px solid var(--line); margin-bottom:6px}
+  .cat-head .badge{background:linear-gradient(135deg,var(--accent),var(--accent2)); color:#0b1120; font-weight:800; width:34px; height:34px; border-radius:10px; display:grid; place-items:center; font-size:16px; flex:0 0 auto}
+  .cat-head h2{margin:0; font-size:clamp(20px,4.5vw,26px); letter-spacing:-.01em}
+  h3.sub{font-size:15px; text-transform:uppercase; letter-spacing:.07em; color:var(--accent); margin:26px 0 4px}
+
+  article.item{padding:16px 0 14px; border-bottom:1px solid var(--line)}
+  article.item:last-child{border-bottom:none}
+  .item h4{margin:0 0 7px; font-size:17.5px; line-height:1.3}
+  .item p{margin:0 0 10px; color:#d7deec}
+  .meta{display:flex; flex-wrap:wrap; gap:8px 10px; align-items:center; font-size:13px}
+  .conf{font-weight:700; padding:2px 9px; border-radius:999px; font-size:11.5px; letter-spacing:.03em; text-transform:uppercase; white-space:nowrap}
+  .conf.v{color:#86efac; background:var(--ok-bg); border:1px solid #1f6b43}
+  .conf.p{color:#f2cf7e; background:var(--partial-bg); border:1px solid #6b561f}
+  .conf.u{color:#f3a3a9; background:var(--unver-bg); border:1px solid #7a2d31}
+  .when{color:var(--faint); font-variant-numeric:tabular-nums}
+  .srcs{margin-top:6px; font-size:13px}
+  .srcs a{color:var(--accent); text-decoration:none; word-break:break-word}
+  .srcs a:hover{text-decoration:underline}
+  .srcs .sep{color:var(--faint); margin:0 6px}
+  .none{color:var(--faint); font-style:italic; padding:10px 0}
+  .note{background:var(--bg2); border:1px solid var(--line); border-left:3px solid var(--accent2); border-radius:10px; padding:11px 14px; margin:12px 0 2px; font-size:13.5px; color:var(--muted)}
+  .note b{color:var(--ink)}
+  ul.tight{margin:4px 0 0; padding-left:20px}
+  ul.tight li{margin:7px 0; color:#d7deec}
+  ul.tight a{color:var(--accent); text-decoration:none}
+  ul.tight a:hover{text-decoration:underline}
+
+  .backtop{display:inline-block; margin-top:14px; font-size:12.5px; color:var(--faint); text-decoration:none}
+  .backtop:hover{color:var(--accent)}
+
+  footer.foot{margin-top:48px; padding-top:22px; border-top:1px solid var(--line); color:var(--faint); font-size:13px}
+  footer.foot a{color:var(--accent); text-decoration:none}
+  .arch-link{display:inline-flex; gap:8px; align-items:center; margin:18px 0 0; padding:10px 16px; background:var(--card); border:1px solid var(--line); border-radius:10px; color:var(--ink); text-decoration:none; font-weight:600; font-size:14px}
+  .arch-link:hover{border-color:var(--accent)}
+  .legend{display:flex; flex-wrap:wrap; gap:8px 14px; margin-top:14px; font-size:12.5px; color:var(--muted)}
+  .legend span{display:inline-flex; align-items:center; gap:6px}
+  .dot{width:9px;height:9px;border-radius:50%}
+  .dot.v{background:#2bb673}.dot.p{background:#d6a234}.dot.u{background:#e06c75}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top" id="top">
+    <div class="kicker">Personal Daily Briefing</div>
+    <h1>Morning Briefing</h1>
+    <p class="date">Tuesday, 4 November 2026</p>
+    <div class="intro">
+      News from roughly the last 24–72 hours across eight areas. Each item has a short summary <b>in the editor's own words</b> (no source text copied), a confidence rating, and source links. Where only a single source exists, or a claim could not be cross-confirmed, it is marked <b>Unverified</b>. Where a subtopic had nothing new, that is stated plainly.
+      <div class="legend">
+        <span><i class="dot v"></i> <b>Verified</b> — 2+ independent sources / primary source</span>
+        <span><i class="dot p"></i> <b>Partial</b> — credible but not fully confirmed</span>
+        <span><i class="dot u"></i> <b>Unverified</b> — single / contested source</span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Contents">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#dental"><span class="n">1</span><span>Dental</span></a></li>
+      <li><a href="#ai"><span class="n">2</span><span>Artificial Intelligence</span></a></li>
+      <li><a href="#tech"><span class="n">3</span><span>Technology</span></a></li>
+      <li><a href="#psy"><span class="n">4</span><span>Psychology</span></a></li>
+      <li><a href="#edu"><span class="n">5</span><span>Education</span></a></li>
+      <li><a href="#med"><span class="n">6</span><span>Medicine</span></a></li>
+      <li><a href="#econ"><span class="n">7</span><span>Economy</span></a></li>
+      <li><a href="#pol"><span class="n">8</span><span>Politics</span></a></li>
+    </ol>
+  </nav>
+
+  <!-- ======================= 1 DENTAL ======================= -->
+  <section class="cat" id="dental">
+    <div class="cat-head"><div class="badge">1</div><h2>Dental</h2></div>
+
+    <h3 class="sub">Medical discoveries</h3>
+    <article class="item">
+      <h4>Unsweetened cranberry compounds studied as a cavity-protective agent</h4>
+      <p>Researchers at the University of Illinois Chicago reported that compounds in unsweetened cranberry juice may interfere with the bacteria and biofilm processes that drive tooth decay. The emphasis is on the sugar-free form, since added sugar would offset any benefit. It is early-stage laboratory/mechanistic work rather than a clinical recommendation.</p>
+      <div class="meta"><span class="conf p">Partial</span><span class="when">~29 Oct 2026</span></div>
+      <div class="srcs"><a href="https://www.dentistrytoday.com/" target="_blank" rel="noopener">Dentistry Today roundup</a></div>
+    </article>
+    <article class="item">
+      <h4>Claimed shared-genetics link between oral and gastrointestinal disease</h4>
+      <p>A headline attributed to a Wuhan research group described shared genetic roots between oral diseases and gastrointestinal conditions. The primary paper could not be located, and a separate 2026 genetics paper on oral-disease heritability does not mention any GI link, so the specific claim is not confirmed. Treat as a lead to watch, not an established finding.</p>
+      <div class="meta"><span class="conf u">Unverified</span><span class="when">~2 Nov 2026</span></div>
+      <div class="srcs"><a href="https://www.frontiersin.org/journals/genetics/articles/10.3389/fgene.2026.1807175/full" target="_blank" rel="noopener">Related Frontiers in Genetics paper</a></div>
+    </article>
+
+    <h3 class="sub">New technology &amp; product launches</h3>
+    <article class="item">
+      <h4>SprintRay begins shipping "Foundation" intraoral scanner and "Nano" chairside printer</h4>
+      <p>SprintRay, previously known for 3D printing, unveiled a wireless full-colour intraoral scanner ("Foundation") and a compact chairside printer ("Nano") at its 3DNext event in mid-October, with first shipments stated for November 2026. The move pushes the company toward a connected scan-design-print workflow. Regional availability is staggered and subject to local regulatory clearance.</p>
+      <div class="meta"><span class="conf p">Partial</span><span class="when">announced ~15 Oct; shipping Nov 2026</span></div>
+      <div class="srcs"><a href="https://www.prnewswire.com/news-releases/sprintray-expands-beyond-3d-printing-with-connected-digital-dentistry-platform-unveiled-at-3dnext-2026-302906373.html" target="_blank" rel="noopener">PR Newswire</a><span class="sep">·</span><a href="https://orthodonticproductsonline.com/practice-products/practice-equipment/3d-printers/sprintray-launches-foundation-intraoral-scanner-nano-series-3d-printing/" target="_blank" rel="noopener">Orthodontic Products</a></div>
+    </article>
+    <article class="item">
+      <h4>Dental-robotics market forecast promoted via press release</h4>
+      <p>A market-research press release projects the global dental-robotics market rising from roughly USD 0.32B in 2026 to about USD 2.15B by 2036, driven by implant demand and AI/autonomous surgical systems, naming Neocis, Straumann, Dentsply Sirona and Envista among key players. This is vendor-sponsored market research, not primary news, and forecasts differ widely between publishers.</p>
+      <div class="meta"><span class="conf p">Partial</span><span class="when">3 Nov 2026 (PR)</span></div>
+      <div class="srcs"><a href="https://www.globenewswire.com/news-release/2026/11/03/3394525/28124/en/global-dental-robotics-market-size-share-trends-and-forecast-to-2036-global-dental-robotics-market-set-to-reach-usd-2-15-billion-by-2036-as-ai-and-autonomous-systems-advance.html" target="_blank" rel="noopener">GlobeNewswire</a></div>
+    </article>
+
+    <h3 class="sub">New clinic processes (call centre, patient care, SOP)</h3>
+    <p class="none">Nothing relevant in the last 24h.</p>
+    <div class="note"><b>Standing context:</b> The AI front-desk / AI-receptionist theme for dental practices remains active — vendors (Arini, healow Genie, Rondah, PatientXpress) pitch 24/7 call answering with write-back into Dentrix/Open Dental/Eaglesoft and triage to an on-call dentist. All are undated marketing pages with self-reported outcomes; no dated, independent study appeared this week.</div>
+
+    <h3 class="sub">Clinic sales &amp; acquisitions (Romania + global)</h3>
+    <p class="none">No clinic M&amp;A transaction (buyer / seller / value) was confirmed within the last 24–72h, in Romania or globally.</p>
+    <div class="note"><b>Recent context (older than the window):</b> In the US, Park Dental Partners agreed (Aug) to buy North Carolina's Village Family DSO (~USD 29.9M cash plus stock); MB2 Dental acquired Hawaii Pacific Dental Group (Sep); Heartland Dental closed an affiliation with Foundation Dental Partners, ~33 practices (Oct). In Romania, chain <b>Dental Elite</b> is pursuing a €5–6M expansion to ~12 locations by early 2027 (an expansion plan, not a deal).</div>
+    <div class="srcs"><a href="https://business24.ro/dental-elite/dental-elite-extindere-retea-nationala-clinici-investitii-1672650" target="_blank" rel="noopener">Dental Elite (Business24)</a><span class="sep">·</span><a href="https://www.groupdentistrynow.com/dso-group-blog/dso-deals-august-2026/" target="_blank" rel="noopener">GroupDentistryNow DSO deals</a></div>
+
+    <h3 class="sub">Key-people moves (leadership / doctors)</h3>
+    <article class="item">
+      <h4>Parkview Dental Partners names Jon Gregoire as CEO</h4>
+      <p>Parkview Dental Partners (Sarasota, Florida; backed by Cathay Capital) appointed Jon Gregoire — a 20-year DSO executive, previously COO of P1 Dental Partners — as chief executive. Reporting is ambiguous on the effective date: a LinkedIn signal points to late September while the trade-press article circulated around 3 November, and Parkview has turned over its CEO more than once recently.</p>
+      <div class="meta"><span class="conf p">Partial</span><span class="when">circulated ~3 Nov 2026 (date ambiguous)</span></div>
+      <div class="srcs"><a href="https://www.prnewswire.com/news-releases/parkview-dental-partners-appoints-jon-gregoire-as-chief-executive-officer-302927258.html" target="_blank" rel="noopener">PR Newswire</a><span class="sep">·</span><a href="https://www.dentistrytoday.com/parkview-dental-partners-appoints-jon-gregoire-as-ceo/" target="_blank" rel="noopener">Dentistry Today</a></div>
+    </article>
+    <p class="note">Romania: no key-people moves surfaced in the last 24h (LinkedIn could not be queried directly this session).</p>
+
+    <h3 class="sub">New lab processes &amp; technologies</h3>
+    <article class="item">
+      <h4>OraLiva reported to receive FDA Breakthrough Device designation for an oral-cancer test</h4>
+      <p>A trade headline states that OraLiva won FDA Breakthrough Device designation for an AI-assisted brush-biopsy cytology test for suspicious oral lesions, currently offered as a lab-developed test. Independent confirmation only reached as far as a 2025 NIDCR grant and a "preparing to apply" status, so the granted designation itself is not corroborated. Company-reported accuracy figures are in the low-90s% for sensitivity/specificity.</p>
+      <div class="meta"><span class="conf u">Unverified</span><span class="when">~3 Nov 2026</span></div>
+      <div class="srcs"><a href="https://www.dentistrytoday.com/fda-grants-breakthrough-designation-to-oraliva-oral-cancer-test/" target="_blank" rel="noopener">Dentistry Today</a><span class="sep">·</span><a href="https://www.diagnosticsworldnews.com/news/2025/07/10/nih-awards-$1-9m-direct-to-phase-ii-grant-to-oraliva-for-ai-driven-oral-cancer-diagnostic" target="_blank" rel="noopener">2025 grant (context)</a></div>
+    </article>
+    <div class="note"><b>Also recent (outside the window):</b> UT Dallas researchers reported cutting 3D-printed zirconia crown processing from ~100 hours to under 30 minutes (Aug 2026), a step toward chairside same-visit zirconia; current reviews still find printed zirconia trailing milled slightly on strength.</div>
+
+    <h3 class="sub">Courses &amp; the English-language online course market</h3>
+    <article class="item">
+      <h4>Align Technology opens its 2027 Dental Research Award program</h4>
+      <p>Align Technology (Invisalign/iTero) opened the 2027 cycle of its research-award program, offering up to USD 300,000 in grants to university dental and orthodontic faculty. The early-November opening matches the company's established annual cadence, though only a single summary was found for the 2027 cycle specifically.</p>
+      <div class="meta"><span class="conf p">Partial</span><span class="when">~3 Nov 2026</span></div>
+      <div class="srcs"><a href="https://www.dentistrytoday.com/align-technology-opens-2027-dental-research-award-program/" target="_blank" rel="noopener">Dentistry Today</a><span class="sep">·</span><a href="https://www.businesswire.com/news/home/20260601852092/en/" target="_blank" rel="noopener">Prior-cycle award (BusinessWire)</a></div>
+    </article>
+    <div class="note"><b>Market read (no breaking news — synthesis of current catalogues, treat as indicative):</b>
+      <ul class="tight">
+        <li><b>Implantology</b> is the best-represented and apparently best-selling topic in English-language online CE; manufacturer academies (<a href="https://www.nobelbiocare.com/en-us/courses" target="_blank" rel="noopener">Nobel Biocare</a>, Straumann) drive large volumes, and thought-leader cohort courses (e.g. Implant Ninja's "Implant Surgery 101") lead aggregator popularity.</li>
+        <li><b>Digital dentistry / clear aligners / intraoral scanning</b> is the fastest-growing adjacent category (e.g. the <a href="https://instituteofdigitaldentistry.com/" target="_blank" rel="noopener">Institute of Digital Dentistry</a>). The clear-aligner market is forecast to roughly triple to ~USD 17.9B by 2033 (<a href="https://www.grandviewresearch.com/industry-analysis/clear-aligners-market" target="_blank" rel="noopener">Grand View Research</a>).</li>
+        <li><b>Sales models</b>: free accredited CE as lead-generation (Viva Learning, Colgate Oral Health Network, ADA); manufacturer academies bundling training with equipment; and paid thought-leader cohort/bundle courses. No ranked sales data exists publicly — the above is inferred from catalogue weighting.</li>
+      </ul>
+    </div>
+    <a class="backtop" href="#top">↑ Back to top</a>
+  </section>
+
+  <!-- ======================= 2 AI ======================= -->
+  <section class="cat" id="ai">
+    <div class="cat-head"><div class="badge">2</div><h2>Artificial Intelligence</h2></div>
+
+    <h3 class="sub">General news</h3>
+    <article class="item">
+      <h4>China accelerates full-lifecycle AI safety legislation</h4>
+      <p>China's top economic planner (the NDRC) said it is speeding up legislation to govern how AI models are developed and deployed, with standards spanning the full model lifecycle, framed as a response to recent global AI security lapses. It signals a move toward a more comprehensive national AI regulatory regime.</p>
+      <div class="meta"><span class="conf v">Verified</span><span class="when">3 Nov 2026</span></div>
+      <div class="srcs"><a href="https://www.bloomberg.com/news/articles/2026-11-03/china-plans-broad-ai-guardrails-after-global-security-lapses" target="_blank" rel="noopener">Bloomberg</a></div>
+    </article>
+    <article class="item">
+      <h4>Shared robots.txt opt-out for AI training backed by Google, OpenAI, Microsoft, Anthropic</h4>
+      <p>The four companies agreed to honour a single robots.txt signal that lets site owners opt out of having their content used to train generative models, defined in an IETF internet-draft. Rollout is staggered: Anthropic has begun honouring it, with the others committing to 2027 timelines. As of early November, support was not yet complete across all four.</p>
+      <div class="meta"><span class="conf v">Verified</span><span class="when">announced ~30 Oct; coverage to 3 Nov 2026</span></div>
+      <div class="srcs"><a href="https://thenextweb.com/news/ai-training-opt-out-robots-txt-google-openai-microsoft-anthropic" target="_blank" rel="noopener">The Next Web</a><span class="sep">·</span><a href="https://www.itechpost.com/articles/237707/20261103/google-openai-anthropic-unite-introduce-new-ai-scraping-controls.htm" target="_blank" rel="noopener">iTech Post</a></div>
+    </article>
+    <article class="item">
+      <h4>Anthropic warns AI may soon accelerate AI research faster than it can be evaluated</h4>
+      <p>In coverage dated 3 November, Anthropic cautioned that AI-assisted research could soon speed the creation of new models faster than researchers can properly evaluate them, and argued the risks should be understood before that point is reached. Part of the company's ongoing safety-messaging push.</p>
+      <div class="meta"><span class="conf p">Partial</span><span class="when">3 Nov 2026</span></div>
+      <div class="srcs"><a href="https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-tuesday-november-3-2026/" target="_blank" rel="noopener">The Neuron (daily digest)</a></div>
+    </article>
+    <article class="item">
+      <h4>OpenAI reportedly to buy Google TPUs, diversifying from Nvidia</h4>
+      <p>Reports from The Information and Bloomberg say OpenAI plans to purchase Google's Tensor Processing Units, its first significant step away from relying solely on Nvidia GPUs. Neither company has confirmed, and no price, volume or timeline has been disclosed, so the story remains sourced to unnamed insiders.</p>
+      <div class="meta"><span class="conf p">Partial</span><span class="when">reported 27–28 Oct 2026</span></div>
+      <div class="srcs"><a href="https://finance.yahoo.com/technology/ai/articles/openai-reportedly-plans-purchase-google-115126770.html" target="_blank" rel="noopener">Yahoo Finance</a><span class="sep">·</span><a href="https://www.techradar.com/pro/openai-pledges-to-buy-google-ai-chips-in-its-first-move-away-from-depending-solely-on-nvidia" target="_blank" rel="noopener">TechRadar</a></div>
+    </article>
+
+    <h3 class="sub">What could help a large dental clinic (market view)</h3>
+    <p class="none">No dated dental-AI launch, funding round or deal appeared in the last 24–48h.</p>
+    <div class="note"><b>Most relevant current tools for a multi-location clinic / DSO (2026 context):</b>
+      <ul class="tight">
+        <li><b>Diagnostics / imaging:</b> Pearl, Overjet and Videa remain the leading FDA-cleared radiograph-AI vendors, now rolling out at enterprise scale across large practice groups — useful for consistency of caries/bone-loss detection and for patient case presentation.</li>
+        <li><b>Front desk / scheduling:</b> Weave's enterprise "AI Receptionist" (built on Google Cloud's Gemini agent platform) and voice-AI vendors (Arini, Emitrr) that book, reschedule and run recall with write-back into Dentrix/Open Dental/Eaglesoft.</li>
+        <li><b>Documentation / revenue cycle:</b> Pearl's RCM tooling for cleaner claims and Dentsply Sirona's integration of Pearl "Second Opinion" into DS Core point to AI moving into billing and charting, not just imaging.</li>
+      </ul>
+      Dates for these sit outside the 24–72h window; monitor vendor newsrooms directly for fresh releases.</div>
+    <a class="backtop" href="#top">↑ Back to top</a>
+  </section>
+
+  <!-- ======================= 3 TECHNOLOGY ======================= -->
+  <section class="cat" id="tech">
+    <div class="cat-head"><div class="badge">3</div><h2>Technology — patents &amp; launches</h2></div>
+
+    <h3 class="sub">Patents &amp; launches (global)</h3>
+    <article class="item">
+      <h4>USPTO issues a batch of deep-tech / nanotech patents dated 3 November</h4>
+      <p>A public USPTO patent-watch digest logged dozens of nanotech-related documents carrying a 3 November 2026 grant date, with applicants including Silicon Quantum Computing, the University of Texas System, Georgia Tech Research Corporation and Saudi Aramco. This confirms real patent-grant activity in the window; the significance of individual patents was not assessed.</p>
+      <div class="meta"><span class="conf v">Verified</span><span class="when">3 Nov 2026</span></div>
+      <div class="srcs"><a href="https://github.com/coattails-droid/uspto-nanotech-watch/issues/32" target="_blank" rel="noopener">USPTO patent-watch digest</a></div>
+    </article>
+    <article class="item">
+      <h4>Microsoft patent for real-time AI that rewrites a speaker's words (approved, not yet granted)</h4>
+      <p>Reports describe a Microsoft patent application for AI that reshapes a live speaker's words in real time; the USPTO has reportedly approved it, meaning it would issue once the final fee is paid, so it is not yet a granted patent. The exact dates could not be independently confirmed.</p>
+      <div class="meta"><span class="conf p">Partial</span><span class="when">early Nov 2026 (uncertain)</span></div>
+      <div class="srcs"><a href="https://aiweekly.co/alerts/microsoft-patents-real-time-ai-that-rewrites-speakers-words" target="_blank" rel="noopener">AI Weekly alert</a></div>
+    </article>
+
+    <h3 class="sub">Romania</h3>
+    <p class="none">Nothing relevant in the last 24h — no Romanian tech launch or patent dated to the window was confirmed.</p>
+    <div class="note"><b>Recent context (older):</b> Cluj-based <b>dotLumen</b> continues to draw attention for its AI smart glasses for blind users and plans for international expansion; Outcome1.AI and Human AI Labs launched products around August 2026.</div>
+    <a class="backtop" href="#top">↑ Back to top</a>
+  </section>
+
+  <!-- ======================= 4 PSYCHOLOGY ======================= -->
+  <section class="cat" id="psy">
+    <div class="cat-head"><div class="badge">4</div><h2>Psychology</h2></div>
+
+    <h3 class="sub">Adults — recent, DSM-5-framed finding</h3>
+    <article class="item">
+      <h4>No meaningful age gap in treatment outcomes for anxiety, OCD or PTSD — but older adults are treated less</h4>
+      <p>A study in the Journal of Anxiety Disorders compared psychological-treatment outcomes between younger and older adults treated for DSM-5 anxiety disorders, OCD or PTSD in routine mental-health care. It found no meaningful difference in outcomes by age, yet older adults were less likely to be referred or treated — pointing to an access gap rather than an efficacy gap. The full effect sizes could not be opened to confirm.</p>
+      <div class="meta"><span class="conf p">Partial</span><span class="when">online ~22 Oct 2026</span></div>
+      <div class="srcs"><a href="https://www.sciencedirect.com/science/article/pii/S0887618526001489" target="_blank" rel="noopener">Journal of Anxiety Disorders</a></div>
+    </article>
+    <article class="item">
+      <h4>Large synthesis finds no good evidence cannabis helps anxiety, depression or PTSD</h4>
+      <p>A 2026 evidence synthesis concluded there is no convincing evidence that cannabis or cannabinoids improve anxiety, depression or PTSD — directly relevant to these DSM-5 categories and to the common patient belief that cannabis is an effective self-treatment. Seen via a research-release summary; the primary paper was not opened.</p>
+      <div class="meta"><span class="conf u">Unverified</span><span class="when">release ~19 Mar 2026</span></div>
+      <div class="srcs"><a href="https://www.sciencedaily.com/releases/2026/03/260319044656.htm" target="_blank" rel="noopener">ScienceDaily</a></div>
+    </article>
+
+    <h3 class="sub">Children — the ~6-year-old brain (for Andrei, b. 2020)</h3>
+    <div class="note">Developmental guidance (reputable developmental-psychology / health-system sources), not breaking news. These are typical ranges, not fixed checkpoints.
+      <ul class="tight">
+        <li><b>What's developing:</b> the <b>prefrontal cortex</b> matures around age 6, improving impulse control, attention and emotional regulation; synaptic pruning and myelination speed up processing, and the hippocampus (memory/learning) keeps developing notably through ages 4–6. <a href="https://pressbooks.palomar.edu/childdevelopment/chapter/brain-development/" target="_blank" rel="noopener">source</a></li>
+        <li><b>Cognitive milestones to watch this year:</b> counting and grasping the concept of 10, telling his own age, sorting/comparing/grouping objects, following a 3-step instruction, sustaining focus ~15 minutes, and beginning to read simple words. <a href="https://www.healthlinkbc.ca/healthwise/milestones-6-year-olds" target="_blank" rel="noopener">source</a></li>
+        <li><b>Social / emotional:</b> cooperative play with 2–3 children for 20+ minutes and a growing ability to understand others' feelings beyond the immediate family; some preschool-type fears (monsters, large animals) are still normal. <a href="https://www.medicinenet.com/developmental_milestones_for_a_6-year-old/index.htm" target="_blank" rel="noopener">source</a></li>
+        <li><b>When to act early:</b> the CDC's "Learn the Signs. Act Early." program advises talking to the doctor if a child loses skills or lags on several milestones. <a href="https://www.cdc.gov/ncbddd/actearly/milestones/" target="_blank" rel="noopener">source</a></li>
+      </ul>
+    </div>
+    <a class="backtop" href="#top">↑ Back to top</a>
+  </section>
+
+  <!-- ======================= 5 EDUCATION ======================= -->
+  <section class="cat" id="edu">
+    <div class="cat-head"><div class="badge">5</div><h2>Education</h2></div>
+
+    <h3 class="sub">The next 20 years vs. classical schooling</h3>
+    <article class="item">
+      <h4>OECD: four scenarios for the future of schooling</h4>
+      <p>The OECD's "Back to the Future of Education" sets out four futures for roughly 2040 against today's classical school model: schooling extended, education outsourced to learning markets, schools as community learning hubs, and "learn-as-you-go" where school-based learning dissolves. They are framed as discussion tools, not predictions.</p>
+      <div class="meta"><span class="conf v">Verified</span><span class="when">OECD report (standing reference)</span></div>
+      <div class="srcs"><a href="https://www.oecd.org/en/publications/back-to-the-future-s-of-education_178ef527-en/full-report.html" target="_blank" rel="noopener">OECD</a></div>
+    </article>
+    <article class="item">
+      <h4>WEF: ~39% of current skill sets to be transformed or outdated by 2030</h4>
+      <p>The World Economic Forum's Future of Jobs work estimates that about two in five current skill sets will be transformed or become outdated between 2025 and 2030 — a core pressure pushing schooling away from fixed content toward adaptive, skills-based learning.</p>
+      <div class="meta"><span class="conf p">Partial</span><span class="when">WEF 2025 figure</span></div>
+      <div class="srcs"><a href="https://initiatives.weforum.org/reskilling-revolution/home" target="_blank" rel="noopener">WEF Reskilling Revolution</a></div>
+    </article>
+    <article class="item">
+      <h4>Brookings: AI's near-term risks to students may outweigh benefits</h4>
+      <p>A Brookings global task force concluded that, as currently deployed, AI's risks to students — overreliance eroding independent learning and social-emotional skills — presently outweigh the benefits, and urged action under three pillars (Prosper, Prepare, Protect). It bears directly on whether classical classroom practice adapts or is displaced.</p>
+      <div class="meta"><span class="conf p">Partial</span><span class="when">Jan 2026</span></div>
+      <div class="srcs"><a href="https://www.brookings.edu/events/a-new-direction-for-ai-and-students-findings-from-the-brookings-global-task-force-on-ai-and-education/" target="_blank" rel="noopener">Brookings</a></div>
+    </article>
+
+    <h3 class="sub">Educating a ~6-year-old (evidence-based)</h3>
+    <div class="note">
+      <ul class="tight">
+        <li><b>Favour guided play over pure direct instruction:</b> set up enjoyable activities with a clear learning goal; evidence suggests guided play is more effective than direct instruction for young children. <a href="https://www.the74million.org/zero2eight/the-science-of-reading-and-play-go-hand-in-hand-schools-must-make-it-happen/" target="_blank" rel="noopener">source</a></li>
+        <li><b>Combine play with the science of reading:</b> playful phonics-rich activities (letter and word games, storytelling) and explicit reading instruction are complementary, not opposed. <a href="https://givingcompass.org/article/the-science-of-reading-supports-combining-phonics-and-play-in-early-learning" target="_blank" rel="noopener">source</a></li>
+        <li><b>Use pretend play to embed literacy and numeracy:</b> e.g. a pretend shop where he writes a list (writing), sorts items (categorising) and talks through it (oral language).</li>
+        <li><b>Build a print-rich home and read daily:</b> a range of age-appropriate books, and acting out stories together. <a href="https://www.bury.gov.uk/schools-and-learning/send-graduated-approach-toolkit/setting-and-school-staff/early-years/graduated-approach/cognition/literacy/advice" target="_blank" rel="noopener">source</a></li>
+      </ul>
+    </div>
+    <a class="backtop" href="#top">↑ Back to top</a>
+  </section>
+
+  <!-- ======================= 6 MEDICINE ======================= -->
+  <section class="cat" id="med">
+    <div class="cat-head"><div class="badge">6</div><h2>Medicine — discoveries &amp; firsts</h2></div>
+    <div class="note">This week's confirmed results cluster around <b>TCT 2026</b> (Transcatheter Cardiovascular Therapeutics, San Diego, 31 Oct–3 Nov), several with simultaneous journal publication. No novel FDA drug approval was dated within the last 72h.</div>
+
+    <article class="item">
+      <h4>PROGRESS trial: early TAVR beats watchful waiting in moderate aortic stenosis</h4>
+      <p>In a randomized trial of 744 patients over 65 with moderate aortic stenosis plus a risk feature, early transcatheter valve replacement cut the 2-year composite of death or heart-failure events to 16.7% versus 23.9% with surveillance, driven mainly by fewer heart-failure events. There was no clear mortality benefit at 2 years, and most of the surveillance arm eventually needed a valve anyway. It is the first randomized evidence for intervening before stenosis becomes severe.</p>
+      <div class="meta"><span class="conf v">Verified</span><span class="when">presented 2 Nov 2026 (NEJM)</span></div>
+      <div class="srcs"><a href="https://www.nejm.org/doi/full/10.1056/NEJMoa2607326" target="_blank" rel="noopener">NEJM</a><span class="sep">·</span><a href="https://medicalxpress.com/news/2026-11-earlier-valve-benefits-patients-moderate.html" target="_blank" rel="noopener">MedicalXpress</a></div>
+    </article>
+    <article class="item">
+      <h4>P4 trial: CT-angiography guidance non-inferior to intravascular ultrasound for stenting</h4>
+      <p>In 1,105 patients, planning coronary stent procedures with coronary CT angiography was non-inferior to the gold-standard intravascular ultrasound for 1-year target-vessel failure, while shortening the procedure (median 46 vs 63 minutes). It is the first large randomized head-to-head suggesting a non-invasive imaging strategy can match IVUS. The trial was sponsored by Heartflow.</p>
+      <div class="meta"><span class="conf v">Verified</span><span class="when">presented 1 Nov 2026 (NEJM)</span></div>
+      <div class="srcs"><a href="https://www.tctmd.com/news/ccta-noninferior-ivus-pci-guidance-p4-trial" target="_blank" rel="noopener">TCTMD</a><span class="sep">·</span><a href="https://www.manilatimes.net/2026/11/02/tmt-newswire/globenewswire/tct-2026-ct-guided-pci-matches-ivus-outcomes-in-randomized-p4-trial-heartflow-pci-navigator-changes-pci-plans-in-approximately-70-of-patients/2459021" target="_blank" rel="noopener">GlobeNewswire</a></div>
+    </article>
+    <article class="item">
+      <h4>TRANSFORM II: sirolimus-coated balloon vs drug-eluting stent in small vessels</h4>
+      <p>A multicentre non-inferiority trial (1,820 patients) compared a sirolimus-coated balloon against a new-generation drug-eluting stent in small (2–3mm) coronary arteries, with the 1-year endpoint presented at TCT and acceptance for publication in The Lancet. The specific outcome figures and the non-inferiority verdict were not yet publicly available.</p>
+      <div class="meta"><span class="conf p">Partial</span><span class="when">presented 1 Nov 2026</span></div>
+      <div class="srcs"><a href="https://clinicaltrials.gov/study/NCT04893291" target="_blank" rel="noopener">ClinicalTrials.gov</a><span class="sep">·</span><a href="https://www.hmpgloballearningnetwork.com/site/cathlab/meeting-update/tct-2026-late-breaking-trials-and-clinical-science-watch" target="_blank" rel="noopener">TCT late-breakers</a></div>
+    </article>
+    <article class="item">
+      <h4>First-in-human results of Robocath's next-generation robotic PCI system</h4>
+      <p>First-in-human results (20 patients, France) for Robocath's next-generation robotic coronary-intervention platform were highlighted at TCT, with operators reportedly fully shielded from fluoroscopy radiation and encouraging early technical success. The efficacy figures are company-reported and the full manuscript is submitted but not yet peer-reviewed.</p>
+      <div class="meta"><span class="conf u">Unverified</span><span class="when">highlighted 2 Nov 2026</span></div>
+      <div class="srcs"><a href="https://www.globenewswire.com/news-release/2026/11/02/3393182/21634/en/first-in-human-coronary-intervention-study-results-of-robocath-s-next-generation-robotic-system-highlighted-at-tct.html" target="_blank" rel="noopener">GlobeNewswire</a></div>
+    </article>
+    <a class="backtop" href="#top">↑ Back to top</a>
+  </section>
+
+  <!-- ======================= 7 ECONOMY ======================= -->
+  <section class="cat" id="econ">
+    <div class="cat-head"><div class="badge">7</div><h2>Economy — M&amp;A</h2></div>
+
+    <article class="item">
+      <h4>Marvell to acquire Lumentum in an all-stock AI-optics deal</h4>
+      <p>US chipmaker Marvell agreed to buy AI-optics maker Lumentum in an all-stock transaction (4.5 Marvell shares per Lumentum share), with Marvell's 8-K citing an implied enterprise value of about USD 115 billion and a ~24% premium; Lumentum holders would own roughly a third of the combined company. The figure is large relative to Lumentum's ~USD 83B pre-deal market value, but it is confirmed in SEC filings. Marvell shares fell sharply as investors questioned the price.</p>
+      <div class="meta"><span class="conf v">Verified</span><span class="when">announced 2 Nov 2026</span></div>
+      <div class="srcs"><a href="https://www.sec.gov/Archives/edgar/data/0001633978/000119312526442758/d163169dex991.htm" target="_blank" rel="noopener">SEC 8-K</a><span class="sep">·</span><a href="https://www.cbsnews.com/news/marvell-lumentum-acquisition-ai-connectivity/" target="_blank" rel="noopener">CBS News</a></div>
+    </article>
+    <article class="item">
+      <h4>Kimberly-Clark reported to complete ~USD 49B acquisition of Kenvue</h4>
+      <p>Consumer-goods maker Kimberly-Clark reportedly closed its acquisition of Kenvue (the Tylenol consumer-health business spun off from J&amp;J), in a deal valued at roughly USD 49 billion including debt. This is a completion rather than a fresh announcement, and the value and close date rest on a single roundup source.</p>
+      <div class="meta"><span class="conf u">Unverified</span><span class="when">reported completed 2 Nov 2026</span></div>
+      <div class="srcs"><a href="https://finance.biggo.com/news/5ef27cb9-3ae0-4db0-b765-6f8fde0472cc" target="_blank" rel="noopener">BigGo Finance</a></div>
+    </article>
+    <article class="item">
+      <h4>Romania: Raiffeisen–Garanti BBVA Romania (€591M) — reported finalisation</h4>
+      <p>Raiffeisen Bank International's Romanian unit agreed in March to buy 100% of Garanti BBVA Group Romania (bank plus leasing arm) for €591 million, cleared by Romania's Competition Council in October. Some Romanian outlets reported an early-November completion, but this could not be confirmed — other sources still describe closing as merely "expected in Q4." The March agreement and the approval are well-sourced; the completion is not.</p>
+      <div class="meta"><span class="conf u">Unverified</span><span class="when">agreement 28 Mar; completion ~Nov 2026 (unconfirmed)</span></div>
+      <div class="srcs"><a href="https://agerpres.ro/economic-extern/2026/03/28/raiffeisen-va-plati-591-milioane-de-euro-pentru-garanti-bbva-din-romania--1541975" target="_blank" rel="noopener">Agerpres</a><span class="sep">·</span><a href="https://www.capital.ro/s-a-vandut-o-banca-din-romania-raiffeisen-a-preluat-garanti-bbva-group-romania-cati-bani-a-platit.html" target="_blank" rel="noopener">Capital.ro</a></div>
+    </article>
+    <div class="note"><b>Just outside the window:</b> DoorDash–Instacart ~USD 17B (announced 29 Oct, USD 65/share); Lufthansa selected to take 44.9% of TAP Air Portugal (~€1.0–1.2B, contracts not yet signed, pending EU approval).</div>
+    <a class="backtop" href="#top">↑ Back to top</a>
+  </section>
+
+  <!-- ======================= 8 POLITICS ======================= -->
+  <section class="cat" id="pol">
+    <div class="cat-head"><div class="badge">8</div><h2>Politics</h2></div>
+
+    <h3 class="sub">Appointments &amp; leadership</h3>
+    <article class="item">
+      <h4>US midterm elections held 3 November — control of Congress shifting (developing)</h4>
+      <p>Election Day was 3 November and results were still being tabulated on the 4th. Multiple networks projected Democrats to take the House, while control of the Senate was not yet clearly called and coverage conflicted. Individual race calls are deliberately not asserted here until confirmed.</p>
+      <div class="meta"><span class="conf p">Partial / developing</span><span class="when">3 Nov 2026</span></div>
+      <div class="srcs"><a href="https://www.cnbc.com/2026/11/03/midterm-elections-2026-live-updates.html" target="_blank" rel="noopener">CNBC</a><span class="sep">·</span><a href="https://www.nbcwashington.com/elections/election-day-2026-midterms-congress-results-live-updates/4175504/" target="_blank" rel="noopener">NBC</a></div>
+    </article>
+    <p class="none">Romania &amp; EU: no new top appointment in the last 24–48h.</p>
+    <div class="note"><b>Context:</b> Romania's government under PM Luca-Alexandru Niculescu took office on 20 October (decree signed by President Nicușor Dan). The EU's von der Leyen II Commission (in office since Dec 2024) stands unchanged.</div>
+
+    <h3 class="sub">New laws adopted / to be applied</h3>
+    <article class="item">
+      <h4>USA: two bills signed into law on 3 November</h4>
+      <p>The White House announced that H.R. 1744 (reauthorising the US Commission on International Religious Freedom through FY2028) and H.R. 8205 (reauthorising the Accelerating Access to Critical Therapies for ALS program through FY2031) were signed into law. Both are reauthorisations extending existing programs.</p>
+      <div class="meta"><span class="conf v">Verified</span><span class="when">3 Nov 2026</span></div>
+      <div class="srcs"><a href="https://www.whitehouse.gov/briefings-statements/2026/11/congressional-bills-h-r-1744-and-h-r-8205-signed-into-law/" target="_blank" rel="noopener">White House</a></div>
+    </article>
+    <article class="item">
+      <h4>Romania: Traffic Code amended for motorcyclists (promulgated 3 November)</h4>
+      <p>President Nicușor Dan signed an amendment to the road-traffic rules allowing motorcyclists and moped riders to pass between cars stopped at traffic lights at up to 20 km/h under certain conditions, and to use bus lanes. It takes effect a few days after publication in the Official Gazette; the exact Gazette number was not yet confirmed.</p>
+      <div class="meta"><span class="conf p">Partial</span><span class="when">promulgated 3 Nov 2026</span></div>
+      <div class="srcs"><a href="https://alba24.ro/codul-rutier-modificat-pentru-motociclisti-vor-putea-trece-printre-masinile-oprite-la-semafor-legea-a-fost-promulgata-1165954.html" target="_blank" rel="noopener">Alba24</a><span class="sep">·</span><a href="https://www.monitorulbt.ro/national/2026/11/03/se-schimba-codul-rutier-ce-vor-avea-voie-sa-faca-motociclistii-in-trafic/" target="_blank" rel="noopener">Monitorul</a></div>
+    </article>
+    <article class="item">
+      <h4>Romania: acts published in the Official Gazette on 2 November</h4>
+      <p>Legal-tracking outlets report that the Official Gazette of 2 November (issue no. 918, Part I) carried normative acts touching the packaging deposit-return scheme (SGR) and the special tax on high-value goods, alongside Constitutional Court and government acts. The exact act numbers could not be opened to confirm.</p>
+      <div class="meta"><span class="conf p">Partial</span><span class="when">2 Nov 2026</span></div>
+      <div class="srcs"><a href="https://ghidullegal.ro/post/ce-acte-normative-au-fost-publicate-azi-2-noiembrie-2026/" target="_blank" rel="noopener">Ghidul Legal</a></div>
+    </article>
+    <article class="item">
+      <h4>USA: Romance Scam Prevention Act signed into law</h4>
+      <p>The President signed the Romance Scam Prevention Act, which requires dating apps and services to send fraud-ban notifications to users who had interacted with an account removed for fraud, aimed at protecting users (notably seniors) from romance scams. No Federal Register / Public Law number was confirmed.</p>
+      <div class="meta"><span class="conf u">Unverified</span><span class="when">reported signed ~1 Nov 2026</span></div>
+      <div class="srcs"><a href="https://www.clarksvilleonline.com/2026/11/01/president-donald-trump-signs-marsha-blackburns-bill-to-protect-senior-citizens-from-dating-app-scams-into-law/" target="_blank" rel="noopener">Clarksville Online</a></div>
+    </article>
+    <p class="none">EU (EUR-Lex): no act with a November 2026 entry-into-force date was confirmed in the window.</p>
+    <a class="backtop" href="#top">↑ Back to top</a>
+  </section>
+
+  <a class="arch-link" href="arhiva/">🗂 Archive — past editions</a>
+
+  <footer class="foot">
+    <p>Compiled 4 November 2026. Window: roughly the last 24–72 hours. Summaries are written in the editor's own words; follow the source links for full reporting. Confidence ratings reflect how far each item could be independently cross-checked — treat <b>Unverified</b> items with caution.</p>
+    <p>Fact-checking references for political/controversial claims: Reuters Fact Check, AFP Fact Check, FactCheck.org, Factual.ro, Veridica.ro.</p>
+  </footer>
+</div>
+</body>
+</html>
