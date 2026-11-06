@@ -1,0 +1,10 @@
+{
+  "name": "Daily Briefing",
+  "short_name": "Briefing",
+  "display": "standalone",
+  "start_url": ".",
+  "scope": ".",
+  "background_color": "#0f1419",
+  "theme_color": "#0f1419",
+  "description": "Personal daily news briefing: dental, AI, technology, psychology, education, medicine, economy and politics."
+}
