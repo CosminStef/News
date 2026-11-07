@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Briefing">
+<meta name="theme-color" content="#0f172a">
+<meta name="description" content="Daily news briefing for November 7, 2026 — dental, AI, technology, psychology, education, medicine, economy, politics.">
+<link rel="manifest" href="manifest.json">
+<title>Daily Briefing — November 7, 2026</title>
+<style>
+  :root{
+    --bg:#0f172a; --card:#1e293b; --card2:#172033; --ink:#e2e8f0; --muted:#94a3b8;
+    --line:#334155; --accent:#38bdf8; --accent2:#818cf8;
+    --ok:#22c55e; --warn:#f59e0b; --bad:#ef4444;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6; font-size:17px; padding:0 16px 64px;
+  }
+  .wrap{max-width:820px; margin:0 auto}
+  header{padding:28px 0 8px; border-bottom:1px solid var(--line); margin-bottom:8px}
+  header h1{font-size:1.7rem; margin:0 0 4px; letter-spacing:-.02em}
+  header .date{color:var(--accent); font-weight:600; font-size:1.05rem}
+  header .sub{color:var(--muted); font-size:.9rem; margin-top:8px}
+  .archive-link{display:inline-block; margin-top:12px; color:var(--accent2); text-decoration:none; font-size:.9rem; border:1px solid var(--line); padding:6px 12px; border-radius:999px}
+  .archive-link:hover{border-color:var(--accent2)}
+  nav{background:var(--card2); border:1px solid var(--line); border-radius:14px; padding:16px 18px; margin:20px 0}
+  nav h2{font-size:.8rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin:0 0 10px}
+  nav ol{margin:0; padding-left:1.2em; columns:2; column-gap:24px}
+  nav li{margin:4px 0}
+  nav a{color:var(--ink); text-decoration:none}
+  nav a:hover{color:var(--accent)}
+  section{margin:34px 0 0; scroll-margin-top:12px}
+  .cat-head{display:flex; align-items:baseline; gap:10px; border-bottom:2px solid var(--accent); padding-bottom:8px; margin-bottom:6px}
+  .cat-num{font-size:.85rem; font-weight:700; color:var(--accent); background:rgba(56,189,248,.12); padding:2px 9px; border-radius:6px}
+  .cat-head h2{font-size:1.35rem; margin:0; letter-spacing:-.01em}
+  .subcat{font-size:.78rem; text-transform:uppercase; letter-spacing:.07em; color:var(--accent2); font-weight:700; margin:22px 0 10px}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 18px; margin:12px 0}
+  .card h3{margin:0 0 8px; font-size:1.08rem; line-height:1.35}
+  .card p{margin:0 0 10px; color:#cbd5e1}
+  .meta{display:flex; flex-wrap:wrap; align-items:center; gap:8px; font-size:.82rem}
+  .badge{font-weight:700; font-size:.72rem; text-transform:uppercase; letter-spacing:.04em; padding:3px 9px; border-radius:999px}
+  .b-ok{background:rgba(34,197,94,.15); color:#4ade80; border:1px solid rgba(34,197,94,.35)}
+  .b-warn{background:rgba(245,158,11,.15); color:#fbbf24; border:1px solid rgba(245,158,11,.35)}
+  .b-bad{background:rgba(239,68,68,.15); color:#f87171; border:1px solid rgba(239,68,68,.35)}
+  .date-tag{color:var(--muted)}
+  .src{color:var(--accent); text-decoration:none}
+  .src:hover{text-decoration:underline}
+  .srcs{font-size:.82rem; color:var(--muted); margin-top:2px}
+  .srcs a{color:var(--accent); text-decoration:none}
+  .srcs a:hover{text-decoration:underline}
+  .none{color:var(--muted); font-style:italic; padding:6px 0}
+  .note{font-size:.85rem; color:var(--muted); background:var(--card2); border-left:3px solid var(--accent2); padding:8px 12px; border-radius:0 8px 8px 0; margin:10px 0}
+  footer{margin-top:48px; padding-top:20px; border-top:1px solid var(--line); color:var(--muted); font-size:.82rem}
+  .legend{display:flex; flex-wrap:wrap; gap:10px; margin:14px 0 0}
+  .totop{display:block; text-align:right; font-size:.8rem; margin-top:6px}
+  .totop a{color:var(--muted); text-decoration:none}
+  @media (max-width:560px){ nav ol{columns:1} body{font-size:16px} header h1{font-size:1.4rem} }
+</style>
+</head>
+<body>
+<div class="wrap" id="top">
+
+<header>
+  <h1>Daily Briefing</h1>
+  <div class="date">Saturday, November 7, 2026</div>
+  <div class="sub">A personal research digest — dental, AI, technology, psychology, education, medicine, economy &amp; politics. Window: last 24–48h unless a date says otherwise. Every item carries a confidence level and source links; summaries are written independently.</div>
+  <a class="archive-link" href="arhiva/">📁 Archive</a>
+  <div class="legend">
+    <span class="badge b-ok">Verified</span>
+    <span class="badge b-warn">Partial</span>
+    <span class="badge b-bad">Unverified</span>
+  </div>
+</header>
+
+<nav>
+  <h2>Contents</h2>
+  <ol>
+    <li><a href="#dental">Dental</a></li>
+    <li><a href="#ai">AI</a></li>
+    <li><a href="#tech">Technology</a></li>
+    <li><a href="#psych">Psychology</a></li>
+    <li><a href="#edu">Education</a></li>
+    <li><a href="#med">Medicine</a></li>
+    <li><a href="#econ">Economy</a></li>
+    <li><a href="#pol">Politics</a></li>
+  </ol>
+</nav>
+
+<!-- ============ 1. DENTAL ============ -->
+<section id="dental">
+  <div class="cat-head"><span class="cat-num">01</span><h2>Dental</h2></div>
+
+  <div class="subcat">Medical discoveries</div>
+  <div class="card">
+    <h3>Lifetime fluoride exposure and cognition in older adults</h3>
+    <p>The Journal of Dental Research posted an open-access study (online Nov 4) examining whether lifetime fluoride exposure is associated with cognition in older Irish adults. Only the journal listing could be confirmed; the full dataset and conclusions were not independently verified.</p>
+    <div class="meta"><span class="badge b-bad">Unverified</span><span class="date-tag">2026-11-04</span></div>
+    <div class="srcs">Source: <a href="https://journals.sagepub.com/home/jdr">journals.sagepub.com/home/jdr</a></div>
+  </div>
+  <div class="card">
+    <h3>Systematic review: digitally guided tooth autotransplantation</h3>
+    <p>MDPI's Journal of Clinical Medicine published a systematic review (Nov 4) of clinical, radiographic and operative outcomes for digitally guided tooth autotransplantation. It synthesises existing evidence rather than reporting a new trial.</p>
+    <div class="meta"><span class="badge b-warn">Partial</span><span class="date-tag">2026-11-04</span></div>
+    <div class="srcs">Source: <a href="https://www.mdpi.com/2077-0383/15/21/8601">mdpi.com — J. Clin. Med.</a></div>
+  </div>
+  <div class="note">⚠️ The widely shared "enamel-regrowth gel" story circulating Nov 4–5 is a recirculation of 2025 University of Nottingham work, <em>not</em> a new discovery — treated here as not-new.</div>
+
+  <div class="subcat">New technologies</div>
+  <div class="card">
+    <h3>SprintRay "Foundation" intraoral scanner + Nano Series printer begin shipping</h3>
+    <p>SprintRay's first intraoral scanner (Foundation), running its ScanOS software tied to a cloud dashboard, plus a compact chairside Nano Series printing workflow, start shipping in November 2026. Foundation ships in the US; Nano in the US, Canada, Australia, NZ and EU. The products were unveiled at 3DNext 2026 in mid-October.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">Announced ~2026-10-15 · ships Nov 2026</span></div>
+    <div class="srcs">Sources: <a href="https://www.prnewswire.com/news-releases/sprintray-expands-beyond-3d-printing-with-connected-digital-dentistry-platform-unveiled-at-3dnext-2026-302906373.html">PR Newswire</a> · <a href="https://orthodonticproductsonline.com/practice-products/practice-equipment/3d-printers/sprintray-launches-foundation-intraoral-scanner-nano-series-3d-printing/">Orthodontic Products</a></div>
+  </div>
+  <div class="card">
+    <h3>Standard Dental Labs previews "Bridge AI" case-submission software</h3>
+    <p>Standard Dental Labs announced an in-house AI platform, Bridge AI, now in live testing with a company-wide launch targeted for Dec 1. It merges case data with patient/client history for technicians, and lets dentists submit cases to the lab at no charge. All coverage traces to a single press release.</p>
+    <div class="meta"><span class="badge b-warn">Partial</span><span class="date-tag">2026-11-04/05</span></div>
+    <div class="srcs">Sources: <a href="https://manilatimes.net/2026/11/05/tmt-newswire/globenewswire/standard-dental-labs-acquires-md-dental-arts-announces-december-1-launch-target-for-bridge-ai-software/2462062">Manila Times (GlobeNewswire)</a> · <a href="https://stockhouse.com/news/press-releases/2026/11/04/standard-dental-labs-acquires-m-d-dental-arts-announces-december-1-launch-target">Stockhouse</a></div>
+  </div>
+
+  <div class="subcat">Clinic processes (call center, patient care, SOP)</div>
+  <p class="none">Nothing relevant in the last 24h. (Context: the AI dental-receptionist category keeps expanding — Weave, Arini, CareStack VoiceStack, mConsent and others pitch 24/7 call handling, booking/rescheduling and PMS integration at ~$199–$600/mo — but all performance claims are vendor-sourced and none is dated to the last 24–48h.)</p>
+
+  <div class="subcat">Clinic sales &amp; acquisitions (Romania + global)</div>
+  <div class="card">
+    <h3>Standard Dental Labs acquires M&amp;D Dental Arts (Orlando)</h3>
+    <p>Standard Dental Labs announced the purchase of M&amp;D Dental Arts in Orlando; recent upgrades have raised Orlando production to roughly 4× prior capacity. M&amp;D's staff will not transfer to SDL. Deal value was not disclosed; coverage rests on one press release.</p>
+    <div class="meta"><span class="badge b-warn">Partial</span><span class="date-tag">2026-11-04/05</span></div>
+    <div class="srcs">Sources: <a href="https://manilatimes.net/2026/11/05/tmt-newswire/globenewswire/standard-dental-labs-acquires-md-dental-arts-announces-december-1-launch-target-for-bridge-ai-software/2462062">Manila Times (GlobeNewswire)</a> · <a href="https://stockhouse.com/news/press-releases/2026/11/04/standard-dental-labs-acquires-m-d-dental-arts-announces-december-1-launch-target">Stockhouse</a></div>
+  </div>
+  <div class="note">Romania: nothing in the last 24–48h. Most recent activity is older — Dental Elite opened its 8th clinic (Voluntari) in Oct 2026, targeting 15–20 clinics by end-2028 and open to acquisitions; Dental Holding (Abris Capital) agreed in Jan 2026 to buy Greek distributor Memodent.</div>
+
+  <div class="subcat">Key-people moves (leadership / doctors)</div>
+  <div class="card">
+    <h3>Align Technology names Jennifer L. Davis as CEO</h3>
+    <p>Align Technology (Invisalign/iTero) appointed Jennifer L. Davis — formerly CEO of P&amp;G's Global Healthcare — as CEO-elect and director effective Nov 2, becoming President &amp; CEO on Dec 31. She succeeds Joseph M. Hogan, CEO since 2015, who moves to a strategic-advisor role. Confirmed via SEC filing and trade press (LinkedIn could not be opened in-session to timestamp the profile change).</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">2026-11-02</span></div>
+    <div class="srcs">Sources: <a href="https://www.sec.gov/Archives/edgar/data/0001097149/000109714926000078/algn-ex991pressreleaseceos.htm">SEC 8-K</a> · <a href="https://www.drbicuspid.com/dental-business/industry-updates/article/16050447/align-technology-names-new-ceo">DrBicuspid</a></div>
+  </div>
+
+  <div class="subcat">Lab processes &amp; technologies</div>
+  <div class="card">
+    <h3>Standard Dental Labs: Orlando output 4× + Bridge AI technician workflow</h3>
+    <p>The same Nov 4–5 announcement notes SDL raised Orlando lab output to ~4× after upgrades and is rolling out Bridge AI to give technicians fuller case context, with free dentist-facing case submission. It is the freshest genuine lab-process item in the window, but rests on a single syndicated release.</p>
+    <div class="meta"><span class="badge b-warn">Partial</span><span class="date-tag">2026-11-04/05</span></div>
+    <div class="srcs">Source: <a href="https://stockhouse.com/news/press-releases/2026/11/04/standard-dental-labs-acquires-m-d-dental-arts-announces-december-1-launch-target">Stockhouse (GlobeNewswire)</a></div>
+  </div>
+  <div class="card">
+    <h3>Zirconia dental-materials market sized at ~$1.2B, 8.4% CAGR</h3>
+    <p>A ResearchAndMarkets report (Nov 4) values zirconia-based dental materials at about USD 1.2B in 2025, projecting an 8.4% CAGR to roughly USD 2.3B by 2033, driven by digital dentistry and 3D printing. Single-report figure.</p>
+    <div class="meta"><span class="badge b-warn">Partial</span><span class="date-tag">2026-11-04</span></div>
+    <div class="srcs">Source: <a href="https://www.globenewswire.com/news-release/2026/11/04/3395572/28124/en/global-zirconia-based-dental-materials-market-size-share-and-trends-report-2026-2033-digital-dentistry-and-3d-printing-fuel-8-4-cagr-to-usd-2-3-billion.html">GlobeNewswire</a></div>
+  </div>
+
+  <div class="subcat">Courses &amp; market (how English online dental CE sells abroad)</div>
+  <p class="none">No hard news in the last 24–48h. Market read below.</p>
+  <div class="card">
+    <h3>Two selling models dominate international English-language dental CE</h3>
+    <p>(1) <strong>Manufacturer-sponsored, free/low-cost CE</strong> used as a marketing funnel — Dentsply Sirona Academy, Glidewell Clinical Education, Colgate Oral Health Network, Viva Learning. (2) <strong>Paid subscription / à-la-carte libraries</strong> sold on expert/KOL branding — World Dental Academy, Dental Academy of CE, Hands-OnLine LIVE. The topics that convert best internationally are implantology, digital dentistry (scanners/3D printing/workflows), orthodontics/clear aligners, and practice management — high-ticket clinical procedures plus business/ownership topics. Credit acceptance varies by country and should be checked per market.</p>
+    <div class="meta"><span class="badge b-warn">Partial</span><span class="date-tag">Current market, no 24–48h news</span></div>
+    <div class="srcs">Sources: <a href="https://www.worlddentalacademy.com/">World Dental Academy</a> · <a href="https://www.dentsplysirona.com/en-us/academy/local-pages/dental-ce.html">Dentsply Sirona Academy</a> · <a href="https://vivalearning.com/">Viva Learning</a></div>
+  </div>
+  <div class="totop"><a href="#top">↑ top</a></div>
+</section>
+
+<!-- ============ 2. AI ============ -->
+<section id="ai">
+  <div class="cat-head"><span class="cat-num">02</span><h2>AI</h2></div>
+
+  <div class="subcat">General news</div>
+  <div class="card">
+    <h3>OpenAI releases GPT-6 Cyber for vetted security work</h3>
+    <p>OpenAI launched GPT-6 Cyber, a cybersecurity-focused model rated "Critical" under its Preparedness Framework and released only to vetted customers in a "Daybreak Red" program for authorized pentesting. It scored 48.5% on the ExploitGym benchmark (up from 32.1% for the prior version) and was used to surface 81 previously unknown high-severity Firefox vulnerabilities, which Mozilla has begun patching.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">2026-11-05</span></div>
+    <div class="srcs">Sources: <a href="https://www.theregister.com/security/2026/11/05/openai-releases-gpt-6-cyber-and-promises-this-one-stays-within-rules-of-engagement/5307855">The Register</a> · <a href="https://fortune.com/2026/11/05/openai-debuts-new-cybersecurity-focused-ai-model-amid-growing-alarm-about-ai-driven-cyber-attacks/">Fortune</a> · <a href="https://thehackernews.com/2026/11/openai-launches-gpt-6-cyber-after-ai.html">The Hacker News</a></div>
+  </div>
+  <div class="card">
+    <h3>Google's Gemini Omni 1.2 Flash reaches general availability</h3>
+    <p>Google moved its cost-efficient video model Gemini Omni 1.2 Flash to general availability across the Gemini API and business products. Clips now extend to 15 seconds (up from 10), with pricing cut about 30% to roughly $0.07/second at 720p; older 1.1 Flash traffic is scheduled to route to 1.2 later.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">2026-11-05</span></div>
+    <div class="srcs">Sources: <a href="https://cloud.google.com/blog/products/ai-machine-learning/gemini-omni-1-2-flash-generally-available">Google Cloud blog</a> · <a href="https://the-decoder.com/googles-gemini-omni-1-2-flash-stretches-ai-video-clips-to-15-seconds-and-cuts-pricing-by-30-percent/">The Decoder</a></div>
+  </div>
+  <div class="card">
+    <h3>Anthropic extends invisible text watermarking to older Claude models</h3>
+    <p>Anthropic rolled out its invisible text watermark to four older models (Claude Mythos 5, Opus 4.7, 4.6 and Sonnet 4.6) about a month early, citing EU AI Act compliance; because it cannot yet geo-limit the mark, it applies worldwide. Public detection tooling is not yet available. Sources differ on the exact start date (Nov 3 vs 4).</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">2026-11-03</span></div>
+    <div class="srcs">Sources: <a href="https://techweez.com/2026/11/02/anthropic-is-bringing-text-watermarking-to-more-claude-models/">Techweez</a> · <a href="https://fourweekmba.com/ai-anthropic-to-watermark-4-older-claude-models-for-eu-ai-act/">FourWeekMBA</a></div>
+  </div>
+
+  <div class="subcat">What could help a large dental clinic</div>
+  <div class="card">
+    <h3>Roweb launches an AI voice agent aimed at (dental) clinics — Romania</h3>
+    <p>Romanian software firm Roweb unveiled an AI voice agent that answers patient calls, gives service/price/booking information and handles appointment and rescheduling requests, handing off to staff for clinical judgement. It is pitched at medical and specifically dental clinics, citing that roughly 4 in 10 first-call booking attempts fail. Both sources trace to Roweb's own announcement; no pricing or client list disclosed.</p>
+    <div class="meta"><span class="badge b-warn">Partial</span><span class="date-tag">2026-11-04</span></div>
+    <div class="srcs">Sources: <a href="https://roweb.com/blog/romania-ranks-last-in-the-eu-for-ai-adoption-95-of-companies-do-not-use-the-technology-while-4-in-10-medical-appointment-requests-fail-on-the-first-call-roweb-proposes-a-solution/">Roweb</a> · <a href="https://www.ziuacargo.ro/cargo/piata-si-companii/agent-vocal-bazat-pe-inteligenta-artificiala-prin-platforma-roweb-ai-260692.html/">ZiuaCargo</a></div>
+  </div>
+  <div class="note">Relevant context (Oct 27, outside the window): Dental Intelligence added a native VoIP phone system ("DI Voice") with call recordings, transcripts, AI summaries and after-hours AI receptionist — directly applicable to large-clinic front-desk automation. For imaging/diagnostics AI (Overjet, Pearl, Videa): nothing new dated Nov 5–7.</div>
+  <div class="totop"><a href="#top">↑ top</a></div>
+</section>
+
+<!-- ============ 3. TECHNOLOGY ============ -->
+<section id="tech">
+  <div class="cat-head"><span class="cat-num">03</span><h2>Technology</h2></div>
+
+  <div class="subcat">Patents &amp; product launches (global + Romania)</div>
+  <div class="card">
+    <h3>Motorola Signature 27 launches globally</h3>
+    <p>Motorola announced its flagship Signature 27 at $1,599.99 (US), with pre-orders Nov 19 and sale from Nov 26. Headline specs: Snapdragon 8 Elite Extreme Gen 6, a 6.8" 120Hz "Extreme AMOLED" display peaking near 12,000 nits, a 7,000mAh battery with 90W wired / 50W wireless charging, and a 50MP main + 200MP periscope + 50MP ultrawide camera set.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">2026-11-05/06</span></div>
+    <div class="srcs">Sources: <a href="https://www.gsmarena.com/motorola_signature_27_5g-14955.php">GSMArena</a> · <a href="https://www.businesstoday.in/technology/news/story/motorola-signature-27-launches-in-global-markets-with-1599-price-tag-brings-7000mah-battery-200mp-camera-and-more-566146-2026-11-06">Business Today</a></div>
+  </div>
+  <div class="card">
+    <h3>Microsoft patent: AI that rewrites live speech and resyncs the speaker's lips</h3>
+    <p>A published Microsoft patent application (US 2026/0341309 A1, filed Apr 2025, published Oct 29) describes AI that monitors a live A/V stream, replaces targeted words, then remaps the speaker's mouth movements to match — proposed for live translation, filler-word removal and profanity filtering. It is a filing, not a shipping product; coverage landed in early November.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">2026-10-29 (publication)</span></div>
+    <div class="srcs">Sources: <a href="https://www.ibtimes.co.uk/microsoft-ai-patent-rewrite-live-speech-1830381">IBTimes UK</a> · <a href="https://windowsforum.com/news/microsoft-patent-application-describes-ai-that-could-rewrite-live-speech-and-alter-lip-movements.450967/">Windows Forum</a></div>
+  </div>
+  <div class="card">
+    <h3>Big-Tech weekly patent roundup (Nov 6)</h3>
+    <p>A patent-tracking roundup lists recent filings: Sony (a car that releases scents tied to ads), Google (ad-integrated chatbot answers), Apple (smart glasses that warn bystanders when the camera is on) and Samsung (a "floating screen" sensed through glass). These are filings/grants, not product commitments, and rest on a single aggregator.</p>
+    <div class="meta"><span class="badge b-bad">Unverified</span><span class="date-tag">2026-11-06</span></div>
+    <div class="srcs">Source: <a href="https://patentlyze.com/big-tech-sixteen-most-interesting-patents-november-6-2026/">Patentlyze</a></div>
+  </div>
+  <div class="note">Romania: the only in-window tech item is the Roweb AI voice agent (Nov 4, listed under AI). No OSIM-linked patent/product launch dated to the last 24–48h (GoTech World 2026 is an upcoming Nov 10–11 Bucharest event, not a launch).</div>
+  <div class="totop"><a href="#top">↑ top</a></div>
+</section>
+
+<!-- ============ 4. PSYCHOLOGY ============ -->
+<section id="psych">
+  <div class="cat-head"><span class="cat-num">04</span><h2>Psychology</h2></div>
+
+  <div class="subcat">Adults — one scientifically proven item (DSM-5)</div>
+  <div class="card">
+    <h3>EEG "phase-resetting" dynamics track depression severity</h3>
+    <p>A University of Tsukuba team recorded EEG from 276 untreated adults and measured how phase-resetting in one brain region shifts the chance of resetting in another. Combined across region pairs, these cross-region dynamics tracked depressive-symptom severity and distinguished moderate-or-higher from milder symptoms at roughly 80% accuracy — a possible objective biomarker for major depressive disorder (DSM-5), pending clinical validation.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">2026-11-05</span></div>
+    <div class="srcs">Sources: <a href="https://www.nature.com/articles/s44220-026-00757-8">Nature Mental Health</a> · <a href="https://www.tsukuba.ac.jp/journal/medicine-health/20261105190000.html">University of Tsukuba</a></div>
+  </div>
+
+  <div class="subcat">Children — Andrei (born 2020, ~6 years old)</div>
+  <div class="card">
+    <h3>The 6-year-old brain: prefrontal refinement and the leap to logical thinking</h3>
+    <p>Around age 6 the brain is in rapid synaptic refinement and prefrontal-cortex growth, driving gains in executive function (working memory, impulse control, focus) and a shift from preschool "magical thinking" toward logical cause-and-effect reasoning. Expect emerging literacy and numeracy, a firmer grasp of real vs. imaginary, growing empathy and the ability to recognise two emotions at once — but with still-immature emotional regulation, so frustration and mood swings remain normal.</p>
+    <p><strong>Watch over the coming year (6→7):</strong> consolidation of reading fluency, lengthening attention span, more cooperative friendships, better self-regulation. Flag with a pediatrician if you see persistent trouble with reading/letters, inability to follow multi-step instructions, marked social withdrawal, or regulation far behind peers.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">Evergreen developmental science</span></div>
+    <div class="srcs">Sources: <a href="https://healthy.kaiserpermanente.org/health-wellness/health-encyclopedia/he.milestones-for-6-year-olds.ue5723">Kaiser Permanente</a> · <a href="https://www.kidcentraltn.com/development/6-7-years/brain-development-ages-6-7.html">KidCentral TN</a></div>
+  </div>
+  <div class="totop"><a href="#top">↑ top</a></div>
+</section>
+
+<!-- ============ 5. EDUCATION ============ -->
+<section id="edu">
+  <div class="cat-head"><span class="cat-num">05</span><h2>Education</h2></div>
+
+  <div class="subcat">Education over the next 20 years vs. classic schooling</div>
+  <div class="card">
+    <h3>From one-size-fits-all classrooms toward AI-personalized, lifelong learning</h3>
+    <p>The dominant projection is a shift from uniform classroom delivery toward AI-assisted, hyper-personalized learning that adapts pace and content to each student, with teachers moving from lecturers to "learning-experience designers" and learning extending into continuous, lifelong pathways. Repeated caveats: data privacy, unequal access/affordability, and the risk of AI baking in existing biases. Crucially, no rigorous long-term study yet compares AI-driven vs. traditional schooling — these remain forecasts, not evidence.</p>
+    <div class="meta"><span class="badge b-warn">Partial</span><span class="date-tag">Forecast · 2025–2026 analyses</span></div>
+    <div class="srcs">Sources: <a href="https://elearningindustry.com/predicting-the-future-of-ai-in-education-and-training">eLearning Industry</a> · <a href="https://www.eschoolnews.com/digital-learning/2025/12/30/25-predictions-about-ai-and-edtech/">eSchool News</a> · <a href="https://arxiv.org/pdf/2412.00605">arXiv survey</a></div>
+  </div>
+
+  <div class="subcat">How to educate a ~6-year-old (Andrei)</div>
+  <div class="card">
+    <h3>Play-based learning plus structured emotion coaching</h3>
+    <p>At 6, play-based learning is among the most effective approaches — it gives natural practice in emotional regulation, cooperation and empathy, and works best paired with debriefing ("what made you happy/frustrated in that game?"). Build literacy and numeracy through short, concrete activities alongside daily shared reading; adults should model calm regulation and create safe space for feelings. A randomized "I Spy Feelings" intervention for 5–6-year-olds shows structured emotion-regulation programs produce measurable short-term gains at this age.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">Evergreen early-childhood evidence</span></div>
+    <div class="srcs">Sources: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10434767/">"I Spy Feelings" RCT (PMC)</a> · <a href="https://www.tandfonline.com/doi/full/10.1080/02568543.2025.2567504">SEL through play</a></div>
+  </div>
+  <div class="totop"><a href="#top">↑ top</a></div>
+</section>
+
+<!-- ============ 6. MEDICINE ============ -->
+<section id="med">
+  <div class="cat-head"><span class="cat-num">06</span><h2>Medicine</h2></div>
+
+  <div class="subcat">New discoveries &amp; firsts (scientifically proven)</div>
+  <div class="card">
+    <h3>Glioblastoma follows predictable "rules" — two companion Nature papers</h3>
+    <p>Two Nature studies show glioblastoma's cell-state switching — long assumed essentially random — actually follows a predictable, spatially patterned program. One introduces scDORI, a deep-learning tool that mapped gene-regulatory networks across more than a million cells; reprogramming a single regulator improved survival in mouse models. The second built a multi-omic atlas of 12 tumors showing heterogeneity traces to a stereotyped developmental-like trajectory, opening potential new therapeutic targets.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">2026-11-04</span></div>
+    <div class="srcs">Sources: <a href="https://www.nature.com/articles/s41586-026-11177-0">Nature (scDORI)</a> · <a href="https://www.nature.com/articles/s41586-026-11234-8">Nature (atlas)</a> · <a href="https://www.embl.org/news/science-technology/understanding-the-rules-of-brain-cancer/">EMBL</a></div>
+  </div>
+  <div class="card">
+    <h3>New anti-glioblastoma lab compounds (SPK17 / SPK17b)</h3>
+    <p>Researchers at IIT Gandhinagar report two lab-stage compounds that kill drug-resistant glioblastoma cells more potently than a routine chemotherapy drug, published in RSC Medicinal Chemistry. This is an early preclinical lead with no human data; only one source could be confirmed.</p>
+    <div class="meta"><span class="badge b-bad">Unverified</span><span class="date-tag">2026-11-06</span></div>
+    <div class="srcs">Source: <a href="https://medicalxpress.com/news/2026-11-compounds-drug-resistant-brain-cancer.html">Medical Xpress</a></div>
+  </div>
+  <div class="note">Not breaking (for reference): the Merck/Moderna mRNA melanoma vaccine (intismeran autogene, Phase 3 INTerpath-001) was heavily covered around ESMO 2026, but those data are from Aug–Oct 2026, not the last 24–48h.</div>
+  <div class="totop"><a href="#top">↑ top</a></div>
+</section>
+
+<!-- ============ 7. ECONOMY ============ -->
+<section id="econ">
+  <div class="cat-head"><span class="cat-num">07</span><h2>Economy</h2></div>
+
+  <div class="subcat">Acquisitions &amp; sales (EU &gt;€100M · US/China &gt;$100M · RO &gt;€1M)</div>
+  <div class="card">
+    <h3>AkzoNobel–Axalta merger wins conditional EU approval (~$25B)</h3>
+    <p>The European Commission cleared the all-stock "merger of equals" between Dutch coatings maker AkzoNobel and US-based Axalta, conditional on AkzoNobel divesting its European vehicle-refinish business to remove EEA overlap. The Commission found no competition problems outside Europe; the companies target a close in early 2027 pending other regulators including the US FTC.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">2026-11-06</span></div>
+    <div class="srcs">Sources: <a href="https://www.sec.gov/Archives/edgar/data/0000003124/000095010326017091/dp256483_ex9901.htm">AkzoNobel 6-K (SEC)</a> · <a href="https://www.sec.gov/Archives/edgar/data/0001616862/000095010326017090/dp256304_425-nov6.htm">Axalta 425 (SEC)</a></div>
+  </div>
+  <div class="card">
+    <h3>Fox completes $22B acquisition of Roku</h3>
+    <p>Fox Corporation closed its roughly $22 billion all-equity acquisition of streaming platform Roku, first agreed in June 2026. Fox stockholders hold about 74% of the combined entity and former Roku holders about 26%, combining Roku's platform with Fox One, Fox Nation and Tubi. This is a completion, not a new announcement.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">2026-11-06</span></div>
+    <div class="srcs">Sources: <a href="https://www.mediaplaynews.com/fox-closes-22-billion-roku-acquisition-combining-streamer-with-fox-one-fox-nation-tubi/">Media Play News</a> · <a href="https://www.investing.com/news/stock-market-news/fox-completes-22-billion-roku-deal-to-expand-digital-reach-5008633">Investing.com</a></div>
+  </div>
+  <div class="card">
+    <h3>Adani Ports reported to agree buyout of Dutch storage operator Evos</h3>
+    <p>Reports indicate India's Adani Ports agreed to buy liquid-bulk tank-storage operator Evos from Igneo Infrastructure Partners, with figures cited variously as an enterprise value around €2.56B and a binding bid near $3.3B in late-October coverage. Sources conflict on the exact value and on whether the deal is signed or still a pending bid.</p>
+    <div class="meta"><span class="badge b-warn">Partial</span><span class="date-tag">2026-11-06 (bid coverage from late Oct)</span></div>
+    <div class="srcs">Sources: <a href="https://www.kotakneo.com/news/stocks/adani-ports-evos-acquisition-bid/">Kotak Neo</a> · <a href="https://www.newsbytesapp.com/news/business/adani-ports-bids-33bn-for-evos-terminals-in-europe/tldr">NewsBytes</a></div>
+  </div>
+  <div class="card">
+    <h3>Romania — Pactic (Sameday group) acquires QeOPS</h3>
+    <p>Pactic, controlled by the Sameday logistics group, announced the acquisition of Romanian firm QeOPS, which works with brands such as Flanco, Lego and Oppo. The transaction value was not disclosed, so the &gt;€1M threshold cannot be confirmed; no other RO clinic/company deal with a disclosed value ≥€1M landed strictly in the window.</p>
+    <div class="meta"><span class="badge b-warn">Partial</span><span class="date-tag">2026-11-04</span></div>
+    <div class="srcs">Source: <a href="https://startupcafe.ro/grupul-sameday-o-noua-achizitie-in-romania-compania-preluata-lucreaza-cu-flanco-lego-oppo-si-alte-branduri-cunoscute-109668">StartupCafe</a></div>
+  </div>
+  <div class="note">Just outside the window (Nov 2, Verified): Marvell agreed to acquire Lumentum in an all-stock deal with an enterprise value near $115B — the largest recent transaction, confirmed via a joint SEC 8-K and multiple outlets.</div>
+  <div class="totop"><a href="#top">↑ top</a></div>
+</section>
+
+<!-- ============ 8. POLITICS ============ -->
+<section id="pol">
+  <div class="cat-head"><span class="cat-num">08</span><h2>Politics</h2></div>
+
+  <div class="subcat">New appointments (EU / Romania / USA)</div>
+  <div class="card">
+    <h3>EU opens search for next European Research Council President</h3>
+    <p>On Nov 5 the European Commission invited nominations for the next ERC President to succeed Maria Leptin; nominations are due Nov 23 and the new President takes office Oct 1, 2027. An independent committee chaired by Pearl Dykstra (including Margrethe Vestager) will shortlist three candidates. This opens a selection process rather than confirming an appointment.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">2026-11-05</span></div>
+    <div class="srcs">Sources: <a href="https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/commission-invites-nominations-next-president-european-research-council-2026-11-05_en">European Commission</a> · <a href="https://www.brusselstimes.com/eu-affairs/2393346/independent-panel-to-shortlist-future-european-research-council-leader/">Brussels Times</a></div>
+  </div>
+  <div class="card">
+    <h3>Romania — nine new state secretaries + new Secretary General of the Government</h3>
+    <p>PM Luca Niculescu signed decisions appointing nine state secretaries across seven ministries (Transport, Labour, Interior, Development, Energy, Economy, Investments/European Projects), published in Monitorul Oficial; five are PSD figures returning after April 2026 resignations. Separately, Gabriel-Ciprian Ene was named Secretary General of the Government with minister rank (effective Nov 2), an appointment contested by USR over possible incompatibility.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">2026-11-02/04</span></div>
+    <div class="srcs">Sources: <a href="https://www.gandul.ro/politica/premierul-luca-niculescu-a-numit-noua-secretari-de-stat-in-mai-multe-ministere-21055522">Gândul</a> · <a href="https://www.atlasnews.ro/gabriel-ciprian-ene-numit-secretar-general-guvern-premier-niculescu/">Atlas News</a></div>
+  </div>
+  <p class="none">USA: nothing relevant in the last 24h. (The Senate is in a lame-duck session with judicial nominees pending, but no confirmation vote dated Nov 5–7 was found.)</p>
+
+  <div class="subcat">New laws adopted / to be applied</div>
+  <div class="card">
+    <h3>Romania — three laws promulgated (Monitorul Oficial nr. 922)</h3>
+    <p>President Nicușor Dan promulgated three laws published Nov 3: Law 206/2026 (Nov 19 as National Day of Women's Entrepreneurship); Law 207/2026, amending the road-traffic code to let motorcycles/mopeds filter between cars stopped at lights up to 20 km/h and use permitted public-transport lanes — the traffic provisions took effect Nov 6; and Law 208/2026, completing a government ordinance.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">2026-11-03 · road code from 2026-11-06</span></div>
+    <div class="srcs">Sources: <a href="https://alba24.ro/codul-rutier-modificat-pentru-motociclisti-vor-putea-trece-printre-masinile-oprite-la-semafor-legea-a-fost-promulgata-1165954.html">Alba24</a> · <a href="https://www.ccjtm.ro/monitorul-922-din-data-03-11-2026/">Monitorul 922</a></div>
+  </div>
+  <div class="card">
+    <h3>EU — Implementing Regulation amending ISIL/Al-Qaida sanctions list</h3>
+    <p>Commission Implementing Regulation (EU) 2026/2490 of Nov 3 was published, amending (for the 364th time) the Council regulation imposing restrictive measures against persons and entities associated with ISIL (Da'esh) and Al-Qaida. No major new Parliament/Council legislative act was confirmed within the strict window; surfaced via an aggregator, not cross-checked against the EUR-Lex primary page.</p>
+    <div class="meta"><span class="badge b-warn">Partial</span><span class="date-tag">2026-11-03</span></div>
+    <div class="srcs">Source: <a href="https://lawplayer.com/eu">EUR-Lex aggregator</a></div>
+  </div>
+  <div class="card">
+    <h3>USA — two bills signed into law (Nov 3)</h3>
+    <p>President Trump signed H.R. 1744, reauthorizing the U.S. Commission on International Religious Freedom through FY2028, and H.R. 8205, reauthorizing the ALS Therapies Access Act through FY2031. No bill signing dated Nov 5–7 was found; this is confirmed via the primary White House statement.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="date-tag">2026-11-03</span></div>
+    <div class="srcs">Source: <a href="https://www.whitehouse.gov/briefings-statements/2026/11/congressional-bills-h-r-1744-and-h-r-8205-signed-into-law/">White House</a></div>
+  </div>
+  <div class="totop"><a href="#top">↑ top</a></div>
+</section>
+
+<footer>
+  <p><strong>Method &amp; caveats.</strong> Items were sought within a 24–48h window (around Nov 5–7, 2026); where the freshest credible item is older, the exact date is shown. "Verified" = corroborated by ≥2 independent sources or a primary record; "Partial" = single effective primary source or forecast; "Unverified" = one source only. Summaries are written independently; follow the source links for originals. Some primary registers (Monitorul Oficial, EUR-Lex) and LinkedIn could not be opened directly this session, so a few legal/personnel items rest on cross-referenced reporting.</p>
+  <p>Generated automatically as a personal research digest · November 7, 2026 · <a class="src" href="arhiva/">Archive</a></p>
+</footer>
+
+</div>
+</body>
+</html>
