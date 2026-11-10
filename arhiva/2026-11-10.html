@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Briefing">
+<meta name="description" content="Daily curated, source-verified morning briefing — dental, AI, technology, psychology, education, medicine, economy, politics.">
+<link rel="manifest" href="../manifest.json">
+<title>Morning Briefing — November 10, 2026</title>
+<style>
+  :root{
+    --bg:#0f172a; --bg2:#111c33; --card:#16223c; --card2:#1b2949;
+    --text:#e8eef7; --muted:#9fb0c9; --line:#263655;
+    --accent:#38bdf8; --accent2:#7dd3fc;
+    --ok:#34d399; --okbg:#0c3b2e; --partial:#fbbf24; --partialbg:#3a2e09; --no:#f87171; --nobg:#3a1414;
+    --radius:14px;
+  }
+  @media (prefers-color-scheme: light){
+    :root:not([data-theme="dark"]){
+      --bg:#f4f7fb; --bg2:#eef3fa; --card:#ffffff; --card2:#f7fafe;
+      --text:#17233b; --muted:#54657f; --line:#dde6f1;
+      --accent:#0369a1; --accent2:#0284c7;
+      --ok:#047857; --okbg:#dcfce7; --partial:#b45309; --partialbg:#fef3c7; --no:#b91c1c; --nobg:#fee2e2;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0f172a; --bg2:#111c33; --card:#16223c; --card2:#1b2949;
+    --text:#e8eef7; --muted:#9fb0c9; --line:#263655;
+    --accent:#38bdf8; --accent2:#7dd3fc;
+    --ok:#34d399; --okbg:#0c3b2e; --partial:#fbbf24; --partialbg:#3a2e09; --no:#f87171; --nobg:#3a1414;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6; font-size:17px;
+    padding:0 16px; padding-bottom:64px;
+  }
+  .wrap{max-width:760px; margin:0 auto}
+  header.masthead{
+    padding:34px 0 20px; border-bottom:2px solid var(--line); margin-bottom:8px;
+  }
+  .kicker{
+    font-size:.72rem; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--accent); font-weight:700; margin:0 0 8px;
+  }
+  h1{
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:2rem; line-height:1.15; margin:0 0 6px; font-weight:700;
+  }
+  .date{color:var(--muted); font-size:.95rem; margin:0}
+  .intro{
+    color:var(--muted); font-size:.9rem; margin:14px 0 0;
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    padding:12px 14px;
+  }
+  nav.toc{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    padding:16px 18px; margin:22px 0;
+  }
+  nav.toc h2{font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin:0 0 12px}
+  nav.toc ol{margin:0; padding-left:1.25em; columns:2; column-gap:22px}
+  @media (max-width:520px){ nav.toc ol{columns:1} }
+  nav.toc li{margin:5px 0; break-inside:avoid}
+  nav.toc a{color:var(--accent2); text-decoration:none; font-weight:600; font-size:.95rem}
+  nav.toc a:hover{text-decoration:underline}
+
+  section.cat{margin:34px 0 10px; scroll-margin-top:16px}
+  .cat-head{
+    display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;
+    border-bottom:2px solid var(--accent); padding-bottom:8px; margin-bottom:4px;
+  }
+  .cat-num{
+    font-family:Georgia,serif; font-size:1.05rem; color:var(--accent); font-weight:700;
+    background:var(--card2); border:1px solid var(--line); border-radius:8px; padding:1px 9px;
+  }
+  .cat-head h2{font-size:1.5rem; margin:0; font-family:Georgia,serif}
+  .sub{
+    font-size:.74rem; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--muted); font-weight:700; margin:22px 0 10px;
+  }
+  .item{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    padding:15px 16px; margin:12px 0;
+  }
+  .item h3{font-size:1.08rem; margin:0 0 7px; line-height:1.3}
+  .item p{margin:0 0 10px; font-size:.97rem}
+  .meta{display:flex; align-items:center; gap:10px; flex-wrap:wrap; font-size:.82rem}
+  .badge{
+    display:inline-block; font-size:.68rem; font-weight:700; letter-spacing:.05em;
+    text-transform:uppercase; padding:3px 9px; border-radius:999px; white-space:nowrap;
+  }
+  .b-ok{background:var(--okbg); color:var(--ok); border:1px solid var(--ok)}
+  .b-partial{background:var(--partialbg); color:var(--partial); border:1px solid var(--partial)}
+  .b-no{background:var(--nobg); color:var(--no); border:1px solid var(--no)}
+  .when{color:var(--muted)}
+  .src a{color:var(--accent2); text-decoration:none; word-break:break-word}
+  .src a:hover{text-decoration:underline}
+  .nothing{
+    color:var(--muted); font-style:italic; font-size:.95rem;
+    background:var(--card2); border:1px dashed var(--line); border-radius:10px;
+    padding:11px 14px; margin:12px 0;
+  }
+  .context{
+    font-size:.86rem; color:var(--muted); margin:8px 0 0; padding:10px 12px;
+    background:var(--card2); border-left:3px solid var(--line); border-radius:0 8px 8px 0;
+  }
+  .context b{color:var(--text); font-weight:600}
+  .backtop{display:inline-block; margin-top:10px; font-size:.78rem; color:var(--muted); text-decoration:none}
+  .backtop:hover{color:var(--accent)}
+  footer{
+    margin-top:46px; padding-top:20px; border-top:1px solid var(--line);
+    color:var(--muted); font-size:.82rem;
+  }
+  footer a{color:var(--accent2); text-decoration:none}
+  .legend{display:flex; gap:14px; flex-wrap:wrap; margin:10px 0 0; font-size:.78rem; color:var(--muted)}
+  .legend span{display:inline-flex; align-items:center; gap:6px}
+  .dot{width:10px; height:10px; border-radius:50%; display:inline-block}
+</style>
+</head>
+<body>
+<div class="wrap" id="top">
+
+  <header class="masthead">
+    <p class="kicker">Daily Briefing · Cosmin's Desk</p>
+    <h1>Morning Briefing</h1>
+    <p class="date">Monday, November 10, 2026</p>
+    <p class="intro">
+      Curated from the last 24–48 hours. Every item carries a confidence level and a source link.
+      Where a topic had no verifiable news in the window, that is stated plainly rather than filled.
+      Single-source or developer-only claims are marked <strong>Unverified</strong> and should not be
+      treated as established fact. Summaries are written in-house; follow the source link for the original.
+    </p>
+    <div class="legend">
+      <span><span class="dot" style="background:var(--ok)"></span>Verified — 2+ independent / primary sources</span>
+      <span><span class="dot" style="background:var(--partial)"></span>Partial — corroborated but observational or older</span>
+      <span><span class="dot" style="background:var(--no)"></span>Unverified — single source, treat with caution</span>
+    </div>
+  </header>
+
+  <nav class="toc">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#dental">Dental</a></li>
+      <li><a href="#ai">Artificial Intelligence</a></li>
+      <li><a href="#tech">Technology</a></li>
+      <li><a href="#psychology">Psychology</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#medicine">Medicine</a></li>
+      <li><a href="#economy">Economy</a></li>
+      <li><a href="#politics">Politics</a></li>
+    </ol>
+  </nav>
+
+  <!-- ============ 1. DENTAL ============ -->
+  <section class="cat" id="dental">
+    <div class="cat-head"><span class="cat-num">1</span><h2>Dental</h2></div>
+
+    <p class="sub">Clinical &amp; research discoveries</p>
+    <div class="item">
+      <h3>Protein-based gel to regrow tooth enamel re-enters the news cycle</h3>
+      <p>A fluoride-free, protein-based gel developed at the University of Nottingham reorganises eroded apatite into regenerated enamel crystals (up to ~10 µm) over about two weeks. The science circulated again on Nov 4, 2026, but the underlying peer-reviewed paper dates to Nov 2025 — this is a repost, not a fresh discovery. Human trials via spin-off Mintech-Bio were slated for early 2026; no results have surfaced.</p>
+      <div class="meta">
+        <span class="badge b-partial">Partial</span>
+        <span class="when">Science: Nov 2025 · recirculated Nov 4, 2026</span>
+        <span class="src"><a href="https://www.healthday.com/health-news/dental-care/new-bio-inspired-gel-helps-tooth-enamel-grow-back" target="_blank" rel="noopener">HealthDay</a> · original: Nature Communications (2025)</span>
+      </div>
+    </div>
+
+    <p class="sub">New technologies (implants, scanners, software)</p>
+    <p class="nothing">Nothing relevant in the last 24h — no product launch or patent could be confirmed to Nov 8–10 to a two-source standard.</p>
+    <div class="context"><b>Recent context (older than the window):</b> Planmeca Onyx intraoral scanner (launched Jun 22, 2026); 3Shape Dx / Dx Plus AI imaging software received FDA 510(k) clearance for caries, plaque, tooth-wear and gingival-recession detection (Apr 28, 2026).</div>
+
+    <p class="sub">New clinic processes (call center, patient care, SOP)</p>
+    <div class="item">
+      <h3>AI voice receptionists moving toward the default for dental front desks</h3>
+      <p>Multiple 2026 vendor guides describe cloud call-handling with AI-assisted routing becoming standard for new installs — AI agents answer calls, book appointments, collect patient data and escalate urgent cases, integrating with Dentrix, Open Dental and Eaglesoft. This is a market trend rather than a dated event, and the evidence is vendor-published. One vendor analysis of 4,280 calls across 26 practices reported 38% went unanswered.</p>
+      <div class="meta">
+        <span class="badge b-partial">Partial</span>
+        <span class="when">Ongoing trend (2026)</span>
+        <span class="src"><a href="https://www.dentalbase.ai/blogs/dental-practice-automation-guide-2026-roadmap" target="_blank" rel="noopener">DentalBase 2026 roadmap</a></span>
+      </div>
+    </div>
+
+    <p class="sub">Clinic sales &amp; acquisitions (Romania + global)</p>
+    <div class="item">
+      <h3>Park Dental Partners — Village Family Dental DSO (North Carolina)</h3>
+      <p>Park Dental Partners agreed (announced Aug 10, 2026) to acquire the DSO behind Village Family Dental in Fayetteville, NC — its entry into the state, adding ~12 locations and ~47 doctors. Terms: a base of ~$39.1M plus up to $6.9M contingent (up to ~$46M total), including 474,535 restricted shares (~$9.2M). One summary claimed the deal closed Nov 6, 2026 with an earnings call Nov 13, but that closing could not be independently confirmed.</p>
+      <div class="meta">
+        <span class="badge b-partial">Partial</span>
+        <span class="when">Announced Aug 10 · Nov 6 closing unverified</span>
+        <span class="src"><a href="https://healthcare.levinassociates.com/2026/08/10/park-dental-partners-expands-network-with-village-family-dental-dso-deal/" target="_blank" rel="noopener">Levin Associates</a> · SEC 8-K filing</span>
+      </div>
+    </div>
+    <p class="nothing"><strong>Romania:</strong> Nothing relevant in the last 24h — no new Romanian clinic acquisition surfaced. (A May 2026 Heligan report forecasts more RO clinic/lab M&amp;A in 2026 but names no in-window deal.)</p>
+
+    <p class="sub">Key-people migrations (leadership / doctors)</p>
+    <p class="nothing">Nothing relevant in the last 24h with an in-window date — LinkedIn was not reachable this cycle to confirm individual moves.</p>
+    <div class="context"><b>Confirmed upcoming transitions (context):</b> Straumann Group — Christopher Norbye becomes CEO effective Dec 1, 2026; Henry Schein — Frederick M. Lowery named CEO (effective Mar 2026).</div>
+
+    <p class="sub">Lab processes &amp; technologies</p>
+    <p class="nothing">Nothing relevant in the last 24h — no lab process or technology launch could be verified to the window.</p>
+    <div class="context"><b>Context (2026, older):</b> LMT Lab Day Chicago (Feb) featured in-house metal printing and Formlabs' first automated dental 3D-printing system; Zahn introduced the Zirlux Independence ML zirconia disc. AM Research projects dental 3D printing to reach $9.6B in revenue by 2033.</div>
+
+    <p class="sub">Courses &amp; the English-language online market</p>
+    <div class="item">
+      <h3>How online English-language dental education is sold abroad</h3>
+      <p>The market splits in two tiers. Low-cost CPD aggregators (Reed.co.uk lists short online dentistry diplomas near £23 with CPD points; Cademy ~£25 on-demand) lean on market-growth claims as marketing. Premium hands-on/hybrid programs run far higher — the Pikos Institute's implant modules sit near $20,000, alongside Nobel Biocare calendars and university CPD. Implantology, cosmetic dentistry and digital-workflow topics are the clear best-sellers; "A-to-Z implantology" on-demand module series are a growing distribution model.</p>
+      <div class="meta">
+        <span class="badge b-partial">Partial</span>
+        <span class="when">Standing market assessment</span>
+        <span class="src"><a href="https://www.reed.co.uk/courses/dentistry" target="_blank" rel="noopener">Reed</a> · <a href="https://implantologyondemand.thinkific.com" target="_blank" rel="noopener">Implantology On Demand</a></span>
+      </div>
+    </div>
+    <a class="backtop" href="#top">↑ Back to top</a>
+  </section>
+
+  <!-- ============ 2. AI ============ -->
+  <section class="cat" id="ai">
+    <div class="cat-head"><span class="cat-num">2</span><h2>Artificial Intelligence</h2></div>
+
+    <p class="sub">General news (models, research, funding)</p>
+    <div class="item">
+      <h3>Thinking Machines Lab nears a ~$5B round at a ~$40B valuation</h3>
+      <p>Mira Murati's startup is reported to be closing roughly $5 billion at about a $40 billion pre-money valuation, led by Accel, with Nvidia discussed as a participant — more than tripling its earlier $12B mark. Terms are not officially confirmed and the company declined to comment, so treat this as a well-sourced report rather than a company announcement.</p>
+      <div class="meta">
+        <span class="badge b-ok">Verified (as report)</span>
+        <span class="when">Reported Nov 6–7, 2026</span>
+        <span class="src"><a href="https://dealroom.co/news/170334-thinking-machines-lab-nears-5b-round-at-40b-valuation-led-by-accel/" target="_blank" rel="noopener">Dealroom</a> · The Decoder</span>
+      </div>
+    </div>
+    <div class="item">
+      <h3>Anthropic reportedly orders ~$3.4B of gas turbines for data-center power</h3>
+      <p>Anthropic is reported to have placed roughly $3.4 billion in orders for natural-gas turbines to power its AI data centers; the orders reportedly date to September but surfaced publicly around Nov 8. The story fits the wider pattern of AI firms securing their own electricity supply, but it rests on aggregator summaries rather than a confirmed primary source.</p>
+      <div class="meta">
+        <span class="badge b-partial">Partial</span>
+        <span class="when">Surfaced ~Nov 8, 2026</span>
+        <span class="src"><a href="https://aiweekly.co/ai-news-today" target="_blank" rel="noopener">AI Weekly digest</a> (via TechCrunch item)</span>
+      </div>
+    </div>
+    <div class="item">
+      <h3>Lazarus AI raises $43M for enterprise document intelligence</h3>
+      <p>Boston-based Lazarus AI announced $43 million backed by QBE Ventures, State Farm Ventures and Mucker Capital, to scale enterprise AI that customers control, including document-intelligence products. No lead investor, round type or valuation was disclosed, and some performance figures are company-stated.</p>
+      <div class="meta">
+        <span class="badge b-ok">Verified</span>
+        <span class="when">Nov 3, 2026 (just before window)</span>
+        <span class="src"><a href="https://dealroom.co/news/169259-lazarus-ai-raises-43m-to-pitch-enterprises-independent-ai-they-control/" target="_blank" rel="noopener">Dealroom</a> · Beinsure</span>
+      </div>
+    </div>
+    <div class="context"><b>Flagged and excluded:</b> several "Nov 9" headlines (a claimed new Anthropic model, a $350B round, NVIDIA/Rebellions Korea deal, Meta "Muse Ember") were single-source or traced to older/fabricated events and did not pass verification.</div>
+
+    <p class="sub">What could help a large dental clinic</p>
+    <p class="nothing">Nothing relevant in the last 24h — no dental-AI launch, partnership or FDA clearance dated Nov 8–10 could be confirmed.</p>
+    <div class="context"><b>Active market categories to watch:</b> imaging/diagnostic AI (Overjet IRIS, Pearl, VideaHealth), AI insurance-claim/RCM automation (VideaHealth ClaimsAI), and voice-driven clinical &amp; perio charting (Pearl Voice, Planet DDS AI Voice Perio) — the main levers for scheduling, operations and diagnostics in a large practice.</div>
+    <a class="backtop" href="#top">↑ Back to top</a>
+  </section>
+
+  <!-- ============ 3. TECHNOLOGY ============ -->
+  <section class="cat" id="tech">
+    <div class="cat-head"><span class="cat-num">3</span><h2>Technology</h2></div>
+
+    <p class="sub">Patents &amp; product launches — Global</p>
+    <p class="nothing">Nothing relevant in the last 24h — no product launch or patent filing/grant dated Nov 8–10 could be confirmed from two reputable sources.</p>
+    <div class="context"><b>Near-window context:</b> Motorola Signature 27 global debut and Asus Zenbook 14 (2026) India launch, both Nov 5, 2026. Leads about "Quark AI glasses" and an "OpenAI earbuds patent" resolved to older events and were not used.</div>
+
+    <p class="sub">Patents &amp; product launches — Romania</p>
+    <p class="nothing">Nothing relevant in the last 24h — no in-window product launch or OSIM patent news confirmed.</p>
+    <div class="context"><b>Upcoming (dates may shift):</b> NASA Space Apps Challenge Romania (Nov 14–15), DefCamp cybersecurity conference (Nov 19–20), CASSINI EU Hackathon (Nov 27–29). OSIM's invention bulletin (BOPI) publishes in numbered 2026 issues; no November issue content confirmed.</div>
+    <a class="backtop" href="#top">↑ Back to top</a>
+  </section>
+
+  <!-- ============ 4. PSYCHOLOGY ============ -->
+  <section class="cat" id="psychology">
+    <div class="cat-head"><span class="cat-num">4</span><h2>Psychology</h2></div>
+
+    <p class="sub">Adults — a proven finding, related to DSM-5</p>
+    <div class="item">
+      <h3>Fear blurs the brain's "danger" vs "safety" maps</h3>
+      <p>A McGill University team reported in Nature Neuroscience that, in mice, fear causes the brain's danger and safety memory maps to overlap instead of staying distinct — an over-active survival mechanism that may underlie the over-generalised fear seen in anxiety disorders and PTSD. It reframes PTSD-type fear as a failure to separate safe from dangerous cues rather than simply "too much" fear. Note this is mechanistic animal research, not yet a human clinical finding.</p>
+      <div class="meta">
+        <span class="badge b-ok">Verified</span>
+        <span class="when">~Oct 15, 2026 · recirculated Nov 2</span>
+        <span class="src"><a href="https://www.sciencedaily.com/releases/2026/11/261102202833.htm" target="_blank" rel="noopener">ScienceDaily</a> · McGill release</span>
+      </div>
+    </div>
+    <div class="item">
+      <h3>GLP-1 drugs linked to fewer alcohol-related hospitalizations</h3>
+      <p>A Swedish national-register, within-individual study in The Lancet Psychiatry found that periods when the same patients were on GLP-1 receptor agonists (e.g., semaglutide) had fewer alcohol- and substance-related hospitalizations than their untreated periods; a separate BMJ Open trial-emulation study of 40,703 adults with alcohol use disorder found 26–65% fewer alcohol-related admissions. Both are observational, so causation is not established and randomized trials are still needed.</p>
+      <div class="meta">
+        <span class="badge b-partial">Partial (observational)</span>
+        <span class="when">2026</span>
+        <span class="src"><a href="https://www.news-medical.net/news/20260721" target="_blank" rel="noopener">News-Medical</a> · Lancet Psychiatry / BMJ Open</span>
+      </div>
+    </div>
+
+    <p class="sub">Children — Andrei (born 2020, turning 6)</p>
+    <div class="item">
+      <h3>The "5-to-7 shift": a leap in self-control around age six</h3>
+      <p>Between roughly five and seven, children make marked gains in executive function — controlling attention, impulses and behaviour — a well-documented transition tied both to brain maturation and to school entry. A typical six-year-old can follow multi-step instructions, sustain attention for about 15 minutes, use largely correct grammar, and grasp basic rules and fairness. Theory of mind (understanding others' thoughts and feelings) also strengthens and appears to support emotional regulation.</p>
+      <div class="meta">
+        <span class="badge b-ok">Verified (behavioral)</span>
+        <span class="when">Evidence base: Brod, Bunge &amp; Shing, Psychological Science (2017)</span>
+        <span class="src"><a href="https://www.psychologicalscience.org/" target="_blank" rel="noopener">Psychological Science</a> · health-system milestone guides</span>
+      </div>
+    </div>
+    <div class="context"><b>What to watch this coming year:</b> big feelings are normal — flag a persistent inability to calm or recover; some separation anxiety and classic fears (dark, animals) are still age-typical. Expect ~15-minute focused tasks and three-part instructions, cooperative play with 2–3 children, mostly correct grammar, and writing his name and some letters/numbers. Uneven development across domains is normal; raise persistent concerns with a pediatrician rather than a checklist.</div>
+    <a class="backtop" href="#top">↑ Back to top</a>
+  </section>
+
+  <!-- ============ 5. EDUCATION ============ -->
+  <section class="cat" id="education">
+    <div class="cat-head"><span class="cat-num">5</span><h2>Education</h2></div>
+
+    <p class="sub">The next 20 years vs. the classical school</p>
+    <div class="item">
+      <h3>Four OECD scenarios for schooling in 2040</h3>
+      <p>The OECD's "Back to the Future of Education" sets out four alternative futures for 2040 that challenge the factory-model school: schooling extended, education outsourced, schools as learning hubs, and learn-as-you-go — with digital tech and AI enabling personalised, analytics-driven learning. The OECD stresses these are deliberately non-predictive thinking tools, not forecasts. Converging commentary points to personalisation, hybrid delivery and lifelong learning displacing standardised age-cohort instruction.</p>
+      <div class="meta">
+        <span class="badge b-ok">Verified (OECD primary)</span>
+        <span class="when">OECD report (framework in continued use 2026)</span>
+        <span class="src"><a href="https://www.oecd.org/education/back-to-the-future-s-of-education_178ef527-en.htm" target="_blank" rel="noopener">OECD</a></span>
+      </div>
+    </div>
+    <div class="context">A widely cited WEF Future of Jobs figure holds that ~40% of workers' core skills will change or become outdated by 2030, used to argue that a standardised curriculum is mismatched to future work. <b>Partial</b> — cited second-hand; confirm against the primary WEF report before quoting.</div>
+
+    <p class="sub">Educating a six-year-old — evidence-based</p>
+    <div class="item">
+      <h3>Play, read, and guard sleep</h3>
+      <p>Current American Academy of Pediatrics guidance for ages 6–12 drops rigid screen-time numbers in favour of "crowding in" sleep, physical activity, play, reading and family time, and choosing quality content (turn off autoplay and infinite scroll). Because six is the executive-function and theory-of-mind window, experts favour play-based, hands-on learning, daily shared reading, strategy and puzzle games, and consistent routines over heavy screens or rote drilling. Naming feelings and modelling calm supports stronger self-control and peer acceptance.</p>
+      <div class="meta">
+        <span class="badge b-ok">Verified</span>
+        <span class="when">AAP guidance (current)</span>
+        <span class="src"><a href="https://www.healthychildren.org/" target="_blank" rel="noopener">HealthyChildren.org (AAP)</a></span>
+      </div>
+    </div>
+    <a class="backtop" href="#top">↑ Back to top</a>
+  </section>
+
+  <!-- ============ 6. MEDICINE ============ -->
+  <section class="cat" id="medicine">
+    <div class="cat-head"><span class="cat-num">6</span><h2>Medicine</h2></div>
+    <div class="context" style="margin-top:14px"><b>Context:</b> the dominant event in this window was the American Heart Association Scientific Sessions 2026 (Chicago, Nov 6–9), with several results published simultaneously in the New England Journal of Medicine on Nov 7.</div>
+
+    <div class="item">
+      <h3>Pelacarsen cuts Lp(a) by 78% but not cardiovascular events (Lp(a)HORIZON)</h3>
+      <p>Full phase-3 results for Novartis/Ionis's pelacarsen, presented at AHA 2026 and published in NEJM, confirmed the drug lowered lipoprotein(a) by about 78% but did not reduce major cardiovascular events in 8,323 patients with elevated Lp(a) and established cardiovascular disease. All-cause death was 5.7% vs 5.9%, with no benefit in any subgroup — a landmark negative result that challenges the Lp(a) hypothesis for this agent. Investigators say it is not the end of the Lp(a) story.</p>
+      <div class="meta">
+        <span class="badge b-ok">Verified</span>
+        <span class="when">Nov 7, 2026</span>
+        <span class="src"><a href="https://www.tctmd.com/news/full-lpahorizon-results-affirm-lack-pelacarsen-benefit-secondary-prevention" target="_blank" rel="noopener">TCTMD</a> · NEJM · HCPLive</span>
+      </div>
+    </div>
+    <div class="item">
+      <h3>Intensive blood-pressure control after ischemic stroke reduces events (OPTIMAL-Stroke)</h3>
+      <p>A randomized trial of 4,368 patients with a prior ischemic stroke or TIA across 30 Brazilian sites found that targeting systolic blood pressure below 120 mm Hg cut major cardiovascular events versus a below-140 target (10.9% vs 13.5%). Serious adverse events were similar between arms, though kidney-related outcomes and hyponatremia were modestly more frequent with intensive treatment. Presented at AHA 2026 and published in NEJM on Nov 7.</p>
+      <div class="meta">
+        <span class="badge b-ok">Verified</span>
+        <span class="when">Nov 7, 2026</span>
+        <span class="src"><a href="https://www.hcplive.com/view/aha-2026-intensive-blood-pressure-control-reduces-events-after-ischemic-stroke" target="_blank" rel="noopener">HCPLive</a> · NEJM · ACC</span>
+      </div>
+    </div>
+    <div class="item">
+      <h3>Oral PCSK9 inhibitor enlicitide: durable LDL lowering across risk groups</h3>
+      <p>New analyses of Merck's enlicitide — the first FDA-approved oral PCSK9 inhibitor (approved July 2026) — were presented at AHA 2026. A CORALreef Lipids analysis showed LDL-C reductions of ~57–63% held consistently regardless of baseline cardiovascular risk, and an open-label extension showed the effect maintained through ~104 weeks. Cardiovascular-outcomes data are not expected until around 2029.</p>
+      <div class="meta">
+        <span class="badge b-partial">Partial</span>
+        <span class="when">Presented Nov 2026</span>
+        <span class="src"><a href="https://www.ajmc.com/view/enlicitide-ldl-c-lowering-holds-across-risk-levels-up-to-2-years" target="_blank" rel="noopener">AJMC</a></span>
+      </div>
+    </div>
+    <a class="backtop" href="#top">↑ Back to top</a>
+  </section>
+
+  <!-- ============ 7. ECONOMY ============ -->
+  <section class="cat" id="economy">
+    <div class="cat-head"><span class="cat-num">7</span><h2>Economy</h2></div>
+    <p class="sub">Mergers &amp; acquisitions — EU &gt; €100M · US/China &gt; $100M · Romania &gt; €1M</p>
+
+    <div class="item">
+      <h3>argenx to acquire Unnatural Products for up to ~$1.15B</h3>
+      <p>Dutch-Belgian immunology group argenx SE signed a definitive agreement to buy Unnatural Products Inc., a Santa Cruz, California macrocyclic-peptide discovery company, in a deal valued at up to ~$1.15 billion (upfront plus milestones). The two had partnered since July 2025 and argenx already held a minority stake. Closing is expected by end of 2026, subject to customary conditions.</p>
+      <div class="meta">
+        <span class="badge b-ok">Verified</span>
+        <span class="when">Announced ~Nov 9, 2026</span>
+        <span class="src"><a href="https://www.biospace.com/" target="_blank" rel="noopener">BioSpace</a> · BioWorld · SEC 6-K</span>
+      </div>
+    </div>
+    <div class="item">
+      <h3>AkzoNobel–Axalta merger wins conditional EU clearance</h3>
+      <p>The European Commission granted conditional Phase I clearance to the ~$25 billion AkzoNobel/Axalta merger of equals, conditioned on AkzoNobel divesting its European vehicle-refinish business (Sikkens, Lesonal) across the EEA, UK and Switzerland. The companies still target closing in early 2027.</p>
+      <div class="meta">
+        <span class="badge b-ok">Verified</span>
+        <span class="when">Nov 6, 2026</span>
+        <span class="src"><a href="https://www.pcimag.com/articles/115508" target="_blank" rel="noopener">PCI Magazine</a> · MLex</span>
+      </div>
+    </div>
+    <div class="item">
+      <h3>Brookfield and CPP Investments complete $5.2B take-private of LXP Industrial Trust</h3>
+      <p>Brookfield Asset Management and CPP Investments completed their all-cash take-private of US industrial REIT LXP Industrial Trust, valued at ~$5.2 billion including debt and preferred equity ($61.20 per share). LXP — roughly 107 industrial properties and ~52 million sq ft — delisted from the NYSE as the assets fold into Brookfield's logistics platform.</p>
+      <div class="meta">
+        <span class="badge b-ok">Verified</span>
+        <span class="when">Completed ~Nov 2–7, 2026</span>
+        <span class="src"><a href="https://bam.brookfield.com/press-releases" target="_blank" rel="noopener">Brookfield</a> · SEC 8-K</span>
+      </div>
+    </div>
+    <div class="context"><b>Flagged (out of scope / unverified):</b> reports that Mitsui Chemicals agreed to buy JSR for ~¥1.84T (~$11.6B) conflict with earlier Reuters reporting that framed it as exploratory with "no decision made" — Japan-to-Japan, and not confirmed as signed.</div>
+    <p class="nothing"><strong>Romania (&gt; €1M):</strong> Nothing relevant in the last 24h. EY and Raiffeisen 9-month 2026 reviews report Q3 had no transaction above $100M and activity down ~9–15% year-on-year; no new Romanian deal surfaced for Nov 8–10.</p>
+    <a class="backtop" href="#top">↑ Back to top</a>
+  </section>
+
+  <!-- ============ 8. POLITICS ============ -->
+  <section class="cat" id="politics">
+    <div class="cat-head"><span class="cat-num">8</span><h2>Politics</h2></div>
+
+    <p class="sub">New appointments — EU / Romania / USA</p>
+    <p class="nothing"><strong>EU:</strong> Nothing relevant in the last 24h. The Europol executive-director post remains vacant (Jürgen Ebner acting since May 1, 2026); the Council is expected to name a successor by end of 2026.</p>
+    <p class="nothing"><strong>Romania:</strong> Nothing relevant in the last 24h. The most recent government investiture vote was Oct 20, 2026 — outside the window — and no reshuffle was found for Nov 8–10.</p>
+    <p class="nothing"><strong>USA:</strong> Nothing verified in the last 24h. Searches surfaced only earlier (Aug–Oct) batch Senate confirmations; no confirmation vote was confirmed for the week of Nov 9.</p>
+
+    <p class="sub">New laws adopted that will be applied</p>
+    <div class="item">
+      <h3>Romania — National Day of Women's Entrepreneurship (Law 206/2026)</h3>
+      <p>A law establishing Nov 19 as the National Day of Women's Entrepreneurship was reported published in Monitorul Oficial no. 923 (Nov 3, 2026) together with its promulgation decree. The official text could not be opened directly this cycle, so the item rests on a single secondary listing.</p>
+      <div class="meta">
+        <span class="badge b-no">Unverified</span>
+        <span class="when">Monitorul Oficial no. 923 · Nov 3, 2026</span>
+        <span class="src"><a href="https://legeaz.net/monitorul-oficial-923-2026/" target="_blank" rel="noopener">legeaz.net listing</a></span>
+      </div>
+    </div>
+    <p class="nothing"><strong>EU (EUR-Lex):</strong> Nothing relevant newly adopted in the last 24h that could be verified against the Official Journal.</p>
+    <div class="item">
+      <h3>USA — H.R. 1744 and H.R. 8205 reported signed into law</h3>
+      <p>A White House notice reportedly recorded two bills, H.R. 1744 and H.R. 8205, signed into law on Nov 3, 2026. The source page could not be reached to confirm the bills' subjects, so the content is unverified and no in-window Federal Register rule was confirmed.</p>
+      <div class="meta">
+        <span class="badge b-no">Unverified</span>
+        <span class="when">Reported Nov 3, 2026</span>
+        <span class="src">White House "Bills Signed" notice (not retrievable this cycle)</span>
+      </div>
+    </div>
+    <a class="backtop" href="#top">↑ Back to top</a>
+  </section>
+
+  <footer>
+    <p><strong>Briefing</strong> — generated November 10, 2026. Confidence levels and source links accompany every item; items marked <em>Unverified</em> rest on a single source and should be confirmed before you rely on them. This edition reflects what was publicly verifiable at publication; several primary-source domains were not reachable during research and are noted where relevant.</p>
+    <p><a href="./">📁 Archive — past editions</a></p>
+  </footer>
+
+</div>
+</body>
+</html>
