@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Briefing">
+<meta name="description" content="Daily curated news briefing — dental, AI, technology, psychology, education, medicine, economy, politics.">
+<link rel="manifest" href="manifest.json">
+<title>Daily Briefing — 19 November 2026</title>
+<style>
+  :root{
+    --bg:#0f1115; --surface:#171a21; --surface2:#1e222b; --border:#2a2f3a;
+    --text:#e6e8ee; --muted:#9aa3b2; --accent:#4da3ff; --accent2:#7ee0b8;
+    --v:#2ecc71; --p:#f1c40f; --u:#e67e73;
+    --maxw:760px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6; font-size:17px; padding:0 16px;
+  }
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:24px 0 80px}
+  header.top{padding:16px 0 8px; border-bottom:1px solid var(--border); margin-bottom:8px}
+  header.top .kicker{color:var(--accent); font-weight:600; letter-spacing:.08em; text-transform:uppercase; font-size:.72rem}
+  header.top h1{font-size:1.7rem; line-height:1.2; margin:.3em 0 .15em}
+  header.top .date{color:var(--muted); font-size:.95rem}
+  .intro{color:var(--muted); font-size:.9rem; margin:14px 0 4px}
+  nav.toc{background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:14px 16px; margin:18px 0 28px}
+  nav.toc h2{font-size:.78rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin:0 0 10px}
+  nav.toc ol{margin:0; padding-left:1.2em; columns:2; column-gap:20px}
+  @media(max-width:480px){nav.toc ol{columns:1}}
+  nav.toc li{margin:4px 0}
+  nav.toc a{color:var(--text); text-decoration:none; font-size:.95rem}
+  nav.toc a:hover{color:var(--accent)}
+  section.cat{margin:0 0 10px; scroll-margin-top:12px}
+  .cat>h2{font-size:1.3rem; margin:34px 0 4px; padding-bottom:8px; border-bottom:2px solid var(--accent); display:flex; align-items:center; gap:10px}
+  .cat>h2 .num{color:var(--accent); font-variant-numeric:tabular-nums}
+  h3.sub{font-size:.82rem; text-transform:uppercase; letter-spacing:.06em; color:var(--accent2); margin:22px 0 6px}
+  article.item{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:14px 16px; margin:12px 0}
+  article.item h4{margin:0 0 6px; font-size:1.05rem; line-height:1.3}
+  article.item p{margin:0 0 10px; color:#d4d8e2; font-size:.97rem}
+  .meta{display:flex; flex-wrap:wrap; gap:8px 10px; align-items:center; font-size:.8rem; color:var(--muted)}
+  .badge{display:inline-block; padding:2px 9px; border-radius:999px; font-size:.72rem; font-weight:700; letter-spacing:.02em}
+  .b-v{background:rgba(46,204,113,.14); color:var(--v); border:1px solid rgba(46,204,113,.35)}
+  .b-p{background:rgba(241,196,15,.14); color:var(--p); border:1px solid rgba(241,196,15,.35)}
+  .b-u{background:rgba(230,126,115,.14); color:var(--u); border:1px solid rgba(230,126,115,.4)}
+  .date-tag{font-variant-numeric:tabular-nums}
+  .srcs a{color:var(--accent); text-decoration:none}
+  .srcs a:hover{text-decoration:underline}
+  .srcs{display:flex; gap:10px; flex-wrap:wrap}
+  .none{color:var(--muted); font-style:italic; font-size:.92rem; margin:6px 0 2px; padding-left:2px}
+  .legend{display:flex; gap:12px; flex-wrap:wrap; font-size:.78rem; color:var(--muted); margin:10px 0 0}
+  footer{margin-top:50px; padding-top:20px; border-top:1px solid var(--border); color:var(--muted); font-size:.82rem}
+  footer a{color:var(--accent); text-decoration:none}
+  .toplink{display:inline-block; margin-top:8px; font-size:.78rem; color:var(--muted); text-decoration:none}
+  .toplink:hover{color:var(--accent)}
+  .disclaim{background:var(--surface2); border:1px solid var(--border); border-left:3px solid var(--p); border-radius:8px; padding:10px 14px; font-size:.82rem; color:var(--muted); margin:16px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="kicker">Daily Briefing</div>
+    <h1>Morning Briefing</h1>
+    <div class="date">Thursday, 19 November 2026</div>
+  </header>
+
+  <p class="intro">Curated, verified news from roughly the last 24–72 hours across eight domains. Each item carries a confidence level and source links. Summaries are written in-house.</p>
+
+  <div class="legend">
+    <span><span class="badge b-v">Verified</span> 2+ independent sources</span>
+    <span><span class="badge b-p">Partial</span> mixed / secondary</span>
+    <span><span class="badge b-u">Unverified</span> single source</span>
+  </div>
+
+  <nav class="toc">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#dental">Dental</a></li>
+      <li><a href="#ai">AI</a></li>
+      <li><a href="#tech">Technology</a></li>
+      <li><a href="#psychology">Psychology</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#medicine">Medicine</a></li>
+      <li><a href="#economy">Economy</a></li>
+      <li><a href="#politics">Politics</a></li>
+    </ol>
+  </nav>
+
+  <!-- ========================= 1. DENTAL ========================= -->
+  <section class="cat" id="dental">
+    <h2><span class="num">1.</span> Dental</h2>
+
+    <h3 class="sub">Medical discoveries</h3>
+    <article class="item">
+      <h4>Two-year data on 2.9 mm narrow implants for lateral incisors</h4>
+      <p>A prospective observational study tracked ultra-narrow 2.9 mm implants placed for single upper lateral incisors, reporting survival and clinical outcomes over two years. Findings come from a single journal and have not been independently replicated.</p>
+      <div class="meta"><span class="badge b-p">Partial</span><span class="date-tag">2026-11-18</span><span class="srcs"><a href="https://www.mdpi.com/2227-9032/14/22/3948" target="_blank" rel="noopener">Healthcare (MDPI)</a></span></div>
+    </article>
+    <article class="item">
+      <h4>Hybrid-surface implant pilot reports 96.7% success</h4>
+      <p>A single-centre pilot study of a contemporary hybrid-surface implant system reported a 96.7% success rate with no failures during the observation period. The authors note the cohort is small and preliminary.</p>
+      <div class="meta"><span class="badge b-p">Partial</span><span class="date-tag">2026-11</span><span class="srcs"><a href="https://doi.org/10.3390/jcm15218691" target="_blank" rel="noopener">J. Clin. Med.</a><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13764123" target="_blank" rel="noopener">PMC</a></span></div>
+    </article>
+    <article class="item">
+      <h4>Harvard to study oral microbes and colorectal cancer</h4>
+      <p>Harvard School of Dental Medicine will use a Massachusetts statewide biobank to investigate how oral microorganisms may contribute to colorectal cancer, one of 13 projects funded by the Massachusetts Life Sciences Center. This is a funding announcement rather than a result.</p>
+      <div class="meta"><span class="badge b-p">Partial</span><span class="date-tag">2026-11</span><span class="srcs"><a href="https://news.harvard.edu/gazette/story/2026/11/unique-opportunity-in-study-of-colorectal-cancer/" target="_blank" rel="noopener">Harvard Gazette</a></span></div>
+    </article>
+
+    <h3 class="sub">New technologies</h3>
+    <article class="item">
+      <h4>SprintRay ships Foundation intraoral scanner in the US</h4>
+      <p>SprintRay began first US shipments of its wireless full-colour Foundation intraoral scanner, which runs on its "ScanOS" software and feeds the company's cloud design-and-production ecosystem. EMEA availability is slated for Q1 2027; its Nano Series chairside 3D printers also began shipping this month.</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="date-tag">2026-11</span><span class="srcs"><a href="https://www.prnewswire.com/news-releases/sprintray-expands-beyond-3d-printing-with-connected-digital-dentistry-platform-unveiled-at-3dnext-2026-302906373.html" target="_blank" rel="noopener">PR Newswire</a><a href="https://orthodonticproductsonline.com/practice-products/practice-equipment/3d-printers/sprintray-launches-foundation-intraoral-scanner-nano-series-3d-printing/" target="_blank" rel="noopener">Orthodontic Products</a></span></div>
+    </article>
+    <article class="item">
+      <h4>SHINING 3D Aoralscan Elf named a top technology product</h4>
+      <p>The Aoralscan Elf intraoral scanner was selected for Dentistry Today's 2026 Readers' Choice Top 50 Technology Products. This is an award rather than a new launch — the device was announced earlier in 2026.</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="date-tag">2026-11</span><span class="srcs"><a href="https://dentistrytoday.com/aoralscan-elf-intraoral-scanner" target="_blank" rel="noopener">Dentistry Today</a><a href="https://www.shining3ddental.com/news-post/aoralscan-elf-by-shining-3d-dental-a-new-era-of-smart-intraoral-scanning-for-digital-dentistry" target="_blank" rel="noopener">SHINING 3D</a></span></div>
+    </article>
+
+    <h3 class="sub">New clinic processes (call centre, patient care, SOP)</h3>
+    <p class="none">Nothing relevant in the last 24h. No newly dated announcement surfaced within the window.</p>
+
+    <h3 class="sub">Clinic sales &amp; acquisitions</h3>
+    <article class="item">
+      <h4>Park Dental Partners acquires Village Family Dental DSO (US)</h4>
+      <p>Park Dental Partners closed its acquisition of North Carolina's Village Family Dental support organisation, adding 12 locations and 47 doctors and entering its fourth state. Park's own release did not disclose terms; a DSO industry newsletter reported roughly a $39.1M base plus about $9.2M in rollover stock, so the price is unconfirmed.</p>
+      <div class="meta"><span class="badge b-v">Verified</span> <span class="badge b-p">price Partial</span><span class="date-tag">2026-11-09</span><span class="srcs"><a href="https://www.citybiz.co/article/931280/park-dental-partners-acquires-village-family-dental-dso-expanding-into-north-carolina/" target="_blank" rel="noopener">Citybiz</a><a href="https://www.beneschlaw.com/wp-content/uploads/2026/11/DSO_OctoberNovember-2026-v2.pdf" target="_blank" rel="noopener">Benesch (price)</a></span></div>
+    </article>
+    <article class="item">
+      <h4>Romania: Croitoru Dental Clinic equipment-modernisation grant</h4>
+      <p>A Bucharest clinic announced an EU-co-financed equipment-modernisation project worth 1,070,258.53 lei (EU co-financing 931,204.02 lei), running Nov 2026–Nov 2027. This is a capex grant, not a clinic sale, and only one source could be located.</p>
+      <div class="meta"><span class="badge b-u">Unverified</span><span class="date-tag">2026-11-18</span><span class="srcs"><a href="https://www.normedia.ro/2026/11/18/comunicat-lansare-proiect-cresterea-competitivitatii-societatii-croitoru-dental-clinic-s-r-l-prin-modernizare-tehnologica/" target="_blank" rel="noopener">Normedia</a></span></div>
+    </article>
+    <p class="none">Market context: industry trackers counted 51 dental deals last quarter, down about 27% year-on-year, with DSOs behind 30 of them — dealmaking is cooling.</p>
+
+    <h3 class="sub">Key-people migrations</h3>
+    <article class="item">
+      <h4>Align Technology names Jennifer L. Davis CEO-elect</h4>
+      <p>Former P&amp;G Global Healthcare chief Jennifer L. Davis joined Align Technology as CEO-elect and board member on 2 November, and becomes President &amp; CEO on 31 December 2026, succeeding Joseph M. Hogan. Confirmed by an SEC filing.</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="date-tag">2026-11-02</span><span class="srcs"><a href="https://www.drbicuspid.com/dental-business/industry-updates/article/16050447/align-technology-names-new-ceo" target="_blank" rel="noopener">DrBicuspid</a><a href="https://www.sec.gov/Archives/edgar/data/0001097149/000109714926000078/algn-ex991pressreleaseceos.htm" target="_blank" rel="noopener">SEC filing</a></span></div>
+    </article>
+    <article class="item">
+      <h4>Parkview Dental Partners appoints Jon Gregoire CEO</h4>
+      <p>Cathay Capital-backed Parkview Dental Partners (Florida) named Jon Gregoire — former COO of P1 Dental Partners and a Cornerstone Dental co-founder — as CEO, focused on Gulf Coast expansion. He had flagged the move on LinkedIn in late September.</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="date-tag">2026-11-03</span><span class="srcs"><a href="https://www.beckersdental.com/?p=28155" target="_blank" rel="noopener">Becker's Dental</a><a href="https://www.citybiz.co/?p=928930" target="_blank" rel="noopener">Citybiz</a></span></div>
+    </article>
+    <article class="item">
+      <h4>Lightwave Dental promotes Dr. Clifton Cameron to CEO</h4>
+      <p>Lightwave Dental elevated Dr. Clifton Cameron from President and Chief Clinical Officer to CEO, succeeding founder Justin Jory, effective 1 October 2026 — just outside the freshness window.</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="date-tag">2026-10-01</span><span class="srcs"><a href="https://www.dentistrytoday.com/lightwave-dental-names-dr-clifton-cameron-ceo/" target="_blank" rel="noopener">Dentistry Today</a></span></div>
+    </article>
+
+    <h3 class="sub">New lab processes &amp; technologies</h3>
+    <p class="none">Nothing relevant in the last 24h. Context: 3D-printed permanent zirconia keeps advancing (UT Dallas reports cutting processing from ~100h to under 30 minutes) but is not yet commercially available; CAD/CAM milling remains the lab standard.</p>
+
+    <h3 class="sub">Courses &amp; the English-language market</h3>
+    <p class="none">No new course launch in the last 24h. The 2026 English-language online-CE launches (Spear Education, CLIRNET DentalNet, Keystone Dental Campus, the consolidated CDOCS platform, Cloud Coaching) all date to earlier in the year.</p>
+    <article class="item">
+      <h4>Market read: what sells in international English-language courses</h4>
+      <p>Implantology is the dominant English-language online dentistry topic, marketed to dentists across 20+ countries (EAO certificates, ITI, World Dental Academy, Coursera's free-to-audit MOOC). Clear aligners and orthodontics are the second-strongest sellers, packaged as accredited hands-on or diploma courses. This reflects breadth of offerings, not verified sales figures.</p>
+      <div class="meta"><span class="badge b-p">Partial</span><span class="date-tag">current</span><span class="srcs"><a href="https://eao.org/education/the-eao-certificates-in-implant-dentistry/" target="_blank" rel="noopener">EAO</a><a href="https://www.worlddentalacademy.com/" target="_blank" rel="noopener">World Dental Academy</a></span></div>
+    </article>
+    <a class="toplink" href="#dental">↑ top</a>
+  </section>
+
+  <!-- ========================= 2. AI ========================= -->
+  <section class="cat" id="ai">
+    <h2><span class="num">2.</span> AI</h2>
+    <article class="item">
+      <h4>Microsoft unveils seven MAI models at Ignite 2026</h4>
+      <p>At Ignite 2026, Microsoft AI launched seven in-house MAI models spanning coding, cybersecurity, image, voice, transcription and decisions, pitched on better price-performance than rivals. The clinic-relevant one is Dragon Copilot Transcribe (built on MAI Transcribe 2), reportedly powering around 10M patient encounters a month — useful for clinical documentation and front-office notes.</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="date-tag">2026-11-18</span><span class="srcs"><a href="https://kingy.ai/news/microsoft-ignite-2026-ai-models/" target="_blank" rel="noopener">Kingy AI</a><a href="https://www.kucoin.com/news/flash/microsoft-unveils-seven-new-ai-models-at-ignite-2026" target="_blank" rel="noopener">KuCoin</a></span></div>
+    </article>
+    <article class="item">
+      <h4>OpenAI releases GPT-6.2 Astra and Sol</h4>
+      <p>OpenAI launched GPT-6.2 Astra for complex professional work and the cheaper Sol for everyday tasks, available in ChatGPT Work and Codex. Astra's API price fell about 20% while posting a 6.2-point gain on OpenAI's professional benchmark; reviewers flag that answers are shorter and more often skip known caveats — relevant for any clinical or financial review use. For a clinic, the cheaper template-following models suit patient-comms drafting and admin.</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="date-tag">2026-11-17</span><span class="srcs"><a href="https://9to5mac.com/2026/11/17/openai-upgrades-chatgpt-and-codex-with-new-gpt-6-2-astra-and-sol-models/" target="_blank" rel="noopener">9to5Mac</a><a href="https://forklog.com/en/openai-launches-gpt-6-2-astra-and-sol/" target="_blank" rel="noopener">ForkLog</a></span></div>
+    </article>
+    <article class="item">
+      <h4>Anthropic goes public in record tech debut</h4>
+      <p>Anthropic, the maker of Claude, listed on Wall Street in what was reported as the largest tech market debut on record. Offering figures conflict across outlets (filings cited tens of billions in proceeds at differing share prices), so exact numbers should be checked against the final prospectus. The move signals continued heavy capital inflows to the frontier-AI vendors that supply clinic-facing tools.</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="date-tag">2026-11-18</span><span class="srcs"><a href="https://www.cnn.com/2026/11/18/investing/anthropic-ipo-wall-street-ai" target="_blank" rel="noopener">CNN</a></span></div>
+    </article>
+    <article class="item">
+      <h4>Google Gemini separates chat history from AI-training controls</h4>
+      <p>Google began rolling out a split of Gemini's single activity toggle into two: one for whether chats are saved and for how long, another for whether chat content trains Google's models. The catch: with history off, chats are now retained about two months (up from 72 hours), and saved history defaults to an 18-month auto-delete — relevant for any clinic weighing patient-data privacy before using consumer Gemini.</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="date-tag">2026-11-17</span><span class="srcs"><a href="https://www.digitaltrends.com/computing/gemini-users-can-finally-save-their-ai-chats-without-letting-google-use-them-for-training-but-theres-a-catch/" target="_blank" rel="noopener">Digital Trends</a></span></div>
+    </article>
+    <article class="item">
+      <h4>For a clinic: no dentistry-specific AI launch this window</h4>
+      <p>Nothing dentistry-specific was newly launched or FDA-cleared in the last 24–48h. The nearest signals are an active dental-imaging AI market (Overjet reached a 12th FDA clearance in August; roughly 29 cleared dental-imaging AI products exist) and AI voice/receptionist tools such as Dental Intelligence's "DI Voice," launched in late October — just outside the window. The most relevant fresh item is Microsoft's Dragon Copilot Transcribe above.</p>
+      <div class="meta"><span class="badge b-p">Partial</span><span class="date-tag">2026-11-19</span><span class="srcs"><a href="https://dentalintel.com/press-release/dental-intelligence-launches-di-voice-bringing-native-phones-into-the-practice-performance-platform" target="_blank" rel="noopener">Dental Intelligence</a></span></div>
+    </article>
+    <a class="toplink" href="#ai">↑ top</a>
+  </section>
+
+  <!-- ========================= 3. TECHNOLOGY ========================= -->
+  <section class="cat" id="tech">
+    <h2><span class="num">3.</span> Technology</h2>
+    <article class="item">
+      <h4>Microsoft patent: training AI on idle consumer GPUs</h4>
+      <p>A US patent (reported granted 10 November) describes spreading AI model training across spare, idle GPU capacity on ordinary machines — "opportunistic micro-training on edge devices." The primary USPTO record could not be retrieved, so sourcing is secondary.</p>
+      <div class="meta"><span class="badge b-p">Partial</span><span class="date-tag">2026-11-10</span><span class="srcs"><a href="https://patentlyze.com/patent/microsoft-protecting-ai-models-your-device/" target="_blank" rel="noopener">Patentlyze</a></span></div>
+    </article>
+    <article class="item">
+      <h4>NVIDIA patent: memory stacked directly on the processor die</h4>
+      <p>A reportedly granted US patent covers stacking memory dies on top of a processor die to boost bandwidth and density for AI compute. Only a single newsletter source was found and the primary record could not be confirmed.</p>
+      <div class="meta"><span class="badge b-u">Unverified</span><span class="date-tag">2026-11-10</span><span class="srcs"><a href="https://marl1208.substack.com/p/326-chip-patent-documents-from-21" target="_blank" rel="noopener">Patent newsletter</a></span></div>
+    </article>
+    <article class="item">
+      <h4>Launch watch: Lenovo 14-inch OLED laptop</h4>
+      <p>A new Lenovo 14-inch laptop was reported with an 1,100-nit OLED panel and roughly 27 hours of claimed battery life, alongside new 14-inch models from Vaio and a GPD mini-PC. Single-outlet sourcing, specs unconfirmed. Xiaomi's 18 Pro series is also "confirmed for November" globally but without a firm date or price yet.</p>
+      <div class="meta"><span class="badge b-u">Unverified</span><span class="date-tag">2026-11-18</span><span class="srcs"><a href="https://www.analyticsinsight.net/news/november-2026-tech-launches-motorola-asus-apple-and-vivo-devices-to-watch" target="_blank" rel="noopener">Analytics Insight</a></span></div>
+    </article>
+    <p class="none">Romania: nothing relevant confirmed in the last 24–72h — no OSIM patent grant or Romanian product launch surfaced. Context: the DefCamp 2026 cybersecurity conference runs in Bucharest on 19–20 November.</p>
+    <a class="toplink" href="#tech">↑ top</a>
+  </section>
+
+  <!-- ========================= 4. PSYCHOLOGY ========================= -->
+  <section class="cat" id="psychology">
+    <h2><span class="num">4.</span> Psychology</h2>
+    <h3 class="sub">Adults (DSM-5 linked)</h3>
+    <article class="item">
+      <h4>Overlapping fear/safety brain maps may explain PTSD and anxiety</h4>
+      <p>In mice, researchers found that under threat the hippocampus does not sharpen the line between "danger" and "safety" memories as assumed — the neural maps overlap, which speeds threat recall at the cost of precision. The team frames anxiety and PTSD (DSM-5 trauma and anxiety categories) as a possibly overactive version of a normal survival mechanism rather than a broken system.</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="date-tag">2026-10</span><span class="srcs"><a href="https://educationnewscanada.com/article/education/level/university/1/1223193/survival-mechanism-in-the-brain-may-help-explain-ptsd.html" target="_blank" rel="noopener">Report</a><a href="https://psych.utoronto.ca/node/1438" target="_blank" rel="noopener">U. Toronto</a></span></div>
+    </article>
+    <article class="item">
+      <h4>Cutting social media use linked to lower depression and anxiety</h4>
+      <p>A JAMA Network Open cohort of young adults found a one-week self-selected reduction in social-media use was associated with meaningfully lower depression, anxiety and insomnia (re-circulated 18 November). The design is observational and self-selected — screen time did not actually fall — so causality is not established. Maps to DSM-5 depressive and anxiety disorders.</p>
+      <div class="meta"><span class="badge b-p">Partial</span><span class="date-tag">2025-11-03</span><span class="srcs"><a href="https://pubmed.ncbi.nlm.nih.gov/41284297/" target="_blank" rel="noopener">PubMed</a><a href="https://www.npr.org/2025/12/02/nx-s1-5627156/social-media-digital-detox-depression-anxiety" target="_blank" rel="noopener">NPR</a></span></div>
+    </article>
+    <h3 class="sub">Child (~6-year-old; born 2020)</h3>
+    <article class="item">
+      <h4>What develops around age six — and what to watch for</h4>
+      <p>Near age six the brain shifts from preschool "magical thinking" toward cause-and-effect reasoning: attention lengthens to roughly 15–30 minutes, time concepts and early reading, writing and simple arithmetic emerge, and peer approval and friendships gain weight. Watch-list for the coming year: loss of previously acquired skills, persistent inability to tell real from pretend, and undetected vision problems (squinting, eye-rubbing, trouble reading at distance) — flag any to a paediatrician, using the CDC milestone checklist as the reference.</p>
+      <div class="meta"><span class="badge b-p">Partial</span><span class="date-tag">2025–26 guidance</span><span class="srcs"><a href="https://healthy.kaiserpermanente.org/health-wellness/health-encyclopedia/he.milestones-for-6-year-olds.ue5723" target="_blank" rel="noopener">Kaiser Permanente</a><a href="https://www.coralcare.com/developmental-guides/milestones-grade-schoolers-6-12-years" target="_blank" rel="noopener">CoralCare</a></span></div>
+    </article>
+    <a class="toplink" href="#psychology">↑ top</a>
+  </section>
+
+  <!-- ========================= 5. EDUCATION ========================= -->
+  <section class="cat" id="education">
+    <h2><span class="num">5.</span> Education</h2>
+    <h3 class="sub">The next 20 years vs. classical schooling</h3>
+    <article class="item">
+      <h4>OECD: the teacher's role shifts from delivering to guiding</h4>
+      <p>OECD 2026 work argues the teacher's role moves from delivering content toward curating and guiding learning, with student AI adoption rising by age — while cautioning that human-plus-AI combinations underperformed the better of human-or-AI-alone in most tested cases, i.e. AI does not automatically improve on good teaching. Specific figures came via secondary summaries.</p>
+      <div class="meta"><span class="badge b-p">Partial</span><span class="date-tag">2026-03</span><span class="srcs"><a href="https://observatorioglobal.udlap.mx/reimagining-teaching-in-an-accelerating-world/" target="_blank" rel="noopener">Summary</a></span></div>
+    </article>
+    <article class="item">
+      <h4>School-choice expansion reshaping the next two decades</h4>
+      <p>An education-forecast source reports more than a million US students now using education savings accounts, vouchers or tax-credit scholarships, the rise of "AI-native microschools," and expected new regulation of accreditation and accountability. It warns the bigger risk is a "hollowing out" of skill development. Single secondary source; directional trend only.</p>
+      <div class="meta"><span class="badge b-u">Unverified</span><span class="date-tag">2025–26</span><span class="srcs"><a href="https://aieducation.substack.com/p/a-forecast-for-learning-and-earning" target="_blank" rel="noopener">Forecast newsletter</a></span></div>
+    </article>
+    <h3 class="sub">Educating a ~6-year-old (born 2020)</h3>
+    <article class="item">
+      <h4>Explicit phonics plus guided play</h4>
+      <p>For this age the strongest evidence supports structured, adult-guided play that targets specific literacy skills — letter recognition, sounding out blends, oral language — layered on top of explicit, systematic phonics, rather than free play alone. A high-security UK EEF trial found play-based maths reasoning improved attainment in 6–7-year-olds, while a review cautioned that guided play's literacy benefits are weaker, so phonics must stay central. The evidence is genuinely mixed.</p>
+      <div class="meta"><span class="badge b-p">Partial</span><span class="date-tag">2024–26</span><span class="srcs"><a href="https://hechingerreport.org/kids-can-learn-more-from-guided-play-than-from-direct-instruction-report-finds/" target="_blank" rel="noopener">Hechinger</a><a href="https://www.the74million.org/zero2eight/the-science-of-reading-and-play-go-hand-in-hand-schools-must-make-it-happen/" target="_blank" rel="noopener">The 74</a></span></div>
+    </article>
+    <a class="toplink" href="#education">↑ top</a>
+  </section>
+
+  <!-- ========================= 6. MEDICINE ========================= -->
+  <section class="cat" id="medicine">
+    <h2><span class="num">6.</span> Medicine</h2>
+    <article class="item">
+      <h4>Retatrutide delivers up to ~25–30% weight loss in Phase 3</h4>
+      <p>Eli Lilly's triple-agonist retatrutide reported average weight loss ranging from about 17.6% to 25.0% across doses at 80 weeks versus 3.9% on placebo, with an extension reaching roughly 30%, moving the once-weekly injectable toward FDA filing. A companion trial also showed osteoarthritis-pain relief. Topline came in May and was re-covered on 8 November; the full peer-reviewed paper is not yet confirmed.</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="date-tag">2026-11-08</span><span class="srcs"><a href="https://pharmaceutical-journal.com/?p=413195" target="_blank" rel="noopener">Pharma Journal</a><a href="https://www.healthline.com/health-news/eli-lilly-new-drug-retatrutide-shows-greater-weight-loss-results" target="_blank" rel="noopener">Healthline</a></span></div>
+    </article>
+    <article class="item">
+      <h4>Wireless "ECHO" implant lowers blood sugar without insulin (preclinical)</h4>
+      <p>An ETH Zurich implant converts excess glucose into gluconate (cleared in urine) via a metal-on-graphite catalyst, switched on and off by a continuous glucose monitor linked to a phone — no insulin, drugs or living cells. In diabetic mice, blood sugar normalised within 60–90 minutes and treated animals lost up to ~10% body weight over six weeks with no detectable hypoglycaemia. Not yet tested in humans.</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="date-tag">2026-10-22</span><span class="srcs"><a href="https://www.sciencenews.org/article/diabetes-device-experiment-blood-sugar" target="_blank" rel="noopener">Science News</a><a href="https://medicaldialogues.in/diabetes-endocrinology/news/wireless-implant-controls-blood-glucose-without-insulin-in-diabetes-in-animal-studies-182590" target="_blank" rel="noopener">Medical Dialogues</a></span></div>
+    </article>
+    <article class="item">
+      <h4>FDA approves first precision cell therapy for matched-donor transplant</h4>
+      <p>Orca Bio's TREGZI was approved as the first precision-engineered allogeneic cell therapy for matched-donor stem-cell transplantation in adults with blood cancers, with the trial reporting 78% graft-versus-host-disease-free survival versus 38% for conventional transplant. A genuine first for 2026.</p>
+      <div class="meta"><span class="badge b-p">Partial</span><span class="date-tag">2026-06-30</span><span class="srcs"><a href="https://www.mondaq.com/unitedstates/healthcare/1816308/fda-approves-orca-bios-tregzi-for-allogeneic-hematopoietic-transplants" target="_blank" rel="noopener">Mondaq</a></span></div>
+    </article>
+    <article class="item">
+      <h4>FDA approves first in-vivo gene therapy for OTOF hearing loss</h4>
+      <p>Regeneron's Otarmeni received FDA accelerated approval as the first in-vivo gene therapy for OTOF-mutation hearing loss, via the first-in-human CHOIRD trial. Full clinical-benefit confirmation awaits the trial's confirmatory portion.</p>
+      <div class="meta"><span class="badge b-p">Partial</span><span class="date-tag">2026</span><span class="srcs"><a href="https://www.genengnews.com/topics/genome-editing/gene-therapy-briefs-regeneron-wins-fda-approval-for-first-neurosensory-gene-therapy/" target="_blank" rel="noopener">GEN</a></span></div>
+    </article>
+    <a class="toplink" href="#medicine">↑ top</a>
+  </section>
+
+  <!-- ========================= 7. ECONOMY ========================= -->
+  <section class="cat" id="economy">
+    <h2><span class="num">7.</span> Economy</h2>
+    <article class="item">
+      <h4>Eurobank to buy 65% of Bulgaria's Fibank (~€650M)</h4>
+      <p>Greece's Eurobank agreed to acquire a 65% stake in First Investment Bank for about €650M in cash (€6.73/share), valuing the lender near €1 billion, with a mandatory tender offer to follow and completion expected in H1 2027. Merging Fibank with Eurobank's Postbank would create Bulgaria's largest bank by market share.</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="date-tag">2026-11-18</span><span class="srcs"><a href="https://sofiaglobe.com/2026/11/18/athens-headquartered-eurobank-to-acquire-bulgarias-first-investment-bank/" target="_blank" rel="noopener">Sofia Globe</a><a href="https://bnrnews.bg/en/post/559808/greeces-eurobank-to-acquire-majority-stake-in-bulgarias-fibank" target="_blank" rel="noopener">BNR</a></span></div>
+    </article>
+    <article class="item">
+      <h4>Palo Alto Networks to acquire Applied Compute ($4.5B)</h4>
+      <p>Palo Alto Networks signed a definitive all-stock agreement to buy AI firm Applied Compute for $4.5 billion, announced alongside its earnings call. Closing is expected in the company's fiscal Q3 2027, pending regulatory clearance.</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="date-tag">2026-11-18</span><span class="srcs"><a href="https://www.sec.gov/Archives/edgar/data/0001327567/000132756726000030/ex992pressrelease_november.htm" target="_blank" rel="noopener">SEC filing</a></span></div>
+    </article>
+    <article class="item">
+      <h4>Johnson &amp; Johnson to acquire Ollin Biosciences ($2.2B upfront)</h4>
+      <p>J&amp;J agreed to buy clinical-stage eye-disease company Ollin Biosciences for $2.2 billion upfront plus up to ~$1.1B in milestones, bringing in a bispecific antibody aimed at challenging Roche's Vabysmo. Blackstone Life Sciences will fund the Phase 3 programme; the deal is expected to close by year-end.</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="date-tag">2026-11-16</span><span class="srcs"><a href="https://www.jnj.com/media-center/press-releases/johnson-johnson-to-acquire-ollin-biosciences-and-late-stage-bispecific-antibody-with-best-in-class-potential-in-ophthalmology" target="_blank" rel="noopener">J&amp;J</a><a href="https://www.fiercebiotech.com/biotech/jj-pays-22b-upfront-ollin-challenge-roches-vabysmo" target="_blank" rel="noopener">Fierce Biotech</a></span></div>
+    </article>
+    <article class="item">
+      <h4>Romania: Premier Energy secures €850M for Evryo / Oltenia distributor</h4>
+      <p>Premier Energy signed an €850M senior syndicated facility (via UniCredit and J.P. Morgan) to fund its roughly €700M acquisition of the Evryo Group — including grid operator Distribuție Energie Oltenia — from Macquarie funds, plus about €100M of refinancing. The deal is far above the €1M Romania threshold.</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="date-tag">2026-11-16</span><span class="srcs"><a href="https://financialintelligence.ro/premier-energy-a-semnat-un-contract-de-finantare-de-850-de-milioane-de-euro-pentru-achizitia-grupului-evryo-inclusiv-distributie-energie-oltenia/" target="_blank" rel="noopener">Financial Intelligence</a><a href="https://www.revistabiz.ro/premier-energy-ia-un-credit-de-825-mil-euro-pentru-achizitia-evryo-si-distributie-energie-oltenia/" target="_blank" rel="noopener">Revista Biz</a></span></div>
+    </article>
+    <article class="item">
+      <h4>Rockwell Automation to acquire AGILOX (Austria)</h4>
+      <p>Rockwell Automation signed a definitive agreement to acquire Austria's AGILOX, a maker of high-end autonomous mobile robots. No deal value was disclosed and only Rockwell's own release could be found, so the item is partial.</p>
+      <div class="meta"><span class="badge b-p">Partial</span><span class="date-tag">2026-11-18</span><span class="srcs"><a href="https://www.rockwellautomation.com/en-us/company/news/press-releases/Rockwell-Automation-Signs-Definitive-Agreement-to-Acquire-AGILOX.html" target="_blank" rel="noopener">Rockwell</a></span></div>
+    </article>
+    <a class="toplink" href="#economy">↑ top</a>
+  </section>
+
+  <!-- ========================= 8. POLITICS ========================= -->
+  <section class="cat" id="politics">
+    <h2><span class="num">8.</span> Politics</h2>
+    <h3 class="sub">Appointments</h3>
+    <article class="item">
+      <h4>US Senate confirms Anna St. John to the Fifth Circuit</h4>
+      <p>The US Senate confirmed Anna St. John to the Court of Appeals for the Fifth Circuit by a 52–46 party-line vote. She previously sat on the US District Court for the Eastern District of Louisiana.</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="date-tag">2026-11-17</span><span class="srcs"><a href="https://news.bloomberglaw.com/us-law-week/senate-confirms-trump-nominee-anna-st-john-to-fifth-circuit" target="_blank" rel="noopener">Bloomberg Law</a><a href="https://www.kennedy.senate.gov/2026/11/17/u-s-senate-confirms-kennedy-backed-nominee-anna-st-john-to-the-u-s-fifth-circuit-court-of-appeals/" target="_blank" rel="noopener">Senate</a></span></div>
+    </article>
+    <article class="item">
+      <h4>Romania: Vice-PM Marian Neacșu granted sweeping expanded powers</h4>
+      <p>A decision signed by PM Luca Niculescu and published in the Monitorul Oficial gives sole deputy PM (and Interior Minister) Marian Neacșu authority to vet all draft normative acts with budget impact from around 15 ministries and to "functionally coordinate" 10–12 ministries led by his PSD colleagues. Critics describe it as making him "de facto PM" and concentrating power.</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="date-tag">2026-11-18</span><span class="srcs"><a href="https://hotnews.ro/atributii-extinse-pentru-vicepremierul-marian-neacsu-ce-ministere-si-institutii-va-coordona-2407353" target="_blank" rel="noopener">HotNews</a><a href="https://cursdeguvernare.ro/marian-neacsu-singurul-vicepremier-primeste-atributii-extinse.html" target="_blank" rel="noopener">Curs de Guvernare</a></span></div>
+    </article>
+    <article class="item">
+      <h4>US Senate Commerce Committee advances Trump FCC nominee</h4>
+      <p>The Senate Commerce Committee voted 15–0 to advance President Trump's FCC nominee, a senior counsel to Chair Brendan Carr; committee Democrats declared opposition but did not attend. This is a committee advancement only — full Senate confirmation is pending — and the nominee's name is reported inconsistently.</p>
+      <div class="meta"><span class="badge b-p">Partial</span><span class="date-tag">2026-11-18</span><span class="srcs"><a href="https://www.usnews.com/news/politics/articles/2026-11-18/senate-panel-advances-trump-nominee-for-us-fcc" target="_blank" rel="noopener">US News</a></span></div>
+    </article>
+    <article class="item">
+      <h4>EU: Commission appoints three new directors</h4>
+      <p>The European Commission announced three new director-level appointments, including Carlos Torrecilla Salinas (Spain) as Director for Fair and Sustainable Economy within the Joint Research Centre. These are director-level, not top EU leadership, and only one source was located.</p>
+      <div class="meta"><span class="badge b-p">Partial</span><span class="date-tag">2026-11-18</span><span class="srcs"><a href="https://agenceurope.eu/en/bulletin/article/13984/29/european-commission-announces-appointment-of-three-new-directors" target="_blank" rel="noopener">Agence Europe</a></span></div>
+    </article>
+    <h3 class="sub">New laws</h3>
+    <article class="item">
+      <h4>Romania: batch of laws promulgated in mid-November</h4>
+      <p>President Nicușor Dan promulgated several laws now taking effect on publication, including the National Integrity Agency (ANI) law — which he asked Parliament to reconsider in part over PNRR-fund concerns — a "motorcyclists' law" (Law 207/2026), a youth-housing support law and social-assistance amendments. These date to roughly 6–11 November, just outside the tightest window; nothing newer was verified in the Monitorul Oficial for 16–19 November.</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="date-tag">2026-11-11</span><span class="srcs"><a href="https://www.digi24.ro/stiri/actualitate/politica/nicusor-dan-a-promulgat-legea-ani-dar-cere-parlamentului-sa-o-discute-din-nou-nu-ne-permitem-sa-nu-accesam-fonduri-pnrr-3925905" target="_blank" rel="noopener">Digi24</a><a href="https://www.presidency.ro/ro/media/comunicate-de-presa/decrete-semnate-de-presedintele-romaniei-nicusor-dan1794415373" target="_blank" rel="noopener">Presidency</a></span></div>
+    </article>
+    <article class="item">
+      <h4>US: most recent batch of federal laws signed 10 November</h4>
+      <p>Nothing was signed into law in the last 24–72h. The most recent batch, signed 10 November, includes the National Taxpayer Advocate Enhancement Act, a Medicare wheelchair payment measure, a Churchill Museum landmark designation, and the Bankruptcy Threshold Adjustment Act, which permanently raises the Subchapter V small-business debt limit to $7.5M for cases filed on or after that date.</p>
+      <div class="meta"><span class="badge b-v">Verified</span><span class="date-tag">2026-11-10</span><span class="srcs"><a href="https://www.whitehouse.gov/briefings-statements/2026/11/congressional-bills-h-r-997-h-r-1703-h-r-1945-and-h-r-7730-signed-into-law/" target="_blank" rel="noopener">White House</a></span></div>
+    </article>
+    <a class="toplink" href="#politics">↑ top</a>
+  </section>
+
+  <div class="disclaim">
+    Summaries are written in-house from the linked sources; no source text is reproduced. Confidence badges reflect source independence, not endorsement. Some items published slightly before the 24–72h window are included where nothing newer was verifiable, with dates shown. A few primary hosts could not be fetched in this environment and were cross-checked via independent outlets.
+  </div>
+
+  <footer>
+    <div><strong>Daily Briefing</strong> · Edition of 19 November 2026</div>
+    <div style="margin-top:6px"><a href="arhiva/">📁 Archive — past editions</a></div>
+    <div style="margin-top:6px">Add to your iPhone home screen via Share → “Add to Home Screen” to open it as an app.</div>
+  </footer>
+</div>
+</body>
+</html>
