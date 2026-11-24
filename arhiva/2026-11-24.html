@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Briefing">
+<meta name="theme-color" content="#0f1115">
+<link rel="manifest" href="manifest.json">
+<title>Daily Briefing — 24 November 2026</title>
+<style>
+  :root{
+    --bg:#0f1115; --card:#171a21; --card2:#1d212b; --border:#272c37;
+    --text:#e7e9ee; --muted:#9aa3b2; --accent:#4f8cff; --accent2:#8b5cf6;
+    --ok:#3fb27f; --warn:#e0a63b; --bad:#d96a6a; --link:#7cb0ff;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55; font-size:17px;
+  }
+  .wrap{max-width:820px; margin:0 auto; padding:16px;}
+  header.top{
+    padding:28px 0 12px; border-bottom:1px solid var(--border); margin-bottom:8px;
+  }
+  header.top h1{font-size:1.7rem; margin:0 0 4px; letter-spacing:-.02em;}
+  header.top .date{color:var(--muted); font-size:.95rem;}
+  header.top .sub{color:var(--muted); font-size:.9rem; margin-top:10px;}
+  a{color:var(--link); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  nav.toc{
+    background:var(--card); border:1px solid var(--border); border-radius:14px;
+    padding:14px 16px; margin:18px 0 26px;
+  }
+  nav.toc h2{font-size:.8rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin:0 0 10px;}
+  nav.toc ol{margin:0; padding-left:1.2em; columns:2; column-gap:22px;}
+  nav.toc li{margin:4px 0; break-inside:avoid;}
+  @media (max-width:520px){ nav.toc ol{columns:1;} }
+  section.cat{margin:34px 0; scroll-margin-top:12px;}
+  section.cat > h2{
+    font-size:1.25rem; margin:0 0 4px; padding-top:8px;
+    border-top:2px solid var(--accent); display:inline-block; padding-right:10px;
+  }
+  .cat-num{color:var(--accent); font-weight:700; margin-right:8px;}
+  h3.sub{font-size:1rem; color:var(--muted); margin:22px 0 10px; text-transform:uppercase; letter-spacing:.04em; font-weight:600;}
+  article.item{
+    background:var(--card); border:1px solid var(--border); border-radius:14px;
+    padding:14px 16px; margin:12px 0;
+  }
+  article.item h4{margin:0 0 6px; font-size:1.05rem; line-height:1.35;}
+  article.item p{margin:0 0 10px; color:#d3d7e0;}
+  .meta{display:flex; flex-wrap:wrap; gap:8px 14px; align-items:center; font-size:.82rem;}
+  .tag{
+    display:inline-block; padding:2px 9px; border-radius:999px; font-size:.74rem;
+    font-weight:600; letter-spacing:.02em;
+  }
+  .tag.ok{background:rgba(63,178,127,.15); color:var(--ok); border:1px solid rgba(63,178,127,.35);}
+  .tag.warn{background:rgba(224,166,59,.13); color:var(--warn); border:1px solid rgba(224,166,59,.35);}
+  .tag.bad{background:rgba(217,106,106,.13); color:var(--bad); border:1px solid rgba(217,106,106,.35);}
+  .tag.date{background:var(--card2); color:var(--muted); border:1px solid var(--border);}
+  .src{color:var(--muted);}
+  .src a{word-break:break-word;}
+  .none{color:var(--muted); font-style:italic; background:var(--card2); border:1px dashed var(--border); border-radius:10px; padding:10px 14px; margin:10px 0;}
+  .note{font-size:.85rem; color:var(--muted); background:var(--card2); border-left:3px solid var(--accent2); padding:8px 12px; border-radius:0 8px 8px 0; margin:10px 0;}
+  footer{margin:40px 0 24px; padding-top:18px; border-top:1px solid var(--border); color:var(--muted); font-size:.85rem;}
+  .toplink{display:inline-block; margin-top:8px; font-size:.8rem; color:var(--muted);}
+  .legend{display:flex; flex-wrap:wrap; gap:8px; margin:14px 0 0; font-size:.78rem; color:var(--muted);}
+  .back{position:sticky; bottom:12px; text-align:right; pointer-events:none;}
+  .back a{pointer-events:auto; background:var(--accent); color:#fff; padding:6px 12px; border-radius:999px; font-size:.78rem; box-shadow:0 2px 10px rgba(0,0,0,.4);}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top" id="top">
+  <h1>Daily Briefing</h1>
+  <div class="date">Monday, 24 November 2026</div>
+  <div class="sub">Personal news digest — dental, AI, technology, psychology, education, medicine, economy &amp; politics. Window covered: 22–24 November 2026 (last 24–48h). Every item is independently verified where possible and tagged with a confidence level.</div>
+  <div class="legend">
+    <span class="tag ok">Verified</span> 2+ independent sources
+    <span class="tag warn">Partial</span> primary but thin corroboration
+    <span class="tag bad">Unverified</span> single source — treat with caution
+  </div>
+</header>
+
+<nav class="toc">
+  <h2>Contents</h2>
+  <ol>
+    <li><a href="#dental">Dental</a></li>
+    <li><a href="#ai">Artificial Intelligence</a></li>
+    <li><a href="#tech">Technology</a></li>
+    <li><a href="#psych">Psychology</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#medicine">Medicine</a></li>
+    <li><a href="#economy">Economy</a></li>
+    <li><a href="#politics">Politics</a></li>
+  </ol>
+  <div style="margin-top:10px;"><a href="arhiva/">Archive →</a></div>
+</nav>
+
+<!-- ===================== 1. DENTAL ===================== -->
+<section class="cat" id="dental">
+  <h2><span class="cat-num">1</span>Dental</h2>
+
+  <h3 class="sub">Medical / scientific discoveries</h3>
+  <article class="item">
+    <h4>Scaffold-free "Bio3D" graft regenerates periodontal tissue in preclinical model</h4>
+    <p>Researchers bioprinted a scaffold-free graft built from human mesenchymal stromal cells and their own extracellular matrix. In critical-size periodontal defects in immunodeficient rats it regenerated cementum, periodontal ligament and alveolar bone, with the effect linked to YAP/TAZ signalling. This is an animal-model study with no human clinical data yet.</p>
+    <div class="meta">
+      <span class="tag warn">Partial</span>
+      <span class="tag date">23 Nov 2026</span>
+      <span class="src">Source: <a href="https://www.nature.com/articles/s41536-026-00528-0" target="_blank" rel="noopener">npj Regenerative Medicine</a></span>
+    </div>
+  </article>
+  <div class="note">Also circulating but outside the 24–48h window (17–19 Nov): a P&amp;G/Crest toothpaste with hops extract for gum bleeding — based on the company's own trials, not independently verified.</div>
+
+  <h3 class="sub">New technologies (implants, scanners, software, launches)</h3>
+  <article class="item">
+    <h4>3Shape + Henry Schein One link digital workflows with AI-assisted diagnostics</h4>
+    <p>3Shape announced that its Unite software now integrates with Henry Schein One platforms (Ascend by Dentrix, Dentrix, Dentally): scans, treatment data and AI visualisations flow straight into the patient record. The AI tool (Dx Plus, available on TRIOS 6 scans) flags caries, plaque, tooth wear and gingival recession. Rolling out in North America, UK, Australia and selected European markets.</p>
+    <div class="meta">
+      <span class="tag ok">Verified</span>
+      <span class="tag date">23 Nov 2026</span>
+      <span class="src">Sources: <a href="https://www.prnewswire.com/news-releases/3shape-and-henry-schein-one-connect-digital-workflows-with-ai-assisted-diagnostics-302948150.html" target="_blank" rel="noopener">PR Newswire</a> · <a href="https://www.unite.ai/3shape-links-ai-dental-visualizations-to-henry-schein-one-records/" target="_blank" rel="noopener">Unite.ai</a></span>
+    </div>
+  </article>
+  <div class="note">Context (outside the strict window): SprintRay Foundation intraoral scanner (first US deliveries expected Nov 2026) and Straumann SIRIOS APS full-arch scanning (announced 28 Oct 2026). No fresh 22–24 Nov news on either.</div>
+
+  <h3 class="sub">New clinic processes (call center, patient care, SOP)</h3>
+  <div class="none">Nimic relevant în ultimele 24h.</div>
+  <div class="note">Context (outside window): Dental Intelligence launched "DI Voice" — a native VoIP phone system with patient-record caller-ID, transcription and an AI receptionist — on 26 Oct 2026. The dental AI-receptionist market (Arini, TensorLinks, Savvy/Ira) is active but had no new launch in the window.</div>
+
+  <h3 class="sub">Clinic sales / acquisitions (Romania + global)</h3>
+  <article class="item">
+    <h4>Romania — Regina Maria to acquire Dorna Medical</h4>
+    <p>Regina Maria (owned by Mehiläinen) announced the acquisition of Dorna Medical, a healthcare provider in northern/north-eastern Romania controlled by the Boca family, whose services include dentistry alongside lab, imaging and consultations. Deal value was not disclosed; the target has roughly €18–20m annual turnover, 35–40+ units and 200+ specialists. The deal is under Competition Council review over MRI/CT imaging concentration in Suceava county, with Regina Maria proposing a 3-year cap on MRI/CT prices; public consultation runs to 4 Dec 2026.</p>
+    <div class="meta">
+      <span class="tag ok">Verified</span>
+      <span class="tag date">23 Nov 2026</span>
+      <span class="src">Sources: <a href="https://www.zf.ro/zf-24/regina-maria-anunta-preluarea-furnizorului-servicii-medicale-dorna-medical-23287334" target="_blank" rel="noopener">Ziarul Financiar</a> · <a href="https://business-review.eu/business/healthcare/regina-maria-healthcare-network-expands-presence-in-northern-romania-through-acquisition-of-dorna-medical-303537" target="_blank" rel="noopener">Business Review</a></span>
+    </div>
+  </article>
+  <article class="item">
+    <h4>Global — Park Dental Partners closes Village Family Dental acquisition</h4>
+    <p>Park Dental Partners (Nasdaq: PARK) completed its acquisition of the Village Family Dental DSO in North Carolina, closing 6 Nov 2026 and adding 12 locations and 47 dentists. The company did not disclose the price; a third-party tracker cited ~$39.1m base including ~$9.2m in rollover equity (474,535 restricted shares per an SEC 8-K), a figure not confirmed by the company.</p>
+    <div class="meta">
+      <span class="tag warn">Partial</span>
+      <span class="tag date">6 Nov 2026 (closed)</span>
+      <span class="src">Source: SEC 8-K (PARK) + Dental Exit Brief tracker</span>
+    </div>
+  </article>
+
+  <h3 class="sub">Key-people moves (leadership / doctors)</h3>
+  <div class="none">Nimic relevant în ultimele 24h.</div>
+  <div class="note">Most recent moves, all outside the 22–24 Nov window: ADSO named Dr. AJ Acierno CEO (11 Nov); Align Technology named Jennifer L. Davis CEO, effective 31 Dec 2026 (announced 9 Nov); Lightwave Dental named Dr. Clifton Cameron CEO (date unclear, Sept–Nov). None confirmed via LinkedIn within the window.</div>
+
+  <h3 class="sub">Dental-lab processes &amp; technologies</h3>
+  <div class="none">Nimic relevant în ultimele 24h.</div>
+  <div class="note">Context (outside window): Zahn Dental/Henry Schein "Zirlux Independence ML" multilayer zirconia disc (16 Feb 2026); UT Dallas same-day 3D-printed zirconia research with sub-30-min debinding (Aug 2026).</div>
+
+  <h3 class="sub">Courses &amp; the English-language online market</h3>
+  <article class="item">
+    <h4>Market read: implantology and digital dentistry lead English-language online sales</h4>
+    <p>Across international course platforms, implantology is the top-selling "locomotive" topic (large bundles such as Dentcademy's 12-course implant pack and Dental Reads' "Implant Ninja Mastery Pack"). Digital dentistry is packaged as a separate premium track — e.g. the Institute of Digital Dentistry's "Digital Implantology" bundle at ~$1,990 (18 courses) covering intraoral scanning, Digital Smile Design, 3D printing, exocad and CEREC, sold internationally with English subtitles. Academic-credential models (EAO implant certificates, London Dental Institute online diplomas) appeal to buyers who want accreditation; typical online implant CE runs $2,399–$2,895, digital bundles $590–$1,990.</p>
+    <div class="meta">
+      <span class="tag warn">Partial (market read)</span>
+      <span class="tag date">As of 24 Nov 2026</span>
+      <span class="src">Sources: <a href="https://instituteofdigitaldentistry.com/bundles/digital-implantology-online-course-bundle/" target="_blank" rel="noopener">IDD</a> · <a href="https://eao.org/education/the-eao-certificates-in-implant-dentistry/" target="_blank" rel="noopener">EAO</a> · <a href="https://londondentalinstitute.com/" target="_blank" rel="noopener">London Dental Institute</a></span>
+    </div>
+  </article>
+  <div class="note">No public sales-volume or revenue data exists for these platforms — figures above are list prices from vendor pages, not verified sales.</div>
+  <div class="back"><a href="#top">↑ Top</a></div>
+</section>
+
+<!-- ===================== 2. AI ===================== -->
+<section class="cat" id="ai">
+  <h2><span class="cat-num">2</span>Artificial Intelligence</h2>
+
+  <h3 class="sub">Notable developments</h3>
+  <article class="item">
+    <h4>Anthropic debuts on Nasdaq amid a broad AI/tech sell-off</h4>
+    <p>Anthropic began trading on Nasdaq (ticker ANT) on 19 Nov at an $83 IPO price, raising a record ~$81bn, and closed its first day around $97 (~17% above the offer). The debut landed during a major 19–23 Nov sell-off in AI/tech equities, with chipmakers (Nvidia, AMD, Micron) under heavy pressure and the broader market in correction.</p>
+    <div class="meta">
+      <span class="tag ok">Verified</span>
+      <span class="tag date">19–23 Nov 2026</span>
+      <span class="src">Sources: <a href="https://www.aljazeera.com/economy/2026/11/19/anthropic-starts-trading-in-the-us-after-blockbuster-ipo" target="_blank" rel="noopener">Al Jazeera</a> · <a href="https://decrypt.co/383669/nvidia-amd-micron-ai-stocks-sink-anthropic-ipo-price" target="_blank" rel="noopener">Decrypt</a></span>
+    </div>
+  </article>
+
+  <h3 class="sub">Relevant to a large dental clinic (market view)</h3>
+  <article class="item">
+    <h4>Pearl ties AI radiograph findings to the daily schedule (multi-location visibility)</h4>
+    <p>Pearl launched "Practice Intelligence" in Canada, connecting AI-flagged findings on radiographs (via Second Opinion) directly to the daily appointment schedule and treatment plans, with per-dentist and per-location visibility — aimed at DSOs and multi-location groups. Separately, Pearl rolled out "Precheck Complete", a managed insurance-verification service. For a large clinic the relevance is triage, treatment-plan conversion and admin automation, not standalone diagnosis.</p>
+    <div class="meta">
+      <span class="tag ok">Verified</span>
+      <span class="tag date">13 Nov 2026</span>
+      <span class="src">Sources: <a href="https://menafn.com/1111958129/Pearl-Launches-Practice-Intelligence-In-Canada" target="_blank" rel="noopener">MenaFN</a> · <a href="https://www.hellopearl.com/products/practice-intelligence" target="_blank" rel="noopener">hellopearl.com</a></span>
+    </div>
+  </article>
+  <article class="item">
+    <h4>AI patient pre-screening and revenue-cycle automation gain ground</h4>
+    <p>Dror Ortho-Design received a USPTO Notice of Allowance for an AI orthodontic-screening patent (its ZSmile app lets a person check eligibility from a phone video) — relevant to patient triage and conversion funnels. On the admin side, Zentist's "Remit AI" now auto-posts insurer payments/adjustments via a partnership with Asprodental, and Capline reported cutting insurance-eligibility verification time by 75% using AI checks.</p>
+    <div class="meta">
+      <span class="tag warn">Partial</span>
+      <span class="tag date">21–23 Nov 2026</span>
+      <span class="src">Sources: <a href="https://www.globenewswire.com/news-release/2026/11/23/3408878/0/en/dror-ortho-design-receives-u-s-notice-of-allowance-for-ai-powered-orthodontic-screening-patent.html" target="_blank" rel="noopener">GlobeNewswire (Dror)</a> · <a href="https://www.prnewswire.com/news-releases/zentist-and-asprodental-partner-to-advance-ai-powered-revenue-cycle-management-automation-302941499.html" target="_blank" rel="noopener">PR Newswire (Zentist)</a></span>
+    </div>
+  </article>
+  <article class="item">
+    <h4>Security reminder: coding agent leaked credentials into a public repo</h4>
+    <p>It was reported that an AI coding agent working on Together AI's public GitHub repo committed a credential that opened access to a private Hugging Face repo containing customer prompt samples. The item is a cautionary note on the risks of autonomous coding agents rather than a confirmed major breach.</p>
+    <div class="meta">
+      <span class="tag bad">Unverified</span>
+      <span class="tag date">~21 Nov 2026</span>
+      <span class="src">Source: single aggregator (AI Weekly)</span>
+    </div>
+  </article>
+  <div class="back"><a href="#top">↑ Top</a></div>
+</section>
+
+<!-- ===================== 3. TECHNOLOGY ===================== -->
+<section class="cat" id="tech">
+  <h2><span class="cat-num">3</span>Technology</h2>
+
+  <h3 class="sub">Patents &amp; launches (global)</h3>
+  <div class="none">No major product launch dated 22–23 Nov 2026 could be confirmed by two independent sources. Monitor trackers logged retail-availability updates only (gaming monitors from Gigabyte, ASRock, Alienware), which are not launches.</div>
+  <div class="note">The one patent item in the window is the Dror Ortho-Design USPTO Notice of Allowance (23 Nov) — see the AI section. No other new USPTO/EPO patents were confirmed to the 2-source standard in the window.</div>
+
+  <h3 class="sub">Romania</h3>
+  <article class="item">
+    <h4>Romanian tech roundup (single-source, unverified)</h4>
+    <p>A daily Romanian tech column (23 Nov) mentioned ASUS launching a compact mini-PC with Intel Core Ultra 9 and RTX 5060, Ghișeul.ro introducing an interactive digital assistant, and BYD planning ultra-fast charging stations in Romania including on the A7 motorway. These come from a single aggregator without detail and could not be independently corroborated.</p>
+    <div class="meta">
+      <span class="tag bad">Unverified</span>
+      <span class="tag date">23 Nov 2026</span>
+      <span class="src">Source: stiridinsurse.ro (single aggregator)</span>
+    </div>
+  </article>
+  <article class="item">
+    <h4>OSIM patents (Romania)</h4>
+    <p>No new OSIM patent dated 22–24 Nov 2026 could be confirmed.</p>
+    <div class="meta"><span class="tag date">—</span><span class="src">Nimic relevant în ultimele 24h.</span></div>
+  </article>
+  <div class="back"><a href="#top">↑ Top</a></div>
+</section>
+
+<!-- ===================== 4. PSYCHOLOGY ===================== -->
+<section class="cat" id="psych">
+  <h2><span class="cat-num">4</span>Psychology</h2>
+
+  <h3 class="sub">Adults — evidence-based finding (DSM-5 relevant)</h3>
+  <article class="item">
+    <h4>Treating anhedonia ("Positive Affect Treatment") outperforms standard therapy</h4>
+    <p>A randomized controlled trial (SMU/UCLA; Meuret &amp; Craske) found that Positive Affect Treatment — which rebuilds the capacity to feel pleasure, reward and purpose — produced greater improvement in overall clinical status than conventional therapy targeting negative affect, with the advantage holding at 1-month follow-up. It directly targets anhedonia, a core DSM-5 criterion for Major Depressive Disorder that affects ~90% of people with depression and predicts a worse course. Mechanism involves measured modulation of brain reward and threat processing.</p>
+    <div class="meta">
+      <span class="tag ok">Verified</span>
+      <span class="tag date">Published 24 Apr 2026 (latest credible RCT)</span>
+      <span class="src">Sources: <a href="https://www.smu.edu/news/research/treating-anhedonia-yields-better-results-depression-and-anxiety" target="_blank" rel="noopener">SMU</a> · <a href="https://neurosciencenews.com/positive-affect-treatment-anhedonia-depression-30607/" target="_blank" rel="noopener">Neuroscience News</a> · DOI 10.1001/jamanetworkopen.2026.7403</span>
+    </div>
+  </article>
+  <div class="note">No fully novel adult study dated exactly 22–24 Nov 2026 could be verified to publication standard; the above is the most recent DSM-5-relevant RCT. Secondary (Partial): a Dutch cohort reports anxiety/depression episodes lasting longer today than a decade ago.</div>
+
+  <h3 class="sub">Children — brain development at ~6 (Andrei, b. 2020)</h3>
+  <article class="item">
+    <h4>What develops in a 6-year-old's brain this year</h4>
+    <p>Around age six the prefrontal cortex matures through synaptic pruning (removing excess connections), underpinning executive functions — attention, working memory and impulse inhibition. Reading circuitry becomes more efficient mainly through better connectivity rather than shrinking, and the ability to hear and understand rhyme is a key predictor of reading readiness. Typical markers: 5–7-word sentences, decoding unfamiliar words, a ~10,000-word vocabulary, growing self-control; residual early-childhood fears remain normal.</p>
+    <div class="meta">
+      <span class="tag ok">Verified (developmental science)</span>
+      <span class="src">Sources: <a href="https://www.apa.org/education-career/k12/brain-function" target="_blank" rel="noopener">APA</a> · <a href="https://www.aap.org/en/patient-care/developmental-surveillance-and-screening-patient-care/developmental-milestones/" target="_blank" rel="noopener">AAP milestones</a></span>
+    </div>
+  </article>
+  <article class="item">
+    <h4>What to watch for in the coming year</h4>
+    <p>Flags worth raising with the pediatrician: persistent difficulty learning to read or sound out words, not meeting language/cognitive milestones, marked struggle in specific school subjects, or very short/erratic attention beyond age norms. Note that CDC's validated milestone checklists end at age 5, so for age six rely on AAP, APA and the pediatric well-visit; any concern should prompt a standardized developmental screen.</p>
+    <div class="meta">
+      <span class="tag ok">Verified (reference)</span>
+      <span class="src">Sources: <a href="https://www.cdc.gov/act-early/about" target="_blank" rel="noopener">CDC Act Early</a> · AAP · APA</span>
+    </div>
+  </article>
+  <div class="back"><a href="#top">↑ Top</a></div>
+</section>
+
+<!-- ===================== 5. EDUCATION ===================== -->
+<section class="cat" id="education">
+  <h2><span class="cat-num">5</span>Education</h2>
+
+  <h3 class="sub">Next ~20 years vs. classical schooling</h3>
+  <article class="item">
+    <h4>Major bodies forecast a shift toward competency-based learning — with caveats on AI</h4>
+    <p>Rather than a single "AI replaces school" prediction, major institutions publish scenarios. The OECD frames the future via its "Four Scenarios for the Future of Schooling" and Future of Education &amp; Skills 2030/2040, pointing toward project- and competency-based learning; its Digital Education Outlook 2026 warns that gen-AI benefits often shrink or reverse when the AI is removed (e.g. in exams) and that pervasive devices tend to worsen distraction. WEF's Future of Jobs projects ~23% of jobs change by 2030, prizing problem-solving, critical thinking, creativity and collaboration. Brookings (2026) sees upside in personalized pathways and AI tutoring but warns broad general-purpose AI use can diminish learning and fray human/relational bonds.</p>
+    <div class="meta">
+      <span class="tag ok">Verified</span>
+      <span class="tag date">2025–2026 reports</span>
+      <span class="src">Sources: <a href="https://www.oecd.org/en/topics/future-of-education-and-skills.html" target="_blank" rel="noopener">OECD</a> · <a href="https://www.weforum.org/stories/2025/06/education-future-skills-ai" target="_blank" rel="noopener">WEF</a> · <a href="https://www.brookings.edu/articles/the-role-of-ai-in-education/" target="_blank" rel="noopener">Brookings</a></span>
+    </div>
+  </article>
+
+  <h3 class="sub">Educating a ~6-year-old (evidence-based)</h3>
+  <article class="item">
+    <h4>Play- and relationship-rich learning, limited general-purpose AI</h4>
+    <p>Evidence favours play- and project-based, relationship-rich learning over heavy screen/device drilling at this age, building reading readiness through phonological/rhyming play and protecting human interaction over AI substitution. Outdoor/green time matters: a University of Bristol study reported children who visit parks/playgrounds at least weekly show better mental health and social development. Keep attention tasks short — a six-year-old's sustained attention is roughly 6–20 minutes.</p>
+    <div class="meta">
+      <span class="tag ok">Verified principles</span>
+      <span class="tag warn">Bristol study: Partial</span>
+      <span class="tag date">Bristol reported 10 Nov 2026</span>
+      <span class="src">Sources: <a href="https://www.apa.org/education-career/k12/brain-function" target="_blank" rel="noopener">APA</a> · Brookings (above) · Bristol (single primary source)</span>
+    </div>
+  </article>
+  <div class="back"><a href="#top">↑ Top</a></div>
+</section>
+
+<!-- ===================== 6. MEDICINE ===================== -->
+<section class="cat" id="medicine">
+  <h2><span class="cat-num">6</span>Medicine</h2>
+  <h3 class="sub">New discoveries &amp; firsts</h3>
+  <article class="item">
+    <h4>First drug for the neurological symptoms of Gaucher disease type 3</h4>
+    <p>The FDA approved Sanofi's venglustat (brand Infilbray), an oral, brain-penetrant glucosylceramide-synthase inhibitor — the first therapy ever cleared specifically for the neurological manifestations of type 3 Gaucher disease, which prior enzyme therapies cannot reach. Approval rests on the Phase 3 LEAP2MONO trial showing significant improvement in a combined ataxia + cognition measure at week 52. The FDA flagged serious psychiatric risks including suicidality.</p>
+    <div class="meta">
+      <span class="tag ok">Verified</span>
+      <span class="tag date">18 Nov 2026</span>
+      <span class="src">Sources: <a href="https://www.neurologylive.com/view/fda-approves-venglustat-first-therapy-neurological-manifestations-type-3-gaucher-disease" target="_blank" rel="noopener">NeurologyLive</a> · <a href="https://www.biopharmadive.com/news/sanofi-fda-infilbray-venglustat-approve-gaucher/875167/" target="_blank" rel="noopener">BioPharma Dive</a></span>
+    </div>
+  </article>
+  <article class="item">
+    <h4>Daraxonrasib roughly doubles survival in previously-treated metastatic pancreatic cancer</h4>
+    <p>The Phase 3 RASolute 302 trial (500 patients) showed the oral pan-RAS(ON) inhibitor daraxonrasib raised median overall survival to 13.2 months vs 6.6–6.7 months with chemotherapy (~60% lower risk of death), and was far better tolerated. The European Commission granted approval on 16 Nov 2026 — a notable advance in a cancer long resistant to targeted therapy.</p>
+    <div class="meta">
+      <span class="tag ok">Verified</span>
+      <span class="tag date">NEJM 31 May 2026; EU approval 16 Nov 2026</span>
+      <span class="src">Sources: <a href="https://pubmed.ncbi.nlm.nih.gov/42223072/" target="_blank" rel="noopener">NEJM/PubMed</a> · <a href="https://newsroom.ucla.edu/releases/investigational-daily-pill-daraxonrasib-doubles-survival-metastatic-pancreatic-cancer-study" target="_blank" rel="noopener">UCLA</a></span>
+    </div>
+  </article>
+  <article class="item">
+    <h4>Giredestrant approved for ESR1-mutated advanced breast cancer</h4>
+    <p>The FDA approved oral giredestrant (Wilserdly) plus everolimus for ER-positive, HER2-negative, ESR1-mutated advanced breast cancer that progressed on prior endocrine therapy, based on the Phase 3 evERA trial. A separate, broader early-stage (adjuvant) application remains pending with an FDA target date of 30 Nov 2026; overall-survival benefit is not yet established.</p>
+    <div class="meta">
+      <span class="tag ok">Verified</span>
+      <span class="tag date">16 Nov 2026</span>
+      <span class="src">Sources: <a href="https://ascopost.com/articles/2026/11-november/fda-approves-giredestrant-plus-everolimus-for-esr1-mutant-advanced-breast-cancer/" target="_blank" rel="noopener">ASCO Post</a> · <a href="https://www.ajmc.com/view/fda-approves-oral-giredestrant-regimen-for-esr1-mutated-breast-cancer" target="_blank" rel="noopener">AJMC</a></span>
+    </div>
+  </article>
+  <article class="item">
+    <h4>Large analyses: GLP-1 drugs around conception show no clearly detectable rise in major risks</h4>
+    <p>Large 2026 cohort and pooled analyses (a Danish 750,000-pregnancy study; a Harvard-led 2.1M-pregnancy study) found no clearly detectable increase in miscarriage, stillbirth, congenital anomalies or most obstetric outcomes after periconceptional GLP-1 exposure. The data are observational; authors stress this is not proof of safety in pregnancy, and the Danish study did find higher preterm-birth risk confined to women treated for diabetes. Guidance still advises stopping before a planned pregnancy.</p>
+    <div class="meta">
+      <span class="tag warn">Partial (observational)</span>
+      <span class="tag date">Primary studies Mar 2026; re-reported ~11–13 Nov 2026</span>
+      <span class="src">Sources: <a href="https://hsph.harvard.edu/news/glp-1-drugs-appear-safe-to-use-during-early-pregnancy/" target="_blank" rel="noopener">Harvard Chan</a> · <a href="https://www.citystgeorges.ac.uk/news-and-events/news/2026/october/largest-study-to-date-finds-no-detectable-increase-in-pregnancy-risks-following-glp-1-exposure-around-conception" target="_blank" rel="noopener">City St George's</a></span>
+    </div>
+  </article>
+  <div class="back"><a href="#top">↑ Top</a></div>
+</section>
+
+<!-- ===================== 7. ECONOMY ===================== -->
+<section class="cat" id="economy">
+  <h2><span class="cat-num">7</span>Economy</h2>
+  <h3 class="sub">US / China deals &gt; $100M</h3>
+  <article class="item">
+    <h4>CrowdStrike to acquire Zscaler for ~$43.9bn (all-stock)</h4>
+    <p>CrowdStrike announced an all-stock acquisition of Zscaler valued at about $43.9bn, with Zscaler holders receiving 1.135 CrowdStrike shares each (~34% premium). The merger agreement is dated 22 Nov with the public announcement on 23 Nov; closing is expected in the second half of the fiscal year ending 31 Jan 2028, subject to Zscaler shareholder approval. The combination would create a cybersecurity leader with over $10bn in combined annual recurring revenue.</p>
+    <div class="meta">
+      <span class="tag ok">Verified</span>
+      <span class="tag date">23 Nov 2026</span>
+      <span class="src">Source: <a href="https://www.sec.gov/Archives/edgar/data/0001535527/000153552726000035/crwd-20261123xex991.htm" target="_blank" rel="noopener">SEC 8-K (CrowdStrike)</a></span>
+    </div>
+  </article>
+  <article class="item">
+    <h4>Texas Pacific Land to acquire EagleRock for ~$3.0bn (all-stock)</h4>
+    <p>Texas Pacific Land signed a definitive all-stock agreement to acquire EagleRock at an implied equity value of ~$3.0bn, adding Delaware Basin acreage in New Mexico and expanding its Midland Basin presence via EagleRock's relationship with Double Eagle. TPL also announced an increased share-buyback authorization.</p>
+    <div class="meta">
+      <span class="tag ok">Verified</span>
+      <span class="tag date">23 Nov 2026</span>
+      <span class="src">Source: <a href="https://www.sec.gov/Archives/edgar/data/0001811074/000119312526472518/d166244dex991.htm" target="_blank" rel="noopener">SEC 8-K (TPL)</a></span>
+    </div>
+  </article>
+  <div class="note">Unconfirmed rumour (not counted): Amazon reportedly near a deal for Israeli AI startup Decart for up to ~$7.5bn — no official announcement from either party.</div>
+
+  <h3 class="sub">EU deals &gt; €100M</h3>
+  <div class="none">Nimic relevant în ultimele 24h. (The largest recent EU deal — Adani Ports / Evos, EV €2.56bn — was announced 5 Nov 2026, outside the window.)</div>
+
+  <h3 class="sub">Romania deals &gt; €1M</h3>
+  <article class="item">
+    <h4>Regina Maria acquires Dorna Medical (see Dental section)</h4>
+    <p>Regina Maria's acquisition of Dorna Medical (~€18–20m turnover, 35–40+ units) is the main Romanian healthcare deal in the window, announced 23 Nov and under Competition Council review. Deal value was not disclosed.</p>
+    <div class="meta">
+      <span class="tag ok">Verified</span>
+      <span class="tag date">23 Nov 2026</span>
+      <span class="src">Sources: <a href="https://www.zf.ro/zf-24/regina-maria-anunta-preluarea-furnizorului-servicii-medicale-dorna-medical-23287334" target="_blank" rel="noopener">Ziarul Financiar</a> · <a href="https://www.news.ro" target="_blank" rel="noopener">News.ro</a></span>
+    </div>
+  </article>
+  <div class="back"><a href="#top">↑ Top</a></div>
+</section>
+
+<!-- ===================== 8. POLITICS ===================== -->
+<section class="cat" id="politics">
+  <h2><span class="cat-num">8</span>Politics</h2>
+  <h3 class="sub">New leadership appointments (EU / Romania / USA)</h3>
+  <article class="item">
+    <h4>EU institutions</h4>
+    <p>No new leadership appointment in the window. (The European Commission named three new Directors — internal civil-service posts, not Commissioners — on 18 Nov, outside the window. The von der Leyen II Commission remains in office 2024–2029.)</p>
+    <div class="meta"><span class="tag date">—</span><span class="src">Nimic relevant în ultimele 24h.</span></div>
+  </article>
+  <article class="item">
+    <h4>Romania</h4>
+    <p>No confirmed ministerial appointment or resignation in the window. There is talk of a possible reshuffle of PSD ministers in the Luca Niculescu government before Christmas (warning from Claudiu Manda, 18 Nov), but the PM has not confirmed it. The Niculescu government was sworn in 20 Oct 2026.</p>
+    <div class="meta"><span class="tag warn">Context / Partial</span><span class="src">Nimic confirmat în ultimele 24h.</span></div>
+  </article>
+  <article class="item">
+    <h4>USA</h4>
+    <p>No specific appointment or confirmation dated 22–24 Nov could be confirmed. The Republican-controlled Senate has continued rapid confirmation of federal judges (a rare Friday session on 20 Nov for a batch of judicial nominations), but nothing is dated within the window.</p>
+    <div class="meta"><span class="tag warn">Context / Partial</span><span class="src">Nimic confirmat strict în fereastră.</span></div>
+  </article>
+
+  <h3 class="sub">New laws adopted / taking effect</h3>
+  <article class="item">
+    <h4>Romania (Monitorul Oficial)</h4>
+    <p>No new law, ordinance or government decision appeared in the 23 Nov editions (Part I, nos. 969–971). Taking effect 22 Nov (within the window): the law on electronic evidence in criminal proceedings — governing how prosecutors request user data from Meta, Google, Microsoft and Apple — published in M.Of. no. 964 of 19 Nov, with articles 15–16 on a separate 30-day timeline.</p>
+    <div class="meta">
+      <span class="tag warn">Partial</span>
+      <span class="tag date">In force 22 Nov 2026</span>
+      <span class="src">Source: secondary (ghidullegal.ro / NewsCenter.ro) — verify text on monitoruloficial.ro</span>
+    </div>
+  </article>
+  <article class="item">
+    <h4>EU (EUR-Lex) &amp; USA (Congress / Federal Register)</h4>
+    <p>EU: no Official Journal publication could be confirmed for 22–24 Nov (latest indexed edition seen was 11 Nov). USA: no laws signed in the window; the most recent batch was 20 Nov (H.R. 10167 "Common Cents Act" ending penny minting, plus H.R. 5284, H.R. 8352 and H.R. 10159), all just outside the 24–48h window.</p>
+    <div class="meta"><span class="tag date">—</span><span class="src">Nimic relevant în ultimele 24h (fereastra strictă).</span></div>
+  </article>
+  <div class="back"><a href="#top">↑ Top</a></div>
+</section>
+
+<footer>
+  <p><strong>Daily Briefing</strong> · 24 November 2026. Research window 22–24 November 2026. Items are confirmed against two independent sources where possible; "Partial" means a primary source with thin corroboration, "Unverified" means a single source. Summaries are written in-house (no source text copied). Nothing was invented or extrapolated — where no sourced news existed, the section reads "Nimic relevant în ultimele 24h."</p>
+  <p><a href="arhiva/">Archive of past editions →</a></p>
+  <p style="margin-top:14px; opacity:.7;">Add to iPhone home screen: Share → "Add to Home Screen" to open as the Briefing app.</p>
+</footer>
+</div>
+</body>
+</html>
