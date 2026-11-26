@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Briefing">
+<meta name="description" content="Daily personal briefing — dental, AI, technology, psychology, education, medicine, economy, politics. Edition of 26 November 2026.">
+<link rel="manifest" href="../manifest.json">
+<title>Daily Briefing — 26 November 2026</title>
+<style>
+  :root{
+    --bg:#0f172a; --bg2:#15213b; --card:#1b2540; --card2:#202c4d;
+    --ink:#e8edf7; --muted:#9aa7c2; --line:#2a3860;
+    --accent:#6ea8fe; --accent2:#8b7cff;
+    --ok:#34d399; --warn:#fbbf24; --bad:#fb7185;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:linear-gradient(180deg,#0d1427,#0f172a 40%);
+    color:var(--ink);
+    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-text-size-adjust:100%;
+  }
+  a{color:var(--accent); text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:820px; margin:0 auto; padding:0 16px 64px}
+  header{
+    padding:30px 0 18px; border-bottom:1px solid var(--line); margin-bottom:8px;
+  }
+  .kicker{font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); font-weight:700}
+  h1{font-size:28px; line-height:1.2; margin:8px 0 6px}
+  .date{color:var(--muted); font-size:15px}
+  .lead{color:var(--muted); font-size:14px; margin-top:12px; padding:12px 14px; background:var(--bg2); border:1px solid var(--line); border-radius:10px}
+  nav.toc{
+    margin:22px 0; padding:16px; background:var(--card); border:1px solid var(--line); border-radius:12px;
+  }
+  nav.toc h2{font-size:13px; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); margin:0 0 10px}
+  nav.toc ol{margin:0; padding-left:20px; columns:2; column-gap:20px}
+  @media(max-width:520px){nav.toc ol{columns:1}}
+  nav.toc li{margin:4px 0}
+  section.cat{margin:34px 0 0; scroll-margin-top:16px}
+  section.cat > h2{
+    font-size:21px; margin:0 0 4px; padding-top:14px; border-top:2px solid var(--line);
+    display:flex; align-items:center; gap:10px;
+  }
+  .cat-emoji{font-size:22px}
+  .sub{margin:20px 0 6px; font-size:14px; font-weight:700; color:var(--accent2); text-transform:uppercase; letter-spacing:.05em}
+  .item{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 16px; margin:10px 0}
+  .item h3{margin:0 0 6px; font-size:16.5px; line-height:1.35}
+  .item p{margin:6px 0 8px; color:#dbe3f4; font-size:14.5px}
+  .meta{display:flex; flex-wrap:wrap; gap:8px; align-items:center; font-size:12px; color:var(--muted)}
+  .badge{display:inline-block; font-size:11px; font-weight:700; padding:2px 8px; border-radius:999px; letter-spacing:.03em}
+  .b-ok{background:rgba(52,211,153,.15); color:var(--ok); border:1px solid rgba(52,211,153,.35)}
+  .b-warn{background:rgba(251,191,36,.13); color:var(--warn); border:1px solid rgba(251,191,36,.35)}
+  .b-bad{background:rgba(251,113,133,.13); color:var(--bad); border:1px solid rgba(251,113,133,.35)}
+  .date-pill{background:var(--card2); border:1px solid var(--line); padding:2px 8px; border-radius:999px; color:var(--muted)}
+  .src{font-size:12.5px; margin-top:6px; word-break:break-word}
+  .src a{color:var(--accent)}
+  .none{color:var(--muted); font-style:italic; padding:8px 0}
+  .note{font-size:13px; color:var(--muted); background:var(--bg2); border-left:3px solid var(--accent2); padding:8px 12px; border-radius:6px; margin:8px 0}
+  footer{margin-top:48px; padding-top:18px; border-top:1px solid var(--line); color:var(--muted); font-size:13px}
+  .toplink{display:inline-block; margin-top:8px; font-size:12px; color:var(--muted)}
+  .archive-btn{display:inline-block; margin:6px 8px 0 0; padding:8px 14px; background:var(--card2); border:1px solid var(--line); border-radius:10px; color:var(--ink); font-size:14px; font-weight:600}
+  .legend{display:flex; flex-wrap:wrap; gap:10px; margin-top:12px; font-size:12px; color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap" id="top">
+<header>
+  <div class="kicker">Personal Morning Briefing</div>
+  <h1>Daily Briefing</h1>
+  <div class="date">Wednesday, 26 November 2026</div>
+  <div class="lead">
+    News from the last 24–72 hours across eight domains. Each item carries a confidence
+    label and a dated source. Where the strict 24-hour window held nothing confirmable,
+    the most recent verified context is shown with its true date. Summaries are written
+    in the editor's own words.
+    <div class="legend">
+      <span><span class="badge b-ok">Verified</span> 2+ independent sources</span>
+      <span><span class="badge b-warn">Partial</span> credible but incompletely confirmed</span>
+      <span><span class="badge b-bad">Unverified</span> single / unconfirmed source</span>
+    </div>
+  </div>
+  <div style="margin-top:14px">
+    <a class="archive-btn" href="./">🗄️ Archive</a>
+  </div>
+</header>
+
+<nav class="toc">
+  <h2>Contents</h2>
+  <ol>
+    <li><a href="#dental">Dental</a></li>
+    <li><a href="#ai">Artificial Intelligence</a></li>
+    <li><a href="#tech">Technology</a></li>
+    <li><a href="#psych">Psychology</a></li>
+    <li><a href="#edu">Education</a></li>
+    <li><a href="#med">Medicine</a></li>
+    <li><a href="#econ">Economy</a></li>
+    <li><a href="#pol">Politics</a></li>
+  </ol>
+</nav>
+
+<!-- ============ 1. DENTAL ============ -->
+<section class="cat" id="dental">
+  <h2><span class="cat-emoji">🦷</span> 1 · Dental</h2>
+
+  <div class="sub">Medical discoveries</div>
+  <div class="note">Nothing could be confirmed as <em>newly published</em> within the strict 24-hour window to a two-source primary standard. Recent, credible dental research below is shown with its real date.</div>
+  <div class="item">
+    <h3>Peri-implantitis severity tied to the submucosal microbiome</h3>
+    <p>A study in the <em>Journal of Dental Research</em> links how severe peri-implant disease becomes to specific microbial and functional shifts in the tissue around the implant. The authors stress the signal still needs confirmation in larger, longer-term cohorts before it changes clinical practice.</p>
+    <div class="meta"><span class="date-pill">2026</span><span class="badge b-warn">Partial</span></div>
+    <div class="src">Source: <a href="https://adanews.ada.org/huddles/study-links-submucosal-microbiome-to-peri-implantitis-severity/">ADA News — submucosal microbiome study</a></div>
+  </div>
+  <div class="item">
+    <h3>November <em>Journal of Endodontics</em>: dental-pulp biology collection</h3>
+    <p>The November 2026 issue gathers roughly 15 papers centred on the dental pulp — stem cells, regenerative approaches, and the inflammation and pain pathways behind severe toothache. All of it is early-stage laboratory and mechanistic work rather than ready-to-use therapy.</p>
+    <div class="meta"><span class="date-pill">Nov 2026 issue</span><span class="badge b-warn">Partial</span></div>
+    <div class="src">Source: <a href="https://www.sciencedaily.com/news/health_medicine/dentistry/">ScienceDaily — Dentistry</a></div>
+  </div>
+
+  <div class="sub">New technologies (implants, scanners, software)</div>
+  <div class="item">
+    <h3>SprintRay moves beyond printing: "Foundation" scanner + Nano Series</h3>
+    <p>Unveiled at the 3DNext 2026 event in Miami Beach (10–13 Oct), SprintRay introduced Foundation — a wireless intraoral scanner on its new ScanOS software — alongside the compact Nano Series (NanoPrint / NanoWash / NanoCure) chairside units. First shipments were stated by the company as <em>expected in November 2026</em> (US first for the scanner; US/Canada/ANZ/EU for Nano), with an event price around $9,995 for the scanner; actual shipping has not been independently confirmed.</p>
+    <div class="meta"><span class="date-pill">Unveiled 10–13 Oct 2026</span><span class="badge b-warn">Partial</span></div>
+    <div class="src">Sources: <a href="https://www.webull.com/news/15741198094590976">Webull / press release</a> · <a href="https://instituteofdigitaldentistry.com/news/sprintray-3dnext-2026-new-nanoprint-nanowash-foundation-scanner-gc-gradia-premi-and-more/">Institute of Digital Dentistry</a></div>
+  </div>
+  <div class="item">
+    <h3>Medit global launch of "Realtime Intelligence"</h3>
+    <p>Medit released a real-time intelligence software layer for its i700 / i700 wireless / i600 scanners (the older i500 is not supported), sold as a one-time licence around $2,000 with a free trial running to the end of 2026. It brings live, AI-assisted feedback into the scanning workflow.</p>
+    <div class="meta"><span class="date-pill">2026</span><span class="badge b-warn">Partial</span></div>
+    <div class="src">Source: <a href="https://us.dental-tribune.com/news/medit-announces-global-launch-of-realtime-intelligence/">Dental Tribune</a></div>
+  </div>
+
+  <div class="sub">New clinic processes (call center, patient care, SOP)</div>
+  <div class="none">Nothing relevant in last 24h. (See the AI section for dental front-office / call-center automation, which is where this month's genuine movement sits.)</div>
+
+  <div class="sub">Clinic sales / acquisitions (Romania + global)</div>
+  <div class="item">
+    <h3>Park Dental Partners enters North Carolina (Village Family Dental)</h3>
+    <p>Park Dental Partners completed its acquisition of Village Family Dental, adding 12 locations and 47 doctors and marking the group's first presence in the state. Reported consideration was roughly $39M base, rising to about $46M with contingent payments; the deal was tied to Park's Q3 2026 reporting.</p>
+    <div class="meta"><span class="date-pill">Q3 2026</span><span class="badge b-warn">Partial</span></div>
+    <div class="src">Source: <a href="https://www.beckersdental.com/?p=28263">Becker's Dental</a></div>
+  </div>
+  <div class="item">
+    <h3>Heartland Dental closes Foundation Dental Partners</h3>
+    <p>Heartland Dental completed its combination with Foundation Dental Partners, a 33-practice supported group spanning four states. Terms were not disclosed in the coverage reviewed.</p>
+    <div class="meta"><span class="date-pill">2026 (exact date unconfirmed)</span><span class="badge b-bad">Unverified</span></div>
+    <div class="src">Source: <a href="https://www.beneschlaw.com/wp-content/uploads/2026/11/DSO_OctoberNovember-2026-v2.pdf">Benesch DSO M&A tracker (Oct–Nov 2026)</a></div>
+  </div>
+  <div class="note"><strong>Romania:</strong> Nothing relevant in last 24h. No Romanian dental-clinic transaction could be dated to this window. (For context, the Abris-backed Dental Holding platform agreed in January 2026 to acquire Greek dental-supplies distributor Memodent — a distributor, not a clinic, and outside this window.)</div>
+
+  <div class="sub">Key-people migrations (leadership / doctors)</div>
+  <div class="item">
+    <h3>Parkview Dental Partners names Jon Gregoire CEO</h3>
+    <p>The Sarasota-based, Cathay Capital-backed DSO appointed Jon Gregoire — a 20-year DSO executive and co-founder/former COO of Cornerstone Dental Partners — as chief executive. LinkedIn confirmation was not possible in this session, so the move is flagged as partially verified.</p>
+    <div class="meta"><span class="date-pill">3 Nov 2026</span><span class="badge b-warn">Partial</span></div>
+    <div class="src">Source: <a href="https://www.webull.com/news/15860319062301696">Webull / press release</a></div>
+  </div>
+  <div class="note">An unconfirmed item (National Dentex Labs naming a new CEO) surfaced with an ambiguous date and could not be corroborated or LinkedIn-verified — withheld pending confirmation.</div>
+
+  <div class="sub">Lab processes &amp; technologies</div>
+  <div class="none">Nothing relevant in last 24h. (2026's notable lab moves — SprintRay's chairside definitive-ceramic crown workflow and SHINING 3D's Ceramix-Nano capsule printer — all predate this window.)</div>
+
+  <div class="sub">Courses &amp; the English-language online CE market</div>
+  <div class="item">
+    <h3>Implantology remains the best-monetised English-language online CE category</h3>
+    <p>Across global vendor academies the pattern is consistent: implant education is the anchor of paid English-language online dentistry courses sold internationally (Nobel Biocare reports 14,000+ professionals a year through its implant programs; Straumann/ITI, Dentsply Sirona and EAO run comparable English catalogues). The topics that reliably sell are implant treatment planning, single-tooth and full-arch/All-on-X with guided surgery, bone grafting/GBR and sinus, soft-tissue management, and digital workflow (intraoral scanning and planning). University-led, KOL-fronted webinar series (often ~$59 for 1.5 CE) and newer platforms such as Keystone Dental Campus target the same buyers. No reliable country-by-country sales or price-elasticity data was found — a dedicated marketplace analytics source would be needed to size the opportunity precisely.</p>
+    <div class="meta"><span class="date-pill">Market structure</span><span class="badge b-warn">Partial</span></div>
+    <div class="src">Sources: <a href="https://www.nobelbiocare.com/en-nl/education">Nobel Biocare Education</a> · <a href="https://iti.org/curriculum">ITI Curriculum</a> · <a href="https://campus.dentsplysirona.com/en/p/course-series">Dentsply Sirona Academy</a></div>
+  </div>
+  <a class="toplink" href="#top">↑ Top</a>
+</section>
+
+<!-- ============ 2. AI ============ -->
+<section class="cat" id="ai">
+  <h2><span class="cat-emoji">🤖</span> 2 · Artificial Intelligence</h2>
+
+  <div class="sub">Notable AI developments</div>
+  <div class="item">
+    <h3>OpenAI ships GPT-6.2 (Astra &amp; Sol)</h3>
+    <p>OpenAI released GPT-6.2 in two variants: Astra, a frontier model aimed at long, complex projects, and Sol, an efficiency model for everyday work. Both landed in ChatGPT's work tier and Codex, with Astra's API rates cut about 20%. The release followed OpenAI scrapping the planned GPT-6.1 Astra; early benchmark and user reaction has been mixed.</p>
+    <div class="meta"><span class="date-pill">17 Nov 2026</span><span class="badge b-ok">Verified</span></div>
+    <div class="src">Sources: <a href="https://openai.com/index/introducing-gpt-6-2-astra-sol/">OpenAI (primary)</a> · <a href="https://www.digitaltrends.com/computing/openai-gpt-6-2-astra-sol-launch/">Digital Trends</a></div>
+  </div>
+  <div class="item">
+    <h3>Google Gemini 4 "Neon" and Microsoft's Ignite model wave</h3>
+    <p>Google released Gemini 4 Neon on 18 November, and Microsoft used its Ignite conference (17 Nov) to announce a cluster of new AI models. Both sit in the same mid-November frontier-model burst as GPT-6.2 and Anthropic's earlier Fable 5.2 (9 Nov). Details here come from secondary trackers rather than a direct read of each primary announcement.</p>
+    <div class="meta"><span class="date-pill">17–18 Nov 2026</span><span class="badge b-warn">Partial</span></div>
+    <div class="src">Sources: <a href="https://tecadmin.net/november-2026-ai-model-releases/">TecAdmin release roundup</a> · <a href="https://llmgateway.io/timeline">LLM Gateway timeline</a></div>
+  </div>
+
+  <div class="sub">What could help a large dental clinic (market view)</div>
+  <div class="item">
+    <h3>Dental "AI receptionists" mature into standalone front-office products</h3>
+    <p>The front office is where dental AI is commercialising fastest. Dental Intelligence launched an AI Receptionist (29 Jun 2026) that works across most VoIP providers, converses in ~70 languages and verifies patient identity with a one-time PIN before sharing anything sensitive; RevenueWell and Heygent have shipped comparable always-on, omnichannel booking agents. For a large clinic the relevant use cases are after-hours and overflow call handling, automated scheduling and recall, and reduced missed-call leakage — with HIPAA/GDPR compliance and multilingual support the main selection criteria.</p>
+    <div class="meta"><span class="date-pill">Mid–late 2026</span><span class="badge b-warn">Partial</span></div>
+    <div class="src">Sources: <a href="https://www.dentalproductsreport.com/view/heygent-dental-ai-launches-ai-powered-patient-engagement-communication-platform">Dental Products Report</a> · <a href="https://www.revenuewell.com/article/revenuewell-launches-standalone-ai-receptionist-to-deliver-always-on-front-desk-coverage-for-dental-practices">RevenueWell</a></div>
+  </div>
+  <div class="item">
+    <h3>Diagnostic imaging AI reaches general practice (CBCT)</h3>
+    <p>On the clinical side, FDA-cleared imaging AI is spreading from specialists to general dentists — Pearl's "Second Opinion 3D" brought cleared CBCT (3D) AI to general practice earlier in 2026, joining 2D radiograph tools from Overjet, Diagnocat and others. For a large clinic this points at a second-opinion / documentation layer that standardises reads across many operatories and chairs, rather than replacing the clinician's judgement.</p>
+    <div class="meta"><span class="date-pill">Sept 2026 (context)</span><span class="badge b-warn">Partial</span></div>
+    <div class="src">Source: <a href="https://hellopearl.com/news/pearl-launches-second-opinion-3d-bringing-fda-cleared-3d-imaging-ai-to-general-dentists-for-the-first-time">Pearl (primary)</a></div>
+  </div>
+  <a class="toplink" href="#top">↑ Top</a>
+</section>
+
+<!-- ============ 3. TECHNOLOGY ============ -->
+<section class="cat" id="tech">
+  <h2><span class="cat-emoji">⚙️</span> 3 · Technology</h2>
+
+  <div class="sub">New patents &amp; launches — global</div>
+  <div class="note">No patent filing or hardware launch could be confirmed to a primary source (USPTO/EPO) within the strict window this session; aggregator "patent roundup" items did not survive cross-checking and are withheld. The most significant verified technology transaction of the window is corporate (CrowdStrike–Zscaler) and appears under <a href="#econ">Economy</a>.</div>
+
+  <div class="sub">New patents &amp; launches — Romania</div>
+  <div class="item">
+    <h3>Vodafone opens an innovation centre in Cluj</h3>
+    <p>Romanian tech press reported that Vodafone opened an innovation centre in Cluj where students and partners can test industrial robots and AI applications. It is a corporate R&amp;D/skills initiative rather than a product launch; a single source and an imprecise date keep it at partial confidence.</p>
+    <div class="meta"><span class="date-pill">November 2026</span><span class="badge b-warn">Partial</span></div>
+    <div class="src">Source: <a href="https://start-up.ro/">start-up.ro</a></div>
+  </div>
+  <div class="note">OSIM bulletins surfaced this session were from early 2026 and could not be matched to the window.</div>
+  <a class="toplink" href="#top">↑ Top</a>
+</section>
+
+<!-- ============ 4. PSYCHOLOGY ============ -->
+<section class="cat" id="psych">
+  <h2><span class="cat-emoji">🧠</span> 4 · Psychology</h2>
+
+  <div class="sub">Adults — finding of the day (DSM-5 lens)</div>
+  <div class="item">
+    <h3>GLP-1 drugs associated with lower alcohol use</h3>
+    <p>A real-world survey found that about half of people who drink and take GLP-1 medications (the semaglutide/Ozempic class) reported drinking less, with the steepest drops among those at higher risk of unhealthy use. The authors are careful: this screened for "potentially unhealthy" drinking, not diagnosed DSM-5 Alcohol Use Disorder, and self-report cannot prove magnitude — but it converges with a BMJ Open cohort (~63% fewer alcohol-related hospitalisations) and a 2026 NIH randomised trial showing semaglutide cut drinks-per-day and cravings. Promising, not yet an approved AUD treatment.</p>
+    <div class="meta"><span class="date-pill">18 Nov 2026</span><span class="badge b-ok">Verified</span></div>
+    <div class="src">Sources: <a href="https://news.harvard.edu/gazette/story/2026/11/about-half-of-drinkers-on-glp-1s-say-they-imbibed-less/">Harvard Gazette</a> · <a href="https://www.eurekalert.org/news-releases/1136598">EurekAlert</a> · <a href="https://nih.gov/news-events/nih-research-matters/glp-1-plus-therapy-can-reduce-heavy-drinking">NIH</a></div>
+  </div>
+
+  <div class="sub">Children — Andrei (born 2020, ~6 years old)</div>
+  <div class="item">
+    <h3>The logic years begin: cause-and-effect firms up, "magical thinking" fades</h3>
+    <p>Around six, children start grasping genuine cause-and-effect, begin to understand time, and the preschooler's magical thinking recedes quickly. Most can state their age, work with the idea of "ten," and are actively learning to write — the brain is laying the logical scaffolding for early academics. This is the window to lean into "why" questions and simple reasoning games.</p>
+    <div class="meta"><span class="date-pill">Evergreen</span><span class="badge b-ok">Verified</span></div>
+    <div class="src">Sources: <a href="https://www.columbiadoctors.org/health-library/article/milestones-6-year-olds/">Columbia Doctors</a> · <a href="https://myhealth.alberta.ca/Health/pages/conditions.aspx?hwid=ue5723">Alberta Health</a></div>
+  </div>
+  <div class="item">
+    <h3>Social-emotional skills are this year's biggest growth area</h3>
+    <p>At six, the fastest development is social-emotional and thinking skills: cooperative play lengthens (20+ minutes with two or three peers), friendships and fairness start to matter, yet typical preschool fears (the dark, monsters, being alone) often linger. Over the coming year, watch for the ability to follow multi-step game rules, manage frustration, and separate comfortably at school — and treat lingering fears as normal rather than a problem.</p>
+    <div class="meta"><span class="date-pill">Evergreen</span><span class="badge b-ok">Verified</span></div>
+    <div class="src">Sources: <a href="https://www.understood.org/en/articles/developmental-milestones">Understood.org</a> · <a href="https://www.healthlinkbc.ca/healthwise/milestones-6-year-olds">HealthLinkBC</a></div>
+  </div>
+  <div class="note">Note: the CDC's official milestone checklists currently stop at age 5, so the age-6 picture above draws on other authoritative health systems. If a specific skill looks clearly delayed, a validated pediatric developmental screen is the right next step.</div>
+  <a class="toplink" href="#top">↑ Top</a>
+</section>
+
+<!-- ============ 5. EDUCATION ============ -->
+<section class="cat" id="edu">
+  <h2><span class="cat-emoji">📚</span> 5 · Education</h2>
+
+  <div class="sub">The next ~20 years vs. the classical school</div>
+  <div class="item">
+    <h3>OECD: generative AI helps only with deliberate pedagogy</h3>
+    <p>The OECD's Digital Education Outlook 2026 finds that general chatbots can raise the quality of students' work <em>while</em> they have access, but the gain fades — and can reverse — on closed-book exams. Purpose-built educational AI, designed around learning goals, produces more durable gains and can noticeably lift less-experienced tutors. The 20-year signal: AI augmenting teaching, not replacing the classroom, with equity, infrastructure and academic-integrity policy as the hard part.</p>
+    <div class="meta"><span class="date-pill">Jan 2026 report</span><span class="badge b-ok">Verified</span></div>
+    <div class="src">Source: <a href="https://www.oecd.org/en/publications/2026/01/oecd-digital-education-outlook-2026_940e0dd8.html">OECD</a></div>
+  </div>
+  <div class="item">
+    <h3>WEF: ~39% of core skills shift by 2030 — the case for skills over static knowledge</h3>
+    <p>The World Economic Forum projects that around 39% of workers' core skills will change by 2030 and that 63% of employers see skill gaps as the top barrier to transformation. Analytical thinking stays the most-valued skill, with AI/big-data, cybersecurity and environmental literacy rising fastest — pointing to curricula weighted toward reasoning, AI literacy and continuous reskilling rather than fixed content mastery.</p>
+    <div class="meta"><span class="date-pill">2025 report</span><span class="badge b-ok">Verified</span></div>
+    <div class="src">Source: <a href="https://www.weforum.org/publications/the-future-of-jobs-report-2025/in-full/3-skills-outlook/">WEF Future of Jobs 2025</a></div>
+  </div>
+
+  <div class="sub">Educating a child of Andrei's age (~6)</div>
+  <div class="item">
+    <h3>Pair short explicit instruction with guided, goal-directed play</h3>
+    <p>A Child Development review of 17 studies (ages 3–8) found that <em>guided</em> play — play with an adult-set learning goal, gently steered — can match direct instruction for some literacy and executive-function gains. The practical recipe at six: brief, explicit phonics/reading and number practice, combined with purposeful play (word games, story role-play, building and drawing that involve writing and counting). Play supplements structured literacy and math; it doesn't replace it. Daily shared reading feeds oral language and letter-level skills, and rule-based cooperative games build the self-regulation that underpins school readiness.</p>
+    <div class="meta"><span class="date-pill">Evergreen</span><span class="badge b-ok">Verified</span></div>
+    <div class="src">Sources: <a href="https://edsource.org/updates/kids-learn-as-much-from-guided-play-as-from-direct-instruction-report-finds">EdSource</a> · <a href="https://newamerica.org/education-policy/edcentral/how-playful-pedagogy-supports-curricula-and-other-learning-goals-for-children/">New America</a></div>
+  </div>
+  <a class="toplink" href="#top">↑ Top</a>
+</section>
+
+<!-- ============ 6. MEDICINE ============ -->
+<section class="cat" id="med">
+  <h2><span class="cat-emoji">🩺</span> 6 · Medicine</h2>
+  <div class="note">No medical first could be confirmed as published or approved strictly within the last 24h this session. The three verified US "firsts" below fall just outside the window (16–18 Nov) and are included because each opens a previously untreatable condition.</div>
+
+  <div class="item">
+    <h3>First siRNA therapy for myasthenia gravis (Livsayis / cemdisiran)</h3>
+    <p>The FDA approved Regeneron's cemdisiran for adults with antibody-positive generalised myasthenia gravis — the first small-interfering-RNA (siRNA) medicine cleared for this autoimmune neuromuscular disease, and Regeneron's first neurology approval.</p>
+    <div class="meta"><span class="date-pill">18 Nov 2026</span><span class="badge b-ok">Verified</span></div>
+    <div class="src">Source: <a href="https://www.pharmexec.com/view/fda-approves-livsayis-first-sirna-therapy-myasthenia-gravis">Pharmaceutical Executive</a></div>
+  </div>
+  <div class="item">
+    <h3>First survival-extending therapy for infantile Niemann-Pick type C (Lembaz / adrabetadex)</h3>
+    <p>The FDA approved Beren Therapeutics' adrabetadex to reduce the risk of death in infantile-onset Niemann-Pick disease type C — the first therapy shown to improve survival in this rare, fatal neurodegenerative disorder of childhood.</p>
+    <div class="meta"><span class="date-pill">17 Nov 2026</span><span class="badge b-ok">Verified</span></div>
+    <div class="src">Sources: <a href="https://www.neurologylive.com/view/fda-approves-adrabetadex-first-therapy-improve-survival-infantile-onset-niemann-pick-disease-type-c">NeurologyLive</a> · <a href="https://www.fiercepharma.com/pharma/beren-clinches-long-awaited-fda-nod-niemann-pick-disease">Fierce Pharma</a></div>
+  </div>
+  <div class="item">
+    <h3>First therapy for primary membranous nephropathy (Gazyva / obinutuzumab)</h3>
+    <p>The FDA approved Genentech/Roche's obinutuzumab for adults with primary membranous nephropathy at risk of progression — the first approved treatment for this autoimmune kidney disease, based on the MAJESTY trial.</p>
+    <div class="meta"><span class="date-pill">16 Nov 2026</span><span class="badge b-ok">Verified</span></div>
+    <div class="src">Source: <a href="https://www.pharmexec.com/view/fda-approves-klygefa-gazyva--igalm">Pharmaceutical Executive</a></div>
+  </div>
+  <a class="toplink" href="#top">↑ Top</a>
+</section>
+
+<!-- ============ 7. ECONOMY ============ -->
+<section class="cat" id="econ">
+  <h2><span class="cat-emoji">💶</span> 7 · Economy</h2>
+
+  <div class="sub">Major acquisitions / sales</div>
+  <div class="item">
+    <h3>CrowdStrike to acquire Zscaler for ~$43.9B (all-stock)</h3>
+    <p>CrowdStrike announced a definitive agreement to buy cybersecurity rival Zscaler in an all-stock deal valuing Zscaler at about $43.9 billion — 1.135 CrowdStrike shares per Zscaler share, roughly a 34% premium to Zscaler's 20 Nov close. Existing CrowdStrike holders would own ~84% of the combined company; the deal adds network security to the Falcon platform and is expected to close in the second half of CrowdStrike's FY2028, subject to Zscaler shareholder and regulatory approval.</p>
+    <div class="meta"><span class="date-pill">23 Nov 2026</span><span class="badge b-ok">Verified</span></div>
+    <div class="src">Sources: <a href="https://www.sec.gov/Archives/edgar/data/0001713683/000119312526471211/d115803dex991.htm">SEC 8-K (primary)</a> · <a href="https://www.crowdstrike.com/en-us/press-releases/zscaler-crowdstrike-expand-partnership-strengthen-ai-driven-secops/">CrowdStrike</a></div>
+  </div>
+  <div class="item">
+    <h3>Terex to sell its Genie aerials business to Linamar for ~$1.4B (cash)</h3>
+    <p>Terex agreed to sell its Aerials segment — the Genie aerial-work-platform brand, its IP, manufacturing and parts/service — to Canada's Linamar for about $1.4 billion in cash, continuing Terex's exit from aerials ahead of its planned merger with REV Group. As of this session only Terex's own SEC filing confirmed the agreement, so it is marked partial.</p>
+    <div class="meta"><span class="date-pill">23 Nov 2026</span><span class="badge b-warn">Partial</span></div>
+    <div class="src">Source: <a href="https://www.sec.gov/Archives/edgar/data/0000097216/000110465926131293/tm2630439d1_ex99-1.htm">SEC filing (Terex, primary)</a></div>
+  </div>
+  <div class="note"><strong>Romania (&gt;€1M):</strong> Nothing relevant in last 24h — no Romanian transaction with a disclosed value could be dated to this window. (Aggregator-only "Sanofi $41B" and a Gulf banking deal were cross-checked and dropped as erroneous/unverified.)</div>
+  <a class="toplink" href="#top">↑ Top</a>
+</section>
+
+<!-- ============ 8. POLITICS ============ -->
+<section class="cat" id="pol">
+  <h2><span class="cat-emoji">🏛️</span> 8 · Politics</h2>
+
+  <div class="sub">New leadership appointments (EU / Romania / USA)</div>
+  <div class="none">Nothing relevant in last 24h. No appointment to EU institutions, the Romanian government, or Senate-confirmed US posts could be verified inside the window. (Context, outside it: Romania's Luca Niculescu minority government was installed 20–21 Oct 2026.)</div>
+
+  <div class="sub">New laws adopted that will apply (RO / EU / USA)</div>
+  <div class="none">Nothing relevant in last 24h. No newly adopted law could be verified with an enactment or publication date inside the window.</div>
+  <div class="note">Recent context, just outside the window: EU Regulation (EU) 2026/2387 ("AGILE" defence-innovation programme) was published in the Official Journal on 3 Nov 2026; a batch of US bills (H.R. 997, 1703, 1945, 7730) was signed into law around 10 Nov 2026. Verify against <a href="https://eur-lex.europa.eu/">EUR-Lex</a> and the <a href="https://www.federalregister.gov/">Federal Register</a> before acting on either.</div>
+  <a class="toplink" href="#top">↑ Top</a>
+</section>
+
+<footer>
+  <p><strong>Method.</strong> Items were sought across the last 24–72 hours and cross-checked against independent and, where possible, primary sources (SEC, OEM press rooms, OECD, WEF, FDA coverage, journals). Confidence labels are deliberately conservative: several sections note "Nothing relevant in last 24h" rather than pad with unconfirmed claims. Two tooling limits affected this edition — direct page-fetching of some news hosts failed, so a few items rest on search summaries, and news indexing lags the calendar, pushing some genuinely-recent items a few days behind today's date. Summaries are the editor's own paraphrase; follow the source links for original reporting.</p>
+  <p><a href="./">🗄️ Archive of past editions</a></p>
+  <p style="margin-top:10px;opacity:.7">Daily Briefing · Edition 2026-11-26</p>
+</footer>
+
+</div>
+</body>
+</html>
