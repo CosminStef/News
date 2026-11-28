@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Briefing">
+<meta name="description" content="Daily curated briefing — dental, AI, technology, psychology, education, medicine, economy and politics.">
+<link rel="manifest" href="manifest.json">
+<title>Daily Briefing — 28 November 2026</title>
+<style>
+  :root{
+    --bg:#0f1115; --surface:#171a21; --surface-2:#1e222b; --border:#2a2f3a;
+    --text:#e8eaed; --muted:#9aa3b2; --faint:#6b7280;
+    --accent:#4f8cff; --accent-soft:#1d2a44;
+    --ok:#3ecf8e; --ok-bg:#12241c; --warn:#f2b63d; --warn-bg:#2a2311; --bad:#ff6b6b; --bad-bg:#2c1618;
+    --radius:14px;
+  }
+  @media (prefers-color-scheme: light){
+    :root:not([data-theme="dark"]){
+      --bg:#f5f6f8; --surface:#ffffff; --surface-2:#f0f2f5; --border:#e2e5ea;
+      --text:#1a1d23; --muted:#5a6473; --faint:#8a93a3;
+      --accent:#2563eb; --accent-soft:#e5edff;
+      --ok:#0f8a56; --ok-bg:#e6f6ee; --warn:#9a6a05; --warn-bg:#fbf1d8; --bad:#c0392b; --bad-bg:#fbe6e4;
+    }
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6; font-size:17px; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:820px; margin:0 auto; padding:0 16px 64px}
+  header.top{
+    padding:34px 0 22px; border-bottom:1px solid var(--border); margin-bottom:8px;
+  }
+  .kicker{font-size:13px; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); font-weight:700; margin:0 0 8px}
+  h1{font-size:30px; line-height:1.2; margin:0 0 10px; font-weight:800; letter-spacing:-.01em}
+  .dateline{color:var(--muted); font-size:15px; margin:0}
+  .intro{color:var(--muted); font-size:14.5px; margin:16px 0 0; padding:14px 16px; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius)}
+  .intro b{color:var(--text)}
+
+  nav.toc{margin:26px 0 8px; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:18px 18px 8px}
+  nav.toc h2{font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:var(--faint); margin:0 0 12px}
+  nav.toc ol{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:6px 18px}
+  nav.toc a{display:flex; gap:10px; align-items:baseline; color:var(--text); text-decoration:none; padding:7px 8px; border-radius:9px; font-size:15.5px}
+  nav.toc a:hover,nav.toc a:active{background:var(--accent-soft)}
+  nav.toc .num{color:var(--accent); font-weight:700; font-variant-numeric:tabular-nums; min-width:20px}
+  @media(max-width:560px){ nav.toc ol{grid-template-columns:1fr} h1{font-size:26px} body{font-size:16px} }
+
+  section.cat{margin-top:40px; scroll-margin-top:16px}
+  .cat-head{display:flex; align-items:center; gap:12px; padding-bottom:10px; border-bottom:2px solid var(--border); margin-bottom:4px}
+  .cat-head .ico{font-size:22px; line-height:1}
+  .cat-head h2{font-size:22px; margin:0; font-weight:800; letter-spacing:-.01em}
+  .cat-num{margin-left:auto; color:var(--faint); font-size:13px; font-weight:700; letter-spacing:.1em}
+  .sub{font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); font-weight:700; margin:24px 0 10px}
+
+  article.item{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:16px 17px; margin:12px 0}
+  article.item h3{margin:0 0 7px; font-size:17.5px; line-height:1.35; font-weight:700}
+  article.item p{margin:0 0 12px; color:var(--text); font-size:15.5px}
+  .meta{display:flex; flex-wrap:wrap; align-items:center; gap:8px; font-size:12.5px}
+  .badge{display:inline-flex; align-items:center; gap:5px; padding:3px 9px; border-radius:999px; font-weight:700; letter-spacing:.02em; font-size:11.5px; text-transform:uppercase; border:1px solid transparent}
+  .b-ok{color:var(--ok); background:var(--ok-bg); border-color:var(--ok)}
+  .b-warn{color:var(--warn); background:var(--warn-bg); border-color:var(--warn)}
+  .b-bad{color:var(--bad); background:var(--bad-bg); border-color:var(--bad)}
+  .date{color:var(--muted); font-variant-numeric:tabular-nums}
+  .src{color:var(--muted)}
+  .src a{color:var(--accent); text-decoration:none; word-break:break-word}
+  .src a:hover{text-decoration:underline}
+  .dot{color:var(--faint)}
+  .empty{color:var(--muted); font-style:italic; padding:12px 16px; background:var(--surface-2); border:1px dashed var(--border); border-radius:var(--radius); margin:12px 0}
+  .ctx{font-size:13.5px; color:var(--muted); margin:10px 0 0; padding-left:12px; border-left:3px solid var(--border)}
+
+  footer.foot{margin-top:52px; padding-top:22px; border-top:1px solid var(--border); color:var(--faint); font-size:13px}
+  footer.foot a{color:var(--accent); text-decoration:none}
+  .archive-link{display:inline-flex; align-items:center; gap:8px; margin:28px 0 0; padding:11px 18px; background:var(--surface); border:1px solid var(--border); border-radius:999px; color:var(--text); text-decoration:none; font-weight:600; font-size:15px}
+  .archive-link:hover{background:var(--accent-soft); border-color:var(--accent)}
+  .totop{display:block; text-align:center; margin:30px 0 0; color:var(--accent); text-decoration:none; font-size:14px}
+  .legend{display:flex; flex-wrap:wrap; gap:14px; margin:14px 0 0; font-size:12.5px; color:var(--muted)}
+  .legend span{display:inline-flex; align-items:center; gap:6px}
+  .legend i{width:11px; height:11px; border-radius:3px; display:inline-block}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top" id="top">
+  <p class="kicker">Personal Daily Briefing</p>
+  <h1>Daily Briefing — 28 November 2026</h1>
+  <p class="dateline">Saturday · Edition of 28 Nov 2026 · Research window: last 24–72 hours</p>
+  <div class="intro">
+    Curated, cross-verified news across eight domains. Each item carries a <b>confidence level</b> and its <b>source links</b>. Summaries are written in our own words. Where the strongest verified item falls just outside the strict 24–48h window, the real publication date is shown so nothing is passed off as fresher than it is. <b>No source = not published.</b>
+    <div class="legend">
+      <span><i style="background:var(--ok)"></i> Verified — 2+ independent sources</span>
+      <span><i style="background:var(--warn)"></i> Partial — single primary / syndicated</span>
+      <span><i style="background:var(--bad)"></i> Unverified — one source only</span>
+    </div>
+  </div>
+</header>
+
+<nav class="toc" aria-label="Contents">
+  <h2>Contents</h2>
+  <ol>
+    <li><a href="#dental"><span class="num">1</span> Dental</a></li>
+    <li><a href="#ai"><span class="num">2</span> Artificial Intelligence</a></li>
+    <li><a href="#tech"><span class="num">3</span> Technology</a></li>
+    <li><a href="#psychology"><span class="num">4</span> Psychology</a></li>
+    <li><a href="#education"><span class="num">5</span> Education</a></li>
+    <li><a href="#medicine"><span class="num">6</span> Medicine</a></li>
+    <li><a href="#economy"><span class="num">7</span> Economy</a></li>
+    <li><a href="#politics"><span class="num">8</span> Politics</a></li>
+  </ol>
+</nav>
+
+<!-- ============ 1. DENTAL ============ -->
+<section class="cat" id="dental">
+  <div class="cat-head"><span class="ico">🦷</span><h2>Dental</h2><span class="cat-num">01</span></div>
+
+  <p class="sub">Dental medical discoveries</p>
+
+  <article class="item">
+    <h3>Machine-learning model flags high-caries-risk groups mainly from social factors</h3>
+    <p>Researchers at NYU and the Federal University of Santa Maria (Brazil) modelled cavity risk across roughly 24,000 people and found that social determinants — income and household crowding — predicted decay better than clinical indicators. The approach is designed for population-level surveillance rather than chairside use, and largely describes existing disease rather than forecasting it. Published in <em>Caries Research</em>.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="dot">·</span><span class="date">2026-11-09</span><span class="dot">·</span><span class="src"><a href="https://www.futurity.org/artificial-intelligence-cavities-3352372/">Futurity</a> · <a href="https://www.oralhealthgroup.com/clinical/dental-research/machine-learning-identifies-groups-at-high-risk-of-cavities-using-social-factors-1004000157">Oral Health Group</a> · <a href="https://dentistry.co.uk/2026/11/10/can-ai-predict-which-patients-will-develop-caries/">Dentistry.co.uk</a></span></div>
+  </article>
+
+  <article class="item">
+    <h3>Natural tooth protein studied as a route to regenerate dentine</h3>
+    <p>Early-November coverage described research into a naturally occurring, highly acidic protein involved in dentine calcification, examined for its ability to help dentin-producing cells survive and mature. A related University of Illinois Chicago project received a ~US$1.2M grant to study pulp stem cells. The work is early-stage, with no peer-reviewed clinical result yet.</p>
+    <div class="meta"><span class="badge b-warn">Partial</span><span class="dot">·</span><span class="date">2026-11-02 → 11-04</span><span class="dot">·</span><span class="src"><a href="https://www.news-medical.net/news/20261102/Natural-tooth-protein-could-pave-way-for-regenerative-dental-treatments.aspx">News-Medical</a> · <a href="https://www.oralhealthgroup.com/clinical/dental-research/u-s-professor-receives-us1-2m-to-study-proteins-potential-for-dentin-regeneration-1003999994/">Oral Health Group</a></span></div>
+  </article>
+
+  <article class="item">
+    <h3>Enamel-mimicking gel reported to also rebuild exposed dentine</h3>
+    <p>University of Nottingham researchers reported a material inspired by childhood enamel formation that also acts on exposed dentine, widely re-reported across November 2026. The underlying <em>Nature Communications</em> paper dates to November 2025, so this is recirculation rather than a new result, and the material remains unproven in the mouth with durability still to be established.</p>
+    <div class="meta"><span class="badge b-warn">Partial</span><span class="dot">·</span><span class="date">Re-coverage Nov 2026 (paper Nov 2025)</span><span class="dot">·</span><span class="src"><a href="https://www.khaleejtimes.com/world/can-a-new-dental-gel-repair-damaged-tooth-enamel-what-scientists-say">Khaleej Times</a> · <a href="https://ceramics.org/ceramic-tech-today/protein-matrix-restores-dental-enamel/">American Ceramic Society</a></span></div>
+  </article>
+
+  <p class="sub">New technologies</p>
+
+  <article class="item">
+    <h3>SprintRay Foundation intraoral scanner begins US shipping</h3>
+    <p>SprintRay's first intraoral scanner — Foundation, a wireless full-colour unit running its ScanOS software and tied to its 3D-printing ecosystem — was unveiled at 3DNext 2026 in Miami and scheduled for first US shipments in November 2026 (~US$9,995 launch price). This is the item closest to the current window, though no release confirming units have actually shipped was found.</p>
+    <div class="meta"><span class="badge b-ok">Verified (launch)</span><span class="dot">·</span><span class="date">Shipping Nov 2026</span><span class="dot">·</span><span class="src"><a href="https://www.prnewswire.com/news-releases/sprintray-expands-beyond-3d-printing-with-connected-digital-dentistry-platform-unveiled-at-3dnext-2026-302906373.html">PR Newswire</a> · <a href="https://orthodonticproductsonline.com/practice-products/practice-equipment/3d-printers/sprintray-launches-foundation-intraoral-scanner-nano-series-3d-printing/">Orthodontic Products</a> · <a href="https://instituteofdigitaldentistry.com/news/sprintray-3dnext-2026-new-nanoprint-nanowash-foundation-scanner-gc-gradia-premi-and-more/">Institute of Digital Dentistry</a></span></div>
+  </article>
+
+  <article class="item">
+    <h3>Straumann introduces full-arch implant tools, including SIRIOS APS</h3>
+    <p>Straumann Group unveiled new implant solutions under its F.A.S.T. workflow, including the SIRIOS APS (Arch Positioning System) for full-arch scanning, complementing its SIRIOS X3 wireless intraoral scanner. Announced 28 October, included here as context; figures should be confirmed on Straumann's newsroom before clinical reliance.</p>
+    <div class="meta"><span class="badge b-warn">Partial</span><span class="dot">·</span><span class="date">2026-10-28</span><span class="dot">·</span><span class="src"><a href="https://www.straumann.com">Straumann newsroom (confirm)</a></span></div>
+  </article>
+
+  <p class="sub">New clinic processes (call centre, patient care, SOP)</p>
+  <div class="empty">Nothing verified within the strict 24–72h window. Recent context below is practice-level anecdote and vendor material, not controlled evidence.</div>
+
+  <article class="item">
+    <h3>"Scan Every Patient" protocol gains traction in the UK</h3>
+    <p>A UK practice adopted a protocol of starting every appointment with an intraoral scan and reported higher associate earnings, though figures vary between sources (~35% in the vendor whitepaper versus higher numbers in the article). The evidence is practice-level anecdote, largely promoted by scanner manufacturers, not controlled-study data.</p>
+    <div class="meta"><span class="badge b-bad">Unverified</span><span class="dot">·</span><span class="date">2026-11-19</span><span class="dot">·</span><span class="src"><a href="https://dentistry.co.uk/2026/11/19/introducing-the-scan-every-patient-protocol/">Dentistry.co.uk</a></span></div>
+  </article>
+
+  <article class="item">
+    <h3>DSOs push patient-coordination tools and AI call-handling</h3>
+    <p>Recent DSO coverage includes Heartland Dental's Conuity care-coordination platform linking generalists, specialists and patients, plus Aspen Group patient apps. Separately, AI front-desk agents are marketed as cutting missed calls — vendors cite an average practice missing ~30% of inbound calls — but these claims are vendor marketing without a dated November news event.</p>
+    <div class="meta"><span class="badge b-warn">Partial</span><span class="dot">·</span><span class="date">Oct–Nov 2026 (dates unconfirmed)</span><span class="dot">·</span><span class="src"><a href="https://www.beckersdental.com/dso-dpms/">Becker's Dental</a> · <a href="https://www.beckersdental.com/ai-teledentistry/ai-in-dental-operations-how-practices-are-reducing-missed-calls-and-improving-chair-utilization/">Becker's (AI operations)</a></span></div>
+  </article>
+
+  <p class="sub">Clinic sales &amp; acquisitions (RO + global)</p>
+
+  <article class="item">
+    <h3>Park Dental Partners enters North Carolina with Village Family Dental deal</h3>
+    <p>Publicly traded Park Dental Partners (NASDAQ: PARK) completed its purchase of the Village Family Dental support organisation, adding 12 locations and 47 doctors to reach ~270 affiliated doctors across ~100 locations in four states. Terms were undisclosed; the SEC 8-K shows 474,535 restricted PARK shares issued to the seller as rollover equity. Practices keep their local brands.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="dot">·</span><span class="date">2026-11-06 (closed), 11-09 (announced)</span><span class="dot">·</span><span class="src"><a href="https://www.globenewswire.com/news-release/2026/11/09/3398528/0/en/park-dental-partners-completes-acquisition-of-village-family-dental-support-services-organization-expands-into-north-carolina.html">GlobeNewswire</a> · <a href="https://www.sec.gov/Archives/edgar/data/0002069604/000110465926124485/tm2629264d1_8k.htm">SEC 8-K</a> · <a href="https://www.citybiz.co/article/931280/park-dental-partners-acquires-village-family-dental-dso-expanding-into-north-carolina/">citybiz</a></span></div>
+  </article>
+
+  <article class="item">
+    <h3>Romania: no new clinic M&amp;A this window; Dental Elite keeps expanding organically</h3>
+    <p>No Romanian clinic acquisition dated 25–28 November could be found. The most recent relevant activity is Dental Elite's organic rollout (backed by ACP Credit growth capital): three new clinics opened in 2026 — Ploiești and Buzău in spring, Voluntari in October — under a &gt;€2M plan, reaching roughly 7–8 clinics, with the company saying it remains open to acquisitions. This is <em>de novo</em> expansion, not a deal.</p>
+    <div class="meta"><span class="badge b-ok">Verified (context)</span><span class="dot">·</span><span class="date">2026 (Voluntari ~October); no 72h deal</span><span class="dot">·</span><span class="src"><a href="https://www.dentalelite.ro/blog/2-milioane-de-euro-investitie-in-extinderea-dental-elite-3-noi-clinici-stomatologice-inaugurate-in-tara/">Dental Elite</a> · <a href="https://www.profit.ro/povesti-cu-profit/dental-elite-pornit-cu-4-scaune-continua-planul-de-dezvoltare-la-nivel-national-si-deschide-o-noua-clinica-in-voluntari-22805415">Profit.ro</a></span></div>
+  </article>
+
+  <p class="sub">Key-people migrations (leadership / doctors)</p>
+
+  <article class="item">
+    <h3>Parkview Dental Partners names Jon Gregoire CEO</h3>
+    <p>Florida-based, Cathay Capital-backed Parkview Dental Partners appointed Jon Gregoire as CEO. Gregoire co-founded Cornerstone Dental Partners (sold to P1 Dental Partners in 2021), then served as P1's COO for about five years and has been involved in 30+ dental acquisitions. Note a date discrepancy: the press release is dated 3 Nov, but Becker's cites a LinkedIn announcement on 25 Sep, so the move itself may predate the release.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="dot">·</span><span class="date">2026-11-03 (announced)</span><span class="dot">·</span><span class="src"><a href="https://www.beckersdental.com/executive-moves/15-new-c-suite-leaders-in-dentistry/">Becker's</a> · <a href="https://www.citybiz.co/?p=928930">citybiz</a></span></div>
+  </article>
+
+  <article class="item">
+    <h3>Lightwave Dental promotes Dr. Clifton Cameron to CEO; founder steps down</h3>
+    <p>Lightwave Dental named Dr. Clifton Cameron — previously president and chief clinical officer, with the company since 2019 — as CEO. Founder Justin Jory stepped down as CEO but remains a shareholder and advisor; under Jory the company grew from ~8 practices/~$23M revenue to 100+ practices/$300M+ over a decade.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="dot">·</span><span class="date">Effective 2026-10-01 (announced ~09-21)</span><span class="dot">·</span><span class="src"><a href="https://www.beckersdental.com/executive-moves/lightwave-dental-names-dr-clifton-cameron-as-ceo/">Becker's</a> · <a href="https://www.citybiz.co/?p=906506">citybiz</a></span></div>
+  </article>
+
+  <p class="ctx">LinkedIn profiles could not be accessed directly this session; all moves above are confirmed via two or more trade-press / press-release sources each.</p>
+
+  <p class="sub">Lab processes &amp; technologies</p>
+
+  <article class="item">
+    <h3>Standard Dental Labs acquires M&amp;D Dental Arts; "Bridge" AI platform targeted for 1 Dec</h3>
+    <p>Standard Dental Labs (OTCQB: TUTH) announced the acquisition of M&amp;D Dental Arts and a 1 December 2026 launch target for "Bridge," an AI platform connecting practices, lab teams and vendors as groundwork for AI-assisted restoration design. The company frames the AI as augmenting rather than replacing technicians.</p>
+    <div class="meta"><span class="badge b-warn">Partial</span><span class="dot">·</span><span class="date">2026-11-04</span><span class="dot">·</span><span class="src"><a href="https://www.manilatimes.net/2026/11/05/tmt-newswire/globenewswire/standard-dental-labs-acquires-md-dental-arts-announces-december-1-launch-target-for-bridge-ai-software/2462062">GlobeNewswire via Manila Times</a></span></div>
+  </article>
+
+  <article class="item">
+    <h3>Labs keep shifting from milling to 3D printing and hybrid workflows</h3>
+    <p>Through 2026, coverage shows in-office and lab 3D printing overtaking milling (Inside Dentistry data cited: ~15% of US practices now own a dental printer), alongside hybrid metal print-then-mill workflows and metal printing entering labs. A recent systematic review cautions that 3D-printed resin restorations look acceptable short-term but lack long-term durability evidence.</p>
+    <div class="meta"><span class="badge b-warn">Partial (vendor-sourced)</span><span class="dot">·</span><span class="date">Various 2026</span><span class="dot">·</span><span class="src"><a href="https://2onelab.com/news/products/hybrid-manufacturing-2onelab-hybrid-dental-workflow/">2oneLab</a> · <a href="https://bioengineer.org/review-finds-3d-printed-dental-crowns-show-promise-but-lack-long-term-evidence">Bioengineer (review)</a></span></div>
+  </article>
+
+  <p class="sub">Courses — market context (English-language online CE)</p>
+
+  <article class="item">
+    <h3>The English-language online dental CE market is built around named opinion leaders</h3>
+    <p>The premium online dental-education market is anchored by a handful of KOL-driven brands — Spear Education (Frank Spear), Kois Center (John Kois), Digital Smile Design (Christian Coachman), DentalXP and gIDE. Content skews heavily toward implants, cosmetic/esthetic work, digital workflows and full-mouth rehab — the subjects that command the highest prices internationally.</p>
+    <div class="meta"><span class="badge b-warn">Market context</span><span class="dot">·</span><span class="date">2026</span><span class="dot">·</span><span class="src"><a href="https://digitalsmiledesign.com/learning-hub/nine-of-the-best-platforms-for-online-dentistry-courses">DSD learning hub</a> · <a href="https://ce.edu.dental/online-dental-ce/top-5-best-dental-ce-courses-providers/">ce.edu.dental</a></span></div>
+  </article>
+
+  <article class="item">
+    <h3>How online dental courses are priced across markets</h3>
+    <p>Three models dominate: subscription/membership (DSD Online ~$35/mo; ADA ~$179/yr for 300+ courses), pay-per-course (Kois ~$25–$750 each; gamified-credit platforms ~$25–$99), and certificate/mentorship programs (mini-courses from ~$500; 6-month certifications ~$2,000–$5,000). Best-selling subjects abroad are implantology, clear-aligner/ortho, esthetics/veneers and digital dentistry; CE accreditation and the high-ticket certification tier are the main monetisation levers. Prices are provider-reported — verify against live pages.</p>
+    <div class="meta"><span class="badge b-warn">Market context</span><span class="dot">·</span><span class="date">2026</span><span class="dot">·</span><span class="src"><a href="https://digitalsmiledesign.com/learning-hub/nine-of-the-best-platforms-for-online-dentistry-courses">DSD learning hub</a> · <a href="https://dla.dental/">Dental Leaders Academy</a> · <a href="https://www.topdental.institute/">TopDental Institute</a></span></div>
+  </article>
+  <a class="totop" href="#top">↑ Back to top</a>
+</section>
+
+<!-- ============ 2. AI ============ -->
+<section class="cat" id="ai">
+  <div class="cat-head"><span class="ico">🤖</span><h2>Artificial Intelligence</h2><span class="cat-num">02</span></div>
+
+  <p class="sub">News from any domain</p>
+
+  <article class="item">
+    <h3>OpenAI pilots "Private Inference" for enterprise customers</h3>
+    <p>OpenAI began a limited pilot letting business customers run queries on its top models on isolated, independently-verifiable hardware so that OpenAI itself cannot see the data. It is part of a wider "Private Intelligence" push; the product is listed as an Alpha API preview with no pricing or general-availability date disclosed.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="dot">·</span><span class="date">2026-11-25/26</span><span class="dot">·</span><span class="src"><a href="https://www.bankingnewsai.com/issues/2026-11-26/openai-pilots-private-inference-first-enterprise-customers">Banking News AI</a> · <a href="https://letsdatascience.com/news/openai-tests-private-inference-so-businesses-can-keep-data-f-37b71da7">Let's Data Science</a> · <a href="https://dailyaibrief.com/news/openai-tests-private-inference-business-customers-DUegjxxg">Daily AI Brief</a></span></div>
+  </article>
+
+  <article class="item">
+    <h3>Report: restricted Nvidia Blackwell chips found at a China data centre</h3>
+    <p>Bloomberg reported that export-restricted Nvidia GB300/Blackwell Ultra and H200 hardware was installed at a Shanghai-area campus linked to Megaspeed, the Singaporean cloud firm formerly led by Alice Huang. Investigators reportedly traced assembly in Taiwan and transshipment through Southeast Asia with misdeclared customs filings; Megaspeed denies wrongdoing. This escalates an ongoing US smuggling probe.</p>
+    <div class="meta"><span class="badge b-warn">Partial (single investigation, widely syndicated)</span><span class="dot">·</span><span class="date">2026-11-27</span><span class="dot">·</span><span class="src"><a href="https://siliconangle.com/2026/11/27/report-links-alice-huang-to-chinese-firms-with-smuggled-nvidia-chips/">SiliconANGLE</a> · <a href="https://www.spokesman.com/stories/2026/nov/27/nvidia-blackwell-tech-used-at-china-site-tied-to-a/">The Spokesman-Review</a></span></div>
+  </article>
+
+  <p class="sub">What could help a large dental clinic (market view)</p>
+
+  <article class="item">
+    <h3>Study: patients accept AI assistance but want a human to make the diagnosis</h3>
+    <p>A cross-sectional study using diagnostic imaging software found dental patients value AI as a communication and explanation aid — segmented anatomy, highlighted regions, suggested findings — but want a clinician to make the actual diagnosis. The takeaway for a large clinic: AI imaging overlays are useful for case acceptance and patient trust, but should be positioned as clinician-supervised, not autonomous.</p>
+    <div class="meta"><span class="badge b-warn">Partial</span><span class="dot">·</span><span class="date">2026-11-26</span><span class="dot">·</span><span class="src"><a href="https://bioengineer.org/dental-patients-value-ai-assistance-but-reject-automated-diagnosis-without-clinicians/">Bioengineer</a></span></div>
+  </article>
+
+  <article class="item">
+    <h3>AI radiograph visualization pitched as a trust and case-acceptance tool</h3>
+    <p>A UK trade piece describes practices using AI visualization of dental X-rays to make clinical findings legible to patients, framed as closing the gap between what the dentist sees and what the patient understands. It is commentary/case-study material rather than a product launch, but directly relevant to patient-communication and treatment-acceptance workflows.</p>
+    <div class="meta"><span class="badge b-warn">Partial</span><span class="dot">·</span><span class="date">2026-11-25</span><span class="dot">·</span><span class="src"><a href="https://dentistry.co.uk/2026/11/25/making-the-invisible-visible-how-ai-is-transforming-patient-understanding-of-dental-radiographs/">Dentistry.co.uk</a></span></div>
+  </article>
+  <a class="totop" href="#top">↑ Back to top</a>
+</section>
+
+<!-- ============ 3. TECHNOLOGY ============ -->
+<section class="cat" id="tech">
+  <div class="cat-head"><span class="ico">⚙️</span><h2>Technology</h2><span class="cat-num">03</span></div>
+
+  <p class="sub">Patents &amp; launches — global</p>
+
+  <article class="item">
+    <h3>Dror Ortho-Design wins US Notice of Allowance for AI orthodontic-screening patent</h3>
+    <p>Dror Ortho-Design (OTC: DROR) announced allowed claims covering an AI method that assesses a patient's front teeth from images; its ZSmile platform labels teeth and builds a depth map to flag misalignment, bite and gap issues and issue a go/no-go screening decision. A Notice of Allowance means approved-but-not-yet-issued; a corresponding EPO application is pending. Spans both patents and dental AI.</p>
+    <div class="meta"><span class="badge b-warn">Partial</span><span class="dot">·</span><span class="date">2026-11-23</span><span class="dot">·</span><span class="src"><a href="https://www.globenewswire.com/news-release/2026/11/23/3408878/0/en/dror-ortho-design-receives-u-s-notice-of-allowance-for-ai-powered-orthodontic-screening-patent.html">GlobeNewswire</a> · <a href="https://www.manilatimes.net/2026/11/24/tmt-newswire/globenewswire/dror-ortho-design-receives-us-notice-of-allowance-for-ai-powered-orthodontic-screening-patent/2476646">Manila Times</a></span></div>
+  </article>
+
+  <article class="item">
+    <h3>Recently granted AI patents from the USPTO weekly index</h3>
+    <p>The USPTO's week-46 grant index lists, among others, Palo Alto Networks' "LLM-guided robust learning system" for command-and-control detection (US 12,803,998) and Deutsche Telekom's method for "bias estimation in AI models using a deep neural network" (US 12,801,697). Grant numbers should be confirmed against the official record before citing.</p>
+    <div class="meta"><span class="badge b-warn">Partial</span><span class="dot">·</span><span class="date">2026-11-17 (week 46)</span><span class="dot">·</span><span class="src"><a href="https://patentsgazette.uspto.gov/week46/OG/patentee/alphaF.html">USPTO Official Gazette</a></span></div>
+  </article>
+
+  <p class="sub">Patents &amp; launches — Romania</p>
+  <div class="empty">Nothing relevant in the last 24h. No Romanian product launch or OSIM/EPO grant surfaced for 26–28 Nov. Nearest items are non-launch: Outcome1.AI raised a €1M pre-seed (listed ~25 Nov; funding, not a launch), and OSIM held institutional meetings with Moldova's AGEPI on 17–19 Nov.</div>
+  <a class="totop" href="#top">↑ Back to top</a>
+</section>
+
+<!-- ============ 4. PSYCHOLOGY ============ -->
+<section class="cat" id="psychology">
+  <div class="cat-head"><span class="ico">🧠</span><h2>Psychology</h2><span class="cat-num">04</span></div>
+
+  <p class="sub">Adults — new finding (DSM-5 referenced)</p>
+
+  <article class="item">
+    <h3>Repeat theft in kleptomania linked to a heightened fear of financial loss</h3>
+    <p>Kyoto University researchers report that people with kleptomania who repeatedly steal show exaggerated loss aversion and price sensitivity compared with repeat offenders without the diagnosis and with non-offender controls — pointing to a decision-making mechanism rather than a simple "urge to steal." Kleptomania sits in the DSM-5 under Disruptive, Impulse-Control and Conduct Disorders, so the work refines that category. The study did not measure brain activity directly and used a small clinical sample.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="dot">·</span><span class="date">2026-11-24</span><span class="dot">·</span><span class="src"><a href="https://phys.org/news/2026-11-thieves-kleptomania-struggle-rewards-decision.html">Phys.org</a> · <a href="https://www.eurekalert.org/news-releases/1151185">EurekAlert</a> · <a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1777535/full">Frontiers in Psychology</a></span></div>
+  </article>
+
+  <article class="item">
+    <h3>Emotional abuse predicts later depressive symptoms via poorer family functioning</h3>
+    <p>A longitudinal study of 1,887 Italians found that emotional abuse at baseline predicted worse family functioning and higher depressive symptoms six months later, with family dysfunction acting as a mediating pathway — mapping onto DSM-5 Major Depressive Disorder and its psychosocial risk factors. Note the sample is adolescents (14–17), not adults.</p>
+    <div class="meta"><span class="badge b-warn">Partial</span><span class="dot">·</span><span class="date">2026-11-27</span><span class="dot">·</span><span class="src"><a href="https://www.psypost.org/how-emotional-abuse-and-family-dynamics-shape-teen-depression-over-time/">PsyPost</a></span></div>
+  </article>
+
+  <p class="sub">Children — what develops in a ~6-year-old's brain (Andrei, b. 2020)</p>
+
+  <article class="item">
+    <h3>Concrete reasoning, early literacy and numeracy take off around age 6</h3>
+    <p>Between 5 and 7, children move into Piaget's "concrete operational" thinking: they begin to grasp conservation (quantity stays the same when shape changes), tell time roughly, count and do simple addition, and start reading by sounding out words. Over the coming year, watch for a growing attention span and the ability to follow multi-step instructions. The CDC frames milestones as what ~75% of children do by a given age — checklists are screening aids, not diagnoses.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="dot">·</span><span class="date">Evergreen (CDC/AAP/PBS)</span><span class="dot">·</span><span class="src"><a href="https://www.cdc.gov/act-early/milestones/5-years.html">CDC milestones</a> · <a href="https://www.pbs.org/parents/learn-grow/age-6/literacy/reading">PBS Parents</a> · <a href="https://www.columbiadoctors.org/health-library/article/milestones-6-year-olds/">Columbia Doctors</a></span></div>
+  </article>
+
+  <article class="item">
+    <h3>Friendships, fairness and self-regulation become central</h3>
+    <p>Around 6, children increasingly want friends and to be liked, grasp rules and "what's fair," and begin managing big emotions with fewer meltdowns — though preschool-style fears (the dark, large animals, being alone) often persist. Over the next year, watch for stronger empathy, cooperative play and the capacity to lose a game without falling apart. Stable, nurturing relationships and play protect the developing executive-function system against stress.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="dot">·</span><span class="date">Evergreen (AAP / HealthLinkBC)</span><span class="dot">·</span><span class="src"><a href="https://www.healthychildren.org/English/family-life/power-of-play/Pages/the-power-of-play-how-fun-and-games-help-children-thrive.aspx">HealthyChildren (AAP)</a> · <a href="https://www.healthlinkbc.ca/healthwise/milestones-6-year-olds">HealthLinkBC</a></span></div>
+  </article>
+
+  <article class="item">
+    <h3>Rapid vocabulary growth and conversational storytelling</h3>
+    <p>By 6, most children speak in full, grammatically complex sentences, can tell a connected story, follow multi-step directions and understand thousands of words; vocabulary expands quickly through the school year. Flag to a pediatrician if speech is hard for strangers to understand or the child cannot follow two-step instructions.</p>
+    <div class="meta"><span class="badge b-warn">Partial</span><span class="dot">·</span><span class="date">Evergreen</span><span class="dot">·</span><span class="src"><a href="https://www.cdc.gov/act-early/milestones/5-years.html">CDC</a> · <a href="https://healthy.kaiserpermanente.org/health-wellness/health-encyclopedia/he.ue5723">Kaiser Permanente</a></span></div>
+  </article>
+  <a class="totop" href="#top">↑ Back to top</a>
+</section>
+
+<!-- ============ 5. EDUCATION ============ -->
+<section class="cat" id="education">
+  <div class="cat-head"><span class="ico">📚</span><h2>Education</h2><span class="cat-num">05</span></div>
+
+  <p class="sub">The next ~20 years vs. classical schooling</p>
+
+  <article class="item">
+    <h3>OECD: AI tutoring helps most when it questions, not when it answers</h3>
+    <p>The OECD Digital Education Outlook 2026 reports that AI tutors using Socratic, process-oriented questioning yield small-to-medium gains in subject knowledge and larger gains in critical thinking — but the gains vanish or reverse when the AI simply supplies answers. It also found that low-experience human tutors raised pass rates by about 9 percentage points when AI-supported, framing AI as reinforcing rather than diminishing the teacher's mentor role.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="dot">·</span><span class="date">2026-01 (OECD outlook)</span><span class="dot">·</span><span class="src"><a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2026/01/oecd-digital-education-outlook-2026_940e0dd8/062a7394-en.pdf">OECD (PDF)</a> · <a href="https://mexicobusiness.news/talent/news/oecd-generative-ai-reshapes-education-systems">Mexico Business</a></span></div>
+  </article>
+
+  <article class="item">
+    <h3>Personalization without challenge can backfire</h3>
+    <p>The same OECD outlook warns that algorithmically "personalized" content without clear pedagogical intent can produce comfortable but unchallenging learning, and that over-reliance on these tools can reduce students' metacognitive engagement — their ability to monitor and direct their own learning. The 20-year implication is that design and teacher oversight, not the technology alone, determine whether personalization helps.</p>
+    <div class="meta"><span class="badge b-warn">Partial</span><span class="dot">·</span><span class="date">2026-01</span><span class="dot">·</span><span class="src"><a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2026/01/oecd-digital-education-outlook-2026_940e0dd8/062a7394-en.pdf">OECD (PDF)</a></span></div>
+  </article>
+
+  <p class="sub">Educating a ~6-year-old (Andrei, b. 2020)</p>
+
+  <article class="item">
+    <h3>Protect and prioritize play</h3>
+    <p>The AAP's clinical report on play urges parents to resist an over-shift toward pure "academic readiness," noting that playful, child-led learning builds executive function, problem-solving and social skills and buffers stress. For ages 4–6, pair structured activities (reading, early worksheets) with ample unstructured and physical play, and ask the school about recess and playful-learning approaches.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="dot">·</span><span class="date">Evergreen (AAP clinical report)</span><span class="dot">·</span><span class="src"><a href="https://www.healthychildren.org/English/family-life/power-of-play/Pages/the-power-of-play-how-fun-and-games-help-children-thrive.aspx">HealthyChildren (AAP)</a> · <a href="https://www.mdedge.com/content/aap-report-prioritize-play-young-children">MDedge</a></span></div>
+  </article>
+
+  <article class="item">
+    <h3>Keep reading together, interactively</h3>
+    <p>The AAP's 2024 literacy policy recommends shared reading from birth through at least kindergarten; at 6, let the child sound out words and take turns reading while you discuss the story. If using screens or audiobooks, the AAP advises pairing them with genuine parent-child conversation rather than passive consumption.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="dot">·</span><span class="date">2024 (AAP literacy policy)</span><span class="dot">·</span><span class="src"><a href="https://pubmed.ncbi.nlm.nih.gov/39342414/">PubMed (AAP policy)</a> · <a href="https://www.pbs.org/parents/learn-grow/age-6/literacy/reading">PBS Parents</a></span></div>
+  </article>
+
+  <article class="item">
+    <h3>Coach feelings, keep predictable routines</h3>
+    <p>Because 6-year-olds are learning to manage frustration, friendships and fairness, name emotions, model calm problem-solving and keep consistent routines for sleep, meals and homework; expect lingering fears and occasional big reactions as normal. Stable, nurturing adult relationships are repeatedly identified as the single strongest protective factor for healthy brain and executive-function development.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="dot">·</span><span class="date">Evergreen (AAP / HealthLinkBC)</span><span class="dot">·</span><span class="src"><a href="https://www.healthlinkbc.ca/healthwise/milestones-6-year-olds">HealthLinkBC</a> · <a href="https://www.healthychildren.org/English/family-life/power-of-play/Pages/the-power-of-play-how-fun-and-games-help-children-thrive.aspx">HealthyChildren (AAP)</a></span></div>
+  </article>
+  <a class="totop" href="#top">↑ Back to top</a>
+</section>
+
+<!-- ============ 6. MEDICINE ============ -->
+<section class="cat" id="medicine">
+  <div class="cat-head"><span class="ico">⚕️</span><h2>Medicine</h2><span class="cat-num">06</span></div>
+  <p class="sub">Discoveries &amp; firsts</p>
+
+  <article class="item">
+    <h3>FDA approves Ekitna (bezuclastinib) for advanced GIST — first new option in 20+ years</h3>
+    <p>The FDA approved bezuclastinib (Ekitna, Cogent Biosciences) with sunitinib for adults with advanced gastrointestinal stromal tumours previously treated with imatinib, clearing it six days ahead of its 30 Nov target. The approval rests on the Phase 3 PEAK trial, which roughly doubled progression-free survival versus sunitinib alone — described as the first treatment approved in this setting in over two decades.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="dot">·</span><span class="date">2026-11-24</span><span class="dot">·</span><span class="src"><a href="https://investors.cogentbio.com/news-releases/news-release-details/cogent-biosciences-announces-fda-approval-and-launch-ekitnatm">Cogent Biosciences</a> · <a href="https://www.ajmc.com/view/fda-approves-bezuclastinib-plus-sunitinib-for-gist-after-imatinib">AJMC</a> · <a href="https://www.pharmexec.com/view/fda-approves-cogent-biosciences-ekitna-advanced-gist-doubling-progression-free-survival">Pharmaceutical Executive</a></span></div>
+  </article>
+
+  <article class="item">
+    <h3>FDA approves Welgemda (ribitol) — first-ever treatment for limb-girdle muscular dystrophy</h3>
+    <p>The FDA approved ribitol (Welgemda, ML Bio Solutions/BridgeBio) as the first approved therapy for any form of limb-girdle muscular dystrophy — specifically type 2I/R9 — as a twice-daily oral solution for patients weighing at least 30 kg. Approval was based on the Phase 3 FORTIFY trial (112 patients), with the FDA citing meaningful improvements in walking speed and lung function. Advocacy groups called it a decades-overdue milestone.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="dot">·</span><span class="date">2026-11-23</span><span class="dot">·</span><span class="src"><a href="https://www.pharmacytimes.com/view/fda-approves-ribitol-as-first-treatment-for-limb-girdle-muscular-dystrophy">Pharmacy Times</a> · <a href="https://www.mda.org/press-releases/first-ever-treatment-for-limb-girdle-muscular-dystrophy-type-2ir9-approved-by-fda-a-milestone-for-a">MDA</a> · <a href="https://www.neurologyadvisor.com/news/fda-approves-welgemda-ribitol-lgmd2i-r9/">Neurology Advisor</a></span></div>
+  </article>
+
+  <article class="item">
+    <h3>First regional use of daraxonrasib, a first-in-class RAS inhibitor, for pancreatic cancer in the UAE</h3>
+    <p>Burjeel Cancer Institute (Abu Dhabi) reported treating a 61-year-old patient with daraxonrasib (Rasonque), described as the drug's first clinical use in the region. Daraxonrasib is an FDA-approved, first-in-class oral pan-RAS inhibitor for metastatic pancreatic adenocarcinoma; its Phase 3 RASolute 302 data showed median overall survival of 13.2 vs 6.7 months versus chemotherapy. The "first regional use" claim rests on a single outlet, though the drug approval and trial data are independently verified.</p>
+    <div class="meta"><span class="badge b-bad">Unverified (single-source claim)</span><span class="dot">·</span><span class="date">2026-11-27</span><span class="dot">·</span><span class="src"><a href="https://www.thenationalnews.com/news/uae/2026/11/27/breakthrough-drug-gives-doctors-new-tool-to-fight-pancreatic-cancer/">The National</a> · <a href="https://www.aacr.org/patients-caregivers/progress-against-cancer/fda-approves-daraxonrasib-as-first-ras-inhibitor-for-pancreatic-cancer/">AACR (drug context)</a></span></div>
+  </article>
+  <a class="totop" href="#top">↑ Back to top</a>
+</section>
+
+<!-- ============ 7. ECONOMY ============ -->
+<section class="cat" id="economy">
+  <div class="cat-head"><span class="ico">📈</span><h2>Economy</h2><span class="cat-num">07</span></div>
+  <p class="sub">Mergers &amp; acquisitions (EU &gt;€100M · US/China &gt;$100M · RO &gt;€1M)</p>
+
+  <article class="item">
+    <h3>EU unconditionally clears Deutsche Börse's €5.3bn Allfunds takeover</h3>
+    <p>The European Commission gave Phase I unconditional clearance to Deutsche Börse's acquisition of fund-distribution platform Allfunds Group, finding no competition concerns. The companies now aim to close in early 2027, with the EU framing it as a step toward more integrated European market infrastructure.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="dot">·</span><span class="date">2026-11-27</span><span class="dot">·</span><span class="src"><a href="https://www.bloomberg.com/news/articles/2026-11-27/deutsche-boerse-s-5-3-billion-allfunds-deal-gets-eu-approval">Bloomberg</a> · <a href="https://globalcompetitionreview.com/article/all-clear-the-briefing-27-november-2026">GCR</a> · <a href="https://www.mlex.com/mlex/dealrisk/articles/2560306">MLex</a></span></div>
+  </article>
+
+  <article class="item">
+    <h3>American-led consortium signs deal for LUKOIL's non-Russian energy portfolio</h3>
+    <p>A consortium led by Eldridge (with the US International Development Finance Corporation, UAE-based Catena Investment Holding and Xtellus Partners) signed a definitive agreement to acquire LUKOIL International GmbH, holding LUKOIL's non-Russian oil and gas assets (~350,000 boe/d across 11 countries, plus trader LITASCO and 2,000+ retail stations). A share-swap structure avoids direct payments to Russia; closing is subject to OFAC and other approvals. Deal value was not disclosed.</p>
+    <div class="meta"><span class="badge b-ok">Verified (value undisclosed)</span><span class="dot">·</span><span class="date">2026-11-25/26</span><span class="dot">·</span><span class="src"><a href="https://www.rigzone.com/news/eldridge_consortium_pens_deal_to_acquire_lukoil_international-26-nov-2026-185176-article/">Rigzone</a> · <a href="https://www.usnews.com/news/business/articles/2026-11-25/us-led-consortium-agrees-to-acquire-assets-from-russian-oil-company-lukoil">US News / AP</a></span></div>
+  </article>
+
+  <article class="item">
+    <h3>PPC Group to buy Italian energy supplier Enegan for €330 million</h3>
+    <p>PPC Group agreed to acquire 100% of Italian electricity and gas supplier Enegan (170,000+ customers, €379M 2025 revenue) for about €330 million, as part of its European expansion. Completion is estimated for 2027.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="dot">·</span><span class="date">2026-11-24</span><span class="dot">·</span><span class="src"><a href="https://www.thediplomat.ro/2026/11/24/ppc-group-to-acquire-italys-enegan-for-330-million-euros/">The Diplomat Romania</a> · <a href="https://financialintelligence.ro/grupul-ppc-semneaza-acordul-pentru-achizitia-enegan/">Financial Intelligence</a></span></div>
+  </article>
+
+  <article class="item">
+    <h3>Romania: PPC Romania seeks to acquire five power-generation and storage companies</h3>
+    <p>PPC Romania notified the Competition Council of its intent to take over five companies holding electricity production and storage assets/projects. The transaction is under review; the deal value was not disclosed, though earlier reporting valued PPC's bundle of Romanian renewable/gas/battery assets at roughly €93 million.</p>
+    <div class="meta"><span class="badge b-warn">Partial (under review, value undisclosed)</span><span class="dot">·</span><span class="date">~2026-11-26</span><span class="dot">·</span><span class="src"><a href="https://financialintelligence.ro/ppc-romania-intentioneaza-sa-preia-cinci-companii-cu-active-si-proiecte-in-productia-si-stocarea-energiei-electrice-tranzactia-analizata-de-consiliul-concurentei/">Financial Intelligence</a> · <a href="https://balkangreenenergynews.com/ppc-signs-major-acquisition-deals-in-romania-italy/">Balkan Green Energy News</a></span></div>
+  </article>
+  <a class="totop" href="#top">↑ Back to top</a>
+</section>
+
+<!-- ============ 8. POLITICS ============ -->
+<section class="cat" id="politics">
+  <div class="cat-head"><span class="ico">🏛️</span><h2>Politics</h2><span class="cat-num">08</span></div>
+
+  <p class="sub">New leadership appointments (EU · RO · US)</p>
+
+  <article class="item">
+    <h3>EU leaders agree to nominate Spain's Hernández de Cos as next ECB president</h3>
+    <p>Euro-area leaders agreed to nominate Pablo Hernández de Cos — former Bank of Spain governor and current BIS General Manager — to succeed Christine Lagarde as ECB president, the first Spaniard to hold the post. Laurence Boone (France) and Markus Brunnermeier (Germany) were recommended for the Executive Board. The nomination is not yet final: formal appointment by the European Council is expected in December, with a handover around February 2027.</p>
+    <div class="meta"><span class="badge b-ok">Verified (summit date varies Nov 26/27)</span><span class="dot">·</span><span class="date">2026-11-26/27</span><span class="dot">·</span><span class="src"><a href="https://english.news.cn/europe/20261127/c971fc6341d646478eb8227d3d2fe4fe/c.html">Xinhua</a> · <a href="https://www.tradingandinvestmentnews.co.uk/hernandez-de-cos-ecb-eu-leaders/">Trading &amp; Investment News</a></span></div>
+  </article>
+
+  <div class="empty"><b>Romania — appointments:</b> Nothing relevant in the last 24h. Most recent change: PM Luca Niculescu's cabinet took office 20 Oct 2026; no new ministerial appointment found 26–28 Nov.</div>
+  <div class="empty"><b>USA — appointments:</b> Nothing relevant in the last 24h. Most recent relevant move was Stephen Miller as White House Chief of Staff from 9 Nov 2026 (outside the window); no Senate confirmations found for 26–27 Nov.</div>
+
+  <p class="sub">New laws adopted that will apply (Monitorul Oficial · EUR-Lex · Federal Register)</p>
+
+  <article class="item">
+    <h3>EU: implementing rules on AI regulatory sandboxes enter into force 1 Dec 2026</h3>
+    <p>Commission Implementing Regulation (EU) 2026/2487 sets detailed arrangements for AI regulatory sandboxes under the AI Act. Published in the Official Journal on 11 Nov 2026, it applies from 1 December 2026 (20 days after publication).</p>
+    <div class="meta"><span class="badge b-ok">Verified (primary source)</span><span class="dot">·</span><span class="date">Published 2026-11-11; effective 2026-12-01</span><span class="dot">·</span><span class="src"><a href="https://eur-lex.europa.eu/eli/reg_impl/2026/2487/oj">EUR-Lex</a></span></div>
+  </article>
+
+  <article class="item">
+    <h3>USA: Counterfeit Notification Act signed into law</h3>
+    <p>President Trump signed H.R. 4930, authorising US Customs and Border Protection to share shipping and import information about suspected counterfeit (IP-infringing) goods with rights holders, carriers and e-commerce platforms. Signed 24 Nov 2026 — the most recent US signing found, just outside the 48h window.</p>
+    <div class="meta"><span class="badge b-ok">Verified</span><span class="dot">·</span><span class="date">2026-11-24</span><span class="dot">·</span><span class="src"><a href="https://www.whitehouse.gov/briefings-statements/2026/11/congressional-bills-h-r-1550-h-r-4930-and-h-r-8552-signed-into-law/">White House</a> · <a href="https://app.govly.com/public/signals/260045">Govly</a></span></div>
+  </article>
+
+  <div class="empty"><b>Romania — new laws:</b> Nothing relevant in the last 24h. The 26 and 27 Nov editions of Monitorul Oficial contained no new law, ordinance or government decision per legal trackers; the most recent laws were published 13 Nov 2026 (e.g. Law 209/2026 on a state-aid scheme for the pig sector). Primary-source verification (monitoruloficial.ro) could not be reached this session.</div>
+  <a class="totop" href="#top">↑ Back to top</a>
+</section>
+
+<a class="archive-link" href="arhiva/">🗂️ Archive — past editions</a>
+
+<footer class="foot">
+  <p>Daily Briefing · Edition of 28 November 2026. Summaries are written in-house from the linked sources; confidence labels reflect source count and recency. Items without a usable source are omitted. Where the freshest verified item fell just outside the strict 24–48h window, the real publication date is shown.</p>
+  <p>Research window: last 24–72 hours · Verified = 2+ independent sources · Partial = single primary / widely syndicated · Unverified = one source only.</p>
+</footer>
+
+</div>
+</body>
+</html>
